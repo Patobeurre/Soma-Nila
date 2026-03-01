@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=4 uid="uid://dvbuqr0aytha7"]
+
+[ext_resource type="Script" uid="uid://lfryewj84806" path="res://scenes/Terrain/tile_bloc.gd" id="1_5fupe"]
+[ext_resource type="Texture2D" uid="uid://cyjij0jwjbrjq" path="res://models/islands/tile_3d_Material.png" id="2_2gfkv"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5fupe"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j0cib"]
+resource_name = "Grass_and_dirt.001"
+cull_mode = 2
+albedo_texture = ExtResource("2_2gfkv")
+roughness = 0.8
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ktkk4"]
+_surfaces = [{
+"aabb": AABB(-1, -0.5, -1, 2, 1, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "Grass_and_dirt.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP7/AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP//AAD+/wAA////////AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_u40np"]
+resource_name = "tile_3d_Cube_002"
+_surfaces = [{
+"aabb": AABB(-1, -0.5, -1, 2, 1, 2),
+"attribute_data": PackedByteArray("/1//f/+f/z//n/9//1//P/9f/z//n/9//5//P/9f/3//X/9//5//P/+f/3//X/8//1//P/+f/3//n/8//1//f/8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_j0cib"),
+"name": "Grass_and_dirt.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP7/VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAAAAP////8AAAAAAAD//wAAAAD//wAAAAAAAP//AAAAAFTV////////VNX/////AABU1f//AAD+/1TV//8AAP7//z8AAP//////P/////////8/AAAAAP7//z8AAAAAAAD/v///AAD+//+///8AAAAA/78AAAAA/v//v/////8AAP//AAD///////8AAP//AAD/////////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ktkk4")
+
+[node name="TileBloc" type="Node3D"]
+script = ExtResource("1_5fupe")
+
+[node name="StaticBody3D" type="AnimatableBody3D" parent="."]
+collision_layer = 4097
+collision_mask = 129
+sync_to_physics = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_5fupe")
+
+[node name="BaseTileMesh" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, -1, 1.94707e-07, 0, -3.89414e-07, -0.5, 0, 0, 0)
+mesh = SubResource("ArrayMesh_u40np")
+skeleton = NodePath("")

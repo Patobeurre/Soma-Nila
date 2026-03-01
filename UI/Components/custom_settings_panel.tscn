@@ -1,0 +1,144 @@
+[gd_scene load_steps=7 format=3 uid="uid://w60cpseg4ehi"]
+
+[ext_resource type="StyleBox" uid="uid://e5cpgac5ah0y" path="res://UI/themes/panel_box_texture.tres" id="1_85ej0"]
+[ext_resource type="Theme" uid="uid://7vunodgdyjg2" path="res://UI/themes/base_font.tres" id="1_e60w2"]
+[ext_resource type="Script" uid="uid://ntv0ulix8lb6" path="res://UI/Components/custom_settings.gd" id="1_sgro0"]
+[ext_resource type="Texture2D" uid="uid://b1o3u4iwpv2v0" path="res://images/UI/cb_cheked_icon.png" id="4_sc75k"]
+[ext_resource type="Texture2D" uid="uid://33inwghnb5gn" path="res://images/UI/cb_uncheked_icon.png" id="5_rlv3m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgro0"]
+border_width_top = 2
+border_width_bottom = 2
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[node name="PanelContainer" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_85ej0")
+script = ExtResource("1_sgro0")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VSplitContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+dragging_enabled = false
+
+[node name="TitleText" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme = ExtResource("1_e60w2")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "TITLE_CUSTOMGAME"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="UseRandomSeed" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VBoxContainer/UseRandomSeed"]
+layout_mode = 2
+theme = ExtResource("1_e60w2")
+text = "TEXT_USERANDSEED"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="CB_RndSeed" type="CheckBox" parent="MarginContainer/VBoxContainer/VBoxContainer/UseRandomSeed"]
+layout_mode = 2
+focus_mode = 0
+theme_override_icons/checked = ExtResource("4_sc75k")
+theme_override_icons/unchecked = ExtResource("5_rlv3m")
+button_pressed = true
+action_mode = 0
+icon_alignment = 1
+expand_icon = true
+
+[node name="SeedValue" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VBoxContainer/SeedValue"]
+layout_mode = 2
+theme = ExtResource("1_e60w2")
+text = "TEXT_SEED"
+fit_content = true
+autowrap_mode = 0
+
+[node name="SB_SeedValue" type="SpinBox" parent="MarginContainer/VBoxContainer/VBoxContainer/SeedValue"]
+clip_contents = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_e60w2")
+theme_override_constants/buttons_width = 50
+theme_override_constants/field_and_buttons_separation = 10
+max_value = 1e+07
+alignment = 2
+editable = false
+update_on_text_changed = true
+select_all_on_focus = true
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxFlat_sgro0")
+
+[node name="AbilitiesContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 20
+columns = 8
+
+[node name="AllowDuplicateItems" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VBoxContainer/AllowDuplicateItems"]
+layout_mode = 2
+theme = ExtResource("1_e60w2")
+text = "MENU_CUSTOM_ALLOWDUPLICATE"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="CB_AllowDuplicateItems" type="CheckBox" parent="MarginContainer/VBoxContainer/VBoxContainer/AllowDuplicateItems"]
+layout_mode = 2
+focus_mode = 0
+theme_override_icons/checked = ExtResource("4_sc75k")
+theme_override_icons/unchecked = ExtResource("5_rlv3m")
+button_pressed = true
+action_mode = 0
+icon_alignment = 1
+expand_icon = true
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxFlat_sgro0")
+
+[connection signal="toggled" from="MarginContainer/VBoxContainer/VBoxContainer/UseRandomSeed/CB_RndSeed" to="." method="_on_cb_rnd_seed_toggled"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer/SeedValue/SB_SeedValue" to="." method="_on_sb_seed_value_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/VBoxContainer/AllowDuplicateItems/CB_AllowDuplicateItems" to="." method="_on_cb_allow_duplicate_items_toggled"]

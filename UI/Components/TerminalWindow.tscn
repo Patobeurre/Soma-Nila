@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnto8evi0hjom"]
+
+[ext_resource type="Texture2D" uid="uid://dcrtgthfy586w" path="res://images/terminal/window_texture.png" id="1_b7wbk"]
+[ext_resource type="Script" uid="uid://cjak26sbrsdum" path="res://UI/Components/terminal_window.gd" id="1_be2vx"]
+[ext_resource type="Resource" uid="uid://ds1l2e5ht5ns1" path="res://scripts/resources/Terminal/TerminalWindowContent/SecretSeedPuzzleWindow.tres" id="2_btjn4"]
+[ext_resource type="Resource" uid="uid://bam4hunlt658g" path="res://scripts/resources/Terminal/TerminalWindowContent/ConversationWindow.tres" id="3_ioej2"]
+[ext_resource type="Theme" uid="uid://dgohthjmb8am6" path="res://UI/themes/console_font.tres" id="4_v8ejd"]
+[ext_resource type="Texture2D" uid="uid://dc2etdsitc8qx" path="res://images/terminal/cursor_terminal.png" id="5_v8ejd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_485fk"]
+texture = ExtResource("1_b7wbk")
+
+[node name="Control" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_be2vx")
+secret_puzzle_window = ExtResource("2_btjn4")
+conversation_window = ExtResource("3_ioej2")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_485fk")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+clip_contents = true
+layout_mode = 2
+
+[node name="TitleLabel" type="RichTextLabel" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_v8ejd")
+text = "SEED"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ContentPanel" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_right = 20
+
+[node name="Cursor" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(278, 285)
+scale = Vector2(2, 2)
+texture = ExtResource("5_v8ejd")

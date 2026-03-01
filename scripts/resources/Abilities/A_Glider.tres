@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="StateRes" load_steps=5 format=3 uid="uid://ghffdxyydiku"]
+
+[ext_resource type="Script" uid="uid://djw557ek5251m" path="res://scripts/resources/StateRes.gd" id="1_ie2k3"]
+[ext_resource type="Texture2D" uid="uid://8ywaoom27rwh" path="res://images/ability_icons/glider.png" id="1_nfmiv"]
+[ext_resource type="Script" uid="uid://nfw2fpi2r2fs" path="res://scripts/resources/AbilityWeights.gd" id="3_c2xgk"]
+
+[sub_resource type="Resource" id="Resource_5c1g4"]
+script = ExtResource("3_c2xgk")
+pointUp = -16.0
+pointDown = 0.0
+pointFar = 0.0
+pointSpread = 1.0
+metadata/_custom_type_script = "uid://nfw2fpi2r2fs"
+
+[resource]
+script = ExtResource("1_ie2k3")
+stateName = "triggerGlideState"
+name = "A_GLIDER"
+icon = ExtResource("1_nfmiv")
+initial_amount = 2
+weights = SubResource("Resource_5c1g4")
+metadata/_custom_type_script = "uid://djw557ek5251m"

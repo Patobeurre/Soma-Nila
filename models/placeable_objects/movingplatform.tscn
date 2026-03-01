@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwwphlv78opb2"]
+
+[ext_resource type="Script" uid="uid://badh6q5nxuoqa" path="res://scripts/moving_platform.gd" id="1_utu7g"]
+[ext_resource type="PackedScene" uid="uid://j3gkhaw14xm3" path="res://models/placeable_objects/moving_platform.glb" id="2_wb6wj"]
+[ext_resource type="PackedScene" uid="uid://ug6t1dxyb67b" path="res://models/decoration/grass.glb" id="3_vf81t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vf81t"]
+size = Vector3(2, 0.3, 2)
+
+[node name="MovingPlatform" type="Node3D" node_paths=PackedStringArray("bodyToMove")]
+script = ExtResource("1_utu7g")
+bodyToMove = NodePath("AnimatableBody3D")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+collision_mask = 2
+sync_to_physics = false
+
+[node name="moving_platform" parent="AnimatableBody3D" instance=ExtResource("2_wb6wj")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
+shape = SubResource("BoxShape3D_vf81t")
+
+[node name="grass" parent="AnimatableBody3D" instance=ExtResource("3_vf81t")]
+transform = Transform3D(0.262513, 0, 0.145214, 0, 0.2, 0, -0.145214, 0, 0.262513, 0.516181, 0.0733529, 0.44848)
+
+[node name="grass2" parent="AnimatableBody3D" instance=ExtResource("3_vf81t")]
+transform = Transform3D(-0.12887, 0, 0.270911, 0, 0.2, 0, -0.270911, 0, -0.12887, 0.344436, 0.0733529, -0.456151)
+
+[node name="grass3" parent="AnimatableBody3D" instance=ExtResource("3_vf81t")]
+transform = Transform3D(-0.24327, 0, 0.175555, 0, 0.2, 0, -0.175555, 0, -0.24327, -0.480294, 0.0733529, 0.321031)
+
+[node name="grass4" parent="AnimatableBody3D" instance=ExtResource("3_vf81t")]
+transform = Transform3D(-0.187957, 0, 0.233821, 0, 0.2, 0, -0.233821, 0, -0.187957, 0.0150363, 0.0589063, -0.129784)
+
+[node name="grass5" parent="AnimatableBody3D" instance=ExtResource("3_vf81t")]
+transform = Transform3D(-0.298895, 0, 0.025719, 0, 0.2, 0, -0.025719, 0, -0.298895, -0.54528, 0.0787343, -0.580784)

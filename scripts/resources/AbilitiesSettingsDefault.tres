@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="AbilitiesSettings" load_steps=13 format=3 uid="uid://cljdvb30r64rh"]
+
+[ext_resource type="Script" uid="uid://c8tmwhrxvsyuv" path="res://scripts/resources/AbilitiesSettings.gd" id="1_8rvhm"]
+[ext_resource type="Resource" uid="uid://ch4cg6xi7dtwp" path="res://scripts/resources/Abilities/A_Bumper.tres" id="1_lvyy7"]
+[ext_resource type="Script" uid="uid://djw557ek5251m" path="res://scripts/resources/StateRes.gd" id="1_shdal"]
+[ext_resource type="Resource" uid="uid://b5b2qo7efvqeg" path="res://scripts/resources/Abilities/A_FlatJumpPath.tres" id="2_6nmsm"]
+[ext_resource type="Resource" uid="uid://cpwo1qcqlbqmq" path="res://scripts/resources/Abilities/A_MovingPlatformH.tres" id="3_boxxr"]
+[ext_resource type="Resource" uid="uid://b38e0d2g77boq" path="res://scripts/resources/Abilities/A_NailGun.tres" id="4_rfdri"]
+[ext_resource type="Resource" uid="uid://btpxxoap1wyq1" path="res://scripts/resources/Abilities/A_Rope.tres" id="5_xoibf"]
+[ext_resource type="Resource" uid="uid://dab0x7w35ch8i" path="res://scripts/resources/Abilities/A_RedirectBubble.tres" id="6_6nmsm"]
+[ext_resource type="Resource" uid="uid://ghffdxyydiku" path="res://scripts/resources/Abilities/A_Glider.tres" id="7_boxxr"]
+[ext_resource type="Resource" uid="uid://dueqjnnn43fxa" path="res://scripts/resources/Abilities/A_Box.tres" id="8_rfdri"]
+[ext_resource type="Resource" uid="uid://dsuiviuhxbwso" path="res://scripts/resources/Abilities/A_MovingPlatformV.tres" id="10_msdn0"]
+[ext_resource type="Resource" uid="uid://bqce2xtko43a4" path="res://scripts/resources/Abilities/A_MoveObjects.tres" id="11_rqq7s"]
+
+[resource]
+script = ExtResource("1_8rvhm")
+seed = -1
+useRandomSeed = true
+nb_abilities_max = 3
+allowSameAbilities = true
+all_abilities = Array[ExtResource("1_shdal")]([ExtResource("8_rfdri"), ExtResource("1_lvyy7"), ExtResource("2_6nmsm"), ExtResource("7_boxxr"), ExtResource("3_boxxr"), ExtResource("4_rfdri"), ExtResource("6_6nmsm"), ExtResource("5_xoibf"), ExtResource("10_msdn0"), ExtResource("11_rqq7s")])
+excluded_abilities = Array[ExtResource("1_shdal")]([])
+metadata/_custom_type_script = "uid://c8tmwhrxvsyuv"

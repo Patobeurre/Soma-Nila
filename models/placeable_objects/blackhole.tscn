@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyf0qvbsti2r3"]
+
+[ext_resource type="Script" uid="uid://djq3rothlb2go" path="res://models/placeable_objects/blackhole.gd" id="1_q1blp"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qm1qg"]
+radius = 8.0
+
+[node name="BlackHole" type="Node3D"]
+script = ExtResource("1_q1blp")
+ROTATION_SPEED = 3.0
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4096
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_qm1qg")
+
+[node name="Orbits" type="Node3D" parent="."]
+
+[node name="Layer1" type="Node3D" parent="Orbits"]
+
+[node name="Layer2" type="Node3D" parent="Orbits"]
+
+[node name="Layer3" type="Node3D" parent="Orbits"]
+
+[node name="Layer4" type="Node3D" parent="Orbits"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 3, 6)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

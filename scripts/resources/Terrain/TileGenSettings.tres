@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TileGenerationSettings" load_steps=2 format=3 uid="uid://cvih3bp8i8egw"]
+
+[ext_resource type="Script" uid="uid://cdoek4l61hpbx" path="res://scripts/resources/Terrain/TileGenerationSettings.gd" id="1_rkjd4"]
+
+[resource]
+script = ExtResource("1_rkjd4")
+seed = -1
+useRandomSeed = true
+nbIter = 8
+nbIterRndOffset = 3
+isParallel = false
+nbParallelJobs = 1
+metadata/_custom_type_script = "uid://cdoek4l61hpbx"

@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://cj1e60bx2jp7u"]
+
+[ext_resource type="Script" uid="uid://1vcmdhhiat1j" path="res://scripts/resources/Terrain/map_terrain_generation.gd" id="1_dhd8f"]
+[ext_resource type="Resource" uid="uid://f1f4nu16t5gd" path="res://scripts/resources/Terrain/GenerationSettings.tres" id="2_3gp5l"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j70hc"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_8kvyl"]
+sky_material = SubResource("ProceduralSkyMaterial_j70hc")
+
+[sub_resource type="Environment" id="Environment_0mw1q"]
+background_mode = 2
+sky = SubResource("Sky_8kvyl")
+tonemap_mode = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3gp5l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhd8f"]
+albedo_texture = SubResource("NoiseTexture2D_3gp5l")
+
+[sub_resource type="QuadMesh" id="QuadMesh_dhd8f"]
+
+[node name="MapTerrain" type="Node3D"]
+script = ExtResource("1_dhd8f")
+settings = ExtResource("2_3gp5l")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0mw1q")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.2222e-08, 0.258819, -0.965926, 1.13133e-08, 0.965926, 0.258819, 1, 4.61853e-14, -4.37114e-08, -44.7868, 20.0162, 30.5659)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+material_override = SubResource("StandardMaterial3D_dhd8f")
+mesh = SubResource("QuadMesh_dhd8f")

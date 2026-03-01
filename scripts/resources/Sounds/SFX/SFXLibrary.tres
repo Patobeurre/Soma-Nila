@@ -1,0 +1,73 @@
+[gd_resource type="Resource" script_class="SoundLibrary" load_steps=18 format=3 uid="uid://cl10qubfna311"]
+
+[ext_resource type="Script" uid="uid://c424y5ikihmkd" path="res://scripts/resources/Sounds/SoundRes.gd" id="1_uu1du"]
+[ext_resource type="Script" uid="uid://n76a1hc3br0m" path="res://scripts/resources/Sounds/SoundLibrary.gd" id="2_fyqrr"]
+[ext_resource type="AudioStream" uid="uid://cafuvso34u8o6" path="res://audio/sfx/UI Soundpack/UI Soundpack/MP3/Coffee2.mp3" id="2_w4xao"]
+[ext_resource type="AudioStream" uid="uid://if6jpmamj4fq" path="res://audio/sfx/UI Soundpack/UI Soundpack/MP3/Coffee1.mp3" id="3_xjkqv"]
+[ext_resource type="AudioStream" uid="uid://cji0wdk7qp4av" path="res://audio/sfx/UI Soundpack/UI Soundpack/MP3/Minimalist1.mp3" id="4_suold"]
+[ext_resource type="AudioStream" uid="uid://c3loicia6tkc4" path="res://audio/sfx/UI Soundpack/UI Soundpack/MP3/Minimalist7.mp3" id="5_5bu4t"]
+[ext_resource type="AudioStream" uid="uid://p0y0o0d30seb" path="res://audio/sfx/OvaniSoundsPack/Signal Positive Bubble C.wav" id="6_5bu4t"]
+[ext_resource type="AudioStream" uid="uid://cjix6cooseoqm" path="res://audio/sfx/OvaniSoundsPack/Aeroportation In.wav" id="7_l6tgx"]
+[ext_resource type="AudioStream" uid="uid://6g7yqodhpwqc" path="res://audio/sfx/OvaniSoundsPack/Aeroportation Out.wav" id="8_h6thi"]
+
+[sub_resource type="Resource" id="Resource_suold"]
+script = ExtResource("1_uu1du")
+name = "BTN_OK"
+stream = ExtResource("2_w4xao")
+variants = Array[AudioStream]([])
+metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
+[sub_resource type="Resource" id="Resource_5bu4t"]
+script = ExtResource("1_uu1du")
+name = "BTN_BACK"
+stream = ExtResource("3_xjkqv")
+variants = Array[AudioStream]([])
+metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
+[sub_resource type="Resource" id="Resource_l6tgx"]
+script = ExtResource("1_uu1du")
+name = "BTN_REPLAY"
+stream = ExtResource("3_xjkqv")
+variants = Array[AudioStream]([])
+metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
+[sub_resource type="Resource" id="Resource_w4xao"]
+script = ExtResource("1_uu1du")
+name = "TOGGLE_ON"
+stream = ExtResource("4_suold")
+variants = Array[AudioStream]([])
+metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
+[sub_resource type="Resource" id="Resource_xjkqv"]
+script = ExtResource("1_uu1du")
+name = "TOGGLE_OFF"
+stream = ExtResource("5_5bu4t")
+variants = Array[AudioStream]([])
+metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
+[sub_resource type="Resource" id="Resource_1oyqy"]
+script = ExtResource("1_uu1du")
+name = "PICK_FRUIT"
+stream = ExtResource("6_5bu4t")
+variants = Array[AudioStream]([])
+metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
+[sub_resource type="Resource" id="Resource_c2y3w"]
+script = ExtResource("1_uu1du")
+name = "PORTAL_IN"
+stream = ExtResource("7_l6tgx")
+variants = Array[AudioStream]([])
+metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
+[sub_resource type="Resource" id="Resource_epcfg"]
+script = ExtResource("1_uu1du")
+name = "PORTAL_OUT"
+stream = ExtResource("8_h6thi")
+variants = Array[AudioStream]([])
+metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
+[resource]
+script = ExtResource("2_fyqrr")
+bus = "SFX"
+library = Array[ExtResource("1_uu1du")]([SubResource("Resource_suold"), SubResource("Resource_5bu4t"), SubResource("Resource_l6tgx"), SubResource("Resource_w4xao"), SubResource("Resource_xjkqv"), SubResource("Resource_1oyqy"), SubResource("Resource_c2y3w"), SubResource("Resource_epcfg")])
+metadata/_custom_type_script = "uid://n76a1hc3br0m"

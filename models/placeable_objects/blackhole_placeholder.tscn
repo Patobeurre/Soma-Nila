@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm3kudrw1s51v"]
+
+[ext_resource type="Material" uid="uid://bju56v1or80my" path="res://materials/placeholder_material.tres" id="1_sxk3i"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+material_override = ExtResource("1_sxk3i")
+transparency = 0.8

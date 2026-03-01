@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://cj1e60bx2jp7u"]
+
+[ext_resource type="Script" uid="uid://1vcmdhhiat1j" path="res://scenes/Terrain/map_terrain_generation.gd" id="1_dhd8f"]
+[ext_resource type="FastNoiseLite" uid="uid://bwusbmd1t7csx" path="res://scripts/resources/Terrain/SimplexNoise.tres" id="2_3gp5l"]
+[ext_resource type="Script" uid="uid://dn8a67533qqne" path="res://scripts/resources/Terrain/TerrainGenerationSettings.gd" id="3_j70hc"]
+
+[sub_resource type="Resource" id="Resource_8kvyl"]
+script = ExtResource("3_j70hc")
+seed = 0
+useRandomSeed = true
+terrainSize = Vector3(20, 20, 20)
+noiseParams = ExtResource("2_3gp5l")
+metadata/_custom_type_script = "uid://dn8a67533qqne"
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3gp5l"]
+noise = ExtResource("2_3gp5l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhd8f"]
+albedo_texture = SubResource("NoiseTexture2D_3gp5l")
+
+[sub_resource type="QuadMesh" id="QuadMesh_dhd8f"]
+
+[node name="MapTerrain" type="Node3D"]
+script = ExtResource("1_dhd8f")
+settings = SubResource("Resource_8kvyl")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.787142)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_dhd8f")
+mesh = SubResource("QuadMesh_dhd8f")

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://g7a6781o2aoc"]
+
+[ext_resource type="PackedScene" uid="uid://crjttur0us8vq" path="res://models/decoration/jellyfish.glb" id="1_dpt7o"]
+[ext_resource type="PackedScene" uid="uid://cy0os3qxo5lw2" path="res://models/objects/bumper.tscn" id="2_mrpmm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dpt7o"]
+radius = 1.7033
+
+[node name="Jellyfish" type="StaticBody3D"]
+collision_layer = 4096
+collision_mask = 0
+
+[node name="jellyfish" parent="." instance=ExtResource("1_dpt7o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.857188, 0)
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 6, 0, 0, 0, 3, 0, -0.157999, 0)
+
+[node name="Bumper" parent="Node3D" instance=ExtResource("2_mrpmm")]
+minBounceSpeed = 25.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.04459, 0)
+shape = SubResource("SphereShape3D_dpt7o")

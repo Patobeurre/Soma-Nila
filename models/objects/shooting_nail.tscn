@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqxwi0duhr1hc"]
+
+[ext_resource type="Script" uid="uid://dbyhwvh782j8x" path="res://models/objects/shooting_nail.gd" id="1_30rot"]
+[ext_resource type="PackedScene" uid="uid://ba7p2akk53puw" path="res://models/objects/nail.tscn" id="2_ucgch"]
+[ext_resource type="PackedScene" uid="uid://ocb8816v4t5q" path="res://models/furnitures/nail.glb" id="3_mqux3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jfvu4"]
+
+[node name="ShootingNail" type="RigidBody3D"]
+collision_layer = 128
+mass = 0.1
+gravity_scale = 0.4
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_30rot")
+scene_to_instantiate = ExtResource("2_ucgch")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_jfvu4")
+
+[node name="nail" parent="." instance=ExtResource("3_mqux3")]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 0, 0, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

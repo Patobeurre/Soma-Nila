@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk82urn3jfi64"]
+
+[ext_resource type="Texture2D" uid="uid://8ywaoom27rwh" path="res://images/ability_icons/glider.png" id="1_iryt0"]
+[ext_resource type="Script" uid="uid://cahsj0ib72ttc" path="res://UI/Components/ability_enable_button_setting.gd" id="1_ye0ow"]
+[ext_resource type="Texture2D" uid="uid://6behgdewoepu" path="res://images/cross.png" id="3_wu4jb"]
+
+[node name="PanelContainer" type="PanelContainer"]
+script = ExtResource("1_ye0ow")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("1_iryt0")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="DarkMask" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="DarkMask"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_wu4jb")
+expand_mode = 2
+stretch_mode = 5
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

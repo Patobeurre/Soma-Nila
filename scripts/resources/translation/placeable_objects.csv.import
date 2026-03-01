@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://d2p1qc7p6vk0q"
+
+[deps]
+
+files=["res://scripts/resources/translation/placeable_objects.en.translation", "res://scripts/resources/translation/placeable_objects.fr.translation"]
+
+source_file="res://scripts/resources/translation/placeable_objects.csv"
+dest_files=["res://scripts/resources/translation/placeable_objects.en.translation", "res://scripts/resources/translation/placeable_objects.fr.translation"]
+
+[params]
+
+compress=true
+delimiter=2

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlaceableObject" load_steps=4 format=3 uid="uid://2vjoikniytr7"]
+
+[ext_resource type="PackedScene" uid="uid://cs0gkresoqpxh" path="res://models/placeable_objects/movingplatform_placeholder.tscn" id="1_igpwv"]
+[ext_resource type="PackedScene" uid="uid://boqnsu5sv450n" path="res://models/placeable_objects/movingplatformV.tscn" id="1_tf1hu"]
+[ext_resource type="Script" uid="uid://b66kqk22rrspi" path="res://scripts/resources/PlaceableObject.gd" id="2_igpwv"]
+
+[resource]
+script = ExtResource("2_igpwv")
+name = "PO_MOVINGPLATFORM_V"
+scene = ExtResource("1_tf1hu")
+scale = Vector3(2, 2, 2)
+placeholder_mesh = ExtResource("1_igpwv")
+maxDistance = 6.0
+metadata/_custom_type_script = "uid://b66kqk22rrspi"

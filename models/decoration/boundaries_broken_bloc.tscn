@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5i14om6maclw"]
+
+[ext_resource type="PackedScene" uid="uid://dm4alohaijeyu" path="res://models/decoration/bloc_inside.glb" id="1_oev0j"]
+
+[node name="BoundariesBrokenBloc" type="Node3D"]
+
+[node name="bloc_inside" parent="." instance=ExtResource("1_oev0j")]

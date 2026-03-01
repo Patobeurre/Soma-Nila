@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlaceableObject" load_steps=4 format=3 uid="uid://cxwyi54ntsvwo"]
+
+[ext_resource type="PackedScene" uid="uid://bc62ietoj1fdn" path="res://models/placeable_objects/jellyfish_placeholder.tscn" id="1_2a60e"]
+[ext_resource type="PackedScene" uid="uid://g7a6781o2aoc" path="res://models/placeable_objects/jellyfish.tscn" id="1_smcci"]
+[ext_resource type="Script" uid="uid://b66kqk22rrspi" path="res://scripts/resources/PlaceableObject.gd" id="2_2a60e"]
+
+[resource]
+script = ExtResource("2_2a60e")
+name = "PO_BUMPER"
+scene = ExtResource("1_smcci")
+scale = Vector3(1.2, 1.2, 1.2)
+placeholder_mesh = ExtResource("1_2a60e")
+maxDistance = 6.0
+metadata/_custom_type_script = "uid://b66kqk22rrspi"

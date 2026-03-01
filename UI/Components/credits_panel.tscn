@@ -1,0 +1,186 @@
+[gd_scene load_steps=15 format=3 uid="uid://c5leu1s8xd08p"]
+
+[ext_resource type="StyleBox" uid="uid://e5cpgac5ah0y" path="res://UI/themes/panel_box_texture.tres" id="1_x5t8d"]
+[ext_resource type="Script" uid="uid://cx0iw166sb37o" path="res://UI/Components/credits_panel.gd" id="2_6nsi3"]
+[ext_resource type="Theme" uid="uid://7vunodgdyjg2" path="res://UI/themes/base_font.tres" id="3_arf5a"]
+[ext_resource type="Texture2D" uid="uid://cnruaejs7qtyx" path="res://images/UI/ui_button_yellow_3d.png" id="4_arf5a"]
+[ext_resource type="Texture2D" uid="uid://kix35tcoohnn" path="res://images/UI/ui_button_green_flat.png" id="4_x5t8d"]
+[ext_resource type="Texture2D" uid="uid://bsy11cu6b3u73" path="res://images/UI/ui_button_green_3d.png" id="5_bpd4k"]
+[ext_resource type="Texture2D" uid="uid://7v3njgwrjudo" path="res://images/UI/ui_button_yellow_flat.png" id="5_kumb6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xg214"]
+texture = ExtResource("4_arf5a")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xyve8"]
+texture = ExtResource("5_kumb6")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+modulate_color = Color(0.5, 0.5, 0.5, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jwbn6"]
+texture = ExtResource("4_arf5a")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+modulate_color = Color(0.7, 0.7, 0.7, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x5t8d"]
+load_path = "res://.godot/imported/ui_button_green_3d.png-a68f5c0db0972b700c71857f2db19569.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bpd4k"]
+texture = SubResource("CompressedTexture2D_x5t8d")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x5t8d"]
+texture = ExtResource("4_x5t8d")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+modulate_color = Color(0.5, 0.5, 0.5, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_arf5a"]
+texture = ExtResource("5_bpd4k")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+modulate_color = Color(0.7, 0.7, 0.7, 1)
+
+[node name="PanelContainer" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_x5t8d")
+script = ExtResource("2_6nsi3")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VSplitContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+dragging_enabled = false
+
+[node name="TitleText" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme = ExtResource("3_arf5a")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "TITLE_CREDITS"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_arf5a")
+theme_override_font_sizes/normal_font_size = 30
+text = "TEXT_CREATEDBY"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_arf5a")
+theme_override_font_sizes/normal_font_size = 50
+text = "Brice Maussang"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 2
+
+[node name="BtnCreatorLink" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_arf5a")
+theme_override_colors/font_outline_color = Color(0.2, 0.2, 0.2, 1)
+theme_override_constants/outline_size = 10
+theme_override_styles/hover = SubResource("StyleBoxTexture_xg214")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xyve8")
+theme_override_styles/normal = SubResource("StyleBoxTexture_jwbn6")
+text = "TEXT_CREATORLINK"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_arf5a")
+theme_override_font_sizes/normal_font_size = 30
+text = "TEXT_MUSICBY"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_arf5a")
+theme_override_font_sizes/normal_font_size = 50
+text = "Omni Gardens"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_arf5a")
+theme_override_font_sizes/normal_font_size = 30
+text = "From the album \"Golden Pear\""
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="BtnMusicLink" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_arf5a")
+theme_override_colors/font_outline_color = Color(0.2, 0.2, 0.2, 1)
+theme_override_constants/outline_size = 10
+theme_override_styles/hover = SubResource("StyleBoxTexture_bpd4k")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_x5t8d")
+theme_override_styles/normal = SubResource("StyleBoxTexture_arf5a")
+text = "TEXT_MUSICLINK"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer2/BtnCreatorLink" to="." method="_on_btn_creator_link_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer/BtnMusicLink" to="." method="_on_btn_music_link_pressed"]

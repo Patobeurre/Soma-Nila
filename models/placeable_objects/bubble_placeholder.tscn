@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://nvmlf8unf8xn"]
+
+[ext_resource type="Shader" uid="uid://d0qig4i3anxjr" path="res://materials/distortion_bubble.gdshader" id="1_ubx6t"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_81wkf"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p8lj5"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wcmpq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wcmpq"]
+render_priority = 0
+shader = ExtResource("1_ubx6t")
+shader_parameter/distortionView = 0.01
+shader_parameter/speedView = 0.05
+shader_parameter/noiseViewX = SubResource("NoiseTexture2D_p8lj5")
+shader_parameter/noiseViewY = SubResource("NoiseTexture2D_wcmpq")
+shader_parameter/tintColor = Color(1.34766e-06, 0.541693, 0.682005, 1)
+shader_parameter/fesnelAmount = 2.0
+shader_parameter/distortionVertex = 0.01
+shader_parameter/speedVertex = 0.22
+shader_parameter/noiseVertex = SubResource("NoiseTexture2D_81wkf")
+
+[sub_resource type="SphereMesh" id="SphereMesh_mhjrr"]
+material = SubResource("ShaderMaterial_wcmpq")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transparency = 0.8
+mesh = SubResource("SphereMesh_mhjrr")
+skeleton = NodePath("")

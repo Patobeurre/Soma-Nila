@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://dkp510eqfu8uo"]
+
+[ext_resource type="Script" uid="uid://skm24yh1ehu2" path="res://scenes/Terrain/waving_terrain.gd" id="1_vqebf"]
+[ext_resource type="Script" uid="uid://1vcmdhhiat1j" path="res://scripts/resources/Terrain/map_terrain_generation.gd" id="1_woju7"]
+[ext_resource type="Script" uid="uid://dn8a67533qqne" path="res://scripts/resources/Terrain/TerrainGenerationSettings.gd" id="2_vqebf"]
+[ext_resource type="Script" uid="uid://cdoek4l61hpbx" path="res://scripts/resources/Terrain/TileGenerationSettings.gd" id="3_evukp"]
+[ext_resource type="Environment" uid="uid://evgf73em6ceg" path="res://scripts/resources/Environments/main_level_env.tres" id="4_e1nig"]
+[ext_resource type="PackedScene" uid="uid://bd2g6625r5o2j" path="res://models/objects/Strawberry_gold.tscn" id="6_hu8sw"]
+
+[sub_resource type="Resource" id="Resource_e1nig"]
+script = ExtResource("3_evukp")
+seed = -1
+useRandomSeed = true
+nbIter = 4
+nbIterRndOffset = 2
+isParallel = false
+nbParallelJobs = 1
+metadata/_custom_type_script = "uid://cdoek4l61hpbx"
+
+[sub_resource type="Resource" id="Resource_hu8sw"]
+script = ExtResource("2_vqebf")
+seed = 0
+useRandomSeed = false
+terrainSize = Vector3(20, 20, 20)
+tile_scale = Vector3(4, 4, 4)
+terrain_scale = Vector3(4, 20, 4)
+density = 0.2
+tileGenSettings = SubResource("Resource_e1nig")
+metadata/_custom_type_script = "uid://dn8a67533qqne"
+
+[node name="WavingTerrain" type="Node3D"]
+script = ExtResource("1_vqebf")
+settings = SubResource("Resource_hu8sw")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("4_e1nig")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Terrain" type="Node3D" parent="."]
+script = ExtResource("1_woju7")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 2.26267e-08, -8.44439e-08, 0, 0.965926, 0.258819, 8.74228e-08, 0.258819, -0.965926, 40, 15, 0)
+current = true
+
+[node name="GoldenFruit" parent="." instance=ExtResource("6_hu8sw")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 40, 20, 39)

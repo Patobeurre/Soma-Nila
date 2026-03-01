@@ -1,0 +1,80 @@
+[gd_scene load_steps=3 format=3 uid="uid://tfvdxa8shadj"]
+
+[ext_resource type="Script" uid="uid://bkhjacmrtd527" path="res://UI/Components/saved_level_container.gd" id="1_8yth1"]
+[ext_resource type="Theme" uid="uid://7vunodgdyjg2" path="res://UI/themes/base_font.tres" id="1_e4l43"]
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8yth1")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Button/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SeedLabel" type="RichTextLabel" parent="Button/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+theme = ExtResource("1_e4l43")
+text = "seed"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="UsedAbilitiesContainer" type="HBoxContainer" parent="Button/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="NoItemUsedLabel" type="RichTextLabel" parent="Button/MarginContainer/HBoxContainer/UsedAbilitiesContainer"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("1_e4l43")
+text = "no items"
+fit_content = true
+autowrap_mode = 0
+
+[node name="TimeLabel" type="RichTextLabel" parent="Button/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+theme = ExtResource("1_e4l43")
+text = "time"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba7p2akk53puw"]
+
+[ext_resource type="Script" uid="uid://du0hi6lxtjt2c" path="res://models/objects/nail.gd" id="1_udsfm"]
+[ext_resource type="PackedScene" uid="uid://ocb8816v4t5q" path="res://models/furnitures/nail.glb" id="2_ek4kw"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sbijf"]
+height = 0.382538
+radius = 1.17285
+
+[node name="Nail" type="Node3D"]
+script = ExtResource("1_udsfm")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 256
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.22638e-08, 0.280564)
+shape = SubResource("CylinderShape3D_sbijf")
+
+[node name="nail" parent="." instance=ExtResource("2_ek4kw")]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 0, 0, 0)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

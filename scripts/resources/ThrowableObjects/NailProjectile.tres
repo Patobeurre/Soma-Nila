@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ThrowableObject" load_steps=3 format=3 uid="uid://j5jqlwpx1ubm"]
+
+[ext_resource type="PackedScene" uid="uid://cqxwi0duhr1hc" path="res://models/objects/shooting_nail.tscn" id="1_5iuj7"]
+[ext_resource type="Script" uid="uid://b1hstqy2bayql" path="res://scripts/resources/ThrowableObject.gd" id="1_uq1rw"]
+
+[resource]
+script = ExtResource("1_uq1rw")
+name = "PROJ_NAIL"
+projectile_scene = ExtResource("1_5iuj7")
+speed = 30.0
+enable_auto_fire = true
+fire_rate = 1.0
+scale = Vector3(0.6, 0.6, 0.6)
+metadata/_custom_type_script = "uid://b1hstqy2bayql"

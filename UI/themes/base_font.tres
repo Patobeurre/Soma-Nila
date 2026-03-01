@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://7vunodgdyjg2"]
+
+[ext_resource type="FontFile" uid="uid://dmxlaybavhk2v" path="res://fonts/sunday_work/Sunday Work.otf" id="1_stf6i"]
+
+[resource]
+default_font = ExtResource("1_stf6i")
+default_font_size = 30

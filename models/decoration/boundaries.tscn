@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8c6ydfgjo18g"]
+
+[ext_resource type="Script" uid="uid://dhfga3k24ihwl" path="res://models/decoration/boundaries.gd" id="1_1intg"]
+[ext_resource type="Shader" uid="uid://cfbl1rejjtvte" path="res://materials/kinetic_pupils.gdshader" id="1_ngxit"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1intg"]
+shader = ExtResource("1_ngxit")
+shader_parameter/size = 20.0
+shader_parameter/speed1 = 1.0
+shader_parameter/speed2 = 1.0
+shader_parameter/color = Vector3(1, 1, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ngxit"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnla4"]
+resource_local_to_scene = true
+transparency = 1
+blend_mode = 1
+albedo_color = Color(0.728053, 0.5544, 0.88, 0.0588235)
+albedo_texture = SubResource("ViewportTexture_ngxit")
+
+[sub_resource type="QuadMesh" id="QuadMesh_rep1v"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_wnla4")
+
+[node name="Boundaries" type="Node3D"]
+script = ExtResource("1_1intg")
+size = 2.0
+
+[node name="SubViewport" type="SubViewport" parent="."]
+canvas_cull_mask = 4294966273
+
+[node name="ColorRect" type="ColorRect" parent="SubViewport"]
+material = SubResource("ShaderMaterial_1intg")
+custom_minimum_size = Vector2(512, 512)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Meshes" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, -1)
+layers = 1023
+mesh = SubResource("QuadMesh_rep1v")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(-2, 0, 1.50996e-07, 0, 2, 0, -3.01992e-07, 0, -1, 0, 0, 1)
+mesh = SubResource("QuadMesh_rep1v")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(1.50996e-07, 0, 1, 0, 2, 0, -2, 0, 7.54979e-08, -1, 0, 0)
+mesh = SubResource("QuadMesh_rep1v")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(-3.25841e-07, 0, -1, 0, 2, 0, 2, 0, -1.62921e-07, 1, 0, 0)
+mesh = SubResource("QuadMesh_rep1v")
+skeleton = NodePath("../..")

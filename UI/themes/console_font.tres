@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dgohthjmb8am6"]
+
+[ext_resource type="FontFile" uid="uid://bwr73i28ligrq" path="res://addons/Arts/Ticketing.ttf" id="1_lh00f"]
+
+[resource]
+default_font = ExtResource("1_lh00f")
+default_font_size = 60
+Label/colors/font_color = Color(0.223529, 1, 0.2, 1)
+RichTextLabel/colors/default_color = Color(0.223529, 1, 0.2, 1)

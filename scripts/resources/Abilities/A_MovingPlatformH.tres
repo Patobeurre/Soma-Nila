@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="StateRes" load_steps=6 format=3 uid="uid://cpwo1qcqlbqmq"]
+
+[ext_resource type="Texture2D" uid="uid://crjoiwddbqils" path="res://images/ability_icons/moving_platform_h.png" id="1_j46ph"]
+[ext_resource type="Script" uid="uid://djw557ek5251m" path="res://scripts/resources/StateRes.gd" id="1_nslbj"]
+[ext_resource type="Resource" uid="uid://dgte88yd13po3" path="res://scripts/resources/PlaceableObjects/MovingPlatformH.tres" id="2_jgjwi"]
+[ext_resource type="Script" uid="uid://nfw2fpi2r2fs" path="res://scripts/resources/AbilityWeights.gd" id="4_oatcd"]
+
+[sub_resource type="Resource" id="Resource_2yvmx"]
+script = ExtResource("4_oatcd")
+pointUp = -2.0
+pointDown = 0.0
+pointFar = 0.0
+pointSpread = 0.0
+metadata/_custom_type_script = "uid://nfw2fpi2r2fs"
+
+[resource]
+script = ExtResource("1_nslbj")
+stateName = "placeObjectState"
+name = "PO_MOVINGPLATFORM_H"
+icon = ExtResource("1_j46ph")
+res = ExtResource("2_jgjwi")
+initial_amount = 1
+weights = SubResource("Resource_2yvmx")
+metadata/_custom_type_script = "uid://djw557ek5251m"

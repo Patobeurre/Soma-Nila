@@ -1,0 +1,114 @@
+[gd_scene load_steps=27 format=3 uid="uid://1wqeuqodu1ar"]
+
+[ext_resource type="Script" uid="uid://c0g7u58cpaarn" path="res://scenes/procedural_level.gd" id="1_abuk1"]
+[ext_resource type="Resource" uid="uid://bxxgkwiehskne" path="res://scripts/resources/Levels/LevelRndRes.tres" id="2_1pxho"]
+[ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/PlayerCharacterScene.tscn" id="2_abuk1"]
+[ext_resource type="Script" uid="uid://1vcmdhhiat1j" path="res://scripts/resources/Terrain/map_terrain_generation.gd" id="3_qgw2h"]
+[ext_resource type="Environment" uid="uid://evgf73em6ceg" path="res://scripts/resources/Environments/main_level_env.tres" id="3_qxd3r"]
+[ext_resource type="Resource" uid="uid://f1f4nu16t5gd" path="res://scripts/resources/Terrain/GenerationSettings.tres" id="4_plvsn"]
+[ext_resource type="PackedScene" uid="uid://lvbklg366xau" path="res://models/objects/Strawberry.tscn" id="5_abuk1"]
+[ext_resource type="PackedScene" uid="uid://cegfrsw8p7ibl" path="res://models/objects/portal.tscn" id="7_855qn"]
+[ext_resource type="Resource" uid="uid://ch4cg6xi7dtwp" path="res://scripts/resources/Abilities/A_Bumper.tres" id="7_dd152"]
+[ext_resource type="Resource" uid="uid://cpwo1qcqlbqmq" path="res://scripts/resources/Abilities/A_MovingPlatformH.tres" id="8_x1qiv"]
+[ext_resource type="Script" uid="uid://djrr832cj7vjl" path="res://scripts/utils/item_list_selector.gd" id="9_dd152"]
+[ext_resource type="Resource" uid="uid://b5b2qo7efvqeg" path="res://scripts/resources/Abilities/A_FlatJumpPath.tres" id="9_mwkpj"]
+[ext_resource type="Script" uid="uid://b547cpm41w7bl" path="res://scripts/abilitySM/abilitiesStateMachine.gd" id="10_1ulos"]
+[ext_resource type="Script" uid="uid://cd2a0hec2s6ls" path="res://scripts/object_selector.gd" id="10_rfl2w"]
+[ext_resource type="Script" uid="uid://b0jtp3tmda0di" path="res://scripts/abilitySM/placeObjectState.gd" id="10_x1qiv"]
+[ext_resource type="Script" uid="uid://j5sm77711or0" path="res://scripts/abilitySM/triggerRopeState.gd" id="12_x1qiv"]
+[ext_resource type="Script" uid="uid://c5acafh0ipy6i" path="res://scripts/abilitySM/disabled_state.gd" id="13_1pxho"]
+[ext_resource type="Script" uid="uid://da5mv6ipujgu5" path="res://scripts/abilitySM/nailGunState.gd" id="13_mwkpj"]
+[ext_resource type="Script" uid="uid://c6sdqcj4kng1n" path="res://scripts/abilitySM/triggerGliderState.gd" id="18_p5f1d"]
+[ext_resource type="PackedScene" uid="uid://b8c6ydfgjo18g" path="res://models/decoration/boundaries.tscn" id="19_10ai8"]
+[ext_resource type="Script" uid="uid://ck2jp3n5is15g" path="res://scripts/abilitySM/moveObjectState.gd" id="19_q4mrk"]
+[ext_resource type="Script" uid="uid://dudmuee06bbct" path="res://scripts/levelSM/disabled_state.gd" id="22_r6i00"]
+[ext_resource type="Script" uid="uid://ciubcnmrvfqsa" path="res://scripts/levelSM/level_state_machine.gd" id="22_ucegv"]
+[ext_resource type="Script" uid="uid://tq6g3r851271" path="res://scripts/levelSM/playing_state.gd" id="23_5bhmg"]
+[ext_resource type="Script" uid="uid://cylv7d473wwqy" path="res://scripts/levelSM/interacting_state.gd" id="24_1mhrl"]
+
+[sub_resource type="Resource" id="Resource_rfl2w"]
+script = ExtResource("9_dd152")
+items = [ExtResource("7_dd152"), ExtResource("8_x1qiv"), ExtResource("9_mwkpj")]
+isCircular = true
+metadata/_custom_type_script = "uid://djrr832cj7vjl"
+
+[node name="MainLevel" type="Node3D"]
+script = ExtResource("1_abuk1")
+DISTANCE = 7.0
+boundOffset = 4.0
+level_res = ExtResource("2_1pxho")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("3_qxd3r")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.686461, -0.559361, 0.464636, -0.202221, 0.76061, 0.616911, -0.698482, 0.329526, -0.635244, 5.69616, -20.5174, -13.6989)
+light_color = Color(0.910845, 0.923517, 0.883351, 1)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_abuk1")]
+transform = Transform3D(-0.0578428, 0, 0.998326, 0, 1, 0, -0.998326, 0, -0.0578428, -0.53425, 0.428703, -0.2947)
+collision_mask = 101
+MIN_STAIR_HEIGHT = 0.3
+MAX_STAIR_HEIGHT = 0.7
+
+[node name="TilePlaceholderNode" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
+visible = false
+
+[node name="PlaceableObjects" type="Node3D" parent="."]
+
+[node name="MapTiles" type="Node3D" parent="."]
+script = ExtResource("3_qgw2h")
+settings = ExtResource("4_plvsn")
+
+[node name="Boundaries" parent="." instance=ExtResource("19_10ai8")]
+
+[node name="Objectives" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 51.3525)
+
+[node name="Strawberry" parent="Objectives" instance=ExtResource("5_abuk1")]
+
+[node name="Portal" parent="Objectives" instance=ExtResource("7_855qn")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="AbilitySelector" type="Node" parent="."]
+script = ExtResource("10_rfl2w")
+items = SubResource("Resource_rfl2w")
+prevAction = "wheelDown"
+nextAction = "wheelUp"
+
+[node name="AbilitiesStateMachine" type="Node" parent="." node_paths=PackedStringArray("initialState")]
+script = ExtResource("10_1ulos")
+initialState = NodePath("DisabledState")
+
+[node name="DisabledState" type="Node" parent="AbilitiesStateMachine"]
+script = ExtResource("13_1pxho")
+
+[node name="PlaceObjectState" type="Node" parent="AbilitiesStateMachine"]
+script = ExtResource("10_x1qiv")
+
+[node name="TriggerRopeState" type="Node" parent="AbilitiesStateMachine"]
+script = ExtResource("12_x1qiv")
+
+[node name="NailGunState" type="Node" parent="AbilitiesStateMachine"]
+script = ExtResource("13_mwkpj")
+
+[node name="TriggerGlideState" type="Node" parent="AbilitiesStateMachine"]
+script = ExtResource("18_p5f1d")
+
+[node name="MoveObjectState" type="Node" parent="AbilitiesStateMachine"]
+script = ExtResource("19_q4mrk")
+
+[node name="LevelSM" type="Node" parent="."]
+script = ExtResource("22_ucegv")
+
+[node name="PlayingState" type="Node" parent="LevelSM"]
+script = ExtResource("23_5bhmg")
+
+[node name="InteractingState" type="Node" parent="LevelSM"]
+script = ExtResource("24_1mhrl")
+
+[node name="DisabledState" type="Node" parent="LevelSM"]
+script = ExtResource("22_r6i00")

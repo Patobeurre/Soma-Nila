@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://ngj887fu30xr"]
+
+[ext_resource type="Script" uid="uid://bn13eaod68116" path="res://UI/Components/TerminalContents/ConversationChat/conversation.gd" id="1_6e25l"]
+[ext_resource type="Resource" uid="uid://bpwc5mxbmy2md" path="res://scripts/resources/Terminal/ChatConversations/Liam2.tres" id="2_hcuxp"]
+[ext_resource type="Resource" uid="uid://c8jnxk67ae3s" path="res://scripts/resources/Terminal/ChatConversations/David.tres" id="3_6dxik"]
+[ext_resource type="Resource" uid="uid://bulrr5pibpjmm" path="res://scripts/resources/Terminal/ChatConversations/Keren.tres" id="4_8p1eb"]
+[ext_resource type="Resource" uid="uid://ck62hp7wu1c7a" path="res://scripts/resources/Terminal/ChatConversations/Liam.tres" id="5_6dxik"]
+
+[node name="VBoxContainer" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+script = ExtResource("1_6e25l")
+all_conversations = {
+1628: ExtResource("5_6dxik"),
+153269: ExtResource("3_6dxik"),
+881544: ExtResource("4_8p1eb"),
+3679593: ExtResource("2_hcuxp")
+}

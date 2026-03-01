@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5yb16qo8tfse"]
+
+[ext_resource type="PackedScene" uid="uid://beo14fwbrgb7t" path="res://models/box.glb" id="1_elkoi"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_elkoi"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[node name="Box" type="RigidBody3D"]
+mass = 5.0
+
+[node name="box" parent="." instance=ExtResource("1_elkoi")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_elkoi")

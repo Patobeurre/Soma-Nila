@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlaceableObject" load_steps=4 format=3 uid="uid://c6mb06q5i38qs"]
+
+[ext_resource type="PackedScene" uid="uid://b2lmbdkkgc7k3" path="res://models/placeable_objects/waterlilies.tscn" id="1_4hqkf"]
+[ext_resource type="PackedScene" uid="uid://d0g6k8i8rk2kl" path="res://models/placeable_objects/waterlilies_placeholder.tscn" id="1_lbv46"]
+[ext_resource type="Script" uid="uid://b66kqk22rrspi" path="res://scripts/resources/PlaceableObject.gd" id="2_lbv46"]
+
+[resource]
+script = ExtResource("2_lbv46")
+name = "PO_WATERLILIES"
+scene = ExtResource("1_4hqkf")
+scale = Vector3(4, 4, 4)
+placeholder_mesh = ExtResource("1_lbv46")
+maxDistance = 6.0
+metadata/_custom_type_script = "uid://b66kqk22rrspi"

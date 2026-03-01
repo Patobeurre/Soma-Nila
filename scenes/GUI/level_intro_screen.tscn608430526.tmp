@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqeomky1i5mki"]
+
+[ext_resource type="Texture2D" uid="uid://re3uwo87abi7" path="res://images/whirl_background.png" id="1_4dj3b"]
+[ext_resource type="Script" uid="uid://ce0ggn4nl583j" path="res://scenes/GUI/level_intro_screen.gd" id="1_bu36q"]
+[ext_resource type="PackedScene" uid="uid://bmdsqqpv0ixy8" path="res://UI/Components/Ability_PresentationIcon.tscn" id="3_c8n6h"]
+[ext_resource type="Texture2D" uid="uid://crympoiqoggf8" path="res://images/ability_icons/bumper.png" id="4_c8n6h"]
+[ext_resource type="Texture2D" uid="uid://cb1aq3hkcwley" path="res://images/ability_icons/nails.png" id="5_yjox0"]
+
+[sub_resource type="Gradient" id="Gradient_4dj3b"]
+colors = PackedColorArray(1, 1, 1, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bu36q"]
+gradient = SubResource("Gradient_4dj3b")
+width = 1920
+height = 1080
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+
+[node name="LevelIntroScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bu36q")
+background_rotate_speed = 100.0
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -420.0
+offset_bottom = 420.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(1100, 1100)
+
+[node name="WhirlBackground" type="TextureRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(2200, 2200)
+layout_direction = 4
+layout_mode = 2
+texture = ExtResource("1_4dj3b")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 2
+offset_top = -420.0
+offset_right = 1920.0
+offset_bottom = 1500.0
+texture = SubResource("GradientTexture2D_bu36q")
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="TextureRect" parent="CenterContainer2/HBoxContainer" instance=ExtResource("3_c8n6h")]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="CenterContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("4_c8n6h")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="CenterContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("5_yjox0")
+expand_mode = 2
+stretch_mode = 4

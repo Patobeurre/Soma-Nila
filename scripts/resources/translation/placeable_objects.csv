@@ -1,0 +1,26 @@
+key	en	fr
+PO_BUMPER	Bumper	Trampoline
+PO_WATERLILIES	Waterlilies	Nenuphars
+PO_MOVINGPLATFORM	Platform	Platforme
+		
+TEXT_WARNING	WARNING	ATTENTION
+TEXT_SECRET_SEED_PUZZLE_TITLE	Bug report	Rapport de bug
+TEXT_SECRET_SEED_PUZZLE	Structural integrity failure detected	Défaillance de l’intégritée structurelle détectée
+TEXT_CURRENT_SEED	Current room ID :	ID de la salle actuelle :
+TEXT_SECRET_SEED	Defective room ID :	ID de la salle défectueuse :
+		
+TEXT_MESSAGING_TITLE	Messaging	Messagerie
+LIAM_1-1	Hello everyone, \nI was wondering, do you know where unused items go? \nJust curious :)	Salut tout le monde,\nJe me demandais, est-ce que vous savez où vont les objets inutilisés ?\nSimple curiosité :)
+LIAM_1-2	You want to keep them for yourself, admit it! ;P\nYou should know that's not allowed...\nFrom what I know, nothing is lost! It's recycled, or something.	Tu veux les récupérer pour toi, avoue !\nSache que c'est interdit ;P
+LIAM_1-3	Indeed, some elements are recycled. But I am working on a project that will allow everything to be reused.\nYou can reach me on 3679593, I will give you more details.	Les objets sont en parti recyclé. Mais je travaille avec Keren@881544 sur un projet qui permettra de les réutiliser.\nTu peux me rejoindre sur la 3679593, je t'expliquerai
+		
+LIAM_2-1	As you can see here, when a player passes through the portal with remaining items, they are automatically filtered and redirected to my project.	Comme tu peux le voir ici, lorsqu’un joueur franchit le portail avec des objets sur lui, ils sont automatiquement filtrés et redirigés vers mon projet.
+LIAM_2-2	Wow! I didn't notice the portals were connected like that!\nIs it supposed to have a red light flashing there?	Wow ! Je pensais pas que les portails étaient connectés de cette façon !\nC’est normal le voyant qui clignotte en rouge, là ?
+LIAM_2-3	Um... no... Keren@881544, can you come here right away?\nWe have a big problem.	Euh… non... Keren@881544 tu peux venir tout de suite ?\nOn a un gros problème.
+		
+DAVID_1-1	I would never have bet on you to do something so stupid.\nMaybe you're getting too old.	Je n’aurai jamais parié sur toi pour faire une connerie aussi monumentale. Tu te fais peut-être trop vieux.
+DAVID_1-2	Come on! this is very serious. I was with Liam@1628, the newcomer, when it happened.	Arrête, c’est très sérieux. J’étais avec Liam@1628 le petit nouveau quand c’est arrivé.
+DAVID_1-3	Damn, how are we going to fix all this?\nI'm calling Selene@0000. I think we're in for a rough time.	Bordel, comment on va réparer tout ça ?\nJ’appelle Sélène@0000, je crois qu’on va passer un sale quart d’heure.
+		
+KEREN_1-1	I saw players inside of your project. Is it still under construction?\nIf it's officially open, I need to hurry up and finish the satisfaction survey!	J'ai vu des joueurs dans votre projet, il est bien toujours en construction ?\nS’il est officiellement ouvert je dois me dépêcher de finir le questionnaire de satisfaction !
+KEREN_1-2	Don't worry, it's still under construction ;)\nI redirected access from David@153269's room to the project, so that must be where the problem lies.\nThey must be trying to enter the room with too few items on them.	Rassures toi, il est bien en construction ;)\nJ'ai redirigé l'accès à la salle de David@153269 vers le projet, le problème doit venir de là.\nIls doivent tenter de rentrer dans la salle avec trop peu d'objets sur eux.

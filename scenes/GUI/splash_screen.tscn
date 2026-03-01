@@ -1,0 +1,119 @@
+[gd_scene load_steps=8 format=3 uid="uid://co1h3cja1quem"]
+
+[ext_resource type="Script" uid="uid://dmjb1fo3ee3an" path="res://scenes/GUI/splash_screen.gd" id="1_elup2"]
+[ext_resource type="Texture2D" uid="uid://ivt1581i7jo7" path="res://images/SaltyProd_splash_screen.jpg" id="2_px5x4"]
+[ext_resource type="FontFile" uid="uid://yuyn4nrsgb1j" path="res://fonts/diamond_smith/Diamond Smith.otf" id="3_8tlv2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tlv2"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_q258w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/DarkMask:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8tlv2"]
+resource_name = "reveal_splash_screen"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/DarkMask:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q258w"]
+_data = {
+&"RESET": SubResource("Animation_q258w"),
+&"reveal_splash_screen": SubResource("Animation_8tlv2")
+}
+
+[node name="SplashScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_elup2")
+
+[node name="DarkBackground" type="PanelContainer" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8tlv2")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+texture = ExtResource("2_px5x4")
+
+[node name="TextContainer" type="Control" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/TextContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.0
+offset_top = 57.5
+offset_right = 185.0
+offset_bottom = 202.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_8tlv2")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "SaltiProd"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DarkMask" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8tlv2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_q258w")
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

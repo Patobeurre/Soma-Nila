@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://hom2ovvp0yxn"]
+
+[ext_resource type="Material" uid="uid://d204wvok1pn2e" path="res://materials/concrete_wall_008_4k.blend/concrete_wall.tres" id="1_inq45"]
+[ext_resource type="FontFile" uid="uid://cuh8h4mf8b0b2" path="res://fonts/delta-stencil/Delta Stencil.otf" id="2_7rtml"]
+[ext_resource type="Script" uid="uid://fircbkn3c7nk" path="res://models/decoration/bloc_room_distant.gd" id="2_itg6c"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qp7sg"]
+material = ExtResource("1_inq45")
+size = Vector3(200, 200, 200)
+
+[node name="BlocRoomDistant" type="MeshInstance3D"]
+cast_shadow = 0
+mesh = SubResource("BoxMesh_qp7sg")
+skeleton = NodePath("../..")
+script = ExtResource("2_itg6c")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -80, 80, -101)
+modulate = Color(0.0768358, 0.0768358, 0.0768358, 1)
+outline_modulate = Color(0.0338533, 0.0338533, 0.0338533, 1)
+text = "153268
+"
+font = ExtResource("2_7rtml")
+font_size = 5000
+outline_size = 0
+horizontal_alignment = 2
+vertical_alignment = 0

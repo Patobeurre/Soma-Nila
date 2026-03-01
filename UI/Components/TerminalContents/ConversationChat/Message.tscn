@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://daqrfdepnqfud"]
+
+[ext_resource type="Script" uid="uid://cyk5y7u26a27r" path="res://UI/Components/TerminalContents/ConversationChat/message.gd" id="1_i4oid"]
+[ext_resource type="Theme" uid="uid://dgohthjmb8am6" path="res://UI/themes/console_font.tres" id="1_jmtvf"]
+
+[node name="Message1" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+script = ExtResource("1_i4oid")
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 2
+theme = ExtResource("1_jmtvf")
+theme_override_font_sizes/normal_font_size = 50
+text = "Ben@1628"
+fit_content = true
+autowrap_mode = 2
+vertical_alignment = 1
+
+[node name="Content" type="RichTextLabel" parent="."]
+layout_mode = 2
+theme = ExtResource("1_jmtvf")
+theme_override_font_sizes/normal_font_size = 35
+text = "LIAM_1-1"
+fit_content = true
+autowrap_mode = 2
+vertical_alignment = 1

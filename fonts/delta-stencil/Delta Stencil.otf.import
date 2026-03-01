@@ -1,0 +1,35 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://cuh8h4mf8b0b2"
+path="res://.godot/imported/Delta Stencil.otf-9692c72f81a0eb95bcdec3114e752e8a.fontdata"
+
+[deps]
+
+source_file="res://fonts/delta-stencil/Delta Stencil.otf"
+dest_files=["res://.godot/imported/Delta Stencil.otf-9692c72f81a0eb95bcdec3114e752e8a.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=4
+keep_rounding_remainders=true
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://dd5g487px3kln"]
+
+[ext_resource type="Environment" uid="uid://evgf73em6ceg" path="res://scripts/resources/Environments/main_level_env.tres" id="1_atacq"]
+[ext_resource type="Script" uid="uid://ccmhkt6ookykg" path="res://scenes/test_terrain/terrain_gen_presentation.gd" id="1_mweab"]
+[ext_resource type="Script" uid="uid://1vcmdhhiat1j" path="res://scripts/resources/Terrain/map_terrain_generation.gd" id="2_mweab"]
+[ext_resource type="Script" uid="uid://dn8a67533qqne" path="res://scripts/resources/Terrain/TerrainGenerationSettings.gd" id="4_4alkh"]
+[ext_resource type="PackedScene" uid="uid://lvbklg366xau" path="res://models/objects/Strawberry.tscn" id="4_ovtub"]
+[ext_resource type="Script" uid="uid://cdoek4l61hpbx" path="res://scripts/resources/Terrain/TileGenerationSettings.gd" id="5_ovtub"]
+[ext_resource type="PackedScene" uid="uid://cegfrsw8p7ibl" path="res://models/objects/portal.tscn" id="5_p2wl8"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_p2wl8"]
+noise_type = 0
+frequency = 0.02
+fractal_type = 0
+
+[sub_resource type="Resource" id="Resource_46pky"]
+script = ExtResource("5_ovtub")
+seed = 0
+useRandomSeed = true
+nbIter = 6
+nbIterRndOffset = 2
+isParallel = false
+nbParallelJobs = 1
+metadata/_custom_type_script = "uid://cdoek4l61hpbx"
+
+[sub_resource type="Resource" id="Resource_yarpq"]
+script = ExtResource("4_4alkh")
+seed = 0
+useRandomSeed = true
+terrainSize = Vector3(15, 20, 15)
+tile_scale = Vector3(4, 4, 4)
+terrain_scale = Vector3(4, 32, 4)
+noiseParams = SubResource("FastNoiseLite_p2wl8")
+density = 0.02
+tileGenSettings = SubResource("Resource_46pky")
+metadata/_custom_type_script = "uid://dn8a67533qqne"
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_mweab")
+cam_rotate_speed = 1.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_atacq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.686461, -0.559361, 0.464636, -0.202221, 0.76061, 0.616911, -0.698482, 0.329526, -0.635244, 5.69616, -20.5174, -13.6989)
+light_color = Color(0.910845, 0.923517, 0.883351, 1)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="MapTiles" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+script = ExtResource("2_mweab")
+settings = SubResource("Resource_yarpq")
+
+[node name="Objectives" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 51.3525)
+
+[node name="Strawberry" parent="Objectives" instance=ExtResource("4_ovtub")]
+
+[node name="Portal" parent="Objectives" instance=ExtResource("5_p2wl8")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="CameraNode" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 30)
+
+[node name="Camera3D" type="Camera3D" parent="CameraNode"]
+transform = Transform3D(-0.707107, 0.353553, -0.612372, 0, 0.866025, 0.5, 0.707107, 0.353553, -0.612372, -30, 15, -30)
+current = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

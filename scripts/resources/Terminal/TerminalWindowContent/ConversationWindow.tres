@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TerminalWindowRes" load_steps=3 format=3 uid="uid://bam4hunlt658g"]
+
+[ext_resource type="PackedScene" uid="uid://ngj887fu30xr" path="res://UI/Components/TerminalContents/ConversationChat/Conversation.tscn" id="1_27t5a"]
+[ext_resource type="Script" uid="uid://dfuraayjd6yb0" path="res://scripts/resources/Terminal/TerminalWindowRes.gd" id="1_l6xda"]
+
+[resource]
+script = ExtResource("1_l6xda")
+title = "TEXT_MESSAGING_TITLE"
+content = ExtResource("1_27t5a")
+metadata/_custom_type_script = "uid://dfuraayjd6yb0"

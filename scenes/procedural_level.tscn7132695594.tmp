@@ -1,0 +1,161 @@
+[gd_scene load_steps=19 format=4 uid="uid://1wqeuqodu1ar"]
+
+[ext_resource type="Script" uid="uid://c0g7u58cpaarn" path="res://scenes/procedural_level.gd" id="1_abuk1"]
+[ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/PlayerCharacterScene.tscn" id="2_abuk1"]
+[ext_resource type="Material" uid="uid://iu7tyhw8j3ah" path="res://materials/Tile/Grass.tres" id="2_w87me"]
+[ext_resource type="PackedScene" uid="uid://bl583tolexw07" path="res://models/map_tiles/base_tile.tscn" id="4_yn40h"]
+[ext_resource type="PackedScene" uid="uid://lvbklg366xau" path="res://models/objects/Strawberry.tscn" id="5_abuk1"]
+[ext_resource type="Resource" uid="uid://ch4cg6xi7dtwp" path="res://scripts/resources/Abilities/A_Bumper.tres" id="7_dd152"]
+[ext_resource type="Script" uid="uid://djrr832cj7vjl" path="res://scripts/utils/item_list_selector.gd" id="9_dd152"]
+[ext_resource type="Script" uid="uid://b547cpm41w7bl" path="res://scripts/abilitySM/abilitiesStateMachine.gd" id="10_1ulos"]
+[ext_resource type="Script" uid="uid://cd2a0hec2s6ls" path="res://scenes/object_selector.gd" id="10_rfl2w"]
+[ext_resource type="Script" uid="uid://b0jtp3tmda0di" path="res://scripts/abilitySM/placeObjectState.gd" id="10_x1qiv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ts0dp"]
+sky_top_color = Color(0.428861, 0.705021, 0.951258, 1)
+sky_horizon_color = Color(0.887226, 0.890987, 0.896928, 1)
+
+[sub_resource type="Sky" id="Sky_okuc5"]
+sky_material = SubResource("ProceduralSkyMaterial_ts0dp")
+
+[sub_resource type="Environment" id="Environment_rdnhh"]
+background_mode = 2
+background_color = Color(0.402538, 0.719512, 0.905975, 1)
+sky = SubResource("Sky_okuc5")
+ambient_light_source = 2
+ambient_light_color = Color(0.974129, 0.890858, 0.719932, 1)
+glow_enabled = true
+glow_strength = 0.3
+glow_bloom = 1.0
+fog_light_color = Color(0.93408, 0.93408, 0.93408, 1)
+fog_density = 0.0001
+volumetric_fog_albedo = Color(1, 0.790893, 0.756161, 1)
+volumetric_fog_length = 20.0
+volumetric_fog_ambient_inject = 4.11
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8c1ti"]
+transparency = 1
+albedo_color = Color(0.707979, 0.545124, 1, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7sad1"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "Rock",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP//AAD//wAA////////AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fi21y"]
+resource_name = "tile_3d_painted_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": ExtResource("2_w87me"),
+"name": "Rock",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///78AAP//////v/////////+/AAAAAP///78AAAAAAAD/v///AAD///+///8AAAAA/78AAAAA////v/////8AAP//AAD///////8AAP//AAD/////////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_7sad1")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ts0dp"]
+data = PackedVector3Array(-1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1)
+
+[sub_resource type="Resource" id="Resource_rfl2w"]
+script = ExtResource("9_dd152")
+items = [ExtResource("7_dd152"), null, null]
+isCircular = true
+metadata/_custom_type_script = "uid://djrr832cj7vjl"
+
+[node name="MainLevel" type="Node3D"]
+script = ExtResource("1_abuk1")
+DISTANCE = 5.0
+boundOffset = null
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rdnhh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.686461, -0.559361, 0.464636, -0.202221, 0.76061, 0.616911, -0.698482, 0.329526, -0.635244, 5.69616, -20.5174, -13.6989)
+light_color = Color(0.910845, 0.923517, 0.883351, 1)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_abuk1")]
+transform = Transform3D(-0.0578428, 0, 0.998326, 0, 1, 0, -0.998326, 0, -0.0578428, 7.46575, 14.6879, -15.2947)
+collision_mask = 101
+MIN_STAIR_HEIGHT = 0.3
+MAX_STAIR_HEIGHT = 0.7
+
+[node name="TilePlaceholderNode" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
+visible = false
+
+[node name="BaseMesh" type="Node3D" parent="TilePlaceholderNode"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -10, 0)
+
+[node name="BaseTileMesh" type="MeshInstance3D" parent="TilePlaceholderNode/BaseMesh"]
+transform = Transform3D(10, 0, 0, 0, -20, 3.25841e-06, 0, -6.51683e-06, -10, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_8c1ti")
+transparency = 0.5
+mesh = SubResource("ArrayMesh_fi21y")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TilePlaceholderNode/BaseMesh/BaseTileMesh"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TilePlaceholderNode/BaseMesh/BaseTileMesh/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ts0dp")
+
+[node name="MapTiles" type="Node3D" parent="."]
+
+[node name="StartingTileMesh" parent="MapTiles" instance=ExtResource("4_yn40h")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -3.97383, 0)
+
+[node name="Tile1" parent="MapTiles" instance=ExtResource("4_yn40h")]
+transform = Transform3D(0.193185, 0, 0.051764, 0, 0.2, 0, -0.051764, 0, 0.193185, 16.7656, 0, 0)
+
+[node name="Tile2" parent="MapTiles" instance=ExtResource("4_yn40h")]
+transform = Transform3D(0.168334, 0, -0.107998, 0, 0.2, 0, 0.107998, 0, 0.168334, 3.64103, -13.9479, -6.98812)
+
+[node name="Tile3" parent="MapTiles" instance=ExtResource("4_yn40h")]
+transform = Transform3D(0.0132863, 0, -0.199558, 0, 0.2, 0, 0.199558, 0, 0.0132863, 10.3989, 0, -13.4417)
+
+[node name="Tile4" parent="MapTiles" instance=ExtResource("4_yn40h")]
+transform = Transform3D(0.0132863, 0, -0.199558, 0, 0.2, 0, 0.199558, 0, 0.0132863, 6.12864, -18.7473, 7.37871)
+
+[node name="Tile5" parent="MapTiles" instance=ExtResource("4_yn40h")]
+transform = Transform3D(0.0773037, 0, -0.184456, 0, 0.2, 0, 0.184456, 0, 0.0773037, 7.56236, 10.4174, -15.2556)
+
+[node name="Tile6" parent="MapTiles" instance=ExtResource("4_yn40h")]
+transform = Transform3D(0.0773037, 0, -0.184456, 0, 0.2, 0, 0.184456, 0, 0.0773037, 18.9246, 10.4174, 6.16384)
+
+[node name="Tile7" parent="MapTiles" instance=ExtResource("4_yn40h")]
+transform = Transform3D(0.0773037, 0, -0.184456, 0, 0.2, 0, 0.184456, 0, 0.0773037, -1.19555, -9.35884, -7.61603)
+
+[node name="Strawberry" parent="." instance=ExtResource("5_abuk1")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 19.8315, 16.8107, 6.17364)
+
+[node name="AbilitySelector" type="Node" parent="."]
+script = ExtResource("10_rfl2w")
+items = SubResource("Resource_rfl2w")
+prevAction = "wheelDown"
+nextAction = "wheelUp"
+
+[node name="AbilitiesStateMachine" type="Node" parent="."]
+script = ExtResource("10_1ulos")
+
+[node name="PlaceObjectState" type="Node" parent="AbilitiesStateMachine"]
+script = ExtResource("10_x1qiv")

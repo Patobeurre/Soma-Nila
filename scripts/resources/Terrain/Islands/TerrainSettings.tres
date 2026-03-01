@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="TerrainGenerationSettings" load_steps=5 format=3 uid="uid://cfxvolct1rkg7"]
+
+[ext_resource type="FastNoiseLite" uid="uid://bt2bi320301ql" path="res://scripts/resources/Terrain/Islands/IslandNoiseFlat.tres" id="1_0hosn"]
+[ext_resource type="Script" uid="uid://dn8a67533qqne" path="res://scripts/resources/Terrain/TerrainGenerationSettings.gd" id="2_wrtkc"]
+[ext_resource type="Script" uid="uid://cdoek4l61hpbx" path="res://scripts/resources/Terrain/TileGenerationSettings.gd" id="3_hx2hw"]
+
+[sub_resource type="Resource" id="Resource_5n17c"]
+script = ExtResource("3_hx2hw")
+seed = 0
+useRandomSeed = false
+nbIter = 10
+nbIterRndOffset = 2
+isParallel = false
+nbParallelJobs = 1
+metadata/_custom_type_script = "uid://cdoek4l61hpbx"
+
+[resource]
+script = ExtResource("2_wrtkc")
+seed = 0
+useRandomSeed = false
+terrainSize = Vector3(40, 40, 40)
+tile_scale = Vector3(4, 4, 4)
+terrain_scale = Vector3(4, 60, 4)
+noiseParams = ExtResource("1_0hosn")
+density = 0.04
+tileGenSettings = SubResource("Resource_5n17c")
+metadata/_custom_type_script = "uid://dn8a67533qqne"

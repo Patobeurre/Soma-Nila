@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlaceableObject" load_steps=4 format=3 uid="uid://c74lhftbrylcn"]
+
+[ext_resource type="Script" uid="uid://b66kqk22rrspi" path="res://scripts/resources/PlaceableObject.gd" id="1_8tyt6"]
+[ext_resource type="PackedScene" uid="uid://cm3kudrw1s51v" path="res://models/placeable_objects/blackhole_placeholder.tscn" id="1_tru6h"]
+[ext_resource type="PackedScene" uid="uid://cyf0qvbsti2r3" path="res://models/placeable_objects/blackhole.tscn" id="2_eueok"]
+
+[resource]
+script = ExtResource("1_8tyt6")
+name = "PO_BLACKHOLE"
+scene = ExtResource("2_eueok")
+scale = Vector3(1, 1, 1)
+placeholder_mesh = ExtResource("1_tru6h")
+maxDistance = 6.0
+metadata/_custom_type_script = "uid://b66kqk22rrspi"

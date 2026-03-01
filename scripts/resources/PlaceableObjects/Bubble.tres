@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlaceableObject" load_steps=4 format=3 uid="uid://bijm4hgl0xd8j"]
+
+[ext_resource type="PackedScene" uid="uid://nvmlf8unf8xn" path="res://models/placeable_objects/bubble_placeholder.tscn" id="1_enuu4"]
+[ext_resource type="Script" uid="uid://b66kqk22rrspi" path="res://scripts/resources/PlaceableObject.gd" id="1_wn50h"]
+[ext_resource type="PackedScene" uid="uid://y17c1k7jcnp2" path="res://models/placeable_objects/redirect_bubble.tscn" id="2_jtld7"]
+
+[resource]
+script = ExtResource("1_wn50h")
+name = "PO_BUBBLE"
+scene = ExtResource("2_jtld7")
+scale = Vector3(3, 3, 3)
+placeholder_mesh = ExtResource("1_enuu4")
+maxDistance = 6.0
+metadata/_custom_type_script = "uid://b66kqk22rrspi"

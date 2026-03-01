@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://qj8as60symea"]
+
+[ext_resource type="Texture2D" uid="uid://re3uwo87abi7" path="res://images/whirl_background.png" id="1_w85wd"]
+
+[resource]
+transparency = 1
+no_depth_test = true
+albedo_color = Color(1, 1, 1, 0.901961)
+albedo_texture = ExtResource("1_w85wd")
+heightmap_scale = -16.0
+uv1_scale = Vector3(2, 2, 2)
+billboard_keep_scale = true

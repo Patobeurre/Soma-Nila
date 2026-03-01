@@ -1,0 +1,35 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://ik77v87jj0fw"
+path="res://.godot/imported/Fredoka dingbats.ttf-5635f259ac19c47096e7c513678ece7c.fontdata"
+
+[deps]
+
+source_file="res://fonts/fredoka-one/Fredoka dingbats.ttf"
+dest_files=["res://.godot/imported/Fredoka dingbats.ttf-5635f259ac19c47096e7c513678ece7c.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=4
+keep_rounding_remainders=true
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

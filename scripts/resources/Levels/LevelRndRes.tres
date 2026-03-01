@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MainLevelRes" load_steps=4 format=3 uid="uid://bxxgkwiehskne"]
+
+[ext_resource type="Resource" uid="uid://cljdvb30r64rh" path="res://scripts/resources/AbilitiesSettingsDefault.tres" id="1_d1v25"]
+[ext_resource type="Script" uid="uid://bccmy31vtu5e3" path="res://scripts/resources/MainLevelRes.gd" id="2_qeuk5"]
+[ext_resource type="Resource" uid="uid://f1f4nu16t5gd" path="res://scripts/resources/Terrain/GenerationSettings.tres" id="3_g4ymg"]
+
+[resource]
+script = ExtResource("2_qeuk5")
+seed = -1
+useRandomSeed = true
+nb_fruits = 1
+abilitiesSettings = ExtResource("1_d1v25")
+terrainSettings = ExtResource("3_g4ymg")
+isCustom = false
+metadata/_custom_type_script = "uid://bccmy31vtu5e3"

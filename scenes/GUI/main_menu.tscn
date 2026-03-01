@@ -1,0 +1,391 @@
+[gd_scene load_steps=38 format=3 uid="uid://c101m0klbpm2i"]
+
+[ext_resource type="Script" uid="uid://dwdkbdg4dqa7l" path="res://scenes/GUI/main_menu.gd" id="1_b4h60"]
+[ext_resource type="Texture2D" uid="uid://cyv8lmv5adtll" path="res://images/game_title.png" id="1_tbt31"]
+[ext_resource type="Theme" uid="uid://7vunodgdyjg2" path="res://UI/themes/base_font.tres" id="4_h03jd"]
+[ext_resource type="Texture2D" uid="uid://kix35tcoohnn" path="res://images/UI/ui_button_green_flat.png" id="5_2mbt4"]
+[ext_resource type="Texture2D" uid="uid://va8hfwhyu43b" path="res://images/UI/ui_button_red_3d.png" id="5_gbdx4"]
+[ext_resource type="Texture2D" uid="uid://6u5ufuc8t6du" path="res://images/UI/ui_button_red_flat.png" id="6_2mbt4"]
+[ext_resource type="Texture2D" uid="uid://cnruaejs7qtyx" path="res://images/UI/ui_button_yellow_3d.png" id="6_obiyt"]
+[ext_resource type="Texture2D" uid="uid://7v3njgwrjudo" path="res://images/UI/ui_button_yellow_flat.png" id="7_6sky3"]
+[ext_resource type="Texture2D" uid="uid://jevnh3qj77vs" path="res://images/UI/ui_button_blue_3d.png" id="8_cu8od"]
+[ext_resource type="Texture2D" uid="uid://cs0nugoht6vy0" path="res://images/UI/ui_button_blue_flat.png" id="9_1amou"]
+[ext_resource type="Texture2D" uid="uid://cjppv75gebse1" path="res://images/UI/ui_button_white_3d.png" id="11_cu8od"]
+[ext_resource type="Texture2D" uid="uid://dn6x6lpd46bh8" path="res://images/UI/ui_button_white_flat.png" id="12_1amou"]
+[ext_resource type="PackedScene" uid="uid://c5leu1s8xd08p" path="res://UI/Components/credits_panel.tscn" id="14_1amou"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iqwse"]
+load_path = "res://.godot/imported/ui_button_green_3d.png-a68f5c0db0972b700c71857f2db19569.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1amou"]
+texture = SubResource("CompressedTexture2D_iqwse")
+texture_margin_left = 40.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eun0f"]
+texture = SubResource("CompressedTexture2D_iqwse")
+texture_margin_left = 40.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cu8od"]
+texture = ExtResource("5_2mbt4")
+texture_margin_left = 30.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r2fwp"]
+load_path = "res://.godot/imported/ui_button_green_3d.png-a68f5c0db0972b700c71857f2db19569.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6sky3"]
+texture = SubResource("CompressedTexture2D_r2fwp")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+modulate_color = Color(0.858824, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ergeh"]
+texture = ExtResource("6_obiyt")
+texture_margin_left = 40.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ufdl"]
+texture = ExtResource("7_6sky3")
+texture_margin_left = 30.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rrwjx"]
+texture = ExtResource("6_obiyt")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+modulate_color = Color(0.9, 0.891, 0.891, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6d3bs"]
+texture = ExtResource("6_obiyt")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1amou"]
+load_path = "res://.godot/imported/ui_button_yellow_3d.png-44f8a4bfc0388d3585f4df5b559e20e3.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4wyhd"]
+texture = SubResource("CompressedTexture2D_1amou")
+texture_margin_left = 40.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0ufdl"]
+load_path = "res://.godot/imported/ui_button_yellow_3d.png-44f8a4bfc0388d3585f4df5b559e20e3.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_33d8n"]
+texture = SubResource("CompressedTexture2D_0ufdl")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+modulate_color = Color(0.9, 0.9, 0.9, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gnwxs"]
+texture = ExtResource("8_cu8od")
+texture_margin_left = 40.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b3yrp"]
+texture = ExtResource("9_1amou")
+texture_margin_left = 30.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_diip2"]
+texture = ExtResource("8_cu8od")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+modulate_color = Color(1, 0.8, 0.8, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_obiyt"]
+texture = ExtResource("5_gbdx4")
+texture_margin_left = 40.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2s2lp"]
+texture = ExtResource("6_2mbt4")
+texture_margin_left = 30.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aqj16"]
+texture = ExtResource("5_gbdx4")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+modulate_color = Color(0.858824, 0.85098, 0.85098, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cu8od"]
+load_path = "res://.godot/imported/ui_button_white_3d.png-7b71358b2fb5d853c53506e394da6c04.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wbg7v"]
+texture = SubResource("CompressedTexture2D_cu8od")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i7wyh"]
+texture = ExtResource("12_1amou")
+texture_margin_left = 30.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m2xcw"]
+texture = ExtResource("11_cu8od")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+modulate_color = Color(1, 0.8, 0.8, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_b4h60")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(1000, 700)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("1_tbt31")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="PanelContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 20
+
+[node name="BtnNewGame" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 150)
+layout_mode = 2
+size_flags_horizontal = 8
+focus_neighbor_left = NodePath("../../../../MarginContainer2/HBoxContainer/BtnCredits")
+focus_neighbor_top = NodePath("../BtnQuit")
+focus_neighbor_bottom = NodePath("../BtnCustomGame")
+theme = ExtResource("4_h03jd")
+theme_override_colors/font_outline_color = Color(0.223103, 0.223103, 0.223103, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxTexture_1amou")
+theme_override_styles/hover = SubResource("StyleBoxTexture_eun0f")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cu8od")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6sky3")
+text = "TITLE_NEWGAME"
+icon_alignment = 2
+expand_icon = true
+
+[node name="BtnCustomGame" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+focus_neighbor_left = NodePath("../../../../MarginContainer2/HBoxContainer/BtnCredits")
+focus_neighbor_top = NodePath("../BtnNewGame")
+focus_neighbor_bottom = NodePath("../BtnFavoriteLevels")
+theme = ExtResource("4_h03jd")
+theme_override_colors/font_outline_color = Color(0.223529, 0.223529, 0.223529, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxTexture_ergeh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ergeh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0ufdl")
+theme_override_styles/normal = SubResource("StyleBoxTexture_rrwjx")
+text = "TITLE_CUSTOMGAME"
+expand_icon = true
+
+[node name="BtnFavoriteLevels" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+focus_neighbor_left = NodePath("../../../../MarginContainer2/HBoxContainer/BtnCredits")
+focus_neighbor_top = NodePath("../BtnCustomGame")
+focus_neighbor_bottom = NodePath("../BtnSettings")
+theme = ExtResource("4_h03jd")
+theme_override_colors/font_outline_color = Color(0.223529, 0.223529, 0.223529, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxTexture_6d3bs")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4wyhd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0ufdl")
+theme_override_styles/normal = SubResource("StyleBoxTexture_33d8n")
+text = "TITLE_FAVORITELEVELS"
+expand_icon = true
+
+[node name="BtnSettings" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+focus_neighbor_left = NodePath("../../../../MarginContainer2/HBoxContainer/BtnCredits")
+focus_neighbor_top = NodePath("../BtnFavoriteLevels")
+focus_neighbor_bottom = NodePath("../BtnQuit")
+theme = ExtResource("4_h03jd")
+theme_override_colors/font_outline_color = Color(0.223529, 0.223529, 0.223529, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxTexture_gnwxs")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gnwxs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b3yrp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_diip2")
+text = "TITLE_SETTINGS"
+expand_icon = true
+
+[node name="BtnQuit" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+focus_neighbor_left = NodePath("../../../../MarginContainer2/HBoxContainer/BtnCredits")
+focus_neighbor_top = NodePath("../BtnSettings")
+focus_neighbor_bottom = NodePath("../BtnNewGame")
+theme = ExtResource("4_h03jd")
+theme_override_colors/font_outline_color = Color(0.223529, 0.223529, 0.223529, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxTexture_obiyt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_obiyt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2s2lp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_aqj16")
+text = "TITLE_QUIT"
+expand_icon = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -120.0
+offset_right = 310.0
+grow_vertical = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
+visible = false
+layout_mode = 2
+
+[node name="BtnCredits" type="Button" parent="MarginContainer2/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../../MarginContainer/PanelContainer/VBoxContainer/BtnNewGame")
+focus_neighbor_right = NodePath("../../../MarginContainer/PanelContainer/VBoxContainer/BtnNewGame")
+focus_neighbor_bottom = NodePath("../../../MarginContainer/PanelContainer/VBoxContainer/BtnNewGame")
+theme = ExtResource("4_h03jd")
+theme_override_colors/font_outline_color = Color(0.223529, 0.223529, 0.223529, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxTexture_wbg7v")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wbg7v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i7wyh")
+theme_override_styles/normal = SubResource("StyleBoxTexture_m2xcw")
+text = "TITLE_CREDITS"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer2/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("4_h03jd")
+theme_override_colors/font_outline_color = Color(0.0923971, 0.0923971, 0.0923971, 1)
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/normal_font_size = 30
+text = "TEXT_CREATEDBY"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer2/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("4_h03jd")
+theme_override_colors/font_outline_color = Color(0.0923971, 0.0923971, 0.0923971, 1)
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/normal_font_size = 50
+text = " Brice Maussang "
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 2
+
+[node name="CreditsContainer" type="CenterContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelContainer" parent="CreditsContainer" instance=ExtResource("14_1amou")]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/BtnNewGame" to="." method="_on_btn_new_game_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/BtnCustomGame" to="." method="_on_btn_custom_game_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/BtnFavoriteLevels" to="." method="_on_btn_favorite_levels_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/BtnSettings" to="." method="_on_btn_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/BtnQuit" to="." method="_on_btn_quit_pressed"]
+[connection signal="pressed" from="MarginContainer2/HBoxContainer/BtnCredits" to="." method="_on_btn_credits_pressed"]

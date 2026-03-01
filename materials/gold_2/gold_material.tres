@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://cn0jv2rmeysj2"]
+
+[ext_resource type="Texture2D" uid="uid://c26coo4cln37l" path="res://materials/gold_2/natural_gold_baseColor.jpeg" id="1_us0c5"]
+[ext_resource type="Texture2D" uid="uid://tirctv2mp3c4" path="res://materials/gold_2/natural_gold_ambientOcclusion.jpeg" id="2_2if7y"]
+[ext_resource type="Texture2D" uid="uid://cmcvnejqwlnxa" path="res://materials/gold_2/natural_gold_height.jpeg" id="3_uuxku"]
+[ext_resource type="Texture2D" uid="uid://d1hfm8wvugy0l" path="res://materials/gold_2/natural_gold_metallic.jpeg" id="4_k0iqr"]
+[ext_resource type="Texture2D" uid="uid://bqk52oug6iu5w" path="res://materials/gold_2/natural_gold_normal.jpeg" id="5_rwray"]
+[ext_resource type="Texture2D" uid="uid://c1d1s6hfuj8i2" path="res://materials/gold_2/natural_gold_roughness.jpeg" id="6_jrsar"]
+
+[resource]
+albedo_texture = ExtResource("1_us0c5")
+metallic = 1.0
+metallic_texture = ExtResource("4_k0iqr")
+roughness_texture = ExtResource("6_jrsar")
+normal_enabled = true
+normal_texture = ExtResource("5_rwray")
+ao_enabled = true
+ao_texture = ExtResource("2_2if7y")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_uuxku")

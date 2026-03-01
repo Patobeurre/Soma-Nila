@@ -1,0 +1,87 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccyvebmykcrdv"]
+
+[ext_resource type="PackedScene" uid="uid://dvbuqr0aytha7" path="res://scenes/Terrain/tile_bloc.tscn" id="1_rholk"]
+
+[node name="Island" type="Node3D"]
+
+[node name="Decoration" type="Node3D" parent="."]
+
+[node name="Blocs" type="Node3D" parent="."]
+
+[node name="TopLayer" type="Node3D" parent="Blocs"]
+
+[node name="TileBloc" parent="Blocs/TopLayer" instance=ExtResource("1_rholk")]
+
+[node name="TileBloc2" parent="Blocs/TopLayer" instance=ExtResource("1_rholk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="TileBloc3" parent="Blocs/TopLayer" instance=ExtResource("1_rholk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="TileBloc4" parent="Blocs/TopLayer" instance=ExtResource("1_rholk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="TileBloc5" parent="Blocs/TopLayer" instance=ExtResource("1_rholk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="TileBloc6" parent="Blocs/TopLayer" instance=ExtResource("1_rholk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="TileBloc7" parent="Blocs/TopLayer" instance=ExtResource("1_rholk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="TileBloc8" parent="Blocs/TopLayer" instance=ExtResource("1_rholk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+
+[node name="TileBloc9" parent="Blocs/TopLayer" instance=ExtResource("1_rholk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+
+[node name="TileBloc10" parent="Blocs/TopLayer" instance=ExtResource("1_rholk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2)
+
+[node name="TileBloc11" parent="Blocs/TopLayer" instance=ExtResource("1_rholk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
+
+[node name="TileBloc12" parent="Blocs/TopLayer" instance=ExtResource("1_rholk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="TileBloc13" parent="Blocs/TopLayer" instance=ExtResource("1_rholk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
+
+[node name="BaseLayer" type="Node3D" parent="Blocs"]
+
+[node name="TileBloc" parent="Blocs/BaseLayer" instance=ExtResource("1_rholk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+isTop = false
+
+[node name="TileBloc2" parent="Blocs/BaseLayer" instance=ExtResource("1_rholk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 1)
+isTop = false
+
+[node name="TileBloc3" parent="Blocs/BaseLayer" instance=ExtResource("1_rholk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 1)
+isTop = false
+
+[node name="TileBloc4" parent="Blocs/BaseLayer" instance=ExtResource("1_rholk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 0)
+isTop = false
+
+[node name="TileBloc5" parent="Blocs/BaseLayer" instance=ExtResource("1_rholk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1, 0)
+isTop = false
+
+[node name="TileBloc6" parent="Blocs/BaseLayer" instance=ExtResource("1_rholk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -1)
+isTop = false
+
+[node name="TileBloc7" parent="Blocs/BaseLayer" instance=ExtResource("1_rholk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1, -1)
+isTop = false
+
+[node name="TileBloc8" parent="Blocs/BaseLayer" instance=ExtResource("1_rholk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 1)
+isTop = false
+
+[node name="TileBloc9" parent="Blocs/BaseLayer" instance=ExtResource("1_rholk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 2)
+isTop = false

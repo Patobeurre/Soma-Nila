@@ -1,0 +1,161 @@
+[gd_scene load_steps=18 format=3 uid="uid://c66x3wko6jl6x"]
+
+[ext_resource type="PackedScene" uid="uid://w60cpseg4ehi" path="res://UI/Components/custom_settings_panel.tscn" id="1_57lon"]
+[ext_resource type="Script" uid="uid://ckptg50q5qevl" path="res://scenes/GUI/custom_game_menu.gd" id="1_u7510"]
+[ext_resource type="Theme" uid="uid://7vunodgdyjg2" path="res://UI/themes/base_font.tres" id="2_u7510"]
+[ext_resource type="Texture2D" uid="uid://kix35tcoohnn" path="res://images/UI/ui_button_green_flat.png" id="4_ly6rk"]
+[ext_resource type="Texture2D" uid="uid://bnewcmvreove4" path="res://images/arrow_right.png" id="5_xl04e"]
+[ext_resource type="Texture2D" uid="uid://va8hfwhyu43b" path="res://images/UI/ui_button_red_3d.png" id="6_fr8df"]
+[ext_resource type="Texture2D" uid="uid://6u5ufuc8t6du" path="res://images/UI/ui_button_red_flat.png" id="7_1ep88"]
+[ext_resource type="Texture2D" uid="uid://byihob66vap8s" path="res://images/arrow_left.png" id="8_fr8df"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fr8df"]
+bg_color = Color(0, 0, 0, 0.392157)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iqwse"]
+load_path = "res://.godot/imported/ui_button_green_3d.png-a68f5c0db0972b700c71857f2db19569.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0r8ep"]
+texture = SubResource("CompressedTexture2D_iqwse")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+modulate_color = Color(0.8, 0.8, 0.8, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fr8df"]
+texture = ExtResource("4_ly6rk")
+texture_margin_left = 30.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_clm6d"]
+load_path = "res://.godot/imported/ui_button_green_3d.png-a68f5c0db0972b700c71857f2db19569.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ep88"]
+texture = SubResource("CompressedTexture2D_clm6d")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u1n05"]
+texture = ExtResource("6_fr8df")
+texture_margin_left = 40.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+modulate_color = Color(0.8, 0.8, 0.8, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j6jvn"]
+texture = ExtResource("7_1ep88")
+texture_margin_left = 30.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6yi1e"]
+texture = ExtResource("6_fr8df")
+texture_margin_left = 40.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+
+[node name="CustomGameMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u7510")
+
+[node name="DarkMask" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fr8df")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 50
+
+[node name="PanelContainer" parent="MarginContainer" instance=ExtResource("1_57lon")]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -159.0
+offset_top = -82.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="BtnStart" type="Button" parent="MarginContainer2"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_u7510")
+theme_override_colors/font_outline_color = Color(0.223103, 0.223103, 0.223103, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxTexture_0r8ep")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fr8df")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1ep88")
+text = "BTN_STARTPLAYING"
+icon = ExtResource("5_xl04e")
+icon_alignment = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -142.0
+offset_right = 207.0
+grow_vertical = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="BtnBack" type="Button" parent="MarginContainer3"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_u7510")
+theme_override_colors/font_outline_color = Color(0.223529, 0.223529, 0.223529, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxTexture_u1n05")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j6jvn")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6yi1e")
+text = "BTN_RETURN"
+icon = ExtResource("8_fr8df")
+
+[connection signal="pressed" from="MarginContainer2/BtnStart" to="." method="_on_btn_start_pressed"]
+[connection signal="pressed" from="MarginContainer3/BtnBack" to="." method="_on_btn_replay_pressed"]

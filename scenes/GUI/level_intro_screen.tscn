@@ -1,0 +1,114 @@
+[gd_scene load_steps=7 format=3 uid="uid://dqeomky1i5mki"]
+
+[ext_resource type="Texture2D" uid="uid://re3uwo87abi7" path="res://images/whirl_background.png" id="1_4dj3b"]
+[ext_resource type="Script" uid="uid://ce0ggn4nl583j" path="res://scenes/GUI/level_intro_screen.gd" id="1_bu36q"]
+[ext_resource type="Texture2D" uid="uid://b84cw34ljl3ed" path="res://images/UI/gradient_radial_dark.tres" id="3_42eh0"]
+[ext_resource type="FontFile" uid="uid://dxv5vk2ljto0h" path="res://fonts/fredoka-one/FredokaOne-Regular.otf" id="3_smwwx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_42eh0"]
+texture = ExtResource("1_4dj3b")
+expand_margin_left = 2048.0
+expand_margin_top = 2048.0
+expand_margin_right = 2048.0
+expand_margin_bottom = 2048.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c8n6h"]
+texture = ExtResource("3_42eh0")
+expand_margin_top = 500.0
+expand_margin_bottom = 500.0
+
+[node name="LevelIntroScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bu36q")
+background_rotate_speed = 100.0
+startAnimationDelay = 0.5
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WhirlPanel" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_42eh0")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_c8n6h")
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="CenterContainer3" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 49.0
+grow_horizontal = 2
+
+[node name="CatchFruitTextLabel" type="RichTextLabel" parent="CenterContainer3"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.051971, 0.051971, 0.0519709, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("3_smwwx")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1] Catch the [rainbow]AppleBerry[/rainbow] ! [/wave]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer4" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PassPortalTextLabel" type="RichTextLabel" parent="CenterContainer4"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.051971, 0.051971, 0.0519709, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("3_smwwx")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1] ... then pass through the portal ! [/wave]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1

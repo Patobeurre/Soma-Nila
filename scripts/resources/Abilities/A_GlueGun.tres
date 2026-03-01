@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="StateRes" load_steps=6 format=3 uid="uid://b3boxo6jdc304"]
+
+[ext_resource type="Texture2D" uid="uid://bbx8ohfloukq0" path="res://images/UI/input/Keyboard & Mouse/Double/keyboard_0.png" id="1_1ko7g"]
+[ext_resource type="Resource" uid="uid://dyhkitr7bwd6r" path="res://scripts/resources/ThrowableObjects/GlueProjectile.tres" id="2_1ko7g"]
+[ext_resource type="Script" uid="uid://djw557ek5251m" path="res://scripts/resources/StateRes.gd" id="3_jxloa"]
+[ext_resource type="Script" uid="uid://nfw2fpi2r2fs" path="res://scripts/resources/AbilityWeights.gd" id="4_jopwp"]
+
+[sub_resource type="Resource" id="Resource_xfy64"]
+script = ExtResource("4_jopwp")
+pointUp = 0.0
+pointDown = 0.0
+pointFar = 0.0
+pointSpread = 0.0
+metadata/_custom_type_script = "uid://nfw2fpi2r2fs"
+
+[resource]
+script = ExtResource("3_jxloa")
+stateName = "nailGunState"
+name = "PROJ_NAIL"
+icon = ExtResource("1_1ko7g")
+res = ExtResource("2_1ko7g")
+initial_amount = 10
+weights = SubResource("Resource_xfy64")
+metadata/_custom_type_script = "uid://djw557ek5251m"

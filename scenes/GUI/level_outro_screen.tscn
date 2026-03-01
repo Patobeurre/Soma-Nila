@@ -1,0 +1,433 @@
+[gd_scene load_steps=31 format=3 uid="uid://xfu2dnwpvbo3"]
+
+[ext_resource type="Script" uid="uid://dk8qfusyluknv" path="res://scenes/GUI/level_outro_screen.gd" id="1_jnxou"]
+[ext_resource type="Texture2D" uid="uid://re3uwo87abi7" path="res://images/whirl_background.png" id="2_snx6o"]
+[ext_resource type="FontFile" uid="uid://dxv5vk2ljto0h" path="res://fonts/fredoka-one/FredokaOne-Regular.otf" id="3_ekahg"]
+[ext_resource type="StyleBox" uid="uid://e5cpgac5ah0y" path="res://UI/themes/panel_box_texture.tres" id="4_h652a"]
+[ext_resource type="Theme" uid="uid://7vunodgdyjg2" path="res://UI/themes/base_font.tres" id="4_snx6o"]
+[ext_resource type="Texture2D" uid="uid://bdqapmabunbwp" path="res://images/share_icon.png" id="5_ekahg"]
+[ext_resource type="Texture2D" uid="uid://jevnh3qj77vs" path="res://images/UI/ui_button_blue_3d.png" id="6_r2fwp"]
+[ext_resource type="Texture2D" uid="uid://cs0nugoht6vy0" path="res://images/UI/ui_button_blue_flat.png" id="7_iqwse"]
+[ext_resource type="Texture2D" uid="uid://kix35tcoohnn" path="res://images/UI/ui_button_green_flat.png" id="7_u7k4v"]
+[ext_resource type="Texture2D" uid="uid://cnruaejs7qtyx" path="res://images/UI/ui_button_yellow_3d.png" id="9_fvos5"]
+[ext_resource type="Texture2D" uid="uid://ca3y4r0fwbkab" path="res://images/UI/star_disabled.png" id="9_idrdf"]
+[ext_resource type="Texture2D" uid="uid://bnewcmvreove4" path="res://images/arrow_right.png" id="9_u7k4v"]
+[ext_resource type="Texture2D" uid="uid://f4bfkjf1s7sw" path="res://images/UI/star.png" id="10_cnfvc"]
+[ext_resource type="Texture2D" uid="uid://7v3njgwrjudo" path="res://images/UI/ui_button_yellow_flat.png" id="10_r2fwp"]
+[ext_resource type="Texture2D" uid="uid://bwyfd8t5ut5ox" path="res://images/replay_icon.png" id="11_r2fwp"]
+[ext_resource type="Texture2D" uid="uid://b84cw34ljl3ed" path="res://images/UI/gradient_radial_dark.tres" id="14_iqwse"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iqwse"]
+texture = ExtResource("2_snx6o")
+expand_margin_left = 2048.0
+expand_margin_top = 2048.0
+expand_margin_right = 2048.0
+expand_margin_bottom = 2048.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ivnj6"]
+texture = ExtResource("14_iqwse")
+expand_margin_top = 500.0
+expand_margin_bottom = 500.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snx6o"]
+border_width_top = 2
+border_width_bottom = 2
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6bnug"]
+texture = ExtResource("6_r2fwp")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+modulate_color = Color(0.8, 0.8, 0.8, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pmgnx"]
+texture = ExtResource("7_iqwse")
+texture_margin_left = 30.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_do44x"]
+texture = ExtResource("6_r2fwp")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r2fwp"]
+load_path = "res://.godot/imported/ui_button_green_3d.png-a68f5c0db0972b700c71857f2db19569.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_idrdf"]
+texture = SubResource("CompressedTexture2D_r2fwp")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+modulate_color = Color(0.8, 0.8, 0.8, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cnfvc"]
+texture = ExtResource("7_u7k4v")
+texture_margin_left = 30.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iqwse"]
+load_path = "res://.godot/imported/ui_button_green_3d.png-a68f5c0db0972b700c71857f2db19569.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ucb6k"]
+texture = SubResource("CompressedTexture2D_iqwse")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a4s4q"]
+texture = ExtResource("9_fvos5")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+modulate_color = Color(0.8, 0.8, 0.8, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_osuio"]
+texture = ExtResource("10_r2fwp")
+texture_margin_left = 30.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dpsi5"]
+texture = ExtResource("9_fvos5")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+
+[node name="LevelOutroScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jnxou")
+background_rotate_speed = 100.0
+startAnimationDelay = 0.5
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WhirlPanel" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_iqwse")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ivnj6")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer"]
+layout_mode = 2
+dragging_enabled = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VSplitContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.051971, 0.051971, 0.0519709, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("3_ekahg")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1] GOTCHA ! [/wave]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VSplitContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("4_h652a")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VSplitContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_snx6o")
+text = "TEXT_SEED"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_snx6o")
+text = " : "
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="SeedTxt" type="RichTextLabel" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_snx6o")
+theme_override_font_sizes/normal_font_size = 30
+text = "-1"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxFlat_snx6o")
+
+[node name="BestTimeContainer" type="HBoxContainer" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer/BestTimeContainer"]
+layout_mode = 2
+theme = ExtResource("4_snx6o")
+text = "TEXT_BEST_TIME"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer/BestTimeContainer"]
+layout_mode = 2
+theme = ExtResource("4_snx6o")
+text = " : "
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="BestTimeTxt" type="RichTextLabel" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer/BestTimeContainer"]
+layout_mode = 2
+theme = ExtResource("4_snx6o")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "00:00:00"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="TimeContainer" type="HBoxContainer" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer/TimeContainer"]
+layout_mode = 2
+theme = ExtResource("4_snx6o")
+text = "TEXT_TIME"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer/TimeContainer"]
+layout_mode = 2
+theme = ExtResource("4_snx6o")
+text = " : "
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="TimeTxt" type="RichTextLabel" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer/TimeContainer"]
+layout_mode = 2
+theme = ExtResource("4_snx6o")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "00:00:00"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxFlat_snx6o")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_snx6o")
+text = "TEXT_ITEMUSED"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NoItemUsed" type="RichTextLabel" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme = ExtResource("4_snx6o")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "No Item Used"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UsedAbilitiesContainer" type="VBoxContainer" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="BtnSave" type="Button" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+size_flags_vertical = 10
+focus_mode = 0
+theme = ExtResource("4_snx6o")
+theme_override_colors/font_outline_color = Color(0.223529, 0.223529, 0.223529, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxTexture_6bnug")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pmgnx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_do44x")
+toggle_mode = true
+text = "TEXT_SAVEFAVORITE"
+alignment = 2
+expand_icon = true
+
+[node name="FavoriteDisabledTexture" type="TextureRect" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer/BtnSave"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("9_idrdf")
+stretch_mode = 5
+
+[node name="FavoriteEnabledTexture" type="TextureRect" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer/BtnSave"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_cnfvc")
+flip_h = true
+
+[node name="BtnShare" type="Button" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 10
+focus_mode = 0
+theme = ExtResource("4_snx6o")
+theme_override_colors/font_outline_color = Color(0.223529, 0.223529, 0.223529, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxTexture_6bnug")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pmgnx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_do44x")
+disabled = true
+text = "BTN_SHARELEVEL"
+icon = ExtResource("5_ekahg")
+expand_icon = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -159.0
+offset_top = -82.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="BtnNext" type="Button" parent="MarginContainer2"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_snx6o")
+theme_override_colors/font_outline_color = Color(0.223103, 0.223103, 0.223103, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxTexture_idrdf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cnfvc")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ucb6k")
+text = "BTN_NEXTLEVEL"
+icon = ExtResource("9_u7k4v")
+icon_alignment = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -142.0
+offset_right = 207.0
+grow_vertical = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="BtnReplay" type="Button" parent="MarginContainer3"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_snx6o")
+theme_override_colors/font_outline_color = Color(0.223529, 0.223529, 0.223529, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxTexture_a4s4q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_osuio")
+theme_override_styles/normal = SubResource("StyleBoxTexture_dpsi5")
+text = "BTN_REPLAY"
+icon = ExtResource("11_r2fwp")
+
+[connection signal="toggled" from="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer/BtnSave" to="." method="_on_btn_save_toggled"]
+[connection signal="pressed" from="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer/BtnShare" to="." method="_on_btn_share_pressed"]
+[connection signal="pressed" from="MarginContainer2/BtnNext" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer3/BtnReplay" to="." method="_on_btn_replay_pressed"]

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="ConversationRes" load_steps=6 format=3 uid="uid://bpwc5mxbmy2md"]
+
+[ext_resource type="Script" uid="uid://dwn8usduvuc6w" path="res://scripts/resources/Terminal/ChatMessageRes.gd" id="1_4hu08"]
+[ext_resource type="Script" uid="uid://boocc56m0o0ok" path="res://scripts/resources/Terminal/ConversationRes.gd" id="2_s4ojw"]
+
+[sub_resource type="Resource" id="Resource_4hu08"]
+script = ExtResource("1_4hu08")
+written_by = "David"
+content = "LIAM_2-1"
+metadata/_custom_type_script = "uid://dwn8usduvuc6w"
+
+[sub_resource type="Resource" id="Resource_s4ojw"]
+script = ExtResource("1_4hu08")
+written_by = "Liam"
+content = "LIAM_2-2"
+metadata/_custom_type_script = "uid://dwn8usduvuc6w"
+
+[sub_resource type="Resource" id="Resource_5d3l6"]
+script = ExtResource("1_4hu08")
+written_by = "David"
+content = "LIAM_2-3"
+metadata/_custom_type_script = "uid://dwn8usduvuc6w"
+
+[resource]
+script = ExtResource("2_s4ojw")
+seed = 3679593
+messages = Array[ExtResource("1_4hu08")]([SubResource("Resource_4hu08"), SubResource("Resource_s4ojw"), SubResource("Resource_5d3l6")])
+metadata/_custom_type_script = "uid://boocc56m0o0ok"
