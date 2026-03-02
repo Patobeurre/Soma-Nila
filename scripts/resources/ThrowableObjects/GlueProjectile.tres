@@ -7,8 +7,8 @@
 script = ExtResource("2_d7rlp")
 name = "PROJ_GLUE"
 projectile_scene = ExtResource("1_nmppk")
-speed = 15.0
+speed = 20.0
 enable_auto_fire = true
-fire_rate = 0.3
+fire_rate = 0.1
 scale = Vector3(1, 1, 1)
 metadata/_custom_type_script = "uid://b1hstqy2bayql"

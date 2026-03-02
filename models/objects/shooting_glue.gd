@@ -5,7 +5,7 @@ extends RigidBody3D
 @onready var area3d :Area3D = $OverlappingArea3D
 
 var check_overlap :bool = false
-var has_overlapping_body :bool = false
+var has_overlapping_body :bool = true
 
 
 func _physics_process(delta: float) -> void:
@@ -20,10 +20,6 @@ func _on_body_entered(body :Node) -> void:
 	freeze = true
 	reparent.call_deferred(body)
 	check_overlap = true
-
-
-func _on_overlapping_area_3d_body_entered(body: Node3D) -> void:
-	has_overlapping_body = true
 
 
 func _on_overlapping_area_3d_body_exited(body: Node3D) -> void:
