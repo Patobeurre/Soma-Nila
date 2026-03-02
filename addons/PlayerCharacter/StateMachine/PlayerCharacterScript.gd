@@ -36,6 +36,8 @@ var walkOrRun : String = "WalkState" #keep in memory if play char was walking or
 @export var continiousCrouch : bool = false #if true, doesn't need to keep crouch button on to crouch
 @export var crouchHitboxHeight : float
 @export var crouchModelHeight : float
+@export var snap_to_edge_on_crouch :bool = false
+var previous_position :Vector3
 
 @export_group("Walk variables")
 @export var walkSpeed : float
@@ -192,6 +194,8 @@ func _physics_process(_delta : float):
 	modifyPhysicsProperties()
 	
 	updateDetectorsOrientation()
+	
+	previous_position = global_position
 	
 	move_and_slide()
 	
