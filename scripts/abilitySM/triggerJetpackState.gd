@@ -36,11 +36,13 @@ func inputManagement(delta :float):
 
 
 func perform() -> void:
+	AudioBus.play_sfx("JETPACK_BOOST", false, true)
 	SignalBus.use_jetpack_requested.emit(true)
 	is_performing = true
 
 
 func _on_jetpack_ability_ended():
+	AudioBus.stop_sfx("JETPACK_BOOST")
 	is_performing = false
 
 

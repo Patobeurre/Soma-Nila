@@ -28,7 +28,7 @@ func _get_available_stream_player(bus :String, forced :bool = true) -> AudioStre
 	for audio_player :AudioStreamPlayer in audio_stream_players:
 		if audio_player.bus == bus and !audio_player.playing:
 			return audio_player
-	
+
 	if forced:
 		return _get_audio_stream_player(bus)
 
@@ -63,7 +63,7 @@ func play_audio_stream(stream :AudioStream, bus :String):
 	audio_player.play()
 
 
-func play_sfx(soundName :String, useVariants :bool = true):
+func play_sfx(soundName :String, useVariants :bool = true, fadeIn :bool = false):
 
 	var sound :SoundRes = sfx_library.get_by_name(soundName)
 
@@ -75,7 +75,32 @@ func play_sfx(soundName :String, useVariants :bool = true):
 	if useVariants and not sound.variants.is_empty():
 		stream = sound.variants.pick_random()
 	
-	play_audio_stream(stream, sfx_library.bus)
+	var audio_player :AudioStreamPlayer = _get_available_stream_player(sfx_library.bus)
+
+	if audio_player == null:
+		return
+
+	if stream == null:
+		return
+	
+	audio_player.stream = stream
+	audio_player.play()
+
+	if fadeIn:
+		audio_player.volume_db = -80
+		await fade_in_sound(audio_player, 0.1)
+	else:
+		audio_player.volume_db = 0
+
+
+func stop_sfx(soundName :String) -> void:
+	
+	var sound :SoundRes = sfx_library.get_by_name(soundName)
+
+	for audio_player :AudioStreamPlayer in audio_stream_players:
+		if audio_player.bus == sfx_library.bus and audio_player.playing:
+			if sound.stream == audio_player.stream:
+				audio_player.stop()
 
 
 func play_music(musicName :String, fadeOut :bool = true, fadeIn :bool = true):
