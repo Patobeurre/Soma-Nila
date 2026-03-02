@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://djl7md2fqcc0j"]
+
+[ext_resource type="Texture2D" uid="uid://cmokiycjktxmo" path="res://scenes/test_UI/update_1.1.png" id="1_5aq70"]
+[ext_resource type="Theme" uid="uid://7vunodgdyjg2" path="res://UI/themes/base_font.tres" id="2_ctn62"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+texture = ExtResource("1_5aq70")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+theme = ExtResource("2_ctn62")
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/normal_font_size = 100
+text = " Update 1.1 is here ! "
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1

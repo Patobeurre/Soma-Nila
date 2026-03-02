@@ -6,10 +6,10 @@
 
 [sub_resource type="Resource" id="Resource_jkngj"]
 script = ExtResource("3_ui0i1")
-pointUp = 2.0
+pointUp = 4.0
 pointDown = 0.0
 pointFar = 0.0
-pointSpread = -1.0
+pointSpread = -2.0
 metadata/_custom_type_script = "uid://nfw2fpi2r2fs"
 
 [resource]
