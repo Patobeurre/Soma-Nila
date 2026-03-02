@@ -18,10 +18,20 @@ var msaa_values :Dictionary = {
 
 var language_values :Array = ["en", "fr_FR"]
 
+var custom_properties :Array[Dictionary] = [
+	{ 
+		"name": "custom/speedrun_mode",
+		"type": TYPE_BOOL,
+		"hint": PROPERTY_HINT_ENUM,
+		"hint_string": "Activate speedrun mode"
+	},
+]
+
 @onready var language_options: OptionButton = $MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer3/VBoxContainer/ResolutionContainer/Dropdown_Languages
 @onready var msaa_options = $MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/AntialiasingContainer/Dropdown_AntiAliasing
 @onready var resolution_options: OptionButton = $MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/ResolutionContainer/Dropdown_Resolution
 @onready var cb_fullscreen: CheckBox = $MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/FullscreenContainer/CB_Fullscreen
+@onready var cb_speedrunmode :CheckBox = $MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer3/VBoxContainer/SpeedrunModeContainer/CB_SpeedrunMode
 
 
 func _ready() -> void:
@@ -30,7 +40,10 @@ func _ready() -> void:
 	_fill_language_options()
 	_init_mouse_sensitivity()
 	_init_camera_fov()
+	_init_custom_settings()
+
 	update_fullscreen()
+	update_speedrun_mode()
 
 
 # Anti-aliasing
@@ -161,3 +174,19 @@ func _init_camera_fov():
 
 func _update_camera_fov_value():
 	fov_value.text = str(ProjectSettings.get_setting("rendering/camera/depth_of_field/fov")).pad_decimals(0)
+
+
+# Custom Settings
+
+func _init_custom_settings() -> void:
+	for custom_prop in custom_properties:
+		if !ProjectSettings.has_setting(custom_prop.name):
+			ProjectSettings.add_property_info(custom_prop)
+
+
+func update_speedrun_mode() -> void:
+	var toggled :bool = ProjectSettings.get_setting("custom/speedrun_mode")
+	cb_speedrunmode.button_pressed = (toggled)
+
+func _on_cb_speedrun_mode_toggled(toggled_on: bool) -> void:
+	ProjectSettings.set_setting("custom/speedrun_mode", toggled_on)

@@ -38,6 +38,7 @@ TEXT_AUDIOBUS_MUSIC,Music,Musique
 TEXT_AUDIOBUS_SFX,Effects,Bruitages
 TEXT_MOUSE_SENSITIVITY,Mouse sensitivity,Sensibilité de la souris
 TEXT_SETTINGS_FOV,Field of View (FOV),Champ de vision (FOV)
+TEXT_SETTINGS_SPEEDRUN_MODE,Show in-game timer,Afficher le chronomètre en jeu
 ,,
 MENU_CUSTOM_ALLOWDUPLICATE,Allow duplicated items,Autoriser les doublons
 ,,

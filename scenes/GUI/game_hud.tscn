@@ -161,3 +161,19 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 10
+
+[node name="TimerTxt" type="RichTextLabel" parent="MarginContainer3"]
+visible = false
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 60
+text = "00.00"
+fit_content = true
+horizontal_alignment = 1

@@ -76,15 +76,20 @@ func inputManagement() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	update_placeholder_position()
-	update_placeholder_rotation()
-	currentTimer += delta
+	_update_placeholder_position()
+	_update_placeholder_rotation()
+	_update_timer(delta)
 
 	if Global.player_global_pos.y < -50:
 		restart_level_keep_params()
 
 
-func update_placeholder_position() -> void:
+func _update_timer(delta: float):
+	currentTimer += delta
+	SignalBus.level_timer_updated.emit(currentTimer)
+
+
+func _update_placeholder_position() -> void:
 	var new_position = get_placeholder_position()
 	
 	var space_state = get_world_3d().direct_space_state
@@ -113,7 +118,7 @@ func get_placeholder_position() -> Vector3:
 	return pos
 
 
-func update_placeholder_rotation() -> void:
+func _update_placeholder_rotation() -> void:
 	var rotation = get_placeholder_rotation()
 	if Vector2(rotation.x, rotation.z) == Vector2(placeholder_node.global_position.x, placeholder_node.global_position.z):
 		return

@@ -5,6 +5,7 @@ extends Control
 @onready var arrowReticle = $Crosshair/ArrowReticle
 @onready var interactKey = $Crosshair/InteractKey
 @onready var fruitTextureRect :TextureRect = $FruitTexture
+@onready var timerTxt = $MarginContainer3/TimerTxt
 
 @onready var abilitySelectorIconScene = preload("res://UI/Components/AbilitySelectorIcon.tscn")
 
@@ -18,6 +19,10 @@ func _ready() -> void:
 	SignalBus.rope_state_available.connect(_display_arrow_reticle)
 	SignalBus.fruit_picked.connect(_display_fruit)
 	SignalBus.can_interact.connect(_display_interact_key)
+	
+	if ProjectSettings.get_setting("custom/speedrun_mode"):
+		timerTxt.visible = true
+		SignalBus.level_timer_updated.connect(_display_timer)
 
 
 func _clear_ability_container() -> void:
@@ -51,6 +56,10 @@ func _on_abilities_changed(abilities :Array) -> void:
 	
 	for ability in abilities:
 		instantiate_ability_panel(ability)
+
+
+func _display_timer(time :float):
+	timerTxt.text = Utils.seconds2hhmmss(time, true)
 
 
 func _display_arrow_reticle(enabled :bool) -> void:

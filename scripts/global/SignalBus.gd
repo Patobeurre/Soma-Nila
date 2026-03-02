@@ -32,6 +32,8 @@ signal abilities_setup(Array)
 
 signal level_intro_finished
 
+signal level_timer_updated(float)
+
 
 signal fruit_picked(Node3D)
 signal enter_level_portal
