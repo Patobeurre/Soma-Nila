@@ -1,14 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://b0m01odt1e15p"]
+[gd_scene load_steps=6 format=4 uid="uid://b0m01odt1e15p"]
 
-[ext_resource type="Texture2D" uid="uid://dte6366veajnd" path="res://models/glider_leaf_palette_v2.png" id="1_liedo"]
+[ext_resource type="Material" uid="uid://d4a1363ukbmjf" path="res://materials/leaf_palette_material.tres" id="1_liedo"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4htip"]
-resource_name = "Material.001"
-cull_mode = 2
-albedo_texture = ExtResource("1_liedo")
-roughness = 0.8
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_1thoc"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_4htip"]
 _surfaces = [{
 "aabb": AABB(-1, 0, -1, 2, 0.133456, 2),
 "format": 34896613377,
@@ -22,7 +16,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_dmci1"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_1thoc"]
 resource_name = "glider_Plane_001"
 _surfaces = [{
 "aabb": AABB(-1, 0, -1, 2, 0.133456, 2),
@@ -30,7 +24,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 6,
 "index_data": PackedByteArray("AAABAAIAAwAEAAUA"),
-"material": SubResource("StandardMaterial3D_4htip"),
+"material": ExtResource("1_liedo"),
 "name": "Material.001",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -38,9 +32,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAAAAP//tPH/fwAAAAC08f9//////7Tx/38AAAAAtPH//wAA//+08f9//////7Tx7IfKvuyHyr7sh8q+M8HsBzPB7AczwewH")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_1thoc")
+shadow_mesh = SubResource("ArrayMesh_4htip")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_kvsat"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_dmci1"]
 _surfaces = [{
 "aabb": AABB(-1, 0, -0.997864, 2, 0.06163, 2.00249),
 "format": 34896613377,
@@ -55,7 +49,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_o5e28"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_kvsat"]
 resource_name = "glider_Plane_002"
 _surfaces = [{
 "aabb": AABB(-1, 0, -0.997864, 2, 0.06163, 2.00249),
@@ -64,7 +58,7 @@ _surfaces = [{
 "index_count": 144,
 "index_data": PackedByteArray("GgAbABwAGgAdABsAHgAfACAAHgAhAB8AIgAjACQAIgAlACMAEwAOACYAJgAOACcAEwAUAA4AJgAnABIAEgAUABMAEgAnABQAKAApACoAKAArACkACAAsAAcACAAEACwALQAIAAcABAAFACwALQAHAAUABAAtAAUALgAvADAALgAxAC8AMgAZADMAMgA0ABkANQAQADYANQAGABAANwAJADgANwA5AAkAFQA6ABcAFQA7ADoAAAA8AAIAAAA9ADwADAA+AD8ADABAAD4AQQBCABgAQQBDAEIADwBEABEADwBFAEQACgBGAAsACgBHAEYASAAWAEkASABKABYASwABAEwASwADAAEATQANAE4ATQBPAA0AUABRAFIAUABTAFEA"),
 "lods": [0.0266818, PackedByteArray("AAABAAIAAAADAAEABAAFAAIABAAGAAUABgAHAAUACAAEAAIACAACAAcABgAIAAcACQAKAAQACgAJAAsADAANAAcADAAOAA0ADwAGABAAEAARAA8AEQAOAAMAEQADABIAEwAOABEAEgADABQAEwAUAA4AEgAUABMAFQAUABYAFQAWABcAEwAIABgACAAZABgA")],
-"material": SubResource("StandardMaterial3D_4htip"),
+"material": ExtResource("1_liedo"),
 "name": "Material.001",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -72,7 +66,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("CgQAAOj81F30+///xv1MYvT7AADo/NRdCgT//8b9TGJV+AAArfoAAAoEAADo/P+/qQcAAK36S+L/fwAATgX/v/9/AABMCv+//38AAEwKQBdV+P//ivsIRv9///8qCwhG9PsAAOj8gdH/f///KwZ87/T7///G/f//qQf//4r71N1V+AAArfpL4lX4//+K+9TdqQf//4r7/z//f///Kgv///9///8rBv8//38AAE4FtxEKBP//xv23LwoEAADo/LcRqQf//4r7c+epBwAArfrguQAA01Ct/4t7//8rr///i3v//9NQrf+LewAAK6///4t7///TUK3/BeL/fyqvUQAF4v9/1FAAAAXi//8rr///BeKzC9NQdPgPyv9/Kq94EA/K/3/UUCYQD8qzCyuvxfgPylX4//+K+///CgT//8b9/z//f9RQJhA1M0v0K6/F+DUzS/TTUHT4NTP/fyqveBA1M/T7AADo/AAAqQcAAK36/79L9NNQdPiK+7MLK6/F+Ir7swvTUHT4ivtL9CuvxfiK+/9/1FAmEOC5swvTUHT44Ln/fwAATArgubML01B0+EviS/TTUHT4S+JL9NNQdPhAF/9/1FAmEEAXVfgAAK36QBcAANNQrf+3Ef9/1FAAALcR///TUK3/1F0AANNQrf/UXf9/1FAAAIHR/38AAE4FgdH//9NQrf+B0f9///8qC3Pnswsrr8X4c+f/fyqveBBz50v0K6/F+NTdswsrr8X41N3/fyqveBAIRkv0K6/F+AhG/38qr1EAty8AACuv//+3L/9///8rBrcvAAArr///TGL//yuv//9MYv//K6///3zv/38qr1EAfO/0+///xv187/9/1FAAABkgAAArr///GiAAANNQrf8aIP9/Kq9RABkgAAD/f////38AAP9/////f/9//z8AAP9/AAD/fwAA/38AAP9/NdH27sLlUL7C5VC+5x1ZTPE8oBb/vwAA////fwAA/3////9//v//f/9//7/+//9/LsMs6PbiyrEuwyzori0/EuAYU0QAAP9/AAD/fwAA/38AAP9/lzFvL5cxby+XMW8vlzFvL5Mi5ySTIuckkyLnJJMi5yT/vwAA/v//f9HbGd7R2xre0dsa3tHbGd7/f/8/AAD/f////3////9/////f////3/gGFNE4BhTROAYU0QAAP9/AAD/fzXR9u410fbuNdH27i7DLOguwyzoAAD/fwAA/3/nHVlM5x1ZTOcdWUyuLT8Sri0/Eq4tPxL///9/////f8LlUL7C5VC+9eLKsfbiyrH14sqx////f////3/xPKAW8TygFvE8oBbTz6LN08+izdPPos3Tz6LN")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_kvsat")
+shadow_mesh = SubResource("ArrayMesh_dmci1")
 
 [node name="Glider" type="Node3D"]
 
@@ -81,10 +75,10 @@ transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="triangle" type="MeshInstance3D" parent="glider"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("ArrayMesh_dmci1")
+mesh = SubResource("ArrayMesh_1thoc")
 skeleton = NodePath("")
 
 [node name="armature" type="MeshInstance3D" parent="glider"]
 transform = Transform3D(0.35, 0, 0, 0, -0.086824, -0.492404, 0, 0.492404, -0.086824, 0, 1, -0.2)
-mesh = SubResource("ArrayMesh_o5e28")
+mesh = SubResource("ArrayMesh_kvsat")
 skeleton = NodePath("")

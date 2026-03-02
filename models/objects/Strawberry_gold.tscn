@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://byb75deu31wf" path="res://models/objects/strawberry.gd" id="1_m3eim"]
 [ext_resource type="Material" uid="uid://cn0jv2rmeysj2" path="res://materials/gold_2/gold_material.tres" id="2_m3eim"]
 [ext_resource type="Texture2D" uid="uid://lj1t2k8jwutk" path="res://models/strawberry_leaf_palette_v2.png" id="3_mpydy"]
-[ext_resource type="Material" uid="uid://d4a1363ukbmjf" path="res://materials/Material.004.tres" id="4_5rhpl"]
+[ext_resource type="Material" uid="uid://d4a1363ukbmjf" path="res://materials/leaf_palette_material.tres" id="4_5rhpl"]
 [ext_resource type="Texture2D" uid="uid://dgr8ortdpxm1q" path="res://images/star.png" id="5_va2pb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvm1h"]

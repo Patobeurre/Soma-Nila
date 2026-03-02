@@ -1,11 +1,11 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d4a1363ukbmjf"]
 
-[ext_resource type="Texture2D" uid="uid://lj1t2k8jwutk" path="res://models/strawberry_leaf_palette_v2.png" id="1_7hmne"]
+[ext_resource type="Texture2D" uid="uid://lj1t2k8jwutk" path="res://models/strawberry_leaf_palette_v2.png" id="1_35shi"]
 
 [resource]
 resource_name = "Material.004"
 cull_mode = 2
-albedo_texture = ExtResource("1_7hmne")
+albedo_texture = ExtResource("1_35shi")
 roughness = 0.6
 emission = Color(0.362829, 0.362829, 0.362829, 1)
 emission_energy_multiplier = 1.82
