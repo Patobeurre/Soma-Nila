@@ -36,7 +36,7 @@ func fill_used_abilities() -> void:
 			used_abilities_container.add_child(obj)
 			obj.init(ability)
 	
-	if used_abilities_container.get_children().is_empty():
+	if used_abilities_container.get_children().size() <= 1:
 		no_item_used_label.visible = true
 
 

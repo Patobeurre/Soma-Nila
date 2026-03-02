@@ -28,6 +28,7 @@ func _ready() -> void:
 	SignalBus.use_rope_requested.connect(player.rope_ability_requested)
 	SignalBus.use_bubble_requested.connect(player.bubble_ability_requested)
 	SignalBus.use_glide_requested.connect(player.glide_ability_requested)
+	SignalBus.use_jetpack_requested.connect(player.jetpack_ability_requested)
 	SignalBus.fruit_picked.connect(_on_fruit_picked)
 	SignalBus.enter_level_portal.connect(_on_enter_level_portal)
 
@@ -123,12 +124,13 @@ func center_layer(layer :TerrainGenerationNode) -> void:
 func load_abilities() -> void:
 	var abilities = []
 	if !preloaded_abilities.is_empty():
-		for preloaded_ability in preloaded_abilities:
-			var ability :StateRes = preloaded_ability.ability.duplicate(true)
+		for preloaded_ability :AbilityStats in preloaded_abilities:
+			var ability :StateRes = preloaded_ability.to_state_res()
 			ability.initial_amount = preloaded_ability.amount_used
 			abilities.append(ability)
 	else:
-		abilities = SaveManager.save_game_res.remaining_abilities.remaining_abilities
+		abilities = SaveManager.save_game_res.remaining_abilities.to_state_res()
+	await get_tree().create_timer(5)
 	ability_selector.populate(abilities)
 	ability_selector.set_selected_ability(0)
 

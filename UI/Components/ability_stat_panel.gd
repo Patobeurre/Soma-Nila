@@ -10,5 +10,5 @@ class_name AbilityStatPanel
 
 func init(res :AbilityStats):
 	abilityStat = res
-	iconButton.texture = abilityStat.ability.icon
+	iconButton.texture = abilityStat.to_state_res().icon
 	amountTxt.text = " " + str(abilityStat.amount_used) + " "

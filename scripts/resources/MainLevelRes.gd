@@ -22,14 +22,3 @@ func restart():
 	abilitiesSettings.init(seed)
 	terrainSettings.init(seed)
 
-
-static func from_level_stats(levelStats :LevelStats) -> MainLevelRes:
-	var level_res = MainLevelRes.new()
-	
-	level_res.isCustom = true
-	level_res.seed = levelStats.seed
-	level_res.useRandomSeed = false
-	
-	level_res.abilitiesSettings.excluded_abilities = levelStats.excluded_abilities
-	
-	return level_res

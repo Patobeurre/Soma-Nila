@@ -40,7 +40,8 @@ func _on_level_clicked(stats :LevelStats) -> void:
 	level_res.isCustom = true
 	level_res.seed = stats.seed
 	level_res.useRandomSeed = false
-	level_res.abilitiesSettings.excluded_abilities = stats.excluded_abilities
+	for excluded_ability in stats.excluded_abilities:
+		level_res.abilitiesSettings.excluded_abilities.append(excluded_ability.to_state_res(false))
 	
 	Global.main_level_res = level_res
 	Global.main_level_res.init()

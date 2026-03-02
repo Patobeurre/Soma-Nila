@@ -22,3 +22,7 @@ func set_amount(new_amount :int):
 func add(other :StateRes):
 	initial_amount += other.initial_amount
 	weights.add(other.weights)
+
+
+func _to_string() -> String:
+	return name

@@ -32,12 +32,16 @@ func set_selected(new_idx :int) -> void:
 		selected_item_changed.emit(selectedItemIdx)
 
 func previous():
+	if !items.size():
+		return
 	if selectedItemIdx > 0:
 		set_selected(selectedItemIdx - 1)
 	elif isCircular:
 		set_selected(items.size() - 1)
 
 func next():
+	if !items.size():
+		return
 	if isCircular:
 		set_selected((selectedItemIdx + 1) % items.size())
 	elif selectedItemIdx < items.size() - 1:
@@ -45,4 +49,6 @@ func next():
 
 
 func get_selected_item():
+	if selectedItemIdx >= items.size() or selectedItemIdx < 0:
+		return null
 	return items[selectedItemIdx]

@@ -16,7 +16,7 @@ metadata/_custom_type_script = "uid://nfw2fpi2r2fs"
 [resource]
 script = ExtResource("3_jxloa")
 stateName = "nailGunState"
-name = "PROJ_NAIL"
+name = "PROJ_GLUE"
 icon = ExtResource("1_1ko7g")
 res = ExtResource("2_1ko7g")
 initial_amount = 10

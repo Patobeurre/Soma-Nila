@@ -44,7 +44,7 @@ func pick_random_abilities():
 			var ability = available_abilities[idx]
 			if allowSameAbilities or not picked_abilities.has(ability):
 				picked_abilities.append(ability)
-	
+
 	var duplicated_abilities = get_duplicated_abilities()
 	
 	SignalBus.abilities_setup.emit(duplicated_abilities)

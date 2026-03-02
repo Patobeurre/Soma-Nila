@@ -53,9 +53,6 @@ func _ready() -> void:
 	isFruitTaken = false
 	level_sm.transition(disabled_state)
 	
-	#isFruitTaken = false
-	#player.set_enable(false)
-	
 	level_stats = LevelStats.new()
 	
 	if Global.main_level_res:
@@ -213,10 +210,14 @@ func end_level():
 	SaveManager.save_game_res.progress_variables.nb_level_completed += 1
 	SaveManager.save_game_res.remaining_abilities.add_all(remaining_abilities)
 	SignalBus.save_requested.emit()
+
+	level_stats.game_version = SaveManager.save_game_res.VERSION
 	level_stats.set_used_abilities_from_remainings(remaining_abilities)
 	level_stats.completionTime = currentTimer
 	level_stats.seed = level_res.seed
-	level_stats.excluded_abilities = level_res.abilitiesSettings.excluded_abilities
+	for excluded_ability in level_res.abilitiesSettings.excluded_abilities:
+		level_stats.excluded_abilities.append(AbilityStats.create(excluded_ability))
+		
 	Global.current_level_stats = level_stats
 	Global.game_controller.end_level_transition()
 

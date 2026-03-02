@@ -13,6 +13,7 @@ var isSelected :bool = false
 
 func init(new_res :StateRes) -> void:
 	res = new_res
+	await get_tree().create_timer(5)
 	image.texture = res.icon
 	bind()
 	enable(true)

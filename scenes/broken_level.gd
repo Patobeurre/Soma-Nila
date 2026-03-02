@@ -43,6 +43,7 @@ func _ready() -> void:
 	SignalBus.use_rope_requested.connect(player.rope_ability_requested)
 	SignalBus.use_bubble_requested.connect(player.bubble_ability_requested)
 	SignalBus.use_glide_requested.connect(player.glide_ability_requested)
+	SignalBus.use_jetpack_requested.connect(player.jetpack_ability_requested)
 	SignalBus.fruit_picked.connect(_on_fruit_picked)
 	SignalBus.enter_level_portal.connect(_on_enter_level_portal)
 	SignalBus.terminal_cam_transition_requested.connect(_on_terminal_interaction_request)
@@ -211,12 +212,17 @@ func _on_enter_level_portal() -> void:
 func end_level():
 	AudioBus.play_sfx("PORTAL_IN")
 	var remaining_abilities = abilitySelector.items.items
+	SaveManager.save_game_res.progress_variables.nb_level_completed += 1
 	SaveManager.save_game_res.remaining_abilities.add_all(remaining_abilities)
 	SignalBus.save_requested.emit()
+
+	level_stats.game_version = SaveManager.save_game_res.VERSION
 	level_stats.set_used_abilities_from_remainings(remaining_abilities)
 	level_stats.completionTime = currentTimer
 	level_stats.seed = level_res.seed
-	level_stats.excluded_abilities = level_res.abilitiesSettings.excluded_abilities
+	for excluded_ability in level_res.abilitiesSettings.excluded_abilities:
+		level_stats.excluded_abilities.append(AbilityStats.create(excluded_ability))
+	
 	Global.current_level_stats = level_stats
 	Global.game_controller.end_level_transition()
 

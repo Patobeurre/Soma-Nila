@@ -1,11 +1,11 @@
 extends Resource
 class_name SaveGameStats
 
-const SAVE_GAME_PATH := "user://save"
+const SAVE_GAME_PATH := "user://saved_data"
 
 var VERSION :String = "1.1"
 
-@export var current_version :String = "0"
+@export var saved_version :String = "0"
 @export var favorite_levels :SavedLevelStats = SavedLevelStats.new()
 @export var remaining_abilities :RemainingAbilitiesStats = RemainingAbilitiesStats.new()
 @export var progress_variables :ProgressVariablesStats = ProgressVariablesStats.new()
@@ -24,7 +24,7 @@ static func save_exists() -> bool:
 static func load_savegame() -> Resource:
 	var save_path := get_save_path()
 	var save_res = ResourceLoader.load(save_path)
-	#ToDo:
+	#ToDo: apply patch ?
 	return save_res
 
 

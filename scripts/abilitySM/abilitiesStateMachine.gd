@@ -33,6 +33,9 @@ func _physics_process(delta: float):
 
 
 func transition(stateRes :StateRes):
+	if stateRes == null:
+		return
+	
 	#manage the transition from one state to another
 	var newState = states.get(stateRes.stateName.to_lower())
 	if !newState: return
