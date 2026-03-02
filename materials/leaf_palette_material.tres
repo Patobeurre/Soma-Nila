@@ -6,6 +6,6 @@
 resource_name = "Material.004"
 cull_mode = 2
 albedo_texture = ExtResource("1_35shi")
-roughness = 0.6
+roughness = 0.7
 emission = Color(0.362829, 0.362829, 0.362829, 1)
 emission_energy_multiplier = 1.82

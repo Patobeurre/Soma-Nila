@@ -6,6 +6,7 @@ static var employees :Dictionary = {
 	'Inaya' : 0000,
 	'David' : 153269,
 	'Keren' : 881544,
+	'Amandine': 7347
 }
 
 @export var written_by :String
