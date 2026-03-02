@@ -48,3 +48,4 @@ current = true
 
 [node name="GoldenFruit" parent="." instance=ExtResource("6_hu8sw")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 40, 20, 39)
+visible = false

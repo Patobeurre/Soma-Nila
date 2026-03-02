@@ -155,6 +155,6 @@ func _on_enter_level_portal() -> void:
 
 func end_level():
 	AudioBus.play_sfx("PORTAL_IN")
-	SaveManager.save_game_res.progress_variables.broken_level_found = true
+	SaveManager.save_game_res.progress_variables.secret_level_completed = true
 	SignalBus.save_requested.emit()
 	Global.game_controller.return_to_main_menu()
