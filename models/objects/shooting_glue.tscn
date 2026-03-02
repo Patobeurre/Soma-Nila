@@ -53,11 +53,11 @@ max_contacts_reported = 1
 script = ExtResource("1_yx3i3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.50129, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.654303, -1)
 shape = SubResource("SphereShape3D_1lo33")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(0.596315, 0.241836, -0.765457, 0.0316002, 0.945732, 0.323409, 0.802128, -0.217042, 0.556312, -0.559864, -0.439219, -0.0880174)
+transform = Transform3D(0.596315, 0.241836, -0.765457, 0.0316002, 0.945732, 0.323409, 0.802128, -0.217042, 0.556312, -0.559864, -0.592232, -1.08802)
 collision_layer = 4160
 collision_mask = 2
 
@@ -72,7 +72,7 @@ shape = SubResource("ConvexPolygonShape3D_yx3i3")
 disabled = true
 
 [node name="OverlappingArea3D" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.50129, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.654303, -1)
 collision_layer = 64
 collision_mask = 2
 

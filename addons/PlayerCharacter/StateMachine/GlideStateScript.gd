@@ -2,7 +2,7 @@ extends State
 
 class_name GlideState
 
-var stateName : String = "Inair"
+var stateName : String = "Glide"
 
 var cR : CharacterBody3D
 
@@ -61,6 +61,9 @@ func inputManagement():
 	
 	if cR.isBubbleAbilityRequested:
 		transitioned.emit(self, "BubbleState")
+	
+	if cR.isJetpackAbilityRequested:
+		transitioned.emit(self, "JetpackState")
 	
 	if Input.is_action_just_pressed(cR.jumpAction):
 		transitioned.emit(self, "IdleState")

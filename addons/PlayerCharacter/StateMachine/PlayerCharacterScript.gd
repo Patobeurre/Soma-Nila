@@ -114,6 +114,13 @@ var isBubbleAbilityRequested : bool = false
 var glideCooldownRef : float
 var isGlideAbilityRequested : bool = false
 
+@export_group("Jetpack variables")
+@export var jetpackAirMoveSpeed : float = 3.0
+@export var jetpackBoostSpeed : float = 30.0
+@export var jetpackBoostAccel : float = 2.0
+@export var jetpackBoostDeccel : float = 5.0
+var isJetpackAbilityRequested : bool = false
+
 @export_group("Climb Stair variables")
 @export var MIN_STAIR_HEIGHT :float = 0.1
 @export var MAX_STAIR_HEIGHT :float = 1.0
@@ -343,6 +350,10 @@ func check_climb_state_transition() -> bool:
 func applyExternalForce(force :Vector3) -> void:
 	velocity += force
 
+func apply_jetpack_force(delta :float):
+	velocity.y = lerp(velocity.y, jetpackBoostSpeed, jetpackBoostAccel * delta)
+
+
 func rope_ability_requested() -> void:
 	if isRopeAbilityRequested == true:
 		return
@@ -371,6 +382,9 @@ func glide_ability_requested() -> void:
 		return
 	if (stateMachine.currStateName != "Glide"):
 		isGlideAbilityRequested = true
+
+func jetpack_ability_requested(state :bool) -> void:
+	isJetpackAbilityRequested = state
 
 
 func displayProperties():

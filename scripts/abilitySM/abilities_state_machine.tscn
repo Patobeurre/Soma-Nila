@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=3 uid="uid://c32svoku0jbdb"]
+
+[ext_resource type="Script" uid="uid://b547cpm41w7bl" path="res://scripts/abilitySM/abilitiesStateMachine.gd" id="1_l77j0"]
+[ext_resource type="Script" uid="uid://c5acafh0ipy6i" path="res://scripts/abilitySM/disabled_state.gd" id="2_abfdx"]
+[ext_resource type="Script" uid="uid://b0jtp3tmda0di" path="res://scripts/abilitySM/placeObjectState.gd" id="3_5wp8t"]
+[ext_resource type="Script" uid="uid://j5sm77711or0" path="res://scripts/abilitySM/triggerRopeState.gd" id="4_qithm"]
+[ext_resource type="Script" uid="uid://da5mv6ipujgu5" path="res://scripts/abilitySM/nailGunState.gd" id="5_axsma"]
+[ext_resource type="Script" uid="uid://c6sdqcj4kng1n" path="res://scripts/abilitySM/triggerGliderState.gd" id="6_5n7yf"]
+[ext_resource type="Script" uid="uid://ck2jp3n5is15g" path="res://scripts/abilitySM/moveObjectState.gd" id="7_ko7nq"]
+[ext_resource type="Script" uid="uid://dkomlreu8sh51" path="res://scripts/abilitySM/triggerJetpackState.gd" id="8_5xrpl"]
+
+[node name="AbilitiesStateMachine" type="Node" node_paths=PackedStringArray("initialState")]
+script = ExtResource("1_l77j0")
+initialState = NodePath("DisabledState")
+
+[node name="DisabledState" type="Node" parent="."]
+script = ExtResource("2_abfdx")
+
+[node name="PlaceObjectState" type="Node" parent="."]
+script = ExtResource("3_5wp8t")
+
+[node name="TriggerRopeState" type="Node" parent="."]
+script = ExtResource("4_qithm")
+
+[node name="NailGunState" type="Node" parent="."]
+script = ExtResource("5_axsma")
+
+[node name="TriggerGlideState" type="Node" parent="."]
+script = ExtResource("6_5n7yf")
+
+[node name="MoveObjectState" type="Node" parent="."]
+script = ExtResource("7_ko7nq")
+
+[node name="TriggerJetpackState" type="Node" parent="."]
+script = ExtResource("8_5xrpl")

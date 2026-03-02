@@ -56,6 +56,9 @@ func inputManagement(delta :float):
 	if cR.isBubbleAbilityRequested:
 		transitioned.emit(self, "BubbleState")
 	
+	if cR.isJetpackAbilityRequested:
+		transitioned.emit(self, "JetpackState")
+
 	if Input.is_action_just_pressed(cR.jumpAction):
 		if cR.checkStamina(cR.jumpStaminaConsumption):
 			transitioned.emit(self, "JumpState")

@@ -24,6 +24,8 @@ signal exit_rope_state
 signal use_bubble_requested(pos :Vector3)
 signal use_glide_requested
 signal glide_state_performed
+signal use_jetpack_requested(bool)
+signal jetpack_state_performed
 
 signal enter_redirect_area
 

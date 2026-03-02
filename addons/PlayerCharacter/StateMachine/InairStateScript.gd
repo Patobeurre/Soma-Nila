@@ -55,6 +55,9 @@ func inputManagement():
 	if cR.isGlideAbilityRequested:
 		transitioned.emit(self, "GlideState")
 	
+	if cR.isJetpackAbilityRequested:
+		transitioned.emit(self, "JetpackState")
+	
 	if Input.is_action_just_pressed(cR.jumpAction):
 		if !cR.nbJumpsInAirAllowed < 0 and !cR.isJumping and cR.checkStamina(cR.jumpStaminaConsumption):
 			#check if can jump buffer

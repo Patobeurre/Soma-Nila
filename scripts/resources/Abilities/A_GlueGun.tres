@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="StateRes" load_steps=6 format=3 uid="uid://b3boxo6jdc304"]
 
-[ext_resource type="Texture2D" uid="uid://bbx8ohfloukq0" path="res://images/UI/input/Keyboard & Mouse/Double/keyboard_0.png" id="1_1ko7g"]
+[ext_resource type="Texture2D" uid="uid://ci5xe3xkebghy" path="res://images/ability_icons/glue.png" id="1_1ko7g"]
 [ext_resource type="Resource" uid="uid://dyhkitr7bwd6r" path="res://scripts/resources/ThrowableObjects/GlueProjectile.tres" id="2_1ko7g"]
 [ext_resource type="Script" uid="uid://djw557ek5251m" path="res://scripts/resources/StateRes.gd" id="3_jxloa"]
 [ext_resource type="Script" uid="uid://nfw2fpi2r2fs" path="res://scripts/resources/AbilityWeights.gd" id="4_jopwp"]

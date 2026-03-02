@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cutypy26ocs14"]
+[gd_scene load_steps=20 format=3 uid="uid://cutypy26ocs14"]
 
 [ext_resource type="Script" uid="uid://buvvmrus27ff6" path="res://scenes/broken_level.gd" id="1_76itn"]
 [ext_resource type="Environment" uid="uid://evgf73em6ceg" path="res://scripts/resources/Environments/main_level_env.tres" id="3_ntptm"]
@@ -13,13 +13,7 @@
 [ext_resource type="Resource" uid="uid://cpwo1qcqlbqmq" path="res://scripts/resources/Abilities/A_MovingPlatformH.tres" id="11_g1mx4"]
 [ext_resource type="Resource" uid="uid://b5b2qo7efvqeg" path="res://scripts/resources/Abilities/A_FlatJumpPath.tres" id="12_34enl"]
 [ext_resource type="Script" uid="uid://djrr832cj7vjl" path="res://scripts/utils/item_list_selector.gd" id="13_5nj6j"]
-[ext_resource type="Script" uid="uid://b547cpm41w7bl" path="res://scripts/abilitySM/abilitiesStateMachine.gd" id="14_p74ho"]
-[ext_resource type="Script" uid="uid://c5acafh0ipy6i" path="res://scripts/abilitySM/disabled_state.gd" id="15_pgh40"]
-[ext_resource type="Script" uid="uid://b0jtp3tmda0di" path="res://scripts/abilitySM/placeObjectState.gd" id="16_aw1e0"]
-[ext_resource type="Script" uid="uid://j5sm77711or0" path="res://scripts/abilitySM/triggerRopeState.gd" id="17_wtndq"]
-[ext_resource type="Script" uid="uid://da5mv6ipujgu5" path="res://scripts/abilitySM/nailGunState.gd" id="18_g0ud6"]
-[ext_resource type="Script" uid="uid://c6sdqcj4kng1n" path="res://scripts/abilitySM/triggerGliderState.gd" id="19_rdfhd"]
-[ext_resource type="Script" uid="uid://ck2jp3n5is15g" path="res://scripts/abilitySM/moveObjectState.gd" id="20_h4d85"]
+[ext_resource type="PackedScene" uid="uid://c32svoku0jbdb" path="res://scripts/abilitySM/abilities_state_machine.tscn" id="14_y8dx2"]
 [ext_resource type="Script" uid="uid://ciubcnmrvfqsa" path="res://scripts/levelSM/level_state_machine.gd" id="22_xhxx6"]
 [ext_resource type="Script" uid="uid://tq6g3r851271" path="res://scripts/levelSM/playing_state.gd" id="23_unbny"]
 [ext_resource type="Script" uid="uid://cylv7d473wwqy" path="res://scripts/levelSM/interacting_state.gd" id="24_geqew"]
@@ -75,27 +69,7 @@ items = SubResource("Resource_rfl2w")
 prevAction = "wheelDown"
 nextAction = "wheelUp"
 
-[node name="AbilitiesStateMachine" type="Node" parent="." node_paths=PackedStringArray("initialState")]
-script = ExtResource("14_p74ho")
-initialState = NodePath("DisabledState")
-
-[node name="DisabledState" type="Node" parent="AbilitiesStateMachine"]
-script = ExtResource("15_pgh40")
-
-[node name="PlaceObjectState" type="Node" parent="AbilitiesStateMachine"]
-script = ExtResource("16_aw1e0")
-
-[node name="TriggerRopeState" type="Node" parent="AbilitiesStateMachine"]
-script = ExtResource("17_wtndq")
-
-[node name="NailGunState" type="Node" parent="AbilitiesStateMachine"]
-script = ExtResource("18_g0ud6")
-
-[node name="TriggerGlideState" type="Node" parent="AbilitiesStateMachine"]
-script = ExtResource("19_rdfhd")
-
-[node name="MoveObjectState" type="Node" parent="AbilitiesStateMachine"]
-script = ExtResource("20_h4d85")
+[node name="AbilitiesStateMachine" parent="." instance=ExtResource("14_y8dx2")]
 
 [node name="LevelSM" type="Node" parent="."]
 script = ExtResource("22_xhxx6")

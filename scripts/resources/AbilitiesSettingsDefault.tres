@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AbilitiesSettings" load_steps=14 format=3 uid="uid://cljdvb30r64rh"]
+[gd_resource type="Resource" script_class="AbilitiesSettings" load_steps=15 format=3 uid="uid://cljdvb30r64rh"]
 
 [ext_resource type="Script" uid="uid://c8tmwhrxvsyuv" path="res://scripts/resources/AbilitiesSettings.gd" id="1_8rvhm"]
 [ext_resource type="Resource" uid="uid://ch4cg6xi7dtwp" path="res://scripts/resources/Abilities/A_Bumper.tres" id="1_lvyy7"]
@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://dsuiviuhxbwso" path="res://scripts/resources/Abilities/A_MovingPlatformV.tres" id="10_msdn0"]
 [ext_resource type="Resource" uid="uid://bqce2xtko43a4" path="res://scripts/resources/Abilities/A_MoveObjects.tres" id="11_rqq7s"]
 [ext_resource type="Resource" uid="uid://b3boxo6jdc304" path="res://scripts/resources/Abilities/A_GlueGun.tres" id="12_xhyuk"]
+[ext_resource type="Resource" uid="uid://di20wh18jrsoy" path="res://scripts/resources/Abilities/A_Jetpack.tres" id="13_uh8oc"]
 
 [resource]
 script = ExtResource("1_8rvhm")
@@ -20,6 +21,6 @@ seed = -1
 useRandomSeed = true
 nb_abilities_max = 3
 allowSameAbilities = true
-all_abilities = Array[ExtResource("1_shdal")]([ExtResource("8_rfdri"), ExtResource("1_lvyy7"), ExtResource("2_6nmsm"), ExtResource("7_boxxr"), ExtResource("3_boxxr"), ExtResource("4_rfdri"), ExtResource("6_6nmsm"), ExtResource("5_xoibf"), ExtResource("10_msdn0"), ExtResource("11_rqq7s"), ExtResource("12_xhyuk")])
+all_abilities = Array[ExtResource("1_shdal")]([ExtResource("8_rfdri"), ExtResource("1_lvyy7"), ExtResource("2_6nmsm"), ExtResource("7_boxxr"), ExtResource("3_boxxr"), ExtResource("4_rfdri"), ExtResource("6_6nmsm"), ExtResource("5_xoibf"), ExtResource("10_msdn0"), ExtResource("11_rqq7s"), ExtResource("12_xhyuk"), ExtResource("13_uh8oc")])
 excluded_abilities = Array[ExtResource("1_shdal")]([])
 metadata/_custom_type_script = "uid://c8tmwhrxvsyuv"

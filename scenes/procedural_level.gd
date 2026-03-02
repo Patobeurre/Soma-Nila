@@ -44,6 +44,7 @@ func _ready() -> void:
 	SignalBus.use_rope_requested.connect(player.rope_ability_requested)
 	SignalBus.use_bubble_requested.connect(player.bubble_ability_requested)
 	SignalBus.use_glide_requested.connect(player.glide_ability_requested)
+	SignalBus.use_jetpack_requested.connect(player.jetpack_ability_requested)
 	SignalBus.fruit_picked.connect(_on_fruit_picked)
 	SignalBus.enter_level_portal.connect(_on_enter_level_portal)
 	SignalBus.terminal_cam_transition_requested.connect(_on_terminal_interaction_request)

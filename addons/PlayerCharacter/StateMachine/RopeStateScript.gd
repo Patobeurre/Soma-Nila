@@ -50,6 +50,9 @@ func inputManagement():
 	
 	if cR.isBubbleAbilityRequested:
 		transitioned.emit(self, "BubbleState")
+	
+	if cR.isJetpackAbilityRequested:
+		transitioned.emit(self, "JetpackState")
 
 
 func checkConditions():

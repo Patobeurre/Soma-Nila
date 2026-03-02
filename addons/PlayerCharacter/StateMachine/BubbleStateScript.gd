@@ -31,6 +31,9 @@ func inputManagement():
 	if cR.isClimbAreaAbilityRequested:
 		transitioned.emit(self, "ClimbAreaState")
 	
+	if cR.isJetpackAbilityRequested:
+		transitioned.emit(self, "JetpackState")
+	
 	if Input.is_action_just_pressed(cR.jumpAction):
 		cR.velocity = Vector3.ZERO
 		var pushForce = Global.player_camera_orientation * cR.bubblePushForce

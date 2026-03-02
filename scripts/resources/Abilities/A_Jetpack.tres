@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="StateRes" load_steps=5 format=3 uid="uid://di20wh18jrsoy"]
+
+[ext_resource type="Texture2D" uid="uid://hsd2n2nmcl7l" path="res://images/ability_icons/jetpack.png" id="1_ui0i1"]
+[ext_resource type="Script" uid="uid://djw557ek5251m" path="res://scripts/resources/StateRes.gd" id="1_uluy0"]
+[ext_resource type="Script" uid="uid://nfw2fpi2r2fs" path="res://scripts/resources/AbilityWeights.gd" id="3_ui0i1"]
+
+[sub_resource type="Resource" id="Resource_jkngj"]
+script = ExtResource("3_ui0i1")
+pointUp = 2.0
+pointDown = 0.0
+pointFar = 0.0
+pointSpread = -1.0
+metadata/_custom_type_script = "uid://nfw2fpi2r2fs"
+
+[resource]
+script = ExtResource("1_uluy0")
+stateName = "triggerJetpackState"
+name = "A_JETPACK"
+icon = ExtResource("1_ui0i1")
+initial_amount = 20
+weights = SubResource("Resource_jkngj")
+metadata/_custom_type_script = "uid://djw557ek5251m"
