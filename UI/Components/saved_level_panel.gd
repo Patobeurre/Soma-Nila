@@ -43,6 +43,7 @@ func _on_level_clicked(stats :LevelStats) -> void:
 	for excluded_ability in stats.excluded_abilities:
 		level_res.abilitiesSettings.excluded_abilities.append(excluded_ability.to_state_res(false))
 	
+	Global.current_level_stats = stats
 	Global.main_level_res = level_res
 	Global.main_level_res.init()
 	Global.game_controller.start_new_game()

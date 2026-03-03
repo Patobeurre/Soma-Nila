@@ -172,6 +172,7 @@ theme_override_constants/margin_top = 10
 [node name="TimerTxt" type="RichTextLabel" parent="MarginContainer3"]
 visible = false
 layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/normal_font_size = 60
 text = "00.00"

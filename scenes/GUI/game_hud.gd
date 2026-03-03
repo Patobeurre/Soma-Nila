@@ -9,6 +9,8 @@ extends Control
 
 @onready var abilitySelectorIconScene = preload("res://UI/Components/AbilitySelectorIcon.tscn")
 
+var level_best_time :float = 0
+
 
 func _ready() -> void:
 	
@@ -22,6 +24,7 @@ func _ready() -> void:
 	
 	if ProjectSettings.get_setting("custom/speedrun_mode"):
 		timerTxt.visible = true
+		level_best_time = Global.current_level_stats.completionTime
 		SignalBus.level_timer_updated.connect(_display_timer)
 
 
@@ -30,10 +33,6 @@ func _clear_ability_container() -> void:
 	for child in abilitiesContainer.get_children():
 		child.unbind()
 		child.queue_free()
-
-
-func _process(delta: float) -> void:
-	pass
 
 
 func instantiate_ability_panel(ability :StateRes) -> void:
@@ -60,6 +59,8 @@ func _on_abilities_changed(abilities :Array) -> void:
 
 func _display_timer(time :float):
 	timerTxt.text = Utils.seconds2hhmmss(time, true)
+	if time > level_best_time and level_best_time > 0:
+		timerTxt.add_theme_color_override("default_color", Color.RED)
 
 
 func _display_arrow_reticle(enabled :bool) -> void:
