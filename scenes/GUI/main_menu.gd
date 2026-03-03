@@ -3,11 +3,13 @@ class_name MainMenu
 
 @onready var btn_new_game = $MarginContainer/PanelContainer/VBoxContainer/BtnNewGame
 @onready var credits_container = $CreditsContainer
+@onready var game_version_label = $MarginContainer/PanelContainer/VBoxContainer/GameVersionTxt
 
 
 func _ready() -> void:
 	btn_new_game.grab_focus()
 	credits_container.visible = false
+	game_version_label.text = "version " + SaveManager.save_game_res.VERSION
 
 
 func _process(delta: float) -> void:

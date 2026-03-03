@@ -308,6 +308,19 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_aqj16")
 text = "TITLE_QUIT"
 expand_icon = true
 
+[node name="GameVersionTxt" type="RichTextLabel" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_h03jd")
+theme_override_colors/font_outline_color = Color(0.0923971, 0.0923971, 0.0923971, 1)
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/normal_font_size = 25
+text = "VERSION"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 2
