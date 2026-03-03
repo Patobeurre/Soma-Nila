@@ -95,7 +95,7 @@ func _update_placeholder_position() -> void:
 	var origin :Vector3 = Global.player_global_pos
 	var end :Vector3 = new_position
 	
-	var query = PhysicsRayQueryParameters3D.create(origin, end, 1)
+	var query = PhysicsRayQueryParameters3D.create(origin, end, 1 + 64)
 	var result = space_state.intersect_ray(query)
 	
 	if not result.is_empty():
