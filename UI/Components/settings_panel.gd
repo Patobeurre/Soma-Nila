@@ -187,7 +187,6 @@ func _on_camera_fovh_slider_value_changed(value :float) -> void:
 
 func _init_camera_fov():
 	fov_slider.value = ProjectSettings.get_setting("rendering/camera/depth_of_field/fov")
-	print("FOV : " + str(fov_slider.value))
 	_update_camera_fov_value()
 
 func _update_camera_fov_value():
