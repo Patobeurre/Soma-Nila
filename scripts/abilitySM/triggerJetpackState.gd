@@ -19,6 +19,10 @@ func enter(res : Variant):
 	amount = stateRes.amount
 
 
+func exit():
+	SignalBus.use_jetpack_requested.emit(false)
+
+
 func physics_update(delta : float):
 	if stateRes.amount > 0:
 		inputManagement(delta)
