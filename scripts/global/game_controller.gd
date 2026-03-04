@@ -27,6 +27,7 @@ func _init_new_level_resource():
 	level_res.terrainSettings.noiseParams = noise_params.duplicate(true)
 	level_res.terrainSettings.tileGenSettings = tile_gen_settings.duplicate(true)
 	level_res.init()
+	Global.current_level_stats = LevelStats.new()
 	Global.main_level_res = level_res
 
 
