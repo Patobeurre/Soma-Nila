@@ -74,6 +74,7 @@ func perform_drag() -> void:
 	#await tile_bloc.deactivate_collision(true)
 	#tile_bloc.reparent.call_deferred(parentNode.map_node)
 	isDragging = true
+	AudioBus.play_sfx("MOVE_OBJECT_START")
 
 func release_drag() -> void:
 	#var tile_bloc = collisionResult.collider.get_parent()
@@ -82,6 +83,7 @@ func release_drag() -> void:
 	isDragging = false
 	clearCollisionResult()
 	stateRes.set_amount(stateRes.amount - 1)
+	AudioBus.play_sfx("MOVE_OBJECT_END")
 
 
 func drag_object() -> void:

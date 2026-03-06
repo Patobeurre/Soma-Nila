@@ -21,4 +21,5 @@ func _on_body_entered(body: Node) -> void:
 		obj.set_wallNormal(_local_collision_normal)
 		obj.global_position = _local_collision_position
 		obj.look_at(obj.global_position - obj.wallNormal)
+		AudioBus.play_sfx("NAILS_ON_WALL")
 	queue_free()

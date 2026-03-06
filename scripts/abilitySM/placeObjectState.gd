@@ -48,6 +48,23 @@ func perform() -> void:
 	obj.rotate_y(deg_to_rad(180))
 	obj.scale = stateRes.res.scale
 	stateRes.set_amount(stateRes.amount - 1)
+	_play_audio()
+
+
+# ToDo : refactor this shit
+func _play_audio():
+	match stateRes.name:
+		"PO_BOX":
+			AudioBus.play_sfx("PLOC_PLACEMENT")
+		"PO_MOVINGPLATFORM_V":
+			AudioBus.play_sfx("ROCK_PLATFORM")
+		"PO_MOVINGPLATFORM_H":
+			AudioBus.play_sfx("ROCK_PLATFORM")
+		"PO_WATERLILIES":
+			pass#AudioBus.play_sfx("WATERLILIES")
+		"PO_BUBBLE":
+			AudioBus.play_sfx("BUBBLE_PLACEMENT")
+
 
 func setRefNode(node :Node3D):
 	parentNode = node

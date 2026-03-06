@@ -31,6 +31,8 @@ func perform() -> void:
 
 func _on_glide_ability_consumed():
 	stateRes.set_amount(stateRes.amount - 1)
+	AudioBus.play_sfx("OPEN_GLIDER")
+	#AudioBus.play_sfx("GLIDER_WIND")
 
 func setRefNode(node :Node3D):
 	parentNode = node

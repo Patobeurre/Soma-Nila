@@ -1,11 +1,28 @@
-[gd_resource type="Resource" script_class="SoundLibrary" load_steps=21 format=3 uid="uid://cl10qubfna311"]
+[gd_resource type="Resource" script_class="SoundLibrary" load_steps=49 format=3 uid="uid://cl10qubfna311"]
 
 [ext_resource type="Script" uid="uid://c424y5ikihmkd" path="res://scripts/resources/Sounds/SoundRes.gd" id="1_uu1du"]
 [ext_resource type="Script" uid="uid://n76a1hc3br0m" path="res://scripts/resources/Sounds/SoundLibrary.gd" id="2_fyqrr"]
+[ext_resource type="AudioStream" uid="uid://bhle1dwxdfpov" path="res://audio/sfx/OvaniSoundsPack/Abilities/box_placement.wav" id="6_1oyqy"]
 [ext_resource type="AudioStream" uid="uid://p0y0o0d30seb" path="res://audio/sfx/OvaniSoundsPack/Signal Positive Bubble C.wav" id="6_5bu4t"]
+[ext_resource type="AudioStream" uid="uid://bwwlbq4k8wgee" path="res://audio/sfx/OvaniSoundsPack/Abilities/nail_on_wall_1.wav" id="7_h6thi"]
 [ext_resource type="AudioStream" uid="uid://cjix6cooseoqm" path="res://audio/sfx/OvaniSoundsPack/Aeroportation In.wav" id="7_l6tgx"]
+[ext_resource type="AudioStream" uid="uid://dx6j5h8sxk3d5" path="res://audio/sfx/OvaniSoundsPack/Abilities/nail_on_wall_2.wav" id="8_c2y3w"]
 [ext_resource type="AudioStream" uid="uid://6g7yqodhpwqc" path="res://audio/sfx/OvaniSoundsPack/Aeroportation Out.wav" id="8_h6thi"]
+[ext_resource type="AudioStream" uid="uid://cou3fq32wpj5x" path="res://audio/sfx/OvaniSoundsPack/Abilities/nail_on_wall_3.wav" id="9_epcfg"]
 [ext_resource type="AudioStream" uid="uid://dr3qk15hvyd0m" path="res://audio/sfx/OvaniSoundsPack/Jet Engine Low Loop A.wav" id="9_h6thi"]
+[ext_resource type="AudioStream" uid="uid://dom8c7xjdqv00" path="res://audio/sfx/OvaniSoundsPack/Abilities/glider_open.wav" id="10_c2y3w"]
+[ext_resource type="AudioStream" uid="uid://dv37xdbfxml5e" path="res://audio/sfx/OvaniSoundsPack/Abilities/glider_wind.wav" id="11_epcfg"]
+[ext_resource type="AudioStream" uid="uid://dai1ovvxcw6u" path="res://audio/sfx/OvaniSoundsPack/Abilities/rocky_platform.wav" id="12_jd3vr"]
+[ext_resource type="AudioStream" uid="uid://hrhql6qg5rah" path="res://audio/sfx/OvaniSoundsPack/Abilities/poc1.wav" id="13_m45cd"]
+[ext_resource type="AudioStream" uid="uid://tg44m8id7gi3" path="res://audio/sfx/OvaniSoundsPack/Abilities/poc2.wav" id="14_bkwv8"]
+[ext_resource type="AudioStream" uid="uid://crq2caimt3kxh" path="res://audio/sfx/OvaniSoundsPack/Abilities/Glue/chwing.wav" id="15_rrh40"]
+[ext_resource type="AudioStream" uid="uid://cpxd73xx7kia0" path="res://audio/sfx/OvaniSoundsPack/Abilities/Glue/clouic.wav" id="16_voiin"]
+[ext_resource type="AudioStream" uid="uid://dh8vi28i5smrj" path="res://audio/sfx/OvaniSoundsPack/Abilities/Glue/spuoich.wav" id="17_asj8l"]
+[ext_resource type="AudioStream" uid="uid://ct7v13hfa2hlj" path="res://audio/sfx/OvaniSoundsPack/Abilities/Glue/plop1.wav" id="18_wp427"]
+[ext_resource type="AudioStream" uid="uid://pqt64lw4ykrv" path="res://audio/sfx/OvaniSoundsPack/Abilities/Glue/plop2.wav" id="19_aydxs"]
+[ext_resource type="AudioStream" uid="uid://ck3tamywcmnut" path="res://audio/sfx/OvaniSoundsPack/Abilities/Glue/plop3.wav" id="20_etpub"]
+[ext_resource type="AudioStream" uid="uid://cchpeu3vrxa01" path="res://audio/sfx/OvaniSoundsPack/Abilities/waterlilies.wav" id="21_aydxs"]
+[ext_resource type="AudioStream" uid="uid://bspf1nfteaeyl" path="res://audio/sfx/OvaniSoundsPack/Abilities/bubble.wav" id="22_etpub"]
 
 [sub_resource type="Resource" id="Resource_h6thi"]
 metadata/__load_path__ = "res://audio/sfx/UI Soundpack/UI Soundpack/MP3/Coffee2.mp3"
@@ -85,8 +102,82 @@ stream = ExtResource("9_h6thi")
 variants = Array[AudioStream]([])
 metadata/_custom_type_script = "uid://c424y5ikihmkd"
 
+[sub_resource type="Resource" id="Resource_rrh40"]
+script = ExtResource("1_uu1du")
+name = "PLOC_PLACEMENT"
+stream = ExtResource("6_1oyqy")
+variants = Array[AudioStream]([])
+metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
+[sub_resource type="Resource" id="Resource_voiin"]
+script = ExtResource("1_uu1du")
+name = "NAILS_ON_WALL"
+variants = Array[AudioStream]([ExtResource("7_h6thi"), ExtResource("8_c2y3w"), ExtResource("9_epcfg")])
+metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
+[sub_resource type="Resource" id="Resource_asj8l"]
+script = ExtResource("1_uu1du")
+name = "OPEN_GLIDER"
+stream = ExtResource("10_c2y3w")
+variants = Array[AudioStream]([])
+metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
+[sub_resource type="Resource" id="Resource_wp427"]
+script = ExtResource("1_uu1du")
+name = "GLIDER_WIND"
+stream = ExtResource("11_epcfg")
+variants = Array[AudioStream]([])
+metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
+[sub_resource type="Resource" id="Resource_aydxs"]
+script = ExtResource("1_uu1du")
+name = "ROCK_PLATFORM"
+stream = ExtResource("12_jd3vr")
+variants = Array[AudioStream]([])
+metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
+[sub_resource type="Resource" id="Resource_etpub"]
+script = ExtResource("1_uu1du")
+name = "MOVE_OBJECT_START"
+stream = ExtResource("13_m45cd")
+variants = Array[AudioStream]([])
+metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
+[sub_resource type="Resource" id="Resource_lyqre"]
+script = ExtResource("1_uu1du")
+name = "MOVE_OBJECT_END"
+stream = ExtResource("14_bkwv8")
+variants = Array[AudioStream]([])
+metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
+[sub_resource type="Resource" id="Resource_jathn"]
+script = ExtResource("1_uu1du")
+name = "GLUE_STICKY"
+variants = Array[AudioStream]([ExtResource("15_rrh40"), ExtResource("16_voiin"), ExtResource("17_asj8l")])
+metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
+[sub_resource type="Resource" id="Resource_h1gwh"]
+script = ExtResource("1_uu1du")
+name = "GLUE_GUN_FIRE"
+variants = Array[AudioStream]([ExtResource("18_wp427"), ExtResource("19_aydxs"), ExtResource("20_etpub")])
+metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
+[sub_resource type="Resource" id="Resource_b1sm1"]
+script = ExtResource("1_uu1du")
+name = "WATERLILIES"
+stream = ExtResource("21_aydxs")
+variants = Array[AudioStream]([])
+metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
+[sub_resource type="Resource" id="Resource_54p0j"]
+script = ExtResource("1_uu1du")
+name = "BUBBLE_PLACEMENT"
+stream = ExtResource("22_etpub")
+variants = Array[AudioStream]([])
+metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
 [resource]
 script = ExtResource("2_fyqrr")
 bus = "SFX"
-library = Array[ExtResource("1_uu1du")]([SubResource("Resource_suold"), SubResource("Resource_5bu4t"), SubResource("Resource_l6tgx"), SubResource("Resource_w4xao"), SubResource("Resource_xjkqv"), SubResource("Resource_1oyqy"), SubResource("Resource_c2y3w"), SubResource("Resource_epcfg"), SubResource("Resource_jd3vr")])
+library = Array[ExtResource("1_uu1du")]([SubResource("Resource_suold"), SubResource("Resource_5bu4t"), SubResource("Resource_l6tgx"), SubResource("Resource_w4xao"), SubResource("Resource_xjkqv"), SubResource("Resource_1oyqy"), SubResource("Resource_c2y3w"), SubResource("Resource_epcfg"), SubResource("Resource_jd3vr"), SubResource("Resource_rrh40"), SubResource("Resource_voiin"), SubResource("Resource_asj8l"), SubResource("Resource_wp427"), SubResource("Resource_aydxs"), SubResource("Resource_etpub"), SubResource("Resource_lyqre"), SubResource("Resource_jathn"), SubResource("Resource_h1gwh"), SubResource("Resource_b1sm1"), SubResource("Resource_54p0j")])
 metadata/_custom_type_script = "uid://n76a1hc3br0m"
