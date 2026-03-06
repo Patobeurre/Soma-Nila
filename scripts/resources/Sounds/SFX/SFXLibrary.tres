@@ -1,7 +1,11 @@
-[gd_resource type="Resource" script_class="SoundLibrary" load_steps=49 format=3 uid="uid://cl10qubfna311"]
+[gd_resource type="Resource" script_class="SoundLibrary" load_steps=52 format=3 uid="uid://cl10qubfna311"]
 
 [ext_resource type="Script" uid="uid://c424y5ikihmkd" path="res://scripts/resources/Sounds/SoundRes.gd" id="1_uu1du"]
+[ext_resource type="AudioStream" uid="uid://cjv0tketk4243" path="res://audio/sfx/UI Soundpack/Coffee2.wav" id="2_b1sm1"]
 [ext_resource type="Script" uid="uid://n76a1hc3br0m" path="res://scripts/resources/Sounds/SoundLibrary.gd" id="2_fyqrr"]
+[ext_resource type="AudioStream" uid="uid://7s0wedoiekan" path="res://audio/sfx/UI Soundpack/Coffee1.wav" id="3_54p0j"]
+[ext_resource type="AudioStream" uid="uid://diutjni4p6g3t" path="res://audio/sfx/UI Soundpack/Minimalist1.wav" id="4_umjnh"]
+[ext_resource type="AudioStream" uid="uid://cvjmuul6dm0hv" path="res://audio/sfx/UI Soundpack/Minimalist7.wav" id="5_klsjf"]
 [ext_resource type="AudioStream" uid="uid://bhle1dwxdfpov" path="res://audio/sfx/OvaniSoundsPack/Abilities/box_placement.wav" id="6_1oyqy"]
 [ext_resource type="AudioStream" uid="uid://p0y0o0d30seb" path="res://audio/sfx/OvaniSoundsPack/Signal Positive Bubble C.wav" id="6_5bu4t"]
 [ext_resource type="AudioStream" uid="uid://bwwlbq4k8wgee" path="res://audio/sfx/OvaniSoundsPack/Abilities/nail_on_wall_1.wav" id="7_h6thi"]
@@ -23,54 +27,42 @@
 [ext_resource type="AudioStream" uid="uid://ck3tamywcmnut" path="res://audio/sfx/OvaniSoundsPack/Abilities/Glue/plop3.wav" id="20_etpub"]
 [ext_resource type="AudioStream" uid="uid://cchpeu3vrxa01" path="res://audio/sfx/OvaniSoundsPack/Abilities/waterlilies.wav" id="21_aydxs"]
 [ext_resource type="AudioStream" uid="uid://bspf1nfteaeyl" path="res://audio/sfx/OvaniSoundsPack/Abilities/bubble.wav" id="22_etpub"]
-
-[sub_resource type="Resource" id="Resource_h6thi"]
-metadata/__load_path__ = "res://audio/sfx/UI Soundpack/UI Soundpack/MP3/Coffee2.mp3"
+[ext_resource type="AudioStream" uid="uid://tq6ud7e4jphv" path="res://audio/sfx/OvaniSoundsPack/Abilities/swing-whoosh-in-room-1.wav" id="27_klsjf"]
+[ext_resource type="AudioStream" uid="uid://d17bhmoc7d85q" path="res://audio/sfx/OvaniSoundsPack/Abilities/swing-whoosh-in-room-2.wav" id="28_5naqy"]
+[ext_resource type="AudioStream" uid="uid://bn8n8avgtice7" path="res://audio/sfx/OvaniSoundsPack/Abilities/swing-whoosh-in-room-3.wav" id="29_5d2j5"]
 
 [sub_resource type="Resource" id="Resource_suold"]
 script = ExtResource("1_uu1du")
 name = "BTN_OK"
-stream = SubResource("Resource_h6thi")
+stream = ExtResource("2_b1sm1")
 variants = Array[AudioStream]([])
 metadata/_custom_type_script = "uid://c424y5ikihmkd"
-
-[sub_resource type="Resource" id="Resource_tjo8v"]
-metadata/__load_path__ = "res://audio/sfx/UI Soundpack/UI Soundpack/MP3/Coffee1.mp3"
 
 [sub_resource type="Resource" id="Resource_5bu4t"]
 script = ExtResource("1_uu1du")
 name = "BTN_BACK"
-stream = SubResource("Resource_tjo8v")
+stream = ExtResource("3_54p0j")
 variants = Array[AudioStream]([])
 metadata/_custom_type_script = "uid://c424y5ikihmkd"
-
-[sub_resource type="Resource" id="Resource_m45cd"]
-metadata/__load_path__ = "res://audio/sfx/UI Soundpack/UI Soundpack/MP3/Coffee1.mp3"
 
 [sub_resource type="Resource" id="Resource_l6tgx"]
 script = ExtResource("1_uu1du")
 name = "BTN_REPLAY"
-stream = SubResource("Resource_m45cd")
+stream = ExtResource("2_b1sm1")
 variants = Array[AudioStream]([])
 metadata/_custom_type_script = "uid://c424y5ikihmkd"
-
-[sub_resource type="Resource" id="Resource_bkwv8"]
-metadata/__load_path__ = "res://audio/sfx/UI Soundpack/UI Soundpack/MP3/Minimalist1.mp3"
 
 [sub_resource type="Resource" id="Resource_w4xao"]
 script = ExtResource("1_uu1du")
 name = "TOGGLE_ON"
-stream = SubResource("Resource_bkwv8")
+stream = ExtResource("4_umjnh")
 variants = Array[AudioStream]([])
 metadata/_custom_type_script = "uid://c424y5ikihmkd"
-
-[sub_resource type="Resource" id="Resource_51rsk"]
-metadata/__load_path__ = "res://audio/sfx/UI Soundpack/UI Soundpack/MP3/Minimalist7.mp3"
 
 [sub_resource type="Resource" id="Resource_xjkqv"]
 script = ExtResource("1_uu1du")
 name = "TOGGLE_OFF"
-stream = SubResource("Resource_51rsk")
+stream = ExtResource("5_klsjf")
 variants = Array[AudioStream]([])
 metadata/_custom_type_script = "uid://c424y5ikihmkd"
 
@@ -176,8 +168,14 @@ stream = ExtResource("22_etpub")
 variants = Array[AudioStream]([])
 metadata/_custom_type_script = "uid://c424y5ikihmkd"
 
+[sub_resource type="Resource" id="Resource_1o8ft"]
+script = ExtResource("1_uu1du")
+name = "ROPE_SWING"
+variants = Array[AudioStream]([ExtResource("27_klsjf"), ExtResource("28_5naqy"), ExtResource("29_5d2j5")])
+metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
 [resource]
 script = ExtResource("2_fyqrr")
 bus = "SFX"
-library = Array[ExtResource("1_uu1du")]([SubResource("Resource_suold"), SubResource("Resource_5bu4t"), SubResource("Resource_l6tgx"), SubResource("Resource_w4xao"), SubResource("Resource_xjkqv"), SubResource("Resource_1oyqy"), SubResource("Resource_c2y3w"), SubResource("Resource_epcfg"), SubResource("Resource_jd3vr"), SubResource("Resource_rrh40"), SubResource("Resource_voiin"), SubResource("Resource_asj8l"), SubResource("Resource_wp427"), SubResource("Resource_aydxs"), SubResource("Resource_etpub"), SubResource("Resource_lyqre"), SubResource("Resource_jathn"), SubResource("Resource_h1gwh"), SubResource("Resource_b1sm1"), SubResource("Resource_54p0j")])
+library = Array[ExtResource("1_uu1du")]([SubResource("Resource_suold"), SubResource("Resource_5bu4t"), SubResource("Resource_l6tgx"), SubResource("Resource_w4xao"), SubResource("Resource_xjkqv"), SubResource("Resource_1oyqy"), SubResource("Resource_c2y3w"), SubResource("Resource_epcfg"), SubResource("Resource_jd3vr"), SubResource("Resource_rrh40"), SubResource("Resource_voiin"), SubResource("Resource_asj8l"), SubResource("Resource_wp427"), SubResource("Resource_aydxs"), SubResource("Resource_etpub"), SubResource("Resource_lyqre"), SubResource("Resource_jathn"), SubResource("Resource_h1gwh"), SubResource("Resource_b1sm1"), SubResource("Resource_54p0j"), SubResource("Resource_1o8ft")])
 metadata/_custom_type_script = "uid://n76a1hc3br0m"

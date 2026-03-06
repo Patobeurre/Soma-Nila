@@ -74,6 +74,7 @@ func update_fullscreen() -> void:
 func _on_cb_fullscreen_toggled(toggled_on: bool) -> void:
 	var window_mode = DisplayServer.WINDOW_MODE_FULLSCREEN if toggled_on else DisplayServer.WINDOW_MODE_MAXIMIZED
 	
+	#AudioBus.play_sfx("TOGGLE_ON") if toggled_on else AudioBus.play_sfx("TOGGLE_OFF")
 	ProjectSettings.set_setting("display/window/size/mode", window_mode)
 	DisplayServer.window_set_mode(window_mode)
 
@@ -208,4 +209,5 @@ func update_speedrun_mode() -> void:
 	cb_speedrunmode.button_pressed = (toggled)
 
 func _on_cb_speedrun_mode_toggled(toggled_on: bool) -> void:
+	#AudioBus.play_sfx("TOGGLE_ON") if toggled_on else AudioBus.play_sfx("TOGGLE_OFF")
 	ProjectSettings.set_setting("custom/speedrun_mode", toggled_on)

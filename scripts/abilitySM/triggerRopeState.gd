@@ -44,6 +44,7 @@ func perform() -> void:
 
 func _on_rope_ability_consumed():
 	stateRes.set_amount(stateRes.amount - 1)
+	AudioBus.play_sfx("ROPE_SWING")
 
 func setRefNode(node :Node3D):
 	parentNode = node
