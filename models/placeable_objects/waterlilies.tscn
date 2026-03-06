@@ -92,13 +92,12 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="water_lily/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_dcb5l")
 
-[node name="Circle_004" type="MeshInstance3D" parent="water_lily/StaticBody3D"]
+[node name="BaseMesh" type="MeshInstance3D" parent="water_lily/StaticBody3D"]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_3s6r5")
 skeleton = NodePath("")
 
-[node name="Cube_020" type="MeshInstance3D" parent="water_lily/StaticBody3D"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+[node name="Cube_020" type="MeshInstance3D" parent="water_lily/StaticBody3D/BaseMesh"]
 mesh = SubResource("ArrayMesh_pbj05")
 skeleton = NodePath("")
 
@@ -113,11 +112,12 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="water_lily2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_dcb5l")
 
-[node name="Circle_004" type="MeshInstance3D" parent="water_lily2/StaticBody3D"]
+[node name="BaseMesh" type="MeshInstance3D" parent="water_lily2/StaticBody3D"]
 mesh = SubResource("ArrayMesh_3s6r5")
 skeleton = NodePath("")
 
-[node name="Cube_020" type="MeshInstance3D" parent="water_lily2/StaticBody3D"]
+[node name="Cube_020" type="MeshInstance3D" parent="water_lily2/StaticBody3D/BaseMesh"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_pbj05")
 skeleton = NodePath("")
 
@@ -131,13 +131,13 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="water_lily3/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_dcb5l")
 
-[node name="Circle_004" type="MeshInstance3D" parent="water_lily3/StaticBody3D"]
+[node name="BaseMesh" type="MeshInstance3D" parent="water_lily3/StaticBody3D"]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_3s6r5")
 skeleton = NodePath("")
 
-[node name="Cube_020" type="MeshInstance3D" parent="water_lily3/StaticBody3D"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+[node name="Cube_020" type="MeshInstance3D" parent="water_lily3/StaticBody3D/BaseMesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_pbj05")
 skeleton = NodePath("")
 
@@ -151,13 +151,13 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="water_lily4/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_dcb5l")
 
-[node name="Circle_004" type="MeshInstance3D" parent="water_lily4/StaticBody3D"]
+[node name="BaseMesh" type="MeshInstance3D" parent="water_lily4/StaticBody3D"]
 transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_3s6r5")
 skeleton = NodePath("")
 
-[node name="Cube_020" type="MeshInstance3D" parent="water_lily4/StaticBody3D"]
-transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, 0, 0, 0)
+[node name="Cube_020" type="MeshInstance3D" parent="water_lily4/StaticBody3D/BaseMesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_pbj05")
 skeleton = NodePath("")
 
@@ -172,12 +172,12 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="water_lily5/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_dcb5l")
 
-[node name="Circle_004" type="MeshInstance3D" parent="water_lily5/StaticBody3D"]
+[node name="BaseMesh" type="MeshInstance3D" parent="water_lily5/StaticBody3D"]
 transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_3s6r5")
 skeleton = NodePath("")
 
-[node name="Cube_020" type="MeshInstance3D" parent="water_lily5/StaticBody3D"]
+[node name="Cube_020" type="MeshInstance3D" parent="water_lily5/StaticBody3D/BaseMesh"]
 transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_pbj05")
 skeleton = NodePath("")
@@ -192,13 +192,13 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="water_lily6/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_dcb5l")
 
-[node name="Circle_004" type="MeshInstance3D" parent="water_lily6/StaticBody3D"]
+[node name="BaseMesh" type="MeshInstance3D" parent="water_lily6/StaticBody3D"]
 transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_3s6r5")
 skeleton = NodePath("")
 
-[node name="Cube_020" type="MeshInstance3D" parent="water_lily6/StaticBody3D"]
-transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0)
+[node name="Cube_020" type="MeshInstance3D" parent="water_lily6/StaticBody3D/BaseMesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_pbj05")
 skeleton = NodePath("")
 
@@ -213,10 +213,11 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="water_lily7/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_dcb5l")
 
-[node name="Circle_004" type="MeshInstance3D" parent="water_lily7/StaticBody3D"]
+[node name="BaseMesh" type="MeshInstance3D" parent="water_lily7/StaticBody3D"]
 mesh = SubResource("ArrayMesh_3s6r5")
 skeleton = NodePath("")
 
-[node name="Cube_020" type="MeshInstance3D" parent="water_lily7/StaticBody3D"]
+[node name="Cube_020" type="MeshInstance3D" parent="water_lily7/StaticBody3D/BaseMesh"]
+transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_pbj05")
 skeleton = NodePath("")

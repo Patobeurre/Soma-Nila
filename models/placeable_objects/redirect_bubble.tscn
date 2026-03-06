@@ -33,7 +33,7 @@ collision_layer = 4096
 collision_mask = 0
 script = ExtResource("1_mhjrr")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="BaseMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_mhjrr")
 
 [node name="Area3D" type="Area3D" parent="."]

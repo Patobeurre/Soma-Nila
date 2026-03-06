@@ -36,7 +36,7 @@ _subresources={
 "materials": {
 "Material.004": {
 "use_external/enabled": true,
-"use_external/path": "res://materials/Material.004.tres"
+"use_external/path": "uid://d4a1363ukbmjf"
 }
 }
 }

@@ -1,48 +1,59 @@
-[gd_resource type="Resource" script_class="SoundLibrary" load_steps=20 format=3 uid="uid://cl10qubfna311"]
+[gd_resource type="Resource" script_class="SoundLibrary" load_steps=21 format=3 uid="uid://cl10qubfna311"]
 
 [ext_resource type="Script" uid="uid://c424y5ikihmkd" path="res://scripts/resources/Sounds/SoundRes.gd" id="1_uu1du"]
 [ext_resource type="Script" uid="uid://n76a1hc3br0m" path="res://scripts/resources/Sounds/SoundLibrary.gd" id="2_fyqrr"]
-[ext_resource type="AudioStream" uid="uid://cafuvso34u8o6" path="res://audio/sfx/UI Soundpack/UI Soundpack/MP3/Coffee2.mp3" id="2_w4xao"]
-[ext_resource type="AudioStream" uid="uid://if6jpmamj4fq" path="res://audio/sfx/UI Soundpack/UI Soundpack/MP3/Coffee1.mp3" id="3_xjkqv"]
-[ext_resource type="AudioStream" uid="uid://cji0wdk7qp4av" path="res://audio/sfx/UI Soundpack/UI Soundpack/MP3/Minimalist1.mp3" id="4_suold"]
-[ext_resource type="AudioStream" uid="uid://c3loicia6tkc4" path="res://audio/sfx/UI Soundpack/UI Soundpack/MP3/Minimalist7.mp3" id="5_5bu4t"]
 [ext_resource type="AudioStream" uid="uid://p0y0o0d30seb" path="res://audio/sfx/OvaniSoundsPack/Signal Positive Bubble C.wav" id="6_5bu4t"]
 [ext_resource type="AudioStream" uid="uid://cjix6cooseoqm" path="res://audio/sfx/OvaniSoundsPack/Aeroportation In.wav" id="7_l6tgx"]
 [ext_resource type="AudioStream" uid="uid://6g7yqodhpwqc" path="res://audio/sfx/OvaniSoundsPack/Aeroportation Out.wav" id="8_h6thi"]
 [ext_resource type="AudioStream" uid="uid://dr3qk15hvyd0m" path="res://audio/sfx/OvaniSoundsPack/Jet Engine Low Loop A.wav" id="9_h6thi"]
 
+[sub_resource type="Resource" id="Resource_h6thi"]
+metadata/__load_path__ = "res://audio/sfx/UI Soundpack/UI Soundpack/MP3/Coffee2.mp3"
+
 [sub_resource type="Resource" id="Resource_suold"]
 script = ExtResource("1_uu1du")
 name = "BTN_OK"
-stream = ExtResource("2_w4xao")
+stream = SubResource("Resource_h6thi")
 variants = Array[AudioStream]([])
 metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
+[sub_resource type="Resource" id="Resource_tjo8v"]
+metadata/__load_path__ = "res://audio/sfx/UI Soundpack/UI Soundpack/MP3/Coffee1.mp3"
 
 [sub_resource type="Resource" id="Resource_5bu4t"]
 script = ExtResource("1_uu1du")
 name = "BTN_BACK"
-stream = ExtResource("3_xjkqv")
+stream = SubResource("Resource_tjo8v")
 variants = Array[AudioStream]([])
 metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
+[sub_resource type="Resource" id="Resource_m45cd"]
+metadata/__load_path__ = "res://audio/sfx/UI Soundpack/UI Soundpack/MP3/Coffee1.mp3"
 
 [sub_resource type="Resource" id="Resource_l6tgx"]
 script = ExtResource("1_uu1du")
 name = "BTN_REPLAY"
-stream = ExtResource("3_xjkqv")
+stream = SubResource("Resource_m45cd")
 variants = Array[AudioStream]([])
 metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
+[sub_resource type="Resource" id="Resource_bkwv8"]
+metadata/__load_path__ = "res://audio/sfx/UI Soundpack/UI Soundpack/MP3/Minimalist1.mp3"
 
 [sub_resource type="Resource" id="Resource_w4xao"]
 script = ExtResource("1_uu1du")
 name = "TOGGLE_ON"
-stream = ExtResource("4_suold")
+stream = SubResource("Resource_bkwv8")
 variants = Array[AudioStream]([])
 metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
+[sub_resource type="Resource" id="Resource_51rsk"]
+metadata/__load_path__ = "res://audio/sfx/UI Soundpack/UI Soundpack/MP3/Minimalist7.mp3"
 
 [sub_resource type="Resource" id="Resource_xjkqv"]
 script = ExtResource("1_uu1du")
 name = "TOGGLE_OFF"
-stream = ExtResource("5_5bu4t")
+stream = SubResource("Resource_51rsk")
 variants = Array[AudioStream]([])
 metadata/_custom_type_script = "uid://c424y5ikihmkd"
 

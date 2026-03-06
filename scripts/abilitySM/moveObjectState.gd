@@ -6,7 +6,7 @@ var stateName : String = "MoveObject"
 var parentNode :Node3D
 var stateRes : StateRes
 
-@export var maxDistance :float = 10
+@export var maxDistance :float = 12
 @export var minDistance :float = 5
 var collisionResult = {}
 var isDragging :bool = false
@@ -54,7 +54,7 @@ func highlight_mesh(toHighlight :bool) -> void:
 	#collisionResult.collider.get_parent().highlight(toHighlight, !(collisionResult.distance > minDistance))
 	
 	var collider :Node3D = collisionResult.collider
-	var meshInstances = collider.find_children("BaseTileMesh")
+	var meshInstances = collider.find_children("BaseMesh")
 	for mesh :MeshInstance3D in meshInstances:
 		if toHighlight:
 			mesh.material_overlay = highlight_material if collisionResult.distance > minDistance else highlight_red_material

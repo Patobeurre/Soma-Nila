@@ -2,7 +2,7 @@ extends Node3D
 class_name TileBloc
 
 
-@onready var mesh = $StaticBody3D/BaseTileMesh
+@onready var mesh = $StaticBody3D/BaseMesh
 @onready var collision = $StaticBody3D/CollisionShape3D
 @onready var dirt_material = load("res://materials/dirt_material.tres")
 

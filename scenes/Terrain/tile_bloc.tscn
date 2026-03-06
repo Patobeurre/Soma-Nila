@@ -55,7 +55,7 @@ sync_to_physics = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_5fupe")
 
-[node name="BaseTileMesh" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="BaseMesh" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(0.5, 0, 0, 0, -1, 1.94707e-07, 0, -3.89414e-07, -0.5, 0, 0, 0)
 mesh = SubResource("ArrayMesh_u40np")
 skeleton = NodePath("")
