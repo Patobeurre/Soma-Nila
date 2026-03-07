@@ -1,7 +1,8 @@
 extends Control
 
 
-@onready var abilitiesContainer = $MarginContainer/PanelContainer/HBoxContainer
+@onready var abilitiesContainer = $MarginContainer/VBoxContainer/PanelContainer/HBoxContainer
+@onready var selectedAbilityName = $MarginContainer/VBoxContainer/SelectedAbilityName
 @onready var arrowReticle = $Crosshair/ArrowReticle
 @onready var interactKey = $Crosshair/InteractKey
 @onready var fruitTextureRect :TextureRect = $FruitTexture
@@ -46,6 +47,8 @@ func _on_selected_ability_changed(ability :StateRes) -> void:
 	
 	for child :AbilitySelectorIcon in abilitiesContainer.get_children():
 		child.set_selected(child.res == ability)
+	
+	selectedAbilityName.text = tr(ability.name)
 
 
 func _on_abilities_changed(abilities :Array) -> void:

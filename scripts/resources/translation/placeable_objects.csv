@@ -2,6 +2,17 @@ key	en	fr
 PO_BUMPER	Bumper	Trampoline
 PO_WATERLILIES	Waterlilies	Nenuphars
 PO_MOVINGPLATFORM	Platform	Platforme
+PO_BOX	Crate	Caisse
+PROJ_NAIL	Nails	Clous
+PROJ_GLUE	Glue	Glue
+A_GLIDER	Glider	Planeur
+A_JETPACK	Jetpack	Jetpack
+A_MOVEOBJECT	Move	Déplacer
+PO_MOVINGPLATFORM_H	Moving platform	Plateforme mobile
+PO_MOVINGPLATFORM_V	Moving platform	Plateforme mobile
+PO_BUBBLE	Bubble	Bulle
+A_ROPE	Rope	Corde
+A_VACUUM	Vacuum	Aspirateur
 		
 TEXT_WARNING	WARNING	ATTENTION
 TEXT_SECRET_SEED_PUZZLE_TITLE	Bug report	Rapport de bug
