@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://b87mxba3r3x8e"]
+
+[ext_resource type="Script" uid="uid://df3x24nasg2g5" path="res://scenes/Terrain/PuzzleTerrain/puzzle_terrain_tool.gd" id="1_luvjt"]
+[ext_resource type="Script" uid="uid://70d1hekukawy" path="res://scripts/resources/Stats/AbilityStats.gd" id="2_dluk2"]
+[ext_resource type="Script" uid="uid://c37spsbe0xfd6" path="res://scripts/resources/PuzzleLevelRes.gd" id="3_vxvmr"]
+[ext_resource type="PackedScene" uid="uid://dvbuqr0aytha7" path="res://scenes/Terrain/tile_bloc.tscn" id="4_vxvmr"]
+[ext_resource type="PackedScene" uid="uid://lvbklg366xau" path="res://models/objects/Strawberry.tscn" id="5_phknu"]
+
+[sub_resource type="Resource" id="Resource_phknu"]
+script = ExtResource("2_dluk2")
+ability_name = "PO_BUMPER"
+initial_amount = 3
+amount_left = 0
+amount_used = 0
+metadata/_custom_type_script = "uid://70d1hekukawy"
+
+[sub_resource type="Resource" id="Resource_8ld2l"]
+script = ExtResource("3_vxvmr")
+ID = 2
+name = "PO_BUMPER"
+abilities = Array[ExtResource("2_dluk2")]([SubResource("Resource_phknu")])
+blocs_positions = Array[Vector3]([])
+fruits_positions = Array[Vector3]([])
+start_position = Vector3(0, 1, 0)
+metadata/_custom_type_script = "uid://c37spsbe0xfd6"
+
+[node name="PuzzleTerrainTool" type="Node3D" node_paths=PackedStringArray("terrain_node", "fruits_node")]
+script = ExtResource("1_luvjt")
+terrain_node = NodePath("Terrain")
+fruits_node = NodePath("Fruits")
+file_name = "Bumper"
+puzzle_res = SubResource("Resource_8ld2l")
+
+[node name="Terrain" type="Node3D" parent="."]
+
+[node name="TileBloc3" parent="Terrain" instance=ExtResource("4_vxvmr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="TileBloc22" parent="Terrain" instance=ExtResource("4_vxvmr")]
+
+[node name="TileBloc77" parent="Terrain" instance=ExtResource("4_vxvmr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="TileBloc23" parent="Terrain" instance=ExtResource("4_vxvmr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 8)
+
+[node name="TileBloc24" parent="Terrain" instance=ExtResource("4_vxvmr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 8)
+
+[node name="TileBloc25" parent="Terrain" instance=ExtResource("4_vxvmr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 6, 5)
+
+[node name="Fruits" type="Node3D" parent="."]
+
+[node name="Strawberry" parent="Fruits" instance=ExtResource("5_phknu")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2, 7, 5)

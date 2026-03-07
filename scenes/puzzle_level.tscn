@@ -1,0 +1,83 @@
+[gd_scene load_steps=20 format=3 uid="uid://cjtjvqm34ayp2"]
+
+[ext_resource type="Script" uid="uid://dj6et40r463fb" path="res://scenes/puzzle_level.gd" id="1_328bm"]
+[ext_resource type="Resource" uid="uid://h0jdii0onmd6" path="res://scripts/resources/Levels/Puzzles/2-Bumper.tres" id="2_328bm"]
+[ext_resource type="Resource" uid="uid://ct3je3220pc05" path="res://scripts/resources/Terrain/PuzzleTerrainSettings.tres" id="2_rbsdd"]
+[ext_resource type="Environment" uid="uid://evgf73em6ceg" path="res://scripts/resources/Environments/main_level_env.tres" id="3_rbsdd"]
+[ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/PlayerCharacterScene.tscn" id="4_1pjho"]
+[ext_resource type="Script" uid="uid://1vcmdhhiat1j" path="res://scripts/resources/Terrain/map_terrain_generation.gd" id="5_81517"]
+[ext_resource type="PackedScene" uid="uid://b8c6ydfgjo18g" path="res://models/decoration/boundaries.tscn" id="7_w0mfp"]
+[ext_resource type="PackedScene" uid="uid://cegfrsw8p7ibl" path="res://models/objects/portal.tscn" id="9_eryio"]
+[ext_resource type="Script" uid="uid://cd2a0hec2s6ls" path="res://scripts/object_selector.gd" id="10_5fdm0"]
+[ext_resource type="Resource" uid="uid://ch4cg6xi7dtwp" path="res://scripts/resources/Abilities/A_Bumper.tres" id="11_li0g3"]
+[ext_resource type="Resource" uid="uid://cpwo1qcqlbqmq" path="res://scripts/resources/Abilities/A_MovingPlatformH.tres" id="12_imuy6"]
+[ext_resource type="Resource" uid="uid://b5b2qo7efvqeg" path="res://scripts/resources/Abilities/A_FlatJumpPath.tres" id="13_qjoy7"]
+[ext_resource type="Script" uid="uid://djrr832cj7vjl" path="res://scripts/utils/item_list_selector.gd" id="14_7mcvq"]
+[ext_resource type="PackedScene" uid="uid://c32svoku0jbdb" path="res://scripts/abilitySM/abilities_state_machine.tscn" id="15_4w2wn"]
+[ext_resource type="Script" uid="uid://ciubcnmrvfqsa" path="res://scripts/levelSM/level_state_machine.gd" id="16_5epjn"]
+[ext_resource type="Script" uid="uid://tq6g3r851271" path="res://scripts/levelSM/playing_state.gd" id="17_pxurx"]
+[ext_resource type="Script" uid="uid://cylv7d473wwqy" path="res://scripts/levelSM/interacting_state.gd" id="18_xy5um"]
+[ext_resource type="Script" uid="uid://dudmuee06bbct" path="res://scripts/levelSM/disabled_state.gd" id="19_x5wec"]
+
+[sub_resource type="Resource" id="Resource_rfl2w"]
+script = ExtResource("14_7mcvq")
+items = [ExtResource("11_li0g3"), ExtResource("12_imuy6"), ExtResource("13_qjoy7")]
+isCircular = true
+metadata/_custom_type_script = "uid://djrr832cj7vjl"
+
+[node name="MainLevel" type="Node3D"]
+script = ExtResource("1_328bm")
+puzzle_res = ExtResource("2_328bm")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("3_rbsdd")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.686461, -0.559361, 0.464636, -0.202221, 0.76061, 0.616911, -0.698482, 0.329526, -0.635244, 5.69616, -20.5174, -13.6989)
+light_color = Color(0.910845, 0.923517, 0.883351, 1)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("4_1pjho")]
+transform = Transform3D(-0.0578428, 0, 0.998326, 0, 1, 0, -0.998326, 0, -0.0578428, 0, 1.4156, 0)
+collision_mask = 101
+MIN_STAIR_HEIGHT = 0.3
+MAX_STAIR_HEIGHT = 0.7
+
+[node name="TilePlaceholderNode" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
+visible = false
+
+[node name="PlaceableObjects" type="Node3D" parent="."]
+
+[node name="MapTiles" type="Node3D" parent="."]
+script = ExtResource("5_81517")
+settings = ExtResource("2_rbsdd")
+
+[node name="Boundaries" parent="." instance=ExtResource("7_w0mfp")]
+
+[node name="Objectives" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 51.3525)
+
+[node name="Portal" parent="Objectives" instance=ExtResource("9_eryio")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="AbilitySelector" type="Node" parent="."]
+script = ExtResource("10_5fdm0")
+items = SubResource("Resource_rfl2w")
+prevAction = "wheelDown"
+nextAction = "wheelUp"
+
+[node name="AbilitiesStateMachine" parent="." instance=ExtResource("15_4w2wn")]
+
+[node name="LevelSM" type="Node" parent="."]
+script = ExtResource("16_5epjn")
+
+[node name="PlayingState" type="Node" parent="LevelSM"]
+script = ExtResource("17_pxurx")
+
+[node name="InteractingState" type="Node" parent="LevelSM"]
+script = ExtResource("18_xy5um")
+
+[node name="DisabledState" type="Node" parent="LevelSM"]
+script = ExtResource("19_x5wec")

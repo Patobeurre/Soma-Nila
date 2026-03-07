@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TerrainGenerationSettings" load_steps=2 format=3 uid="uid://ct3je3220pc05"]
+
+[ext_resource type="Script" uid="uid://dn8a67533qqne" path="res://scripts/resources/Terrain/TerrainGenerationSettings.gd" id="2_7c2ma"]
+
+[resource]
+script = ExtResource("2_7c2ma")
+seed = -1
+useRandomSeed = false
+terrainSize = Vector3(20, 20, 20)
+tile_scale = Vector3(4, 4, 4)
+terrain_scale = Vector3(4, 4, 4)
+density = 1.0
+metadata/_custom_type_script = "uid://dn8a67533qqne"

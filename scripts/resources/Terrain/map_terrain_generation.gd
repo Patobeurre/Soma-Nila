@@ -46,6 +46,21 @@ func generate_terrain():
 	availablePositions = retreive_available_positions()
 
 
+func generate_from_positions(positions :Array[Vector3]) -> void:
+	_clear_terrain()
+
+	var blocs_positions = []
+	for position :Vector3 in positions:
+		var global_pos = Vector3(position.x * settings.terrain_scale.x, position.y * settings.terrain_scale.y, position.z * settings.terrain_scale.z)
+		print(global_pos)
+		blocs_positions.append(global_pos)
+
+	instantiate_blocs(blocs_positions)
+	availablePositions = retreive_available_positions()
+
+	map_generation_finished.emit()
+
+
 func _clear_terrain() -> void:
 	allBlocs = []
 	availablePositions = []

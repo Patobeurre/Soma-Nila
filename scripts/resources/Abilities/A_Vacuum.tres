@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="StateRes" load_steps=5 format=3 uid="uid://dtqxy3u08w4xg"]
+
+[ext_resource type="Script" uid="uid://djw557ek5251m" path="res://scripts/resources/StateRes.gd" id="1_84ycy"]
+[ext_resource type="Texture2D" uid="uid://bom13wktc51a5" path="res://images/UI/input/Keyboard & Mouse/Default/keyboard_0.png" id="1_op817"]
+[ext_resource type="Script" uid="uid://nfw2fpi2r2fs" path="res://scripts/resources/AbilityWeights.gd" id="3_cp0g1"]
+
+[sub_resource type="Resource" id="Resource_87wil"]
+script = ExtResource("3_cp0g1")
+pointUp = 0.0
+pointDown = 0.0
+pointFar = 0.0
+pointSpread = 0.0
+metadata/_custom_type_script = "uid://nfw2fpi2r2fs"
+
+[resource]
+script = ExtResource("1_84ycy")
+stateName = "triggerVacuumState"
+name = "A_VACUUM"
+icon = ExtResource("1_op817")
+initial_amount = 3
+weights = SubResource("Resource_87wil")
+metadata/_custom_type_script = "uid://djw557ek5251m"

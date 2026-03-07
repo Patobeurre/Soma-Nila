@@ -71,6 +71,13 @@ func restart_level() -> void:
 	SignalBus.level_intro_finished.emit()
 
 
+func start_puzzle_level(puzzle_res :PuzzleLevelRes):
+	change_gui_scene("res://scenes/GUI/game_hud.tscn")
+	change_gui_scene("res://scenes/GUI/level_intro_screen.tscn", false, true)
+	change_3d_scene("res://scenes/puzzle_level.tscn")
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+
 func is_secret_level(level_res :MainLevelRes) -> bool:
 	if level_res.seed != Global.SECRET_LEVEL_SEED:
 		return false

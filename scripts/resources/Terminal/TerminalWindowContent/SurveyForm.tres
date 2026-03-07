@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TerminalWindowRes" load_steps=3 format=3 uid="uid://dmp4pe8epgqpb"]
+
+[ext_resource type="Script" uid="uid://dfuraayjd6yb0" path="res://scripts/resources/Terminal/TerminalWindowRes.gd" id="1_ad353"]
+[ext_resource type="PackedScene" uid="uid://0dad8f4je25h" path="res://UI/Components/TerminalContents/SurveyForm.tscn" id="1_ppbwo"]
+
+[resource]
+script = ExtResource("1_ad353")
+title = "TEXT_SURVEY_FORM_TITLE"
+content = ExtResource("1_ppbwo")
+metadata/_custom_type_script = "uid://dfuraayjd6yb0"

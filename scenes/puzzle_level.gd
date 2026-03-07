@@ -2,7 +2,6 @@ extends Node3D
 
 
 @onready var player :PlayerCharacter = $PlayerCharacter
-@onready var fruit :Node3D = $Objectives/Strawberry
 @onready var portal :LevelPortal = $Objectives/Portal
 @onready var abilitySelector :AbilitySelector = $AbilitySelector
 @onready var abilityStateMachine :StateMachineStrategy = $AbilitiesStateMachine
@@ -25,14 +24,17 @@ var interacting_camera :Camera3D
 @export var DISTANCE :float = 10.0
 @export var boundOffset :float = 2.0
 
-var isMapGenerated :bool = false
 var starting_pos :Vector3 = Vector3.ZERO
-var isFruitTaken :bool = false
+var nbFruitTaken :int = 0
 var currentTimer :float = 0
 
-@export var level_res :MainLevelRes
+var abilitiesSettings :AbilitiesSettings = load("res://scripts/resources/AbilitiesSettingsDefault.tres")
+var terrainSettings :TerrainGenerationSettings = load("res://scripts/resources/Terrain/PuzzleTerrainSettings.tres")
+
+@export var puzzle_res :PuzzleLevelRes = PuzzleLevelRes.new()
 @export var level_stats :LevelStats
 
+@onready var fruit_scene = load("res://models/objects/Strawberry.tscn")
 @onready var terminalScene = load("res://models/terminal/terminal.tscn")
 
 
@@ -50,25 +52,22 @@ func _ready() -> void:
 	SignalBus.terminal_cam_transition_requested.connect(_on_terminal_interaction_request)
 	map_node.map_generation_finished.connect(_on_map_generated)
 	
-	isFruitTaken = false
+	nbFruitTaken = 0
 	level_sm.transition(disabled_state)
 	
 	level_stats = LevelStats.new()
 	
-	if Global.main_level_res:
-		level_res = Global.main_level_res
-		level_res.abilitiesSettings.pick_random_abilities()
-	else:
-		level_res.init()
-		level_res.abilitiesSettings.pick_random_abilities()
-		_on_level_intro_finished()
+	abilitiesSettings.set_picked_abilities(puzzle_res.abilities)
+	map_node.settings = terrainSettings
+
+	print(terrainSettings.terrain_scale)
+
+	_on_level_intro_finished()
 
 
 func inputManagement() -> void:
 	if Input.is_action_just_pressed("restart"):
 		restart_level_keep_params()
-	if Input.is_action_just_pressed("restart_forced"):
-		restart_level_regenerate()
 	if Input.is_action_just_pressed("ui_cancel"):
 		Global.game_controller.return_to_main_menu()
 
@@ -129,12 +128,9 @@ func get_placeholder_rotation() -> Vector3:
 	return pos
 
 
-func restart_level_regenerate():
-	Global.game_controller.start_new_game()
-
-
 func restart_level_keep_params():
-	Global.game_controller.restart_level()
+	pass
+	#Global.game_controller.restart_level()
 
 
 func remove_placeable_objects() -> void:
@@ -142,28 +138,16 @@ func remove_placeable_objects() -> void:
 		objects.queue_free()
 
 
-func place_objectives():
-	var possible_positions = map_node.availablePositions
-	
-	var nearestPos :Vector3 = possible_positions[0]
-	var minDist :float = Vector3.ZERO.distance_to(nearestPos)
-	var farestPos :Vector3 = possible_positions[0]
-	var maxDist :float = Vector3.ZERO.distance_to(farestPos)
-	
-	for pos in possible_positions:
-		var distance = Vector3.ZERO.distance_to(pos)
-		if distance < minDist:
-			minDist = distance
-			nearestPos = pos
-		if distance > maxDist:
-			maxDist = distance
-			farestPos = pos
-	
-	starting_pos = nearestPos
+func place_objectives():	
+	starting_pos = puzzle_res.start_position * terrainSettings.tile_scale
 	player.global_position = starting_pos
 	portal.global_position = starting_pos
-	fruit.global_position = farestPos
-	fruit.visible = true
+
+	for fruit_pos in puzzle_res.fruits_positions:
+		var fruit = fruit_scene.instantiate()
+		objectives_node.add_child(fruit)
+		fruit.global_position = fruit_pos * terrainSettings.tile_scale
+		fruit.visible = true
 
 
 func place_terminal() -> void:
@@ -173,34 +157,33 @@ func place_terminal() -> void:
 	for pos in possible_positions:
 		if pos == starting_pos: continue
 		for direction in directions:
-			var end_pos = pos + (direction * level_res.terrainSettings.tile_scale)
+			var end_pos = pos + (direction * terrainSettings.tile_scale)
 			if map_node.allBlocsPositions.has(end_pos):
 				var obj = terminalScene.instantiate()
 				add_child(obj)
-				obj.global_position = pos + direction * level_res.terrainSettings.tile_scale/2
+				obj.global_position = pos + direction * terrainSettings.tile_scale/2
 				obj.look_at(pos + direction)
 				for bloc in map_node.allBlocs:
-					if bloc.global_position == pos + direction * level_res.terrainSettings.tile_scale:
+					if bloc.global_position == pos + direction * terrainSettings.tile_scale:
 						obj.reparent(bloc.mesh)
 				return
 
 
 func place_bondaries():
-	boundaries_node.global_position = (level_res.terrainSettings.terrainSize * level_res.terrainSettings.terrain_scale) / 2
+	boundaries_node.global_position = (terrainSettings.terrainSize * terrainSettings.terrain_scale) / 2
 	boundaries_node.global_position.y = 0
-	boundaries_node.init(level_res.terrainSettings.terrainSize.x * level_res.terrainSettings.terrain_scale.x)
+	boundaries_node.init(terrainSettings.terrainSize.x * terrainSettings.terrain_scale.x)
 
 
 func _on_fruit_picked(fruit_node :Node3D) -> void:
-	if not isFruitTaken:
-		fruit.visible = false
-		isFruitTaken = true
-		AudioBus.play_sfx("PICK_FRUIT")
-	portal.set_activated(true)
+	fruit_node.queue_free()
+	nbFruitTaken += 1
+	AudioBus.play_sfx("PICK_FRUIT")
+	portal.set_activated(nbFruitTaken >= puzzle_res.fruits_positions.size())
 
 
 func _on_enter_level_portal() -> void:
-	if isFruitTaken:
+	if nbFruitTaken >= puzzle_res.fruits_positions.size():
 		end_level()
 
 
@@ -211,20 +194,16 @@ func end_level():
 	SaveManager.save_game_res.remaining_abilities.add_all(remaining_abilities)
 	SignalBus.save_requested.emit()
 
-	level_stats.game_version = ProjectSettings.get_setting("application/config/version")
+	level_stats.game_version = SaveManager.save_game_res.VERSION
 	level_stats.set_used_abilities_from_remainings(remaining_abilities)
 	level_stats.completionTime = currentTimer
-	level_stats.seed = level_res.seed
-	for excluded_ability in level_res.abilitiesSettings.excluded_abilities:
-		level_stats.excluded_abilities.append(AbilityStats.create(excluded_ability))
-		
+	
 	Global.current_level_stats = level_stats
 	Global.game_controller.end_level_transition()
 
 
 func _on_level_intro_finished():
 	AudioBus.play_sfx("PORTAL_OUT")
-	#if isMapGenerated:
 	abilitySelector.set_selected_ability(0)
 	currentTimer = 0
 	level_sm.transition(playing_state)
@@ -255,12 +234,9 @@ func _on_selected_ability_changed(abilityRes :StateRes):
 func _on_map_generated():
 	place_objectives()
 	place_bondaries()
-	place_terminal()
-	isMapGenerated = true
+	#place_terminal()
 
 
 func _on_abilities_setup(abilities :Array):
-	var abilityWeights = level_res.abilitiesSettings.get_picked_abilities_weights()
-	level_res.terrainSettings.adjust_params_by_ability_weights(abilityWeights)
-	map_node.init(level_res.terrainSettings)
+	map_node.generate_from_positions(puzzle_res.blocs_positions)
 	abilitySelector.populate(abilities)

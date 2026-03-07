@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="PuzzleLevelRes" load_steps=4 format=3 uid="uid://h0jdii0onmd6"]
+
+[ext_resource type="Script" uid="uid://70d1hekukawy" path="res://scripts/resources/Stats/AbilityStats.gd" id="1_vbs1q"]
+[ext_resource type="Script" uid="uid://c37spsbe0xfd6" path="res://scripts/resources/PuzzleLevelRes.gd" id="2_skgm1"]
+
+[sub_resource type="Resource" id="Resource_phknu"]
+script = ExtResource("1_vbs1q")
+ability_name = "PO_BUMPER"
+initial_amount = 3
+amount_left = 0
+amount_used = 0
+metadata/_custom_type_script = "uid://70d1hekukawy"
+
+[resource]
+script = ExtResource("2_skgm1")
+ID = 2
+name = "PO_BUMPER"
+abilities = Array[ExtResource("1_vbs1q")]([SubResource("Resource_phknu")])
+blocs_positions = Array[Vector3]([Vector3(0, 0, 2), Vector3(0, 0, 0), Vector3(0, 0, 1), Vector3(0, 2, 8), Vector3(4, 4, 8), Vector3(2, 6, 5)])
+fruits_positions = Array[Vector3]([Vector3(2, 7, 5)])
+start_position = Vector3(0, 1, 0)

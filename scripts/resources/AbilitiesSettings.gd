@@ -50,6 +50,15 @@ func pick_random_abilities():
 	SignalBus.abilities_setup.emit(duplicated_abilities)
 
 
+func set_picked_abilities(abilities :Array[AbilityStats]) -> void:
+	picked_abilities = []
+	
+	for ability in abilities:
+		picked_abilities.append(ability.to_state_res())
+
+	SignalBus.abilities_setup.emit(get_duplicated_abilities())
+
+
 func try_merge_abilities(ability :StateRes, merged_abilities :Array) -> bool:
 	for merged_ability in merged_abilities:
 		if ability.name == merged_ability.name:
