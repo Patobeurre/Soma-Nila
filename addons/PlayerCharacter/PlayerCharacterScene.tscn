@@ -1,9 +1,10 @@
-[gd_scene load_steps=48 format=3 uid="uid://bwggrf7sbmkcv"]
+[gd_scene load_steps=49 format=3 uid="uid://bwggrf7sbmkcv"]
 
 [ext_resource type="Script" uid="uid://d3s8yxuvpmekm" path="res://addons/PlayerCharacter/StateMachine/PlayerCharacterScript.gd" id="1_h128t"]
 [ext_resource type="Script" uid="uid://b0fbr48rbvn27" path="res://addons/PlayerCharacter/Camera/CameraScript.gd" id="2_x12n0"]
 [ext_resource type="Material" uid="uid://d2x17ijo0ckuc" path="res://materials/rope_material/rope.tres" id="3_2rfya"]
 [ext_resource type="PackedScene" uid="uid://b0m01odt1e15p" path="res://models/objects/glider.tscn" id="4_20r42"]
+[ext_resource type="PackedScene" uid="uid://dgr6c12y6utf4" path="res://models/vacuum.glb" id="4_o2ynt"]
 [ext_resource type="Script" uid="uid://dh15xksi1hpf6" path="res://scripts/interact_system.gd" id="5_h8602"]
 [ext_resource type="Script" uid="uid://bpt1ql68y6yco" path="res://addons/PlayerCharacter/StateMachine/ClimbIdleStateScript.gd" id="10_17hed"]
 [ext_resource type="Script" uid="uid://b36xvir18mivi" path="res://addons/PlayerCharacter/StateMachine/RopeStateScript.gd" id="11_ypkm2"]
@@ -314,6 +315,10 @@ visible = false
 
 [node name="Glider" parent="CameraHolder/Glider" instance=ExtResource("4_20r42")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="vacuum" parent="CameraHolder" instance=ExtResource("4_o2ynt")]
+transform = Transform3D(-1.74846e-08, 1.38174e-16, -0.4, 9.93411e-09, 0.4, -2.96059e-16, 0.4, -9.93411e-09, -1.74846e-08, 0.54537, -0.384951, -0.312779)
+visible = false
 
 [node name="Hitbox" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
