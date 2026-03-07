@@ -2,9 +2,8 @@ extends Node3D
 class_name TileBloc
 
 
-@onready var mesh = $StaticBody3D/BaseMesh
-@onready var collision = $StaticBody3D/CollisionShape3D
-@onready var animated_body = $StaticBody3D
+@onready var mesh = $BaseMesh
+@onready var collision = $CollisionShape3D
 @onready var dirt_material = load("res://materials/dirt_material.tres")
 
 @onready var highlight_material :ShaderMaterial = load("res://materials/highlight_material.tres")
@@ -14,7 +13,7 @@ class_name TileBloc
 
 var isMoving :bool = false
 var move_speed :float = 0
-var from_position :Vector3 = Vector3.ZERO
+var move_dir :Vector3 = Vector3.ZERO
 var to_position :Vector3 = Vector3.ZERO
 
 
@@ -33,17 +32,21 @@ func deactivate_collision(disabled :bool):
 
 func _physics_process(delta: float) -> void:
 	if isMoving:
-		global_position = lerp(from_position, to_position, delta)
-		if global_position == to_position:
+		var dir = _get_current_dir()
+		position += dir * move_speed * delta
+		if dir.dot(move_dir) < 0 :
 			isMoving = false
 
 
 func start_moving(to :Vector3, speed :float):
-	from_position = global_position
 	to_position = to
+	move_dir = _get_current_dir()
 	move_speed = speed
 	isMoving = true
 
+
+func _get_current_dir() -> Vector3:
+	return (to_position - global_position).normalized()
 
 
 func update_material() -> void:

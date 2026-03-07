@@ -44,18 +44,16 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ktkk4")
 
-[node name="TileBloc" type="Node3D"]
-script = ExtResource("1_5fupe")
-
-[node name="StaticBody3D" type="AnimatableBody3D" parent="."]
+[node name="StaticBody3D" type="AnimatableBody3D"]
 collision_layer = 4097
 collision_mask = 129
 sync_to_physics = false
+script = ExtResource("1_5fupe")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_5fupe")
 
-[node name="BaseMesh" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="BaseMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, -1, 1.94707e-07, 0, -3.89414e-07, -0.5, 0, 0, 0)
 mesh = SubResource("ArrayMesh_u40np")
 skeleton = NodePath("")
