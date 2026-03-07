@@ -211,7 +211,7 @@ func end_level():
 	SaveManager.save_game_res.remaining_abilities.add_all(remaining_abilities)
 	SignalBus.save_requested.emit()
 
-	level_stats.game_version = ProjectSettings.get_setting("application/config/version")
+	level_stats.game_version = SaveManager.save_game_res.VERSION
 	level_stats.set_used_abilities_from_remainings(remaining_abilities)
 	level_stats.completionTime = currentTimer
 	level_stats.seed = level_res.seed

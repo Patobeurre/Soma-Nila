@@ -2,6 +2,7 @@ extends Resource
 class_name SaveGameStats
 
 const SAVE_GAME_PATH := "user://saved_data"
+const VERSION :String = "1.2"
 
 @export var saved_version :String = "0"
 @export var favorite_levels :SavedLevelStats = SavedLevelStats.new()
@@ -37,11 +38,12 @@ static func get_save_path() -> String:
 
 
 func apply_patches():
-	var currentVersion = ProjectSettings.get_setting("application/config/version")
-	if saved_version < currentVersion:
+	if saved_version < VERSION:
 		apply_patch_v102()
-	saved_version = currentVersion
+	saved_version = VERSION
 
 
 func apply_patch_v102() -> void:
-	pass
+	var ability_vacuum = load("res://scripts/resources/Abilities/A_Vacuum.tres")
+	for level :LevelStats in favorite_levels.levels:
+		level.excluded_abilities.append(AbilityStats.create(ability_vacuum))

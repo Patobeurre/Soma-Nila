@@ -9,7 +9,7 @@ class_name MainMenu
 func _ready() -> void:
 	btn_new_game.grab_focus()
 	credits_container.visible = false
-	game_version_label.text = "version " + ProjectSettings.get_setting("application/config/version")
+	game_version_label.text = "version " + SaveManager.save_game_res.VERSION
 
 
 func _process(delta: float) -> void:
