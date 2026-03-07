@@ -10,6 +10,7 @@ class_name TerminalWindow
 
 @export var secret_puzzle_window :TerminalWindowRes
 @export var conversation_window :TerminalWindowRes
+@export var survey_form_window :TerminalWindowRes
 var currentWindowRes :TerminalWindowRes = null
 
 
@@ -21,6 +22,8 @@ func _ready() -> void:
 func init(seed :int):
 	if seed != Global.SECRET_LEVEL_SEED:
 		currentWindowRes = secret_puzzle_window
+	if seed == ChatMessageRes.employees.get('Amandine'):
+		currentWindowRes = survey_form_window
 	if Global.all_conversation_seeds.has(seed):
 		currentWindowRes = conversation_window
 	_update()
