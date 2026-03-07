@@ -32,7 +32,9 @@ func _init_language() -> void:
 func _create_or_load_save() -> void:
 	if SaveGameStats.save_exists():
 		save_game_res = SaveGameStats.load_savegame()
+		save_game_res.apply_patches()
 	else:
 		save_game_res = SaveGameStats.new()
+		save_game_res.saved_version = ProjectSettings.get_setting("application/config/version")
 
 	SignalBus.savegame_loaded.emit()

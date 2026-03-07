@@ -3,8 +3,6 @@ class_name SaveGameStats
 
 const SAVE_GAME_PATH := "user://saved_data"
 
-var VERSION :String = "1.1"
-
 @export var saved_version :String = "0"
 @export var favorite_levels :SavedLevelStats = SavedLevelStats.new()
 @export var remaining_abilities :RemainingAbilitiesStats = RemainingAbilitiesStats.new()
@@ -24,7 +22,6 @@ static func save_exists() -> bool:
 static func load_savegame() -> Resource:
 	var save_path := get_save_path()
 	var save_res = ResourceLoader.load(save_path)
-	#ToDo: apply patch ?
 	return save_res
 
 
@@ -37,3 +34,14 @@ static func make_random_path() -> String:
 static func get_save_path() -> String:
 	var extension := ".tres" if OS.is_debug_build() else ".res"
 	return SAVE_GAME_PATH + extension
+
+
+func apply_patches():
+	var currentVersion = ProjectSettings.get_setting("application/config/version")
+	if saved_version < currentVersion:
+		apply_patch_v102()
+	saved_version = currentVersion
+
+
+func apply_patch_v102() -> void:
+	pass
