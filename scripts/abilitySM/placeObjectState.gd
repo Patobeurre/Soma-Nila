@@ -61,7 +61,7 @@ func _play_audio():
 		"PO_MOVINGPLATFORM_H":
 			AudioBus.play_sfx("ROCK_PLATFORM")
 		"PO_WATERLILIES":
-			pass#AudioBus.play_sfx("WATERLILIES")
+			AudioBus.play_sfx("WATERLILIES")
 		"PO_BUBBLE":
 			AudioBus.play_sfx("BUBBLE_PLACEMENT")
 
