@@ -20,6 +20,7 @@ func enter(res : Variant):
 
 
 func exit():
+	is_performing = false
 	SignalBus.use_jetpack_requested.emit(false)
 
 

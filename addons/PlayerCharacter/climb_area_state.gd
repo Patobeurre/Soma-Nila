@@ -95,6 +95,10 @@ func inputManagement():
 		if cR.check_rope_state_transition():
 			transitioned.emit(self, "RopeState")
 	
+	if cR.isJetpackAbilityRequested:
+		if cR.check_rope_state_transition():
+			transitioned.emit(self, "JetpackState")
+	
 	if Input.is_action_just_pressed(cR.jumpAction):
 		cR.nbJumpsInAirAllowed = 1
 		transitioned.emit(self, "JumpState")
