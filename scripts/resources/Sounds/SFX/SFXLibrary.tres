@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SoundLibrary" load_steps=52 format=3 uid="uid://cl10qubfna311"]
+[gd_resource type="Resource" script_class="SoundLibrary" load_steps=56 format=3 uid="uid://cl10qubfna311"]
 
 [ext_resource type="Script" uid="uid://c424y5ikihmkd" path="res://scripts/resources/Sounds/SoundRes.gd" id="1_uu1du"]
 [ext_resource type="AudioStream" uid="uid://cjv0tketk4243" path="res://audio/sfx/UI Soundpack/Coffee2.wav" id="2_b1sm1"]
@@ -11,7 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://bwwlbq4k8wgee" path="res://audio/sfx/OvaniSoundsPack/Abilities/nail_on_wall_1.wav" id="7_h6thi"]
 [ext_resource type="AudioStream" uid="uid://cjix6cooseoqm" path="res://audio/sfx/OvaniSoundsPack/Aeroportation In.wav" id="7_l6tgx"]
 [ext_resource type="AudioStream" uid="uid://dx6j5h8sxk3d5" path="res://audio/sfx/OvaniSoundsPack/Abilities/nail_on_wall_2.wav" id="8_c2y3w"]
-[ext_resource type="AudioStream" uid="uid://6g7yqodhpwqc" path="res://audio/sfx/OvaniSoundsPack/Aeroportation Out.wav" id="8_h6thi"]
+[ext_resource type="AudioStream" uid="uid://desbjxuuqdsrw" path="res://audio/sfx/OvaniSoundsPack/magic-smite.wav" id="8_klsjf"]
 [ext_resource type="AudioStream" uid="uid://cou3fq32wpj5x" path="res://audio/sfx/OvaniSoundsPack/Abilities/nail_on_wall_3.wav" id="9_epcfg"]
 [ext_resource type="AudioStream" uid="uid://dr3qk15hvyd0m" path="res://audio/sfx/OvaniSoundsPack/Jet Engine Low Loop A.wav" id="9_h6thi"]
 [ext_resource type="AudioStream" uid="uid://dom8c7xjdqv00" path="res://audio/sfx/OvaniSoundsPack/Abilities/glider_open.wav" id="10_c2y3w"]
@@ -30,6 +30,9 @@
 [ext_resource type="AudioStream" uid="uid://tq6ud7e4jphv" path="res://audio/sfx/OvaniSoundsPack/Abilities/swing-whoosh-in-room-1.wav" id="27_klsjf"]
 [ext_resource type="AudioStream" uid="uid://d17bhmoc7d85q" path="res://audio/sfx/OvaniSoundsPack/Abilities/swing-whoosh-in-room-2.wav" id="28_5naqy"]
 [ext_resource type="AudioStream" uid="uid://bn8n8avgtice7" path="res://audio/sfx/OvaniSoundsPack/Abilities/swing-whoosh-in-room-3.wav" id="29_5d2j5"]
+[ext_resource type="AudioStream" uid="uid://dcoi4igsw76f3" path="res://audio/sfx/OvaniSoundsPack/Abilities/Bumper/bounce_1.wav" id="30_1o8ft"]
+[ext_resource type="AudioStream" uid="uid://bdx3u8aiqbl5w" path="res://audio/sfx/OvaniSoundsPack/Abilities/Bumper/bounce_2.wav" id="31_g2vg0"]
+[ext_resource type="AudioStream" uid="uid://vgab0y81y8kw" path="res://audio/sfx/OvaniSoundsPack/Abilities/Bumper/bounce_3.wav" id="32_17nyc"]
 
 [sub_resource type="Resource" id="Resource_suold"]
 script = ExtResource("1_uu1du")
@@ -83,7 +86,7 @@ metadata/_custom_type_script = "uid://c424y5ikihmkd"
 [sub_resource type="Resource" id="Resource_epcfg"]
 script = ExtResource("1_uu1du")
 name = "PORTAL_OUT"
-stream = ExtResource("8_h6thi")
+stream = ExtResource("8_klsjf")
 variants = Array[AudioStream]([])
 metadata/_custom_type_script = "uid://c424y5ikihmkd"
 
@@ -174,8 +177,14 @@ name = "ROPE_SWING"
 variants = Array[AudioStream]([ExtResource("27_klsjf"), ExtResource("28_5naqy"), ExtResource("29_5d2j5")])
 metadata/_custom_type_script = "uid://c424y5ikihmkd"
 
+[sub_resource type="Resource" id="Resource_5d2j5"]
+script = ExtResource("1_uu1du")
+name = "BUMPER_BOUNCE"
+variants = Array[AudioStream]([ExtResource("30_1o8ft"), ExtResource("31_g2vg0"), ExtResource("32_17nyc")])
+metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
 [resource]
 script = ExtResource("2_fyqrr")
 bus = "SFX"
-library = Array[ExtResource("1_uu1du")]([SubResource("Resource_suold"), SubResource("Resource_5bu4t"), SubResource("Resource_l6tgx"), SubResource("Resource_w4xao"), SubResource("Resource_xjkqv"), SubResource("Resource_1oyqy"), SubResource("Resource_c2y3w"), SubResource("Resource_epcfg"), SubResource("Resource_jd3vr"), SubResource("Resource_rrh40"), SubResource("Resource_voiin"), SubResource("Resource_asj8l"), SubResource("Resource_wp427"), SubResource("Resource_aydxs"), SubResource("Resource_etpub"), SubResource("Resource_lyqre"), SubResource("Resource_jathn"), SubResource("Resource_h1gwh"), SubResource("Resource_b1sm1"), SubResource("Resource_54p0j"), SubResource("Resource_1o8ft")])
+library = Array[ExtResource("1_uu1du")]([SubResource("Resource_suold"), SubResource("Resource_5bu4t"), SubResource("Resource_l6tgx"), SubResource("Resource_w4xao"), SubResource("Resource_xjkqv"), SubResource("Resource_1oyqy"), SubResource("Resource_c2y3w"), SubResource("Resource_epcfg"), SubResource("Resource_jd3vr"), SubResource("Resource_rrh40"), SubResource("Resource_voiin"), SubResource("Resource_asj8l"), SubResource("Resource_wp427"), SubResource("Resource_aydxs"), SubResource("Resource_etpub"), SubResource("Resource_lyqre"), SubResource("Resource_jathn"), SubResource("Resource_h1gwh"), SubResource("Resource_b1sm1"), SubResource("Resource_54p0j"), SubResource("Resource_1o8ft"), SubResource("Resource_5d2j5")])
 metadata/_custom_type_script = "uid://n76a1hc3br0m"

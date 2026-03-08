@@ -23,3 +23,4 @@ func _on_body_entered(body: Node3D) -> void:
 		var bounce_force = Vector3(0, -body_velocity_y + bounce_velocity_y, 0)
 		
 		body.applyExternalForce(bounce_force)
+		AudioBus.play_sfx("BUMPER_BOUNCE")
