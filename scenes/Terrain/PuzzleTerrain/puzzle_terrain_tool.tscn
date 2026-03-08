@@ -2,55 +2,100 @@
 
 [ext_resource type="Script" uid="uid://df3x24nasg2g5" path="res://scenes/Terrain/PuzzleTerrain/puzzle_terrain_tool.gd" id="1_luvjt"]
 [ext_resource type="Script" uid="uid://70d1hekukawy" path="res://scripts/resources/Stats/AbilityStats.gd" id="2_dluk2"]
+[ext_resource type="PackedScene" uid="uid://dvbuqr0aytha7" path="res://scenes/Terrain/tile_bloc.tscn" id="3_5cwhi"]
 [ext_resource type="Script" uid="uid://c37spsbe0xfd6" path="res://scripts/resources/PuzzleLevelRes.gd" id="3_vxvmr"]
-[ext_resource type="PackedScene" uid="uid://dvbuqr0aytha7" path="res://scenes/Terrain/tile_bloc.tscn" id="4_vxvmr"]
-[ext_resource type="PackedScene" uid="uid://lvbklg366xau" path="res://models/objects/Strawberry.tscn" id="5_phknu"]
+[ext_resource type="PackedScene" uid="uid://lvbklg366xau" path="res://models/objects/Strawberry.tscn" id="5_f0f81"]
 
-[sub_resource type="Resource" id="Resource_phknu"]
+[sub_resource type="Resource" id="Resource_dluk2"]
 script = ExtResource("2_dluk2")
-ability_name = "PO_BUMPER"
-initial_amount = 3
+ability_name = "PO_BUBBLE"
+initial_amount = 1
 amount_left = 0
 amount_used = 0
 metadata/_custom_type_script = "uid://70d1hekukawy"
 
-[sub_resource type="Resource" id="Resource_8ld2l"]
+[sub_resource type="Resource" id="Resource_vxvmr"]
 script = ExtResource("3_vxvmr")
-ID = 2
-name = "PO_BUMPER"
-abilities = Array[ExtResource("2_dluk2")]([SubResource("Resource_phknu")])
+ID = 7
+name = "TUTORIAL_BUBBLE"
+abilities = Array[ExtResource("2_dluk2")]([SubResource("Resource_dluk2")])
 blocs_positions = Array[Vector3]([])
 fruits_positions = Array[Vector3]([])
 start_position = Vector3(0, 1, 0)
-metadata/_custom_type_script = "uid://c37spsbe0xfd6"
 
 [node name="PuzzleTerrainTool" type="Node3D" node_paths=PackedStringArray("terrain_node", "fruits_node")]
 script = ExtResource("1_luvjt")
 terrain_node = NodePath("Terrain")
 fruits_node = NodePath("Fruits")
-file_name = "Bumper"
-puzzle_res = SubResource("Resource_8ld2l")
+save_path = "res://scripts/resources/Levels/Puzzles/TutorialPack/"
+file_name = "Bubble"
+puzzle_res = SubResource("Resource_vxvmr")
 
 [node name="Terrain" type="Node3D" parent="."]
 
-[node name="TileBloc3" parent="Terrain" instance=ExtResource("4_vxvmr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+[node name="StaticBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
 
-[node name="TileBloc22" parent="Terrain" instance=ExtResource("4_vxvmr")]
-
-[node name="TileBloc77" parent="Terrain" instance=ExtResource("4_vxvmr")]
+[node name="StaticBody3D2" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 
-[node name="TileBloc23" parent="Terrain" instance=ExtResource("4_vxvmr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 8)
+[node name="StaticBody3D3" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
-[node name="TileBloc24" parent="Terrain" instance=ExtResource("4_vxvmr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 8)
+[node name="StaticBody3D4" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 
-[node name="TileBloc25" parent="Terrain" instance=ExtResource("4_vxvmr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 6, 5)
+[node name="StaticBody3D5" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 5)
+
+[node name="StaticBody3D6" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 6)
+
+[node name="StaticBody3D7" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 6)
+
+[node name="StaticBody3D8" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 6)
+
+[node name="StaticBody3D9" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 7)
+
+[node name="StaticBody3D10" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3, 5)
+
+[node name="StaticBody3D11" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3, 6)
+
+[node name="StaticBody3D12" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3, 6)
+
+[node name="StaticBody3D13" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, 6)
+
+[node name="StaticBody3D14" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3, 7)
+
+[node name="StaticBody3D15" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 5)
+
+[node name="StaticBody3D16" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 6)
+
+[node name="StaticBody3D17" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 6)
+
+[node name="StaticBody3D18" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 6)
+
+[node name="StaticBody3D19" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 7)
 
 [node name="Fruits" type="Node3D" parent="."]
 
-[node name="Strawberry" parent="Fruits" instance=ExtResource("5_phknu")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2, 7, 5)
+[node name="Strawberry" parent="Fruits" instance=ExtResource("5_f0f81")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 6)
+
+[node name="Strawberry2" parent="Fruits" instance=ExtResource("5_f0f81")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2, 4, 6)
+
+[node name="Strawberry3" parent="Fruits" instance=ExtResource("5_f0f81")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2, 2, 6)
