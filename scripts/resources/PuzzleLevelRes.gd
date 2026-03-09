@@ -4,6 +4,7 @@ class_name PuzzleLevelRes
 
 @export var ID :int = 0
 @export var name :String = ""
+@export var thumbnail :CompressedTexture2D
 @export var abilities :Array[AbilityStats] = []
 @export var blocs_positions :Array[Vector3] = []
 @export var fruits_positions :Array[Vector3] = []

@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="PuzzleLevelRes" load_steps=4 format=3 uid="uid://dwlhowf7geqeg"]
+[gd_resource type="Resource" script_class="PuzzleLevelRes" load_steps=5 format=3 uid="uid://dwlhowf7geqeg"]
 
 [ext_resource type="Script" uid="uid://70d1hekukawy" path="res://scripts/resources/Stats/AbilityStats.gd" id="1_oty5g"]
 [ext_resource type="Script" uid="uid://c37spsbe0xfd6" path="res://scripts/resources/PuzzleLevelRes.gd" id="2_1a5wo"]
+[ext_resource type="Texture2D" uid="uid://hb1ak7j4a8h4" path="res://scripts/resources/Levels/Puzzles/TutorialPack/thumbnails/thumb_box.png" id="3_4i7bc"]
 
 [sub_resource type="Resource" id="Resource_phknu"]
 script = ExtResource("1_oty5g")
@@ -14,7 +15,8 @@ metadata/_custom_type_script = "uid://70d1hekukawy"
 [resource]
 script = ExtResource("2_1a5wo")
 ID = 1
-name = "Box"
+name = "PO_BOX"
+thumbnail = ExtResource("3_4i7bc")
 abilities = Array[ExtResource("1_oty5g")]([SubResource("Resource_phknu")])
 blocs_positions = Array[Vector3]([Vector3(0, 0, 0), Vector3(0, 0, 1), Vector3(1, 0, 0), Vector3(-1, 0, 0), Vector3(-1, 1, 1), Vector3(1, 1, 1), Vector3(0, 1, 2), Vector3(3, 2, 0), Vector3(-3, 2, 0), Vector3(2, 1, 0), Vector3(-2, 1, 0), Vector3(-1, 1, -1), Vector3(1, 1, -1), Vector3(0, 1, -2), Vector3(0, 0, -1), Vector3(4, 2, 0), Vector3(-4, 2, 0), Vector3(0, 2, 3), Vector3(0, 2, 4), Vector3(0, 2, -2), Vector3(0, 3, -2)])
 fruits_positions = Array[Vector3]([Vector3(4, 3, 0), Vector3(-4, 3, 0), Vector3(0, 3, 4), Vector3(0, 4, -2)])
