@@ -74,7 +74,13 @@ func init() -> void:
 
 	nbFruitTaken = 0
 	
+	var saved_stats = SaveManager.save_game_res.puzzle_levels.try_get_completed_level(puzzle_res.ID)
+	if saved_stats != null:
+		Global.current_level_stats = saved_stats
+	
 	level_stats = LevelStats.new()
+
+	SignalBus.current_level_stats_updated.emit(Global.current_level_stats)
 	
 	abilitiesSettings.set_picked_abilities(puzzle_res.abilities)
 

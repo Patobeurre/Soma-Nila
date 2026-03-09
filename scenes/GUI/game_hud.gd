@@ -22,12 +22,16 @@ func _ready() -> void:
 	SignalBus.rope_state_available.connect(_display_arrow_reticle)
 	SignalBus.fruit_picked.connect(_display_fruit)
 	SignalBus.can_interact.connect(_display_interact_key)
+	SignalBus.ability_selector_populated.connect(_on_abilities_changed)
+	SignalBus.current_level_stats_updated.connect(_on_level_stats_changed)
 
 	selectedAbilityName.text = ""
-	
+
+
+func _on_level_stats_changed(level_stats :LevelStats) -> void:
 	if ProjectSettings.get_setting("custom/speedrun_mode"):
 		timerTxt.visible = true
-		level_best_time = Global.current_level_stats.completionTime
+		level_best_time = level_stats.completionTime
 		SignalBus.level_timer_updated.connect(_display_timer)
 
 

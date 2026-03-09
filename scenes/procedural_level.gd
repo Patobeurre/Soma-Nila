@@ -54,6 +54,7 @@ func _ready() -> void:
 	level_sm.transition(disabled_state)
 	
 	level_stats = LevelStats.new()
+	SignalBus.current_level_stats_updated.emit(Global.current_level_stats)
 	
 	if Global.main_level_res:
 		level_res = Global.main_level_res

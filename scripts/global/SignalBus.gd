@@ -34,6 +34,7 @@ signal abilities_setup(Array)
 
 signal level_intro_finished
 
+signal current_level_stats_updated(LevelStats)
 signal level_timer_updated(float)
 
 

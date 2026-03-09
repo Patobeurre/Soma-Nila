@@ -12,9 +12,7 @@ const VERSION :String = "1.2"
 
 
 func write_savegame() -> void:
-	print("write save game...")
 	ResourceSaver.save(self, get_save_path())
-	print("done")
 
 static func save_exists() -> bool:
 	print(get_save_path())
@@ -39,12 +37,15 @@ static func get_save_path() -> String:
 
 
 func apply_patches():
+	#ToDo: version check and apply patches
+
 	if saved_version < VERSION:
 		apply_patch_v102()
 	saved_version = VERSION
 
 
 func apply_patch_v102() -> void:
-	var ability_vacuum = load("res://scripts/resources/Abilities/A_Vacuum.tres")
-	for level :LevelStats in favorite_levels.levels:
-		level.excluded_abilities.append(AbilityStats.create(ability_vacuum))
+	pass
+	#var ability_vacuum = load("res://scripts/resources/Abilities/A_Vacuum.tres")
+	#for level :LevelStats in favorite_levels.levels:
+	#	level.excluded_abilities.append(AbilityStats.create(ability_vacuum))
