@@ -272,6 +272,24 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_33d8n")
 text = "TITLE_FAVORITELEVELS"
 expand_icon = true
 
+[node name="BtnPuzzles" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+focus_neighbor_left = NodePath("../../../../MarginContainer2/HBoxContainer/BtnCredits")
+focus_neighbor_top = NodePath("../BtnCustomGame")
+focus_neighbor_bottom = NodePath("../BtnSettings")
+theme = ExtResource("4_h03jd")
+theme_override_colors/font_outline_color = Color(0.223529, 0.223529, 0.223529, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxTexture_6d3bs")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4wyhd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0ufdl")
+theme_override_styles/normal = SubResource("StyleBoxTexture_33d8n")
+text = "TITLE_PUZZLE_LEVELS"
+expand_icon = true
+
 [node name="BtnSettings" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
@@ -399,6 +417,7 @@ layout_mode = 2
 [connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/BtnNewGame" to="." method="_on_btn_new_game_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/BtnCustomGame" to="." method="_on_btn_custom_game_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/BtnFavoriteLevels" to="." method="_on_btn_favorite_levels_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/BtnPuzzles" to="." method="_on_btn_puzzles_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/BtnSettings" to="." method="_on_btn_settings_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/BtnQuit" to="." method="_on_btn_quit_pressed"]
 [connection signal="pressed" from="MarginContainer2/HBoxContainer/BtnCredits" to="." method="_on_btn_credits_pressed"]

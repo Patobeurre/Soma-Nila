@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc5d3l5b8no78"]
+
+[ext_resource type="Texture2D" uid="uid://cb1aq3hkcwley" path="res://images/ability_icons/nails.png" id="1_gtlhv"]
+
+[node name="TextureRect" type="TextureRect"]
+mouse_filter = 2
+texture = ExtResource("1_gtlhv")
+expand_mode = 2
+stretch_mode = 5

@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://84uc78j8j0hg"]
+
+[ext_resource type="Theme" uid="uid://7vunodgdyjg2" path="res://UI/themes/base_font.tres" id="1_x7n4e"]
+[ext_resource type="Script" uid="uid://bvn6m4mkoa1bn" path="res://scenes/GUI/LevelLibrary/levels_library.gd" id="2_7a7aj"]
+[ext_resource type="StyleBox" uid="uid://e5cpgac5ah0y" path="res://UI/themes/panel_box_texture.tres" id="2_orodn"]
+[ext_resource type="PackedScene" uid="uid://b3nbupd2tmro4" path="res://scenes/GUI/LevelLibrary/level_pack_panel.tscn" id="4_orodn"]
+[ext_resource type="Resource" uid="uid://c2trp7x8kxyoe" path="res://scripts/resources/Levels/PuzzlesPack/TutorialPack.tres" id="5_visgs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7a7aj"]
+
+[node name="LevelLibraryPanel" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_x7n4e")
+theme_override_styles/panel = ExtResource("2_orodn")
+script = ExtResource("2_7a7aj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="TitleText" type="RichTextLabel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme = ExtResource("1_x7n4e")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "TITLE_PUZZLE_LEVELS"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7a7aj")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer3" instance=ExtResource("4_orodn")]
+layout_mode = 2
+level_pack_res = ExtResource("5_visgs")

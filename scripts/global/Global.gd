@@ -6,6 +6,8 @@ var game_controller :GameController
 var main_level_res :MainLevelRes = MainLevelRes.new()
 var current_level_stats :LevelStats = LevelStats.new()
 
+var puzzle_level_res :PuzzleLevelRes = PuzzleLevelRes.new()
+
 var player_global_pos :Vector3 = Vector3.ZERO
 var player_camera_orientation :Vector3 = Vector3.ZERO
 

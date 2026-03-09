@@ -41,7 +41,7 @@ var terrainSettings :TerrainGenerationSettings = load("res://scripts/resources/T
 func _ready() -> void:
 	AudioBus.play_music("LEVEL_PLAYLIST")
 	SignalBus.abilities_setup.connect(_on_abilities_setup)
-	SignalBus.level_intro_finished.connect(_on_level_intro_finished)
+	SignalBus.level_intro_finished.connect(_on_level_intro_finished, CONNECT_ONE_SHOT)
 	SignalBus.selected_ability_changed.connect(_on_selected_ability_changed)
 	SignalBus.use_rope_requested.connect(player.rope_ability_requested)
 	SignalBus.use_bubble_requested.connect(player.bubble_ability_requested)
@@ -55,10 +55,13 @@ func _ready() -> void:
 	map_node.settings = terrainSettings
 	place_bondaries()
 
-	init()
+	if Global.puzzle_level_res:
+		init()
 
 
 func init() -> void:
+	puzzle_res = Global.puzzle_level_res.duplicate(true)
+
 	level_sm.transition(disabled_state)
 
 	portal.set_activated(false)
@@ -70,8 +73,6 @@ func init() -> void:
 	level_stats = LevelStats.new()
 	
 	abilitiesSettings.set_picked_abilities(puzzle_res.abilities)
-
-	_on_level_intro_finished()
 
 
 func inputManagement() -> void:
@@ -138,7 +139,15 @@ func get_placeholder_rotation() -> Vector3:
 
 
 func restart_level_keep_params():
-	init()
+	Global.game_controller.restart_puzzle_level(puzzle_res)
+
+
+func restart_level_regenerate():
+	pass
+
+
+func exit_level_requested():
+	Global.game_controller.return_to_puzzles_menu()
 
 
 func remove_placeable_objects() -> void:
@@ -182,12 +191,13 @@ func end_level():
 	SaveManager.save_game_res.remaining_abilities.add_all(remaining_abilities)
 	SignalBus.save_requested.emit()
 
+	level_stats.seed = puzzle_res.ID
 	level_stats.game_version = SaveManager.save_game_res.VERSION
 	level_stats.set_used_abilities_from_remainings(remaining_abilities)
 	level_stats.completionTime = currentTimer
 	
 	Global.current_level_stats = level_stats
-	Global.game_controller.end_level_transition()
+	Global.game_controller.end_puzzle_level_transition()
 
 
 func _on_level_intro_finished():

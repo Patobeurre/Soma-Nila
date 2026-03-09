@@ -32,6 +32,11 @@ func _on_btn_favorite_levels_pressed() -> void:
 	Global.game_controller.open_saved_levels_menu()
 
 
+func _on_btn_puzzles_pressed() -> void:
+	AudioBus.play_sfx("BTN_OK")
+	Global.game_controller.open_puzzles_menu()
+
+
 func _on_btn_settings_pressed() -> void:
 	AudioBus.play_sfx("BTN_OK")
 	Global.game_controller.open_settings_menu()
@@ -43,3 +48,4 @@ func _on_btn_quit_pressed() -> void:
 
 func _on_btn_credits_pressed() -> void:
 	credits_container.visible = !credits_container.visible
+

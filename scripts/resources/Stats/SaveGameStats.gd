@@ -8,6 +8,7 @@ const VERSION :String = "1.2"
 @export var favorite_levels :SavedLevelStats = SavedLevelStats.new()
 @export var remaining_abilities :RemainingAbilitiesStats = RemainingAbilitiesStats.new()
 @export var progress_variables :ProgressVariablesStats = ProgressVariablesStats.new()
+@export var puzzle_levels :PuzzleLevelStats = PuzzleLevelStats.new()
 
 
 func write_savegame() -> void:

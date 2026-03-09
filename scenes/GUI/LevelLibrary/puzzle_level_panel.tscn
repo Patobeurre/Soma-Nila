@@ -1,0 +1,121 @@
+[gd_scene load_steps=10 format=3 uid="uid://c1mjawsl6snqr"]
+
+[ext_resource type="Script" uid="uid://bmq8cdw30jfgj" path="res://scenes/GUI/LevelLibrary/puzzle_level_panel.gd" id="1_tgjsy"]
+[ext_resource type="Texture2D" uid="uid://f4bfkjf1s7sw" path="res://images/UI/star.png" id="3_70x5v"]
+[ext_resource type="Texture2D" uid="uid://ca3y4r0fwbkab" path="res://images/UI/star_disabled.png" id="3_g63kd"]
+[ext_resource type="Theme" uid="uid://7vunodgdyjg2" path="res://UI/themes/base_font.tres" id="4_l1v1k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4eak"]
+bg_color = Color(1, 1, 1, 0.196078)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iww4u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iww4u"]
+bg_color = Color(1, 1, 1, 0.235294)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_70x5v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g63kd"]
+
+[node name="PuzzleLevelPanel" type="Control"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_tgjsy")
+
+[node name="PanelContainer3" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Thumbnail" type="TextureRect" parent="PanelContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 3
+
+[node name="AbilitiesPanel" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h4eak")
+
+[node name="LevelNameText" type="RichTextLabel" parent="PanelContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("4_l1v1k")
+theme_override_colors/font_outline_color = Color(0.0475577, 0.0475576, 0.0475576, 1)
+theme_override_constants/outline_size = 10
+bbcode_enabled = true
+text = "LEVEL_NAME"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="PanelContainer4" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_iww4u")
+
+[node name="BtnLevel" type="Button" parent="PanelContainer4"]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_iww4u")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_70x5v")
+
+[node name="CompletedIconPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_g63kd")
+
+[node name="CompletedIconBackground" type="TextureRect" parent="CompletedIconPanel"]
+layout_mode = 2
+texture = ExtResource("3_g63kd")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="CompletedIcon" type="TextureRect" parent="CompletedIconPanel"]
+layout_mode = 2
+texture = ExtResource("3_70x5v")
+expand_mode = 2
+stretch_mode = 3
+flip_h = true
+
+[connection signal="pressed" from="PanelContainer4/BtnLevel" to="." method="_on_btn_level_pressed"]

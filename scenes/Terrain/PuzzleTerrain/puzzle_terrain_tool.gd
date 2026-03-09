@@ -77,3 +77,7 @@ func load_level():
 		fruit.set_owner(get_tree().edited_scene_root)
 		fruit.global_position = fruit_pos
 		fruit.scale = Vector3.ONE * 0.2
+
+
+func _ready() -> void:
+	Global.player_global_pos = $Environement/Camera3D.global_position

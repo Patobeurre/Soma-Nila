@@ -224,7 +224,6 @@ func end_level():
 
 func _on_level_intro_finished():
 	AudioBus.play_sfx("PORTAL_OUT")
-	#if isMapGenerated:
 	abilitySelector.set_selected_ability(0)
 	currentTimer = 0
 	level_sm.transition(playing_state)
@@ -238,6 +237,10 @@ func _on_terminal_interaction_request(camera :Camera3D) -> void:
 
 func exit_interaction() -> void:
 	level_sm.transition(playing_state)
+
+
+func exit_level_requested():
+	Global.game_controller.return_to_main_menu()
 
 
 func enable_ability_selector(enabled :bool) -> void:

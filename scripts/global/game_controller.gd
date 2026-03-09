@@ -60,7 +60,6 @@ func start_game(level_scene_path :String, show_level_intro :bool = true) -> void
 	change_3d_scene(level_scene_path)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-
 func restart_level() -> void:
 	Global.main_level_res.terrainSettings = terrain_settings.duplicate(true)
 	Global.main_level_res.terrainSettings.noiseParams = noise_params.duplicate(true)
@@ -71,11 +70,18 @@ func restart_level() -> void:
 	SignalBus.level_intro_finished.emit()
 
 
-func start_puzzle_level(puzzle_res :PuzzleLevelRes):
+func start_puzzle_level(puzzle_res :PuzzleLevelRes, show_level_intro :bool = true):
+	Global.puzzle_level_res = puzzle_res
 	change_gui_scene("res://scenes/GUI/game_hud.tscn")
-	change_gui_scene("res://scenes/GUI/level_intro_screen.tscn", false, true)
+	if show_level_intro:
+		change_gui_scene("res://scenes/GUI/level_intro_screen.tscn", false, true)
 	change_3d_scene("res://scenes/puzzle_level.tscn")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func restart_puzzle_level(puzzle_res :PuzzleLevelRes) -> void:
+	Global.puzzle_level_res = PuzzleLevelRes.new()
+	start_puzzle_level(puzzle_res, false)
+	SignalBus.level_intro_finished.emit()
 
 
 func is_secret_level(level_res :MainLevelRes) -> bool:
@@ -100,6 +106,13 @@ func end_level_transition() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 
+func end_puzzle_level_transition():
+	change_gui_scene("res://scenes/GUI/puzzle_level_outro_screen.tscn")
+	if current_3d_scene != null:
+		current_3d_scene.queue_free()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+
 func return_to_main_menu() -> void:
 	AudioBus.play_music("TITLE_SCREEN")
 	Utils.remove_children(gui)
@@ -108,6 +121,14 @@ func return_to_main_menu() -> void:
 		current_3d_scene.queue_free()
 	change_3d_scene("res://scenes/Terrain/waving_terrain.tscn")
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+func return_to_puzzles_menu():
+	AudioBus.play_music("TITLE_SCREEN")
+	Utils.remove_children(gui)
+	open_puzzles_menu()
+	if current_3d_scene != null:
+		current_3d_scene.queue_free()
+	change_3d_scene("res://scenes/Terrain/waving_terrain.tscn")
 
 
 func open_custom_game_menu() -> void:
@@ -120,6 +141,10 @@ func open_settings_menu() -> void:
 
 func open_saved_levels_menu() -> void:
 	change_gui_scene("res://scenes/GUI/favorite_levels_menu.tscn")
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+func open_puzzles_menu() -> void:
+	change_gui_scene("res://scenes/GUI/puzzle_levels_menu.tscn")
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func display_current_gui(visible :bool) -> void:

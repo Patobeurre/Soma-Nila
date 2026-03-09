@@ -1,7 +1,7 @@
 extends Control
 
 
-@onready var abilitiesContainer = $MarginContainer/VBoxContainer/PanelContainer/HBoxContainer
+@onready var abilitiesContainer = %AbilitiesIconContainer
 @onready var selectedAbilityName = $MarginContainer/VBoxContainer/SelectedAbilityName
 @onready var arrowReticle = $Crosshair/ArrowReticle
 @onready var interactKey = $Crosshair/InteractKey
@@ -22,6 +22,8 @@ func _ready() -> void:
 	SignalBus.rope_state_available.connect(_display_arrow_reticle)
 	SignalBus.fruit_picked.connect(_display_fruit)
 	SignalBus.can_interact.connect(_display_interact_key)
+
+	selectedAbilityName.text = ""
 	
 	if ProjectSettings.get_setting("custom/speedrun_mode"):
 		timerTxt.visible = true

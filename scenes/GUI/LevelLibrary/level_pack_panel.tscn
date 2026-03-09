@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3nbupd2tmro4"]
+
+[ext_resource type="Script" uid="uid://2t20te5a1atv" path="res://scenes/GUI/LevelLibrary/library_level_pack_panel.gd" id="1_gmb6u"]
+[ext_resource type="Theme" uid="uid://7vunodgdyjg2" path="res://UI/themes/base_font.tres" id="2_4apsu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7a7aj"]
+border_width_top = 2
+border_width_bottom = 2
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[node name="VBoxContainer" type="VBoxContainer"]
+script = ExtResource("1_gmb6u")
+
+[node name="LevelPackTitleText" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_4apsu")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "LEVEL_PACK_TITLE"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 2
+
+[node name="HSeparator4" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxFlat_7a7aj")
+
+[node name="LevelPackFlowContainer" type="HFlowContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 50

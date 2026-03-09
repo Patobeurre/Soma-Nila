@@ -5,3 +5,4 @@
 [resource]
 default_font = ExtResource("1_stf6i")
 default_font_size = 30
+TabBar/font_sizes/font_size = 80

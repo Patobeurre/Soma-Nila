@@ -24,7 +24,7 @@ func inputManagement():
 	if Input.is_action_just_pressed("restart_forced"):
 		parentNode.restart_level_regenerate()
 	if Input.is_action_just_pressed("ui_cancel"):
-		Global.game_controller.return_to_main_menu()
+		parentNode.exit_level_requested()
 
 
 func setRefNode(node :Node3D):

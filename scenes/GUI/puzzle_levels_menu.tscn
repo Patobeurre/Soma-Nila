@@ -1,0 +1,97 @@
+[gd_scene load_steps=11 format=3 uid="uid://bgbtrdr10gb0k"]
+
+[ext_resource type="Script" uid="uid://c02tsfh3rtpg" path="res://scenes/GUI/favorite_levels_menu.gd" id="1_68wsi"]
+[ext_resource type="PackedScene" uid="uid://84uc78j8j0hg" path="res://scenes/GUI/LevelLibrary/levels_library.tscn" id="2_68wsi"]
+[ext_resource type="Theme" uid="uid://7vunodgdyjg2" path="res://UI/themes/base_font.tres" id="3_80uxg"]
+[ext_resource type="Texture2D" uid="uid://va8hfwhyu43b" path="res://images/UI/ui_button_red_3d.png" id="4_iajpe"]
+[ext_resource type="Texture2D" uid="uid://6u5ufuc8t6du" path="res://images/UI/ui_button_red_flat.png" id="5_alhyg"]
+[ext_resource type="Texture2D" uid="uid://byihob66vap8s" path="res://images/arrow_left.png" id="6_kn38n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fr8df"]
+bg_color = Color(0, 0, 0, 0.392157)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u1n05"]
+texture = ExtResource("4_iajpe")
+texture_margin_left = 40.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+modulate_color = Color(0.8, 0.8, 0.8, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j6jvn"]
+texture = ExtResource("5_alhyg")
+texture_margin_left = 30.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6yi1e"]
+texture = ExtResource("4_iajpe")
+texture_margin_left = 40.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+
+[node name="SavedLevelMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_68wsi")
+
+[node name="DarkMask" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fr8df")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 50
+
+[node name="LevelLibraryPanel" parent="MarginContainer" instance=ExtResource("2_68wsi")]
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -142.0
+offset_right = 207.0
+grow_vertical = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="BtnBack" type="Button" parent="MarginContainer3"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("3_80uxg")
+theme_override_colors/font_outline_color = Color(0.223529, 0.223529, 0.223529, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxTexture_u1n05")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j6jvn")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6yi1e")
+text = "BTN_RETURN"
+icon = ExtResource("6_kn38n")
+
+[connection signal="pressed" from="MarginContainer3/BtnBack" to="." method="_on_btn_back_pressed"]
