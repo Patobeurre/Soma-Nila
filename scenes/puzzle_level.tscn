@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://cjtjvqm34ayp2"]
+[gd_scene load_steps=20 format=3 uid="uid://cjtjvqm34ayp2"]
 
 [ext_resource type="Script" uid="uid://dj6et40r463fb" path="res://scenes/puzzle_level.gd" id="1_328bm"]
+[ext_resource type="Resource" uid="uid://uxfkh6xjfe1q" path="res://scripts/resources/Levels/Puzzles/TutorialPack/11-Glue.tres" id="2_328bm"]
 [ext_resource type="Resource" uid="uid://ct3je3220pc05" path="res://scripts/resources/Terrain/PuzzleTerrainSettings.tres" id="2_rbsdd"]
 [ext_resource type="Environment" uid="uid://evgf73em6ceg" path="res://scripts/resources/Environments/main_level_env.tres" id="3_rbsdd"]
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/PlayerCharacterScene.tscn" id="4_1pjho"]
@@ -26,6 +27,7 @@ metadata/_custom_type_script = "uid://djrr832cj7vjl"
 
 [node name="MainLevel" type="Node3D"]
 script = ExtResource("1_328bm")
+puzzle_res = ExtResource("2_328bm")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("3_rbsdd")

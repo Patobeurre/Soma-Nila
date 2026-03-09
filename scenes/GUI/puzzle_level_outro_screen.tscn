@@ -324,6 +324,7 @@ text = "BTN_REPLAY"
 icon = ExtResource("16_0k57j")
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="PuzzleLevelRes" load_steps=5 format=3 uid="uid://bul1c5invcg1j"]
+
+[ext_resource type="Script" uid="uid://70d1hekukawy" path="res://scripts/resources/Stats/AbilityStats.gd" id="1_khemo"]
+[ext_resource type="Script" uid="uid://c37spsbe0xfd6" path="res://scripts/resources/PuzzleLevelRes.gd" id="2_in63q"]
+[ext_resource type="Texture2D" uid="uid://cryc3qlqmi2ok" path="res://scripts/resources/Levels/Puzzles/TutorialPack/thumbnails/thumb_move.png" id="3_in63q"]
+
+[sub_resource type="Resource" id="Resource_vxvmr"]
+script = ExtResource("1_khemo")
+ability_name = "A_MOVEOBJECT"
+initial_amount = 4
+amount_left = 0
+amount_used = 0
+metadata/_custom_type_script = "uid://70d1hekukawy"
+
+[resource]
+script = ExtResource("2_in63q")
+ID = 9
+name = "A_MOVEOBJECT"
+thumbnail = ExtResource("3_in63q")
+abilities = Array[ExtResource("1_khemo")]([SubResource("Resource_vxvmr")])
+blocs_positions = Array[Vector3]([Vector3(0, 0, 0), Vector3(0, 1, 2), Vector3(1, 1, 2), Vector3(-1, 1, 2), Vector3(1, 2, 2), Vector3(-1, 2, 2), Vector3(0, 0, 1), Vector3(0, 0, 2), Vector3(0, 0, 3), Vector3(0, 0, 4), Vector3(1, 0, 5), Vector3(0, 0, 5), Vector3(-1, 0, 5), Vector3(-1, 0, 2), Vector3(1, 0, 2), Vector3(-3, 1, 5), Vector3(3, 1, 5), Vector3(-4, 2, 4), Vector3(4, 2, 4)])
+fruits_positions = Array[Vector3]([Vector3(4, 3, 4), Vector3(-4, 3, 4)])
+start_position = Vector3(0, 1, 0)

@@ -22,6 +22,7 @@ func save_level():
 	var res :PuzzleLevelRes = PuzzleLevelRes.new()
 	res.ID = puzzle_res.ID
 	res.name = puzzle_res.name
+	res.thumbnail = puzzle_res.thumbnail
 	res.abilities = puzzle_res.abilities.duplicate(true)
 	res.start_position = puzzle_res.start_position
 

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LevelPackRes" load_steps=11 format=3 uid="uid://c2trp7x8kxyoe"]
+[gd_resource type="Resource" script_class="LevelPackRes" load_steps=15 format=3 uid="uid://c2trp7x8kxyoe"]
 
 [ext_resource type="Script" uid="uid://c37spsbe0xfd6" path="res://scripts/resources/PuzzleLevelRes.gd" id="1_cgiwq"]
 [ext_resource type="Resource" uid="uid://df4ab6tc8g75w" path="res://scripts/resources/Levels/Puzzles/TutorialPack/0-Basics.tres" id="2_cx0vo"]
@@ -9,10 +9,14 @@
 [ext_resource type="Resource" uid="uid://benijmyubo72p" path="res://scripts/resources/Levels/Puzzles/TutorialPack/5-Glider.tres" id="7_irgn8"]
 [ext_resource type="Resource" uid="uid://b6mb28rky7u1j" path="res://scripts/resources/Levels/Puzzles/TutorialPack/6-MovingPlatforms.tres" id="8_70uak"]
 [ext_resource type="Resource" uid="uid://b68b7mkoqleyf" path="res://scripts/resources/Levels/Puzzles/TutorialPack/7-Bubble.tres" id="9_a2hq4"]
+[ext_resource type="Resource" uid="uid://chxwv7cuyk3ja" path="res://scripts/resources/Levels/Puzzles/TutorialPack/8-Rope.tres" id="10_cx0vo"]
 [ext_resource type="Script" uid="uid://hje1d4mj0irc" path="res://scripts/resources/Levels/PuzzlesPack/LevelPackRes.gd" id="10_lxobe"]
+[ext_resource type="Resource" uid="uid://bul1c5invcg1j" path="res://scripts/resources/Levels/Puzzles/TutorialPack/9-MoveObject.tres" id="11_nd2rs"]
+[ext_resource type="Resource" uid="uid://dh1ap3t0scgg8" path="res://scripts/resources/Levels/Puzzles/TutorialPack/10-Jetpack.tres" id="12_0gt5h"]
+[ext_resource type="Resource" uid="uid://uxfkh6xjfe1q" path="res://scripts/resources/Levels/Puzzles/TutorialPack/11-Glue.tres" id="13_733e4"]
 
 [resource]
 script = ExtResource("10_lxobe")
 name = "TITLE_TUTORIALS"
-levels = Array[ExtResource("1_cgiwq")]([ExtResource("2_cx0vo"), ExtResource("3_nd2rs"), ExtResource("4_0gt5h"), ExtResource("5_733e4"), ExtResource("6_3o4hp"), ExtResource("7_irgn8"), ExtResource("8_70uak"), ExtResource("9_a2hq4")])
+levels = Array[ExtResource("1_cgiwq")]([ExtResource("2_cx0vo"), ExtResource("3_nd2rs"), ExtResource("4_0gt5h"), ExtResource("5_733e4"), ExtResource("6_3o4hp"), ExtResource("7_irgn8"), ExtResource("8_70uak"), ExtResource("9_a2hq4"), ExtResource("10_cx0vo"), ExtResource("11_nd2rs"), ExtResource("12_0gt5h"), ExtResource("13_733e4")])
 metadata/_custom_type_script = "uid://hje1d4mj0irc"

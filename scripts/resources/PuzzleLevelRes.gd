@@ -2,7 +2,7 @@ extends Resource
 class_name PuzzleLevelRes
 
 
-@export var ID :int = 0
+@export var ID :int = -1
 @export var name :String = ""
 @export var thumbnail :CompressedTexture2D
 @export var abilities :Array[AbilityStats] = []

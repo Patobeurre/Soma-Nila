@@ -55,12 +55,16 @@ func _ready() -> void:
 	map_node.settings = terrainSettings
 	place_bondaries()
 
-	if Global.puzzle_level_res:
+	if Global.puzzle_level_res.ID >= 0:
+		puzzle_res = Global.puzzle_level_res.duplicate(true)
 		init()
+	#ToDo : remove
+	else:
+		init()
+		_on_level_intro_finished()
 
 
 func init() -> void:
-	puzzle_res = Global.puzzle_level_res.duplicate(true)
 
 	level_sm.transition(disabled_state)
 
@@ -139,7 +143,12 @@ func get_placeholder_rotation() -> Vector3:
 
 
 func restart_level_keep_params():
-	Global.game_controller.restart_puzzle_level(puzzle_res)
+	if Global.game_controller:
+		Global.game_controller.restart_puzzle_level(puzzle_res)
+	#ToDo : remove
+	else:
+		init()
+		_on_level_intro_finished()
 
 
 func restart_level_regenerate():
