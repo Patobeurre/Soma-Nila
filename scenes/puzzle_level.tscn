@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://cjtjvqm34ayp2"]
 
 [ext_resource type="Script" uid="uid://dj6et40r463fb" path="res://scenes/puzzle_level.gd" id="1_328bm"]
-[ext_resource type="Resource" uid="uid://h0jdii0onmd6" path="res://scripts/resources/Levels/Puzzles/2-Bumper.tres" id="2_328bm"]
+[ext_resource type="Resource" uid="uid://df4ab6tc8g75w" path="res://scripts/resources/Levels/Puzzles/TutorialPack/0-Basics.tres" id="2_328bm"]
 [ext_resource type="Resource" uid="uid://ct3je3220pc05" path="res://scripts/resources/Terrain/PuzzleTerrainSettings.tres" id="2_rbsdd"]
 [ext_resource type="Environment" uid="uid://evgf73em6ceg" path="res://scripts/resources/Environments/main_level_env.tres" id="3_rbsdd"]
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/PlayerCharacterScene.tscn" id="4_1pjho"]
@@ -56,11 +56,11 @@ settings = ExtResource("2_rbsdd")
 
 [node name="Boundaries" parent="." instance=ExtResource("7_w0mfp")]
 
+[node name="Portal" parent="." instance=ExtResource("9_eryio")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 51.3525)
+
 [node name="Objectives" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 51.3525)
-
-[node name="Portal" parent="Objectives" instance=ExtResource("9_eryio")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 
 [node name="AbilitySelector" type="Node" parent="."]
 script = ExtResource("10_5fdm0")

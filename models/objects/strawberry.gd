@@ -19,4 +19,5 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	SignalBus.fruit_picked.emit(self)
+	if visible:
+		SignalBus.fruit_picked.emit(self)

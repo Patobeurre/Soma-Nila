@@ -2,7 +2,7 @@ extends Node3D
 
 
 @onready var player :PlayerCharacter = $PlayerCharacter
-@onready var portal :LevelPortal = $Objectives/Portal
+@onready var portal :LevelPortal = $Portal
 @onready var abilitySelector :AbilitySelector = $AbilitySelector
 @onready var abilityStateMachine :StateMachineStrategy = $AbilitiesStateMachine
 @onready var ability_disabled_state: DisabledState = $AbilitiesStateMachine/DisabledState
@@ -40,7 +40,7 @@ var terrainSettings :TerrainGenerationSettings = load("res://scripts/resources/T
 
 func _ready() -> void:
 	AudioBus.play_music("LEVEL_PLAYLIST")
-	SignalBus.abilities_setup.connect(_on_abilities_setup, CONNECT_ONE_SHOT)
+	SignalBus.abilities_setup.connect(_on_abilities_setup)
 	SignalBus.level_intro_finished.connect(_on_level_intro_finished)
 	SignalBus.selected_ability_changed.connect(_on_selected_ability_changed)
 	SignalBus.use_rope_requested.connect(player.rope_ability_requested)
@@ -52,15 +52,24 @@ func _ready() -> void:
 	SignalBus.terminal_cam_transition_requested.connect(_on_terminal_interaction_request)
 	map_node.map_generation_finished.connect(_on_map_generated)
 	
-	nbFruitTaken = 0
+	map_node.settings = terrainSettings
+	place_bondaries()
+
+	init()
+
+
+func init() -> void:
 	level_sm.transition(disabled_state)
+
+	portal.set_activated(false)
+	Utils.remove_children(placeableObject_node)
+	Utils.remove_children(objectives_node)
+
+	nbFruitTaken = 0
 	
 	level_stats = LevelStats.new()
 	
 	abilitiesSettings.set_picked_abilities(puzzle_res.abilities)
-	map_node.settings = terrainSettings
-
-	print(terrainSettings.terrain_scale)
 
 	_on_level_intro_finished()
 
@@ -129,8 +138,7 @@ func get_placeholder_rotation() -> Vector3:
 
 
 func restart_level_keep_params():
-	pass
-	#Global.game_controller.restart_level()
+	init()
 
 
 func remove_placeable_objects() -> void:
@@ -138,7 +146,7 @@ func remove_placeable_objects() -> void:
 		objects.queue_free()
 
 
-func place_objectives():	
+func place_objectives():
 	starting_pos = puzzle_res.start_position * terrainSettings.tile_scale
 	player.global_position = starting_pos
 	portal.global_position = starting_pos
@@ -148,25 +156,6 @@ func place_objectives():
 		objectives_node.add_child(fruit)
 		fruit.global_position = fruit_pos * terrainSettings.tile_scale
 		fruit.visible = true
-
-
-func place_terminal() -> void:
-	var possible_positions = map_node.availablePositions
-	var directions = [Vector3.LEFT, Vector3.RIGHT, Vector3.FORWARD, Vector3.BACK]
-	
-	for pos in possible_positions:
-		if pos == starting_pos: continue
-		for direction in directions:
-			var end_pos = pos + (direction * terrainSettings.tile_scale)
-			if map_node.allBlocsPositions.has(end_pos):
-				var obj = terminalScene.instantiate()
-				add_child(obj)
-				obj.global_position = pos + direction * terrainSettings.tile_scale/2
-				obj.look_at(pos + direction)
-				for bloc in map_node.allBlocs:
-					if bloc.global_position == pos + direction * terrainSettings.tile_scale:
-						obj.reparent(bloc.mesh)
-				return
 
 
 func place_bondaries():
@@ -190,7 +179,6 @@ func _on_enter_level_portal() -> void:
 func end_level():
 	AudioBus.play_sfx("PORTAL_IN")
 	var remaining_abilities = abilitySelector.items.items
-	SaveManager.save_game_res.progress_variables.nb_level_completed += 1
 	SaveManager.save_game_res.remaining_abilities.add_all(remaining_abilities)
 	SignalBus.save_requested.emit()
 
@@ -233,8 +221,6 @@ func _on_selected_ability_changed(abilityRes :StateRes):
 
 func _on_map_generated():
 	place_objectives()
-	place_bondaries()
-	#place_terminal()
 
 
 func _on_abilities_setup(abilities :Array):
