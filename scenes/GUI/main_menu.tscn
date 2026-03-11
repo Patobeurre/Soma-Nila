@@ -251,6 +251,7 @@ icon_alignment = 2
 expand_icon = true
 
 [node name="BtnCustomGame" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 focus_neighbor_left = NodePath("../../../../MarginContainer2/HBoxContainer/BtnCredits")
@@ -287,6 +288,7 @@ text = "TITLE_FAVORITELEVELS"
 expand_icon = true
 
 [node name="BtnPuzzles" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 focus_neighbor_left = NodePath("../../../../MarginContainer2/HBoxContainer/BtnCredits")

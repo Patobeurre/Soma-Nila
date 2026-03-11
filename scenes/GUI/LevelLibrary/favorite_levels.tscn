@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bc41y4df2atnb"]
+[gd_scene load_steps=4 format=3 uid="uid://4qd6bvj4agsw"]
 
 [ext_resource type="Script" uid="uid://c1ofoa4d0ihcr" path="res://UI/Components/saved_level_panel.gd" id="2_m1quf"]
 [ext_resource type="Theme" uid="uid://7vunodgdyjg2" path="res://UI/themes/base_font.tres" id="3_ldc5n"]

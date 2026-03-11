@@ -14,4 +14,4 @@ dest_files=["res://scripts/resources/translation/menus.en.translation", "res://s
 [params]
 
 compress=true
-delimiter=0
+delimiter=2

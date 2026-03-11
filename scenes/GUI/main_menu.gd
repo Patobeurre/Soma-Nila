@@ -18,8 +18,7 @@ func _process(delta: float) -> void:
 
 
 func _on_btn_new_game_pressed() -> void:
-	Global.main_level_res.isCustom = false
-	Global.game_controller.start_new_game()
+	Global.game_controller.open_game_select_menu()
 
 
 func _on_btn_custom_game_pressed() -> void:

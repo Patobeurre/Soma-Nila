@@ -1,63 +1,70 @@
-key,en,fr
-TITLE_NEWGAME,New Game,Nouvelle partie
-TITLE_CUSTOMGAME,Custom Game,Partie personnalisée
-TITLE_FAVORITELEVELS,Favorite Levels,Niveaux favoris
-TITLE_PUZZLE_LEVELS,Puzzles,Puzzles
-TITLE_SETTINGS,Settings,Options
-TITLE_QUIT,Quit,Quitter
-TITLE_CREDITS,Credits,Crédits
-,,
-BTN_STARTPLAYING,Start,Jouer
-BTN_RETURN,Back,Retour
-BTN_REPLAY,Replay,Rejouer
-BTN_NEXTLEVEL,Next level,Niveau suivant
-BTN_SHARELEVEL,Share,Partager
-BTN_RETURN_LIBRARY,Return to library,Retourner au menu
-,,
-TEXT_SEED,Seed,Graine
-TEXT_TIME,Time,Temps
-TEXT_BEST_TIME,Best time,Meilleur temps
-TEXT_ITEMUSED,Used items,Items utilisés
-TEXT_USERANDSEED,Use random seed,Utiliser une graine aléatoire
-TEXT_SAVEFAVORITE,Save as favorite,Mettre en favoris
-TEXT_FRUITNAME,Appelberry,Pom’fraise
-,,
-TEXT_INTRO_CATCH,Catch the ,Attrape la
-TEXT_INTRO_PORTAL,...then go back through the portal,...puis retourne au portail
-,,
-,,
-TITLE_SETTINGS_GENERAL,General,Général
-TITLE_SETTINGS_GRAPHICS,Graphics,Graphique
-TITLE_SETTINGS_AUDIO,Audio,Audio
-TITLE_SETTINGS_CONTROLS,Controls,Touches
-,,
-TEXT_SETTINGS_LANGUAGE,Language,Langue
-TEXT_SETTINGS_RESOLUTION,Resolution,Résolution
-TEXT_SETTINGS_ANTIALIASING,Anti-aliasing,Anti-crénelage
-TEXT_SETTINGS_FULLSCREEN,Fullscreen,Plein écran
-TEXT_AUDIOBUS_MASTER,Main,Général
-TEXT_AUDIOBUS_MUSIC,Music,Musique
-TEXT_AUDIOBUS_SFX,Effects,Bruitages
-TEXT_MOUSE_SENSITIVITY,Mouse sensitivity,Sensibilité de la souris
-TEXT_SETTINGS_FOV,Field of View (FOV),Champ de vision (FOV)
-TEXT_SETTINGS_SPEEDRUN_MODE,Show in-game timer,Afficher le chronomètre en jeu
-,,
-MENU_CUSTOM_ALLOWDUPLICATE,Allow duplicated items,Autoriser les doublons
-,,
-TEXT_ASSIGN_KEY,Press key to assign,Appuyez sur une touche
-INPUT_MOVE_FORWARD,Move forward,Avancer
-INPUT_MOVE_BACK,Move backward,Reculer
-INPUT_MOVE_LEFT,Move left,Aller à gauche
-INPUT_MOVE_RIGHT,Move right,Aller à droite
-INPUT_JUMP,Jump,Sauter
-INPUT_USE_ITEM,Use item,Utiliser un objet
-INPUT_CHANGE_ITEM_UP,Select next object,Selectionner object suivant
-INPUT_CHANGE_ITEM_DOWN,Select previous object,Selectionner object précédent
-INPUT_RESTART,Restart level,Rejouer le niveau
-INPUT_NEXT_LEVEL,New level,Niveau suivant
-INPUT_INTERACT,Interact,Intéragir
-,,
-TEXT_CREATEDBY,A game created by,Un jeu réalisé par
-TEXT_CREATORLINK,Learn more,En savoir plus
-TEXT_MUSICBY,Music composed by,Musique composée par
-TEXT_MUSICLINK,Listen on Bandcamp.com,Ecouter sur Bandcamp.com
+key	en	fr
+TITLE_NEWGAME	New Game	Nouvelle partie
+TITLE_CUSTOMGAME	Custom Game	Partie personnalisée
+TITLE_FAVORITELEVELS	Favorite Levels	Niveaux favoris
+TITLE_PUZZLE_LEVELS	Puzzles	Puzzles
+TITLE_SETTINGS	Settings	Options
+TITLE_QUIT	Quit	Quitter
+TITLE_CREDITS	Credits	Crédits
+		
+BTN_STARTPLAYING	Start	Jouer
+BTN_RETURN	Back	Retour
+BTN_REPLAY	Replay	Rejouer
+BTN_NEXTLEVEL	Next level	Niveau suivant
+BTN_SHARELEVEL	Share	Partager
+BTN_RETURN_LIBRARY	Return to library	Retourner au menu
+		
+TEXT_SEED	Seed	Graine
+TEXT_TIME	Time	Temps
+TEXT_BEST_TIME	Best time	Meilleur temps
+TEXT_ITEMUSED	Used items	Items utilisés
+TEXT_USERANDSEED	Use random seed	Utiliser une graine aléatoire
+TEXT_SAVEFAVORITE	Save as favorite	Mettre en favoris
+TEXT_FRUITNAME	Appelberry	Pom’fraise
+		
+TEXT_INTRO_CATCH	Catch the 	Attrape la
+TEXT_INTRO_PORTAL	...then go back through the portal	...puis retourne au portail
+		
+		
+TITLE_SETTINGS_GENERAL	General	Général
+TITLE_SETTINGS_GRAPHICS	Graphics	Graphique
+TITLE_SETTINGS_AUDIO	Audio	Audio
+TITLE_SETTINGS_CONTROLS	Controls	Touches
+		
+TEXT_SETTINGS_LANGUAGE	Language	Langue
+TEXT_SETTINGS_RESOLUTION	Resolution	Résolution
+TEXT_SETTINGS_ANTIALIASING	Anti-aliasing	Anti-crénelage
+TEXT_SETTINGS_FULLSCREEN	Fullscreen	Plein écran
+TEXT_AUDIOBUS_MASTER	Main	Général
+TEXT_AUDIOBUS_MUSIC	Music	Musique
+TEXT_AUDIOBUS_SFX	Effects	Bruitages
+TEXT_MOUSE_SENSITIVITY	Mouse sensitivity	Sensibilité de la souris
+TEXT_SETTINGS_FOV	Field of View (FOV)	Champ de vision (FOV)
+TEXT_SETTINGS_SPEEDRUN_MODE	Show in-game timer	Afficher le chronomètre en jeu
+		
+MENU_CUSTOM_ALLOWDUPLICATE	Allow duplicated items	Autoriser les doublons
+		
+TEXT_ASSIGN_KEY	Press key to assign	Appuyez sur une touche
+INPUT_MOVE_FORWARD	Move forward	Avancer
+INPUT_MOVE_BACK	Move backward	Reculer
+INPUT_MOVE_LEFT	Move left	Aller à gauche
+INPUT_MOVE_RIGHT	Move right	Aller à droite
+INPUT_JUMP	Jump	Sauter
+INPUT_USE_ITEM	Use item	Utiliser un objet
+INPUT_CHANGE_ITEM_UP	Select next object	Selectionner object suivant
+INPUT_CHANGE_ITEM_DOWN	Select previous object	Selectionner object précédent
+INPUT_RESTART	Restart level	Rejouer le niveau
+INPUT_NEXT_LEVEL	New level	Niveau suivant
+INPUT_INTERACT	Interact	Intéragir
+		
+TEXT_CREATEDBY	A game created by	Un jeu réalisé par
+TEXT_CREATORLINK	Learn more	En savoir plus
+TEXT_MUSICBY	Music composed by	Musique composée par
+TEXT_MUSICLINK	Listen on Bandcamp.com	Ecouter sur Bandcamp.com
+		
+GAMEMODE_RANDOM_TITLE	Random mode (Classic)	Aléatoire (Classique)
+GAMEMODE_RANDOM_DESCR	As the game is meant to be played.\nDiscover, experiment, and use your ingenuity to complete the levels!\n\nCaution : some levels may be impossible	Tel que le jeu a été pensé.\nDécouvrez, expérimentez, et faites preuve d’ingéniosité pour compléter les niveaux !\n\nAttention : certains niveaux peuvent être impossible
+GAMEMODE_CUSTOM_TITLE	Custom mode	Customisé
+GAMEMODE_CUSTOM_DESCR	Same as random mode, but you can tweak things up !	Identique au mode aléatoire, mais vous pouvez ajuster les paramètres !
+GAMEMODE_PUZZLE_TITLE	Puzzle mode	Puzzles
+GAMEMODE_PUZZLE_DESCR	Chill out, grab a coffee, and solve puzzles !\nNo need to rush…, right ?	Détendez-vous, prenez un café, et résolvez des puzzles!\nPas besoin de se presser…, si ?

@@ -123,6 +123,10 @@ func return_to_puzzles_menu():
 	change_3d_scene("res://scenes/Terrain/waving_terrain.tscn")
 
 
+func open_game_select_menu() -> void:
+	change_gui_scene("res://scenes/GUI/new_game_select_menu.tscn")
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
 func open_custom_game_menu() -> void:
 	change_gui_scene("res://scenes/GUI/custom_game_menu.tscn")
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

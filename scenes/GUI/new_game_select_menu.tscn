@@ -1,0 +1,295 @@
+[gd_scene load_steps=26 format=3 uid="uid://coksoncrdv1kv"]
+
+[ext_resource type="Script" uid="uid://cyffn5dh4p838" path="res://scenes/GUI/new_game_select_menu.gd" id="1_6sdyf"]
+[ext_resource type="Texture2D" uid="uid://dhewfkrdmda6l" path="res://images/dice_random_mode.png" id="2_qqsvr"]
+[ext_resource type="Theme" uid="uid://7vunodgdyjg2" path="res://UI/themes/base_font.tres" id="3_6sdyf"]
+[ext_resource type="FontFile" uid="uid://dxv5vk2ljto0h" path="res://fonts/fredoka-one/FredokaOne-Regular.otf" id="3_ehxlq"]
+[ext_resource type="FontFile" uid="uid://cn266dt0w0lka" path="res://fonts/fredoka-one/FredokaOne-Regular.ttf" id="4_5gckq"]
+[ext_resource type="Texture2D" uid="uid://va8hfwhyu43b" path="res://images/UI/ui_button_red_3d.png" id="4_qqsvr"]
+[ext_resource type="Texture2D" uid="uid://dfi1hyhfpuu0l" path="res://images/custom_mode.png" id="5_82uun"]
+[ext_resource type="Texture2D" uid="uid://6u5ufuc8t6du" path="res://images/UI/ui_button_red_flat.png" id="5_xodkj"]
+[ext_resource type="Texture2D" uid="uid://byihob66vap8s" path="res://images/arrow_left.png" id="6_82uun"]
+[ext_resource type="Texture2D" uid="uid://ba53006ghbs3s" path="res://images/puzzle_mode.png" id="7_xodkj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fr8df"]
+bg_color = Color(0, 0, 0, 0.392157)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5gckq"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ehxlq"]
+load_path = "res://.godot/imported/panel_texture.png-a277d8ace1a16ff77382d055946faf08.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5gckq"]
+content_margin_left = 50.0
+content_margin_top = 50.0
+content_margin_right = 50.0
+content_margin_bottom = 50.0
+texture = SubResource("CompressedTexture2D_ehxlq")
+texture_margin_left = 100.0
+texture_margin_top = 100.0
+texture_margin_right = 100.0
+texture_margin_bottom = 100.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gckq"]
+bg_color = Color(1, 1, 1, 0.196078)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6sdyf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qqsvr"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5gckq"]
+load_path = "res://.godot/imported/panel_texture.png-a277d8ace1a16ff77382d055946faf08.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6sdyf"]
+content_margin_left = 50.0
+content_margin_top = 50.0
+content_margin_right = 50.0
+content_margin_bottom = 50.0
+texture = SubResource("CompressedTexture2D_5gckq")
+texture_margin_left = 100.0
+texture_margin_top = 100.0
+texture_margin_right = 100.0
+texture_margin_bottom = 100.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xodkj"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_msise"]
+load_path = "res://.godot/imported/panel_texture.png-a277d8ace1a16ff77382d055946faf08.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ehxlq"]
+content_margin_left = 50.0
+content_margin_top = 50.0
+content_margin_right = 50.0
+content_margin_bottom = 50.0
+texture = SubResource("CompressedTexture2D_msise")
+texture_margin_left = 100.0
+texture_margin_top = 100.0
+texture_margin_right = 100.0
+texture_margin_bottom = 100.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u1n05"]
+texture = ExtResource("4_qqsvr")
+texture_margin_left = 40.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+modulate_color = Color(0.8, 0.8, 0.8, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j6jvn"]
+texture = ExtResource("5_xodkj")
+texture_margin_left = 30.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6yi1e"]
+texture = ExtResource("4_qqsvr")
+texture_margin_left = 40.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+
+[node name="SavedLevelMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6sdyf")
+
+[node name="DarkMask" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fr8df")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 200
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 70
+columns = 3
+
+[node name="RandomModePanel" type="PanelContainer" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5gckq")
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/GridContainer/RandomModePanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_5gckq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/GridContainer/RandomModePanel/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/GridContainer/RandomModePanel/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("2_qqsvr")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/GridContainer/RandomModePanel/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_6sdyf")
+theme_override_fonts/normal_font = ExtResource("3_ehxlq")
+theme_override_font_sizes/normal_font_size = 40
+text = "GAMEMODE_RANDOM_TITLE"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/GridContainer/RandomModePanel/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_6sdyf")
+text = "GAMEMODE_RANDOM_DESCR"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="BtnRandomMode" type="Button" parent="MarginContainer/GridContainer/RandomModePanel"]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_5gckq")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6sdyf")
+
+[node name="CustomModePanel" type="PanelContainer" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qqsvr")
+
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/GridContainer/CustomModePanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_6sdyf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/GridContainer/CustomModePanel/PanelContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/GridContainer/CustomModePanel/PanelContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("5_82uun")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/GridContainer/CustomModePanel/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_6sdyf")
+theme_override_fonts/normal_font = ExtResource("4_5gckq")
+theme_override_font_sizes/normal_font_size = 40
+text = "GAMEMODE_CUSTOM_TITLE"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/GridContainer/CustomModePanel/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_6sdyf")
+text = "GAMEMODE_CUSTOM_DESCR"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="BtnCustomMode" type="Button" parent="MarginContainer/GridContainer/CustomModePanel"]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_5gckq")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6sdyf")
+
+[node name="PuzzleModePanel" type="PanelContainer" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xodkj")
+
+[node name="PanelContainer3" type="PanelContainer" parent="MarginContainer/GridContainer/PuzzleModePanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_ehxlq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/GridContainer/PuzzleModePanel/PanelContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/GridContainer/PuzzleModePanel/PanelContainer3/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("7_xodkj")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/GridContainer/PuzzleModePanel/PanelContainer3/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_6sdyf")
+theme_override_fonts/normal_font = ExtResource("3_ehxlq")
+theme_override_font_sizes/normal_font_size = 40
+text = "GAMEMODE_PUZZLE_TITLE"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/GridContainer/PuzzleModePanel/PanelContainer3/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_6sdyf")
+text = "GAMEMODE_PUZZLE_DESCR"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="BtnPuzzleMode" type="Button" parent="MarginContainer/GridContainer/PuzzleModePanel"]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_5gckq")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6sdyf")
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -142.0
+offset_right = 207.0
+grow_vertical = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="BtnBack" type="Button" parent="MarginContainer3"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("3_6sdyf")
+theme_override_colors/font_outline_color = Color(0.223529, 0.223529, 0.223529, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxTexture_u1n05")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j6jvn")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6yi1e")
+text = "BTN_RETURN"
+icon = ExtResource("6_82uun")
+
+[connection signal="pressed" from="MarginContainer/GridContainer/RandomModePanel/BtnRandomMode" to="." method="_on_btn_random_mode_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/CustomModePanel/BtnCustomMode" to="." method="_on_btn_custom_mode_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/PuzzleModePanel/BtnPuzzleMode" to="." method="_on_btn_puzzle_mode_pressed"]
+[connection signal="pressed" from="MarginContainer3/BtnBack" to="." method="_on_btn_back_pressed"]
