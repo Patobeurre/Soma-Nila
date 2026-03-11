@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="PuzzleLevelRes" load_steps=5 format=3 uid="uid://dfkb3f26rn4bs"]
+
+[ext_resource type="Script" uid="uid://70d1hekukawy" path="res://scripts/resources/Stats/AbilityStats.gd" id="1_ngtle"]
+[ext_resource type="Script" uid="uid://c37spsbe0xfd6" path="res://scripts/resources/PuzzleLevelRes.gd" id="2_utsrx"]
+[ext_resource type="Texture2D" uid="uid://cyf4ky5q8nl1h" path="res://scripts/resources/Levels/Puzzles/TutorialPack/thumbnails/thumb_nails_1.png" id="3_vlu7v"]
+
+[sub_resource type="Resource" id="Resource_dvgc4"]
+script = ExtResource("1_ngtle")
+ability_name = "PROJ_NAIL"
+initial_amount = 5
+amount_left = 0
+amount_used = 0
+metadata/_custom_type_script = "uid://70d1hekukawy"
+
+[resource]
+script = ExtResource("2_utsrx")
+ID = 12
+name = "TUTORIAL_NAIL-1"
+thumbnail = ExtResource("3_vlu7v")
+abilities = Array[ExtResource("1_ngtle")]([SubResource("Resource_dvgc4")])
+blocs_positions = Array[Vector3]([Vector3(0, 0, 0), Vector3(0, 0, 1), Vector3(0, 1, 2), Vector3(0, 0, 2), Vector3(1, 1, 2), Vector3(2, 1, 2), Vector3(2, 3, 3), Vector3(2, 2, 3), Vector3(2, 1, 3), Vector3(1, 3, 3), Vector3(-2, 3, 3), Vector3(-2, 4, 3), Vector3(0, 1, 3), Vector3(1, 1, 3), Vector3(0, 0, 3), Vector3(1, 0, 3)])
+fruits_positions = Array[Vector3]([Vector3(-2, 5, 3)])
+start_position = Vector3(0, 1, 0)

@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="PuzzleLevelRes" load_steps=5 format=3 uid="uid://dxeeejpn8xdl8"]
 
-[ext_resource type="Script" uid="uid://70d1hekukawy" path="res://scripts/resources/Stats/AbilityStats.gd" id="1_vtvmo"]
-[ext_resource type="Script" uid="uid://c37spsbe0xfd6" path="res://scripts/resources/PuzzleLevelRes.gd" id="2_17rf4"]
-[ext_resource type="Texture2D" uid="uid://cjp5jncdmj066" path="res://scripts/resources/Levels/Puzzles/TutorialPack/thumbnails/thumb_nails.png" id="3_oy4hf"]
+[ext_resource type="Script" uid="uid://70d1hekukawy" path="res://scripts/resources/Stats/AbilityStats.gd" id="1_qrogj"]
+[ext_resource type="Script" uid="uid://c37spsbe0xfd6" path="res://scripts/resources/PuzzleLevelRes.gd" id="2_ne83h"]
+[ext_resource type="Texture2D" uid="uid://cjp5jncdmj066" path="res://scripts/resources/Levels/Puzzles/TutorialPack/thumbnails/thumb_nails.png" id="3_5ac8v"]
 
 [sub_resource type="Resource" id="Resource_phknu"]
-script = ExtResource("1_vtvmo")
+script = ExtResource("1_qrogj")
 ability_name = "PROJ_NAIL"
 initial_amount = 10
 amount_left = 0
@@ -13,11 +13,11 @@ amount_used = 0
 metadata/_custom_type_script = "uid://70d1hekukawy"
 
 [resource]
-script = ExtResource("2_17rf4")
+script = ExtResource("2_ne83h")
 ID = 3
-name = "PROJ_NAIL"
-thumbnail = ExtResource("3_oy4hf")
-abilities = Array[ExtResource("1_vtvmo")]([SubResource("Resource_phknu")])
+name = "TUTORIAL_NAIL-2"
+thumbnail = ExtResource("3_5ac8v")
+abilities = Array[ExtResource("1_qrogj")]([SubResource("Resource_phknu")])
 blocs_positions = Array[Vector3]([Vector3(2, 3, 4), Vector3(1, 3, 4), Vector3(2, 4, 4), Vector3(3, 4, 4), Vector3(2, 5, 4), Vector3(1, 5, 4), Vector3(3, 5, 4), Vector3(2, 6, 4), Vector3(1, 6, 5), Vector3(3, 6, 4), Vector3(0, 4, 4), Vector3(0, 5, 4), Vector3(-1, 4, 4), Vector3(-4, 2, 3), Vector3(1, 4, 4), Vector3(2, 7, 4), Vector3(1, 7, 4), Vector3(3, 7, 4), Vector3(0, 6, 4), Vector3(-1, 5, 4), Vector3(2, 8, 4), Vector3(1, 8, 4), Vector3(3, 8, 4), Vector3(0, 7, 4), Vector3(-1, 6, 4), Vector3(2, 9, 4), Vector3(1, 9, 4), Vector3(3, 9, 4), Vector3(0, 8, 4), Vector3(-1, 7, 4), Vector3(2, 10, 4), Vector3(1, 10, 4), Vector3(3, 10, 4), Vector3(0, 9, 4), Vector3(-1, 8, 4), Vector3(3, 0, 4), Vector3(3, 1, 4), Vector3(3, 2, 4), Vector3(2, 0, 4), Vector3(3, 3, 4), Vector3(1, 0, 3), Vector3(0, 0, 2), Vector3(2, 0, 3), Vector3(1, 0, 2), Vector3(3, 0, 3), Vector3(-3, 2, 4), Vector3(-4, 2, 4), Vector3(-2, 3, 4), Vector3(-2, 4, 4), Vector3(-2, 5, 4), Vector3(-2, 6, 4), Vector3(-2, 7, 4), Vector3(-2, 8, 4), Vector3(-3, 3, 4), Vector3(-3, 4, 4), Vector3(-3, 5, 4), Vector3(-3, 6, 4), Vector3(-3, 7, 4), Vector3(-4, 3, 4), Vector3(-4, 4, 4), Vector3(-4, 5, 4), Vector3(-4, 6, 4), Vector3(0, 0, 0), Vector3(-1, 0, 1), Vector3(-1, 0, 2), Vector3(1, 7, 5), Vector3(2, 0, 2), Vector3(3, 0, 2), Vector3(0, 0, 1)])
 fruits_positions = Array[Vector3]([Vector3(-4, 3, 3), Vector3(1, 6, 4)])
 start_position = Vector3(0, 1, 0)
