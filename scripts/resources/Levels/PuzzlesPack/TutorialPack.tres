@@ -18,5 +18,6 @@
 [resource]
 script = ExtResource("10_lxobe")
 name = "TITLE_TUTORIALS"
+game_version_compatibility = "1.2"
 levels = Array[ExtResource("1_cgiwq")]([ExtResource("2_cx0vo"), ExtResource("3_nd2rs"), ExtResource("4_0gt5h"), ExtResource("5_733e4"), ExtResource("6_3o4hp"), ExtResource("7_irgn8"), ExtResource("8_70uak"), ExtResource("9_a2hq4"), ExtResource("10_cx0vo"), ExtResource("11_nd2rs"), ExtResource("12_0gt5h"), ExtResource("13_733e4")])
 metadata/_custom_type_script = "uid://hje1d4mj0irc"

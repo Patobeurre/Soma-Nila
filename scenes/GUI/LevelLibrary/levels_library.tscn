@@ -44,10 +44,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer"]
+[node name="PuzzlePackContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer3" instance=ExtResource("4_orodn")]
+[node name="TutorialPack" parent="VBoxContainer/ScrollContainer/MarginContainer/PuzzlePackContainer" instance=ExtResource("4_orodn")]
 layout_mode = 2
 level_pack_res = ExtResource("5_visgs")
