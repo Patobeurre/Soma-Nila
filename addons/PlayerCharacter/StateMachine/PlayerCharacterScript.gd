@@ -350,9 +350,6 @@ func check_climb_state_transition() -> bool:
 func applyExternalForce(force :Vector3) -> void:
 	velocity += force
 
-func apply_jetpack_force(delta :float):
-	velocity.y = lerp(velocity.y, jetpackBoostSpeed, jetpackBoostAccel * delta)
-
 
 func rope_ability_requested() -> void:
 	if isRopeAbilityRequested == true:

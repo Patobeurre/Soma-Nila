@@ -93,6 +93,7 @@ func move(delta : float):
 			cR.velocity.x = lerp(cR.velocity.x, 0.0, cR.moveDeccel * delta)
 			cR.velocity.z = lerp(cR.velocity.z, 0.0, cR.moveDeccel * delta)
 	
-	cR.velocity.y = -cR.glideFallSpeed
+	var fallVelocity = cR.velocity.y + cR.fallGravity * delta
+	cR.velocity.y = max(-cR.glideFallSpeed, fallVelocity)
 	
 	if cR.desiredMoveSpeed >= cR.maxSpeed: cR.desiredMoveSpeed = cR.maxSpeed
