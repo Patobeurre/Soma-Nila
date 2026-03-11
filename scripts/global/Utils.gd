@@ -33,8 +33,30 @@ func get_all_file_paths(path: String) -> Array[String]:
 
 func world_environment_transition(from :Environment, to :Environment, duration :float = 2.0):
 	var tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_CUBIC)
-	tween.parallel().tween_property(from, "fog_aerial_perspective", to.fog_aerial_perspective, duration)
+
+	# Ambient light
+	tween.parallel().tween_property(from, "ambient_light_color", to.ambient_light_color, duration)
+
+	# Fog
 	tween.parallel().tween_property(from, "fog_light_color", to.fog_light_color, duration)
+	tween.parallel().tween_property(from, "fog_light_energy", to.fog_light_energy, duration)
+	tween.parallel().tween_property(from, "fog_sun_scatter", to.fog_sun_scatter, duration)
+	tween.parallel().tween_property(from, "fog_density", to.fog_density, duration)
+	tween.parallel().tween_property(from, "fog_aerial_perspective", to.fog_aerial_perspective, duration)
+	tween.parallel().tween_property(from, "fog_depth_begin", to.fog_depth_begin, duration)
+	tween.parallel().tween_property(from, "fog_depth_curve", to.fog_depth_curve, duration)
+	tween.parallel().tween_property(from, "fog_depth_end", to.fog_depth_end, duration)
+
+	# Sky
+	var from_sky_material :ProceduralSkyMaterial = from.sky.sky_material
+	tween.parallel().tween_property(from_sky_material, "sky_horizon_color", to.sky.sky_material.sky_horizon_color, duration)
+	tween.parallel().tween_property(from_sky_material, "sky_top_color", to.sky.sky_material.sky_top_color, duration)
+	tween.parallel().tween_property(from_sky_material, "sky_curve", to.sky.sky_material.sky_curve, duration)
+	tween.parallel().tween_property(from_sky_material, "ground_horizon_color", to.sky.sky_material.sky_horizon_color, duration)
+	tween.parallel().tween_property(from_sky_material, "ground_bottom_color", to.sky.sky_material.ground_bottom_color, duration)
+	tween.parallel().tween_property(from_sky_material, "ground_curve", to.sky.sky_material.ground_curve, duration)
+	#from_sky_material.sky
+
 	tween.play()
 	return
 
@@ -101,5 +123,3 @@ func raycast(world :Node3D, origin :Vector3, end :Vector3 = Vector3.ZERO, mask :
 	
 	var query = PhysicsRayQueryParameters3D.create(origin, end, mask)
 	return space_state.intersect_ray(query)
-
-

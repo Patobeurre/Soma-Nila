@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dd5g487px3kln"]
 
 [ext_resource type="Environment" uid="uid://evgf73em6ceg" path="res://scripts/resources/Environments/main_level_env.tres" id="1_atacq"]
-[ext_resource type="Script" uid="uid://ccmhkt6ookykg" path="res://scenes/test_terrain/terrain_gen_presentation.gd" id="1_mweab"]
+[ext_resource type="Script" uid="uid://ccmhkt6ookykg" path="res://working files/FilmmakingTools/terrain_gen_presentation.gd" id="1_mweab"]
 [ext_resource type="Script" uid="uid://1vcmdhhiat1j" path="res://scripts/resources/Terrain/map_terrain_generation.gd" id="2_mweab"]
 [ext_resource type="Script" uid="uid://dn8a67533qqne" path="res://scripts/resources/Terrain/TerrainGenerationSettings.gd" id="4_4alkh"]
 [ext_resource type="PackedScene" uid="uid://lvbklg366xau" path="res://models/objects/Strawberry.tscn" id="4_ovtub"]
@@ -69,7 +69,7 @@ transform = Transform3D(-0.707107, 0.353553, -0.612372, 0, 0.866025, 0.5, 0.7071
 current = true
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 2.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

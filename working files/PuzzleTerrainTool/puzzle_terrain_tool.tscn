@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://b87mxba3r3x8e"]
 
-[ext_resource type="Script" uid="uid://df3x24nasg2g5" path="res://scenes/Terrain/PuzzleTerrain/puzzle_terrain_tool.gd" id="1_luvjt"]
+[ext_resource type="Script" uid="uid://df3x24nasg2g5" path="res://working files/PuzzleTerrainTool/puzzle_terrain_tool.gd" id="1_luvjt"]
 [ext_resource type="Script" uid="uid://70d1hekukawy" path="res://scripts/resources/Stats/AbilityStats.gd" id="2_dluk2"]
 [ext_resource type="PackedScene" uid="uid://dvbuqr0aytha7" path="res://scenes/Terrain/tile_bloc.tscn" id="3_5cwhi"]
 [ext_resource type="Script" uid="uid://c37spsbe0xfd6" path="res://scripts/resources/PuzzleLevelRes.gd" id="3_vxvmr"]

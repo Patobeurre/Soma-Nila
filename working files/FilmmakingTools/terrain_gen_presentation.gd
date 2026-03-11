@@ -21,6 +21,8 @@ var currentTimer :float = 0
 
 
 func _ready() -> void:
+	init_for_recording()
+	
 	map_node.map_generation_finished.connect(_on_map_generated)
 
 	if Global.main_level_res:
@@ -29,6 +31,11 @@ func _ready() -> void:
 		level_res.init()
 	
 	map_node.init(null)
+
+
+func init_for_recording():
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 
 func _process(delta: float) -> void:

@@ -1,0 +1,154 @@
+[gd_scene load_steps=11 format=3 uid="uid://c3evw7tmosvqc"]
+
+[ext_resource type="Script" uid="uid://c0c55tsdjt2yf" path="res://working files/FilmmakingTools/Appleberry travelling/apple_berry_appear.gd" id="1_0sm4x"]
+[ext_resource type="PackedScene" uid="uid://dvbuqr0aytha7" path="res://scenes/Terrain/tile_bloc.tscn" id="1_77woo"]
+[ext_resource type="PackedScene" uid="uid://ccyvebmykcrdv" path="res://models/islands/island.tscn" id="2_2y1ia"]
+[ext_resource type="Environment" uid="uid://evgf73em6ceg" path="res://scripts/resources/Environments/main_level_env.tres" id="3_f8jxa"]
+[ext_resource type="PackedScene" uid="uid://lvbklg366xau" path="res://models/objects/Strawberry.tscn" id="4_0sm4x"]
+
+[sub_resource type="Animation" id="Animation_0sm4x"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 1, 0)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Strawberry:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_f8jxa"]
+resource_name = "camera_traveling_in"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 1, 0, 1, 1, 0, 1, -2.26627)
+
+[sub_resource type="Animation" id="Animation_sob86"]
+resource_name = "display_appleberry_text"
+length = 0.5
+
+[sub_resource type="Animation" id="Animation_wk8bt"]
+resource_name = "pop_fruit"
+length = 0.1
+step = 60.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Strawberry:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wk8bt"]
+_data = {
+&"RESET": SubResource("Animation_0sm4x"),
+&"camera_traveling_in": SubResource("Animation_f8jxa"),
+&"display_appleberry_text": SubResource("Animation_sob86"),
+&"pop_fruit": SubResource("Animation_wk8bt")
+}
+
+[node name="AppleBerryAppear" type="Node3D"]
+script = ExtResource("1_0sm4x")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+current = true
+
+[node name="Terrain" type="Node3D" parent="."]
+
+[node name="StaticBody3D" parent="Terrain" instance=ExtResource("1_77woo")]
+
+[node name="StaticBody3D2" parent="Terrain" instance=ExtResource("1_77woo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="StaticBody3D3" parent="Terrain" instance=ExtResource("1_77woo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="StaticBody3D4" parent="Terrain" instance=ExtResource("1_77woo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="Island" parent="Terrain" instance=ExtResource("2_2y1ia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -10)
+
+[node name="Island2" parent="Terrain" instance=ExtResource("2_2y1ia")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 5, 4, -10)
+
+[node name="Island3" parent="Terrain" instance=ExtResource("2_2y1ia")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 2, -11)
+
+[node name="Island4" parent="Terrain" instance=ExtResource("2_2y1ia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -11)
+
+[node name="StaticBody3D5" parent="Terrain" instance=ExtResource("1_77woo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -11)
+
+[node name="StaticBody3D6" parent="Terrain" instance=ExtResource("1_77woo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, -7)
+
+[node name="StaticBody3D7" parent="Terrain" instance=ExtResource("1_77woo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -7)
+isTop = false
+
+[node name="StaticBody3D8" parent="Terrain" instance=ExtResource("1_77woo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -7)
+
+[node name="StaticBody3D9" parent="Terrain" instance=ExtResource("1_77woo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, -6)
+
+[node name="StaticBody3D10" parent="Terrain" instance=ExtResource("1_77woo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -6)
+isTop = false
+
+[node name="Island5" parent="Terrain" instance=ExtResource("2_2y1ia")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -3, 4, -27)
+
+[node name="StaticBody3D11" parent="Terrain" instance=ExtResource("1_77woo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, -27)
+
+[node name="StaticBody3D12" parent="Terrain" instance=ExtResource("1_77woo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, -26)
+isTop = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("3_f8jxa")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.979303, 0.162517, 0.120638, -0.202221, 0.76061, 0.616911, 0.00850013, -0.628538, 0.777734, 5.69616, -20.5174, -13.6989)
+light_color = Color(0.910845, 0.923517, 0.883351, 1)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="Strawberry" parent="." instance=ExtResource("4_0sm4x")]
+unique_name_in_owner = true
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1, -3)
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_wk8bt")
+}
+
+[node name="StaticBody3D11" parent="." instance=ExtResource("1_77woo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 5, -27)
