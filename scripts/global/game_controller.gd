@@ -47,8 +47,6 @@ func start_new_game() -> void:
 func get_level_scene_path() -> String:
 	if is_secret_level(Global.main_level_res):
 		return "res://scenes/secret_level.tscn"
-	elif is_broken_level(Global.main_level_res):
-		return "res://scenes/broken_level.tscn"
 	else:
 		return "res://scenes/procedural_level.tscn"
 
@@ -88,12 +86,6 @@ func is_secret_level(level_res :MainLevelRes) -> bool:
 	if level_res.seed != Global.SECRET_LEVEL_SEED:
 		return false
 	if !(level_res.abilitiesSettings.get_available_abilities().size() == 1 and !level_res.abilitiesSettings.allowSameAbilities):
-		return false
-	
-	return true
-
-func is_broken_level(level_res :MainLevelRes) -> bool:
-	if level_res.seed != Global.SECRET_LEVEL_SEED:
 		return false
 	
 	return true

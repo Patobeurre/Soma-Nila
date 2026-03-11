@@ -191,6 +191,15 @@ func place_bondaries():
 	boundaries_node.global_position.y = 0
 	boundaries_node.init(level_res.terrainSettings.terrainSize.x * level_res.terrainSettings.terrain_scale.x)
 
+func place_broken_bondaries():
+	var broken_boundaries_scene :PackedScene = load("res://models/decoration/boundaries_broken_bloc.tscn")
+	var broken_boundaries_node = broken_boundaries_scene.instantiate()
+	add_child(broken_boundaries_node)
+	broken_boundaries_node.global_position = (level_res.terrainSettings.terrainSize * level_res.terrainSettings.terrain_scale) / 2
+	broken_boundaries_node.global_position.y = 0
+	var size :float = (level_res.terrainSettings.terrainSize.x * level_res.terrainSettings.terrain_scale.x)
+	broken_boundaries_node.scale = Vector3(size, size, size)
+
 
 func _on_fruit_picked(fruit_node :Node3D) -> void:
 	if not isFruitTaken:
@@ -258,7 +267,10 @@ func _on_selected_ability_changed(abilityRes :StateRes):
 
 func _on_map_generated():
 	place_objectives()
-	place_bondaries()
+	if level_res.seed == Global.SECRET_LEVEL_SEED:
+		place_broken_bondaries()
+	else:
+		place_bondaries()
 	place_terminal()
 	isMapGenerated = true
 

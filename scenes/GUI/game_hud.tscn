@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://dh3cmfm46vf62" path="res://scenes/GUI/game_hud.gd" id="1_d4xr4"]
 [ext_resource type="Texture2D" uid="uid://bpb435aekvx6k" path="res://images/aim_dot.png" id="4_d0u0j"]
 [ext_resource type="Texture2D" uid="uid://miuh7r4o5afs" path="res://images/aim_square.png" id="5_d4xr4"]
-[ext_resource type="Texture2D" uid="uid://c7fcp12h8butq" path="res://addons/Arts/godot-prototype-texture/PNG/logo_512x512/logo_blue_512x512.png" id="5_qr5cp"]
 [ext_resource type="Script" uid="uid://babi6rccmqk8p" path="res://UI/Components/gui_input_display.gd" id="6_0x245"]
+[ext_resource type="PackedScene" uid="uid://cege2r0n2dh5v" path="res://UI/Components/fruit_texture.tscn" id="6_d4xr4"]
 [ext_resource type="Texture2D" uid="uid://bc3gc0sqe6eyy" path="res://images/aim_arrow.png" id="6_qb8rb"]
 [ext_resource type="Theme" uid="uid://7vunodgdyjg2" path="res://UI/themes/base_font.tres" id="7_qb8rb"]
 
@@ -107,20 +107,18 @@ layout_mode = 2
 mouse_filter = 2
 expand_mode = 4
 
-[node name="FruitTexture" type="TextureRect" parent="."]
-visible = false
-custom_minimum_size = Vector2(100, 100)
+[node name="FruitsContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
+anchors_preset = 10
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
-grow_horizontal = 0
-rotation = 0.261799
-texture = ExtResource("5_qr5cp")
-expand_mode = 2
-stretch_mode = 5
+grow_horizontal = 2
+alignment = 2
+
+[node name="FruitTexture" parent="FruitsContainer" instance=ExtResource("6_d4xr4")]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 1

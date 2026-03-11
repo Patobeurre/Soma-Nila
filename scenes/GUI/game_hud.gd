@@ -2,13 +2,14 @@ extends Control
 
 
 @onready var abilitiesContainer = %AbilitiesIconContainer
+@onready var fruitsContainer = %FruitsContainer
 @onready var selectedAbilityName = $MarginContainer/VBoxContainer/SelectedAbilityName
 @onready var arrowReticle = $Crosshair/ArrowReticle
 @onready var interactKey = $Crosshair/InteractKey
-@onready var fruitTextureRect :TextureRect = $FruitTexture
 @onready var timerTxt = $MarginContainer3/TimerTxt
 
-@onready var abilitySelectorIconScene = preload("res://UI/Components/AbilitySelectorIcon.tscn")
+@onready var abilitySelectorIconScene = load("res://UI/Components/AbilitySelectorIcon.tscn")
+@onready var fruitIconScene = load("res://UI/Components/fruit_texture.tscn")
 
 var level_best_time :float = 0
 
@@ -60,7 +61,6 @@ func _on_selected_ability_changed(ability :StateRes) -> void:
 func _on_abilities_changed(abilities :Array) -> void:
 	
 	_clear_ability_container()
-	fruitTextureRect.visible = false
 	
 	for ability in abilities:
 		instantiate_ability_panel(ability)
@@ -76,8 +76,11 @@ func _display_arrow_reticle(enabled :bool) -> void:
 	arrowReticle.visible = enabled
 
 func _display_fruit(fruitNode :Fruit) -> void:
-	fruitTextureRect.texture = fruitNode.icon
-	fruitTextureRect.visible = true
+	var fruit_texture :TextureRect = fruitIconScene.instantiate()
+	fruitsContainer.add_child(fruit_texture)
+	fruit_texture.texture = fruitNode.icon
+	fruit_texture.visible = true
+	fruit_texture.rotation_degrees = 30
 
 func _display_interact_key(enabled :bool) -> void:
 	if enabled:
