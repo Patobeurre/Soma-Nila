@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SoundLibrary" load_steps=56 format=3 uid="uid://cl10qubfna311"]
+[gd_resource type="Resource" script_class="SoundLibrary" load_steps=58 format=3 uid="uid://cl10qubfna311"]
 
 [ext_resource type="Script" uid="uid://c424y5ikihmkd" path="res://scripts/resources/Sounds/SoundRes.gd" id="1_uu1du"]
 [ext_resource type="AudioStream" uid="uid://cjv0tketk4243" path="res://audio/sfx/UI Soundpack/Coffee2.wav" id="2_b1sm1"]
@@ -33,6 +33,7 @@
 [ext_resource type="AudioStream" uid="uid://dcoi4igsw76f3" path="res://audio/sfx/OvaniSoundsPack/Abilities/Bumper/bounce_1.wav" id="30_1o8ft"]
 [ext_resource type="AudioStream" uid="uid://bdx3u8aiqbl5w" path="res://audio/sfx/OvaniSoundsPack/Abilities/Bumper/bounce_2.wav" id="31_g2vg0"]
 [ext_resource type="AudioStream" uid="uid://vgab0y81y8kw" path="res://audio/sfx/OvaniSoundsPack/Abilities/Bumper/bounce_3.wav" id="32_17nyc"]
+[ext_resource type="AudioStream" uid="uid://dv24cl31lq7ff" path="res://working files/FilmmakingTools/Appleberry travelling/strawberry_pop.wav" id="33_g2vg0"]
 
 [sub_resource type="Resource" id="Resource_suold"]
 script = ExtResource("1_uu1du")
@@ -183,8 +184,15 @@ name = "BUMPER_BOUNCE"
 variants = Array[AudioStream]([ExtResource("30_1o8ft"), ExtResource("31_g2vg0"), ExtResource("32_17nyc")])
 metadata/_custom_type_script = "uid://c424y5ikihmkd"
 
+[sub_resource type="Resource" id="Resource_17nyc"]
+script = ExtResource("1_uu1du")
+name = "STRAWBERRY_POP"
+stream = ExtResource("33_g2vg0")
+variants = Array[AudioStream]([])
+metadata/_custom_type_script = "uid://c424y5ikihmkd"
+
 [resource]
 script = ExtResource("2_fyqrr")
 bus = "SFX"
-library = Array[ExtResource("1_uu1du")]([SubResource("Resource_suold"), SubResource("Resource_5bu4t"), SubResource("Resource_l6tgx"), SubResource("Resource_w4xao"), SubResource("Resource_xjkqv"), SubResource("Resource_1oyqy"), SubResource("Resource_c2y3w"), SubResource("Resource_epcfg"), SubResource("Resource_jd3vr"), SubResource("Resource_rrh40"), SubResource("Resource_voiin"), SubResource("Resource_asj8l"), SubResource("Resource_wp427"), SubResource("Resource_aydxs"), SubResource("Resource_etpub"), SubResource("Resource_lyqre"), SubResource("Resource_jathn"), SubResource("Resource_h1gwh"), SubResource("Resource_b1sm1"), SubResource("Resource_54p0j"), SubResource("Resource_1o8ft"), SubResource("Resource_5d2j5")])
+library = Array[ExtResource("1_uu1du")]([SubResource("Resource_suold"), SubResource("Resource_5bu4t"), SubResource("Resource_l6tgx"), SubResource("Resource_w4xao"), SubResource("Resource_xjkqv"), SubResource("Resource_1oyqy"), SubResource("Resource_c2y3w"), SubResource("Resource_epcfg"), SubResource("Resource_jd3vr"), SubResource("Resource_rrh40"), SubResource("Resource_voiin"), SubResource("Resource_asj8l"), SubResource("Resource_wp427"), SubResource("Resource_aydxs"), SubResource("Resource_etpub"), SubResource("Resource_lyqre"), SubResource("Resource_jathn"), SubResource("Resource_h1gwh"), SubResource("Resource_b1sm1"), SubResource("Resource_54p0j"), SubResource("Resource_1o8ft"), SubResource("Resource_5d2j5"), SubResource("Resource_17nyc")])
 metadata/_custom_type_script = "uid://n76a1hc3br0m"
