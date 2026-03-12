@@ -19,5 +19,6 @@ name = "PO_BOX"
 thumbnail = ExtResource("3_4i7bc")
 abilities = Array[ExtResource("1_oty5g")]([SubResource("Resource_phknu")])
 blocs_positions = Array[Vector3]([Vector3(0, 0, 0), Vector3(0, 0, 1), Vector3(1, 0, 0), Vector3(-1, 0, 0), Vector3(-1, 1, 1), Vector3(1, 1, 1), Vector3(0, 1, 2), Vector3(3, 2, 0), Vector3(-3, 2, 0), Vector3(2, 1, 0), Vector3(-2, 1, 0), Vector3(-1, 1, -1), Vector3(1, 1, -1), Vector3(0, 1, -2), Vector3(0, 0, -1), Vector3(4, 2, 0), Vector3(-4, 2, 0), Vector3(0, 2, 3), Vector3(0, 2, 4), Vector3(0, 2, -2), Vector3(0, 3, -2)])
+magma_blocs_positions = Array[Vector3]([])
 fruits_positions = Array[Vector3]([Vector3(4, 3, 0), Vector3(-4, 3, 0), Vector3(0, 3, 4), Vector3(0, 4, -2)])
 start_position = Vector3(0, 1, 0)

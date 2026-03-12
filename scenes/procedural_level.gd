@@ -289,5 +289,6 @@ func _on_abilities_setup(abilities :Array):
 func _on_player_dead() -> void:
 	death_panel.visible = true
 	level_sm.transition(disabled_state)
+	AudioBus.play_sfx("DEATH_FIRE")
 	await get_tree().create_timer(0.5).timeout
 	restart_level_keep_params()

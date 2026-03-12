@@ -64,19 +64,28 @@ func apply_spice(spicy_ratio :float):
 		allMagmaBlocs.append(bloc_magma)
 
 
-func generate_from_positions(positions :Array[Vector3]) -> void:
+func generate_from_puzzle_res(puzzleRes :PuzzleLevelRes) -> void:
 	_clear_terrain()
 
+	generate_from_positions(puzzleRes.blocs_positions)
+	
+	var magma_blocs_positions = []
+	for pos :Vector3 in puzzleRes.magma_blocs_positions:
+		var global_pos = Vector3(pos.x * settings.terrain_scale.x, pos.y * settings.terrain_scale.y, pos.z * settings.terrain_scale.z)
+		magma_blocs_positions.append(global_pos)
+	instantiate_magma_blocs(magma_blocs_positions)
+
+	map_generation_finished.emit()
+
+
+func generate_from_positions(positions :Array[Vector3]) -> void:
 	var blocs_positions = []
 	for pos :Vector3 in positions:
 		var global_pos = Vector3(pos.x * settings.terrain_scale.x, pos.y * settings.terrain_scale.y, pos.z * settings.terrain_scale.z)
-		print(global_pos)
 		blocs_positions.append(global_pos)
 
 	instantiate_blocs(blocs_positions)
 	availablePositions = retreive_available_positions()
-
-	map_generation_finished.emit()
 
 
 func _clear_terrain() -> void:
@@ -114,3 +123,13 @@ func instantiate_blocs(positions :Array):
 		obj.global_position = position + global_position
 		obj.scale = settings.tile_scale
 		allBlocs.append(obj)
+
+
+func instantiate_magma_blocs(positions :Array):
+	for i in range(positions.size()):
+		var position = positions[i]
+		var bloc_magma = bloc_magma_scene.instantiate()
+		add_child(bloc_magma)
+		bloc_magma.global_position = position + global_position
+		bloc_magma.scale = settings.tile_scale
+		allMagmaBlocs.append(bloc_magma)

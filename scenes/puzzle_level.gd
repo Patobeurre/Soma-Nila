@@ -252,12 +252,13 @@ func _on_map_generated():
 
 
 func _on_abilities_setup(abilities :Array):
-	map_node.generate_from_positions(puzzle_res.blocs_positions)
+	map_node.generate_from_puzzle_res(puzzle_res)
 	abilitySelector.populate(abilities)
 
 
 func _on_player_dead() -> void:
 	death_panel.visible = true
 	level_sm.transition(disabled_state)
+	AudioBus.play_sfx("DEATH_FIRE")
 	await get_tree().create_timer(0.5).timeout
 	restart_level_keep_params()

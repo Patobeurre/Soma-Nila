@@ -11,5 +11,6 @@ name = "TUTORIAL_BASICS"
 thumbnail = ExtResource("3_dtecc")
 abilities = Array[ExtResource("1_u2hj4")]([])
 blocs_positions = Array[Vector3]([Vector3(0, 0, 0), Vector3(0, 0, 1), Vector3(0, 0, 3), Vector3(3, 0, 3), Vector3(4, 0, 3), Vector3(4, 0, 4)])
+magma_blocs_positions = Array[Vector3]([])
 fruits_positions = Array[Vector3]([Vector3(4, 1, 4)])
 start_position = Vector3(0, 1, 0)

@@ -11,6 +11,9 @@ extends Control
 @onready var bestTimeContainer = $MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer/BestTimeContainer
 @onready var bestTimeTxt = $MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer/BestTimeContainer/BestTimeTxt
 
+@onready var hbox_spice_container = %HBoxSpiceContainer
+@onready var spice_icon_container = %SpiceIconContainer
+
 @onready var whirl_background = $CenterContainer
 @export var background_rotate_speed :float = 10.0
 @export var startAnimationDelay :float = 1.0
@@ -19,7 +22,7 @@ extends Control
 @export var levelStats :LevelStats = LevelStats.new()
 
 @onready var abilityStatScene :PackedScene = load("res://UI/Components/AbilityStatPanel.tscn")
-
+@onready var spiceTextureScene :PackedScene = load("res://UI/Components/spice_texture.tscn")
 
 
 func _ready() -> void:
@@ -48,6 +51,9 @@ func inputManagement():
 func display_stats(stats :LevelStats) -> void:
 	seedTxt.text = str(stats.seed)
 	timeTxt.text = Utils.seconds2hhmmss(stats.completionTime, true)
+	if levelStats.terrain_stats.spice_level > 0:
+		hbox_spice_container.visible = true
+		set_spice()
 	fill_used_abilities()
 
 
@@ -59,7 +65,13 @@ func display_saved_game_content(saved_level :LevelStats) -> void:
 	if timeDiff == 0 : timeTextColor = "white"
 	timeTxt.text = BBCodeString.new(timeTxt.text).set_color(timeTextColor).get_text()
 	btn_save.button_pressed = true
+	
 
+func set_spice() -> void:
+	for i in range(levelStats.terrain_stats.spice_level):
+		var spice_texture = spiceTextureScene.instantiate()
+		spice_icon_container.add_child(spice_texture)
+		spice_texture.set_enabled(true)
 
 
 func fill_used_abilities() -> void:

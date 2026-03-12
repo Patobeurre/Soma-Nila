@@ -19,5 +19,6 @@ name = "PO_BUMPER"
 thumbnail = ExtResource("3_cb71c")
 abilities = Array[ExtResource("1_vbs1q")]([SubResource("Resource_phknu")])
 blocs_positions = Array[Vector3]([Vector3(0, 0, 2), Vector3(0, 0, 0), Vector3(0, 0, 1), Vector3(0, 2, 8), Vector3(4, 4, 8), Vector3(2, 6, 5)])
+magma_blocs_positions = Array[Vector3]([])
 fruits_positions = Array[Vector3]([Vector3(2, 7, 5)])
 start_position = Vector3(0, 1, 0)

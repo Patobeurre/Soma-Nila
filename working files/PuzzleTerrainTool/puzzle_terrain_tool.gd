@@ -27,8 +27,12 @@ func save_level():
 	res.start_position = puzzle_res.start_position
 
 	res.blocs_positions = []
+	res.magma_blocs_positions = []
 	for tile in terrain_node.get_children():
-		res.blocs_positions.append(tile.global_position)
+		if tile is TileBloc:
+			res.blocs_positions.append(tile.global_position)
+		elif tile is TileBlocMagma:
+			res.magma_blocs_positions.append(tile.global_position)
 	
 	res.fruits_positions = []
 	for fruit in fruits_node.get_children():
@@ -40,6 +44,7 @@ func save_level():
 
 func clear() -> void:
 	puzzle_res = PuzzleLevelRes.new()
+	puzzle_res.start_position.y = 1
 	file_name = ""
 
 	clear_nodes()

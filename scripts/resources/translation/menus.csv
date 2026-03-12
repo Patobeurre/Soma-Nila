@@ -13,12 +13,14 @@ BTN_REPLAY	Replay	Rejouer
 BTN_NEXTLEVEL	Next level	Niveau suivant
 BTN_SHARELEVEL	Share	Partager
 BTN_RETURN_LIBRARY	Return to library	Retourner au menu
+BTN_IMPORT_PUZZLE_PACK	Import a pack	Importer un pack
 		
 TEXT_SEED	Seed	Graine
 TEXT_TIME	Time	Temps
 TEXT_BEST_TIME	Best time	Meilleur temps
 TEXT_ITEMUSED	Used items	Items utilisés
 TEXT_USERANDSEED	Use random seed	Utiliser une graine aléatoire
+TEXT_SPICE_LEVEL	Spice level	Niveau de piquant
 TEXT_SAVEFAVORITE	Save as favorite	Mettre en favoris
 TEXT_FRUITNAME	Appelberry	Pom’fraise
 		
@@ -57,7 +59,7 @@ INPUT_RESTART	Restart level	Rejouer le niveau
 INPUT_NEXT_LEVEL	New level	Niveau suivant
 INPUT_INTERACT	Interact	Intéragir
 		
-TEXT_CREATEDBY	A game created by	Un jeu réalisé par
+TEXT_CREATEDBY	 A game created by 	 Un jeu réalisé par 
 TEXT_CREATORLINK	Learn more	En savoir plus
 TEXT_MUSICBY	Music composed by	Musique composée par
 TEXT_MUSICLINK	Listen on Bandcamp.com	Ecouter sur Bandcamp.com

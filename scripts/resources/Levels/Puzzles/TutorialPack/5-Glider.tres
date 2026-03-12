@@ -19,5 +19,6 @@ name = "A_GLIDER"
 thumbnail = ExtResource("3_cm041")
 abilities = Array[ExtResource("1_7jqqf")]([SubResource("Resource_phknu")])
 blocs_positions = Array[Vector3]([Vector3(0, 0, 2), Vector3(0, 0, 0), Vector3(0, 0, 1), Vector3(1, 0, 2), Vector3(-1, 0, 2), Vector3(4, 0, 8), Vector3(-4, 0, 8), Vector3(3, 0, 8), Vector3(-3, 0, 8), Vector3(0, 0, 14), Vector3(0, 0, 13)])
+magma_blocs_positions = Array[Vector3]([])
 fruits_positions = Array[Vector3]([Vector3(4, 1, 8), Vector3(-4, 1, 8), Vector3(0, 1, 14)])
 start_position = Vector3(0, 1, 0)

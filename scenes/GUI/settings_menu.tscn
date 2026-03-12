@@ -152,6 +152,7 @@ theme = ExtResource("3_afjn7")
 theme_override_colors/font_outline_color = Color(0.223529, 0.223529, 0.223529, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 20
 theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxTexture_u1n05")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_j6jvn")

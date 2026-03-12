@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PuzzleLevelRes" load_steps=4 format=3 uid="uid://6w4e1ublw66q"]
+
+[ext_resource type="Script" uid="uid://70d1hekukawy" path="res://scripts/resources/Stats/AbilityStats.gd" id="1_j61ee"]
+[ext_resource type="Script" uid="uid://c37spsbe0xfd6" path="res://scripts/resources/PuzzleLevelRes.gd" id="2_a2yiw"]
+[ext_resource type="Texture2D" uid="uid://cejbiwn27te76" path="res://scripts/resources/Levels/Puzzles/MagmaPack/thumbnails/thumb_basics.png" id="3_pmxqw"]
+
+[resource]
+script = ExtResource("2_a2yiw")
+ID = 100
+name = "Magma basics"
+thumbnail = ExtResource("3_pmxqw")
+abilities = Array[ExtResource("1_j61ee")]([])
+blocs_positions = Array[Vector3]([Vector3(0, 0, 0), Vector3(0, 0, 3), Vector3(1, 0, 0), Vector3(1, 0, 3), Vector3(3, 0, 2), Vector3(3, 0, 1), Vector3(2, 0, 0), Vector3(2, 0, 3)])
+magma_blocs_positions = Array[Vector3]([Vector3(0, 0, 2), Vector3(0, 0, 1)])
+fruits_positions = Array[Vector3]([Vector3(0, 1, 3)])
+start_position = Vector3(0, 1, 0)

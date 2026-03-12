@@ -1,12 +1,37 @@
-[gd_scene load_steps=7 format=3 uid="uid://84uc78j8j0hg"]
+[gd_scene load_steps=13 format=3 uid="uid://84uc78j8j0hg"]
 
 [ext_resource type="Theme" uid="uid://7vunodgdyjg2" path="res://UI/themes/base_font.tres" id="1_x7n4e"]
 [ext_resource type="Script" uid="uid://bvn6m4mkoa1bn" path="res://scenes/GUI/LevelLibrary/levels_library.gd" id="2_7a7aj"]
 [ext_resource type="StyleBox" uid="uid://e5cpgac5ah0y" path="res://UI/themes/panel_box_texture.tres" id="2_orodn"]
+[ext_resource type="Texture2D" uid="uid://jevnh3qj77vs" path="res://images/UI/ui_button_blue_3d.png" id="4_18lru"]
 [ext_resource type="PackedScene" uid="uid://b3nbupd2tmro4" path="res://scenes/GUI/LevelLibrary/level_pack_panel.tscn" id="4_orodn"]
+[ext_resource type="Texture2D" uid="uid://cs0nugoht6vy0" path="res://images/UI/ui_button_blue_flat.png" id="5_7uvuh"]
 [ext_resource type="Resource" uid="uid://c2trp7x8kxyoe" path="res://scripts/resources/Levels/PuzzlesPack/TutorialPack.tres" id="5_visgs"]
+[ext_resource type="Texture2D" uid="uid://wce1r5182tay" path="res://images/import_icon.png" id="6_18lru"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7a7aj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_duk2x"]
+texture = ExtResource("4_18lru")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+modulate_color = Color(0.8, 0.8, 0.8, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y0lew"]
+texture = ExtResource("5_7uvuh")
+texture_margin_left = 40.0
+texture_margin_top = 40.0
+texture_margin_right = 40.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_akix1"]
+texture = ExtResource("4_18lru")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
 
 [node name="LevelLibraryPanel" type="PanelContainer"]
 anchors_preset = 15
@@ -14,7 +39,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_x7n4e")
 theme_override_styles/panel = ExtResource("2_orodn")
 script = ExtResource("2_7a7aj")
 
@@ -52,3 +76,27 @@ theme_override_constants/separation = 50
 [node name="TutorialPack" parent="VBoxContainer/ScrollContainer/MarginContainer/PuzzlePackContainer" instance=ExtResource("4_orodn")]
 layout_mode = 2
 level_pack_res = ExtResource("5_visgs")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 30
+
+[node name="BtnImportPack" type="Button" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+focus_mode = 0
+theme = ExtResource("1_x7n4e")
+theme_override_colors/font_outline_color = Color(0.223103, 0.223103, 0.223103, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 20
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxTexture_duk2x")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_y0lew")
+theme_override_styles/normal = SubResource("StyleBoxTexture_akix1")
+text = "BTN_IMPORT_PUZZLE_PACK"
+icon = ExtResource("6_18lru")
+
+[connection signal="pressed" from="MarginContainer/BtnImportPack" to="." method="_on_btn_import_pack_pressed"]

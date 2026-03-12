@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Soma Nila"
-config/version="1.2"
+config/version="1.3"
 run/main_scene="uid://c1nji1bcaxwdp"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 run/max_fps=120
@@ -47,6 +47,13 @@ mouse_cursor/mouse_sensitivity=Vector2(0.5, 0.5)
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/finite_state_machine/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://UI/": "green",
+"res://scenes/GUI/": "green"
+}
 
 [importer_defaults]
 

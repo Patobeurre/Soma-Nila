@@ -36,6 +36,7 @@ func _on_level_clicked(stats :LevelStats) -> void:
 	level_res.terrainSettings = terrain_settings.duplicate(true)
 	level_res.terrainSettings.noiseParams = noise_params.duplicate(true)
 	level_res.terrainSettings.tileGenSettings = tile_gen_settings.duplicate(true)
+	level_res.terrainSettings.terrainSettingStats = stats.terrain_stats
 	
 	level_res.isCustom = true
 	level_res.seed = stats.seed

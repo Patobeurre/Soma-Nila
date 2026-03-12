@@ -316,6 +316,7 @@ theme = ExtResource("6_bub1i")
 theme_override_colors/font_outline_color = Color(0.223529, 0.223529, 0.223529, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 20
 theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxTexture_a4s4q")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_osuio")
@@ -377,13 +378,13 @@ theme = ExtResource("6_bub1i")
 theme_override_colors/font_outline_color = Color(0.223529, 0.223529, 0.223529, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 20
 theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxTexture_7q53w")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_nmghf")
 theme_override_styles/normal = SubResource("StyleBoxTexture_lr7uh")
 text = "BTN_RETURN_LIBRARY"
 icon = ExtResource("13_7kts8")
-expand_icon = true
 
 [connection signal="pressed" from="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VSplitContainer/VBoxContainer2/BtnReplay" to="." method="_on_btn_replay_pressed"]
 [connection signal="pressed" from="MarginContainer2/BtnNext" to="." method="_on_button_pressed"]

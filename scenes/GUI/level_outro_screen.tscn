@@ -220,6 +220,35 @@ fit_content = true
 autowrap_mode = 0
 vertical_alignment = 1
 
+[node name="HBoxSpiceContainer" type="HBoxContainer" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxSpiceContainer"]
+layout_mode = 2
+theme = ExtResource("4_snx6o")
+text = "TEXT_SPICE_LEVEL"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxSpiceContainer"]
+layout_mode = 2
+theme = ExtResource("4_snx6o")
+text = " : "
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="SpiceIconContainer" type="HBoxContainer" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxSpiceContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 2
+
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VSplitContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
@@ -391,6 +420,7 @@ theme = ExtResource("4_snx6o")
 theme_override_colors/font_outline_color = Color(0.223103, 0.223103, 0.223103, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 20
 theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxTexture_idrdf")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_cnfvc")
@@ -420,6 +450,7 @@ theme = ExtResource("4_snx6o")
 theme_override_colors/font_outline_color = Color(0.223529, 0.223529, 0.223529, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 20
 theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxTexture_a4s4q")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_osuio")

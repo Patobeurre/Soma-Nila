@@ -19,5 +19,6 @@ name = "PO_WATERLILIES"
 thumbnail = ExtResource("3_sk5so")
 abilities = Array[ExtResource("1_e7ah0")]([SubResource("Resource_phknu")])
 blocs_positions = Array[Vector3]([Vector3(0, 0, 2), Vector3(0, 0, 0), Vector3(0, 0, 1), Vector3(0, 0, 9), Vector3(0, 0, 10), Vector3(-7, 1, 10), Vector3(-5, 1, 10), Vector3(-6, 1, 10), Vector3(8, -1, 10), Vector3(9, -1, 10)])
+magma_blocs_positions = Array[Vector3]([])
 fruits_positions = Array[Vector3]([Vector3(9, 0, 10), Vector3(-7, 2, 10)])
 start_position = Vector3(0, 1, 0)

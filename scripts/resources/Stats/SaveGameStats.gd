@@ -2,7 +2,7 @@ extends Resource
 class_name SaveGameStats
 
 const SAVE_GAME_PATH := "user://saved_data"
-const VERSION :String = "1.2"
+const VERSION :String = "1.3"
 
 @export var saved_version :String = "0"
 @export var favorite_levels :SavedLevelStats = SavedLevelStats.new()
