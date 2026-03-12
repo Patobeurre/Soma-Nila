@@ -3,12 +3,14 @@ class_name SavedLevelPanel
 
 @export var levelStats :LevelStats = LevelStats.new()
 
-@onready var seed_label: RichTextLabel = $Button/MarginContainer/HBoxContainer/SeedLabel
-@onready var time_label: RichTextLabel = $Button/MarginContainer/HBoxContainer/TimeLabel
-@onready var used_abilities_container: HBoxContainer = $Button/MarginContainer/HBoxContainer/UsedAbilitiesContainer
-@onready var no_item_used_label: RichTextLabel = $Button/MarginContainer/HBoxContainer/UsedAbilitiesContainer/NoItemUsedLabel
+@onready var seed_label: RichTextLabel = %SeedLabel
+@onready var time_label: RichTextLabel = %TimeLabel
+@onready var used_abilities_container: HBoxContainer = %UsedAbilitiesContainer
+@onready var no_item_used_label: RichTextLabel = %NoItemUsedLabel
+@onready var spice_icon_container = %SpiceIconContainer
 
 @onready var abilityStatScene :PackedScene = load("res://UI/Components/AbilityStatPanel.tscn")
+@onready var spiceTextureScene :PackedScene = load("res://UI/Components/spice_texture.tscn")
 
 
 signal on_clicked(LevelStats)
@@ -17,12 +19,20 @@ signal on_clicked(LevelStats)
 func init(stat :LevelStats):
 	levelStats = stat
 	set_seed_label()
+	set_spice()
 	set_time_label()
 	fill_used_abilities()
 
 
 func set_seed_label() -> void:
 	seed_label.text = str(levelStats.seed)
+
+
+func set_spice() -> void:
+	for i in range(levelStats.terrain_stats.spice_level):
+		var spice_texture = spiceTextureScene.instantiate()
+		spice_icon_container.add_child(spice_texture)
+		spice_texture.set_enabled(true)
 
 
 func set_time_label() -> void:

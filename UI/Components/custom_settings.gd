@@ -10,8 +10,12 @@ extends PanelContainer
 
 @onready var abilitiesContainer :GridContainer = $MarginContainer/VBoxContainer/VBoxContainer/AbilitiesContainer
 @onready var seed_value :SpinBox = $MarginContainer/VBoxContainer/VBoxContainer/SeedValue/SB_SeedValue
+@onready var spiceIconContainer = %SpiceIconContainer
 
 @onready var abilityButtonScene :PackedScene = load("res://UI/Components/AbilityEnableButtonSetting.tscn")
+
+const max_spice_level :int = 3
+var spice_level :int = 0
 
 
 func _ready() -> void:
@@ -74,3 +78,25 @@ func _on_cb_allow_duplicate_items_toggled(toggled_on: bool) -> void:
 	else:
 		AudioBus.play_sfx("TOGGLE_OFF")
 	custom_level_res.abilitiesSettings.allowSameAbilities = toggled_on
+
+
+func _set_spice_level(new_spice_level :int) -> void:
+	spice_level = new_spice_level
+	custom_level_res.terrainSettings.terrainSettingStats.spice_level = new_spice_level
+	_update_spice_textures()
+
+
+func _update_spice_textures() -> void:
+	var i = 1
+	for spiceIcon in spiceIconContainer.get_children():
+		spiceIcon.set_enabled(spice_level >= i)
+		i += 1
+
+
+func _on_btn_spice_plus_pressed() -> void:
+	if spice_level < max_spice_level:
+		_set_spice_level(spice_level + 1)
+
+func _on_btn_spice_minus_pressed() -> void:
+	if spice_level > 0:
+		_set_spice_level(spice_level - 1)

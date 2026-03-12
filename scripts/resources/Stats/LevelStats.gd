@@ -9,6 +9,8 @@ class_name LevelStats
 @export var completionTime :float = 0
 @export var used_abilities :Array[AbilityStats] = []
 
+@export var terrain_stats :TerrainSettingStats = TerrainSettingStats.new()
+
 
 func set_used_abilities_from_remainings(abilities :Array):
 	for ability :StateRes in abilities:
@@ -17,7 +19,10 @@ func set_used_abilities_from_remainings(abilities :Array):
 
 
 func equals(other :LevelStats) -> bool:
-	if seed != other.seed: return false
+	if seed != other.seed:
+		return false
+	if terrain_stats.spice_level != other.terrain_stats.spice_level:
+		return false
 	for ability in excluded_abilities:
 		if not has_ability(other.excluded_abilities, ability):
 			return false

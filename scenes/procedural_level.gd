@@ -19,6 +19,8 @@ var interacting_camera :Camera3D
 @onready var objectives_node :Node3D = $Objectives
 @onready var boundaries_node :Node3D = $Boundaries
 
+@onready var death_panel = %DeathPanel
+
 
 # Place Object State
 @onready var placeholder_node :Node3D = $TilePlaceholderNode
@@ -48,6 +50,7 @@ func _ready() -> void:
 	SignalBus.fruit_picked.connect(_on_fruit_picked)
 	SignalBus.enter_level_portal.connect(_on_enter_level_portal)
 	SignalBus.terminal_cam_transition_requested.connect(_on_terminal_interaction_request)
+	SignalBus.player_on_death_floor.connect(_on_player_dead)
 	map_node.map_generation_finished.connect(_on_map_generated)
 	
 	isFruitTaken = false
@@ -225,6 +228,7 @@ func end_level():
 	level_stats.set_used_abilities_from_remainings(remaining_abilities)
 	level_stats.completionTime = currentTimer
 	level_stats.seed = level_res.seed
+	level_stats.terrain_stats = level_res.terrainSettings.terrainSettingStats
 	for excluded_ability in level_res.abilitiesSettings.excluded_abilities:
 		level_stats.excluded_abilities.append(AbilityStats.create(excluded_ability))
 		
@@ -280,3 +284,10 @@ func _on_abilities_setup(abilities :Array):
 	level_res.terrainSettings.adjust_params_by_ability_weights(abilityWeights)
 	map_node.init(level_res.terrainSettings)
 	abilitySelector.populate(abilities)
+
+
+func _on_player_dead() -> void:
+	death_panel.visible = true
+	level_sm.transition(disabled_state)
+	await get_tree().create_timer(0.5).timeout
+	restart_level_keep_params()

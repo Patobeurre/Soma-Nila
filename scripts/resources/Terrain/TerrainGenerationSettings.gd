@@ -12,6 +12,7 @@ class_name TerrainGenerationSettings
 @export var density :float = 0.02
 
 @export var tileGenSettings :TileGenerationSettings = TileGenerationSettings.new()
+@export var terrainSettingStats :TerrainSettingStats = TerrainSettingStats.new()
 
 var rng :RandomNumberGenerator = RandomNumberGenerator.new()
 var noiseImage :Image = Image.new()

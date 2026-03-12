@@ -1,6 +1,9 @@
 @tool
 extends Node
 
+@export_tool_button("Load Level") var load_button :Callable = load_level
+@export_tool_button("Clear") var clear_button :Callable = clear
+
 @export var terrain_node :Node3D
 @export var fruits_node :Node3D
 
@@ -9,9 +12,6 @@ extends Node
 @export var puzzle_res :PuzzleLevelRes = PuzzleLevelRes.new()
 
 @export_tool_button("Save Level") var save_button :Callable = save_level
-@export_tool_button("Load Level") var load_button :Callable = load_level
-@export_tool_button("Clear") var clear_button :Callable = clear
-
 
 @onready var tile_bloc_scene = load("res://scenes/Terrain/tile_bloc.tscn")
 @onready var fruit_scene = load("res://models/objects/Strawberry.tscn")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c43oaell0o20l"]
+
+[ext_resource type="Script" uid="uid://c33u7o3i4tk0t" path="res://UI/Components/spice_texture.gd" id="1_p0c23"]
+
+[node name="TextureRect" type="TextureRect"]
+custom_minimum_size = Vector2(20, 0)
+expand_mode = 5
+script = ExtResource("1_p0c23")

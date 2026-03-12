@@ -30,6 +30,10 @@ CameraTransition="*res://camera_transition.tscn"
 AudioBus="*res://scripts/global/audio_bus.tscn"
 InputKeyImageMapper="*res://scripts/global/InputKeyImageMapper.gd"
 
+[debug]
+
+gdscript/warnings/unused_signal=0
+
 [display]
 
 window/size/viewport_width=1920

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://1wqeuqodu1ar"]
+[gd_scene load_steps=22 format=3 uid="uid://1wqeuqodu1ar"]
 
 [ext_resource type="Script" uid="uid://c0g7u58cpaarn" path="res://scenes/procedural_level.gd" id="1_abuk1"]
 [ext_resource type="Resource" uid="uid://bxxgkwiehskne" path="res://scripts/resources/Levels/LevelRndRes.tres" id="2_1pxho"]
@@ -26,6 +26,9 @@ items = [ExtResource("7_dd152"), ExtResource("8_x1qiv"), ExtResource("9_mwkpj")]
 isCircular = true
 metadata/_custom_type_script = "uid://djrr832cj7vjl"
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_10ai8"]
+bg_color = Color(1, 0, 0, 0.435294)
+
 [node name="MainLevel" type="Node3D"]
 script = ExtResource("1_abuk1")
 DISTANCE = 7.0
@@ -42,7 +45,7 @@ light_energy = 1.2
 shadow_enabled = true
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_abuk1")]
-transform = Transform3D(-0.0578428, 0, 0.998326, 0, 1, 0, -0.998326, 0, -0.0578428, -0.53425, 0.428703, -0.2947)
+transform = Transform3D(-0.0578428, 0, 0.998326, 0, 1, 0, -0.998326, 0, -0.0578428, 1000, 1000, 1000)
 collision_mask = 101
 MIN_STAIR_HEIGHT = 0.3
 MAX_STAIR_HEIGHT = 0.7
@@ -86,3 +89,23 @@ script = ExtResource("24_1mhrl")
 
 [node name="DisabledState" type="Node" parent="LevelSM"]
 script = ExtResource("22_r6i00")
+
+[node name="DeathPanel" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="DeathPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_10ai8")

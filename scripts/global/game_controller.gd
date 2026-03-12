@@ -35,7 +35,9 @@ func start_new_game() -> void:
 	if not Global.main_level_res.isCustom:
 		_init_new_level_resource()
 	else:
-		Global.main_level_res.terrainSettings = terrain_settings.duplicate(true)
+		var level_terrain_settings = terrain_settings.duplicate(true)
+		level_terrain_settings.terrainSettingStats = Global.main_level_res.terrainSettings.terrainSettingStats
+		Global.main_level_res.terrainSettings = level_terrain_settings
 		Global.main_level_res.terrainSettings.noiseParams = noise_params.duplicate(true)
 		Global.main_level_res.terrainSettings.tileGenSettings = tile_gen_settings.duplicate(true)
 		Global.main_level_res.init()
@@ -59,7 +61,9 @@ func start_game(level_scene_path :String, show_level_intro :bool = true) -> void
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func restart_level() -> void:
-	Global.main_level_res.terrainSettings = terrain_settings.duplicate(true)
+	var level_terrain_settings = terrain_settings.duplicate(true)
+	level_terrain_settings.terrainSettingStats = Global.main_level_res.terrainSettings.terrainSettingStats
+	Global.main_level_res.terrainSettings = level_terrain_settings
 	Global.main_level_res.terrainSettings.noiseParams = noise_params.duplicate(true)
 	Global.main_level_res.terrainSettings.tileGenSettings = tile_gen_settings.duplicate(true)
 	Global.main_level_res.restart()

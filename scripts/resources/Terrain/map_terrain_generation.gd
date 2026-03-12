@@ -3,8 +3,10 @@ class_name TerrainGenerationNode
 
 @export var settings :TerrainGenerationSettings = TerrainGenerationSettings.new()
 @onready var bloc_scene :PackedScene = load("res://scenes/Terrain/tile_bloc.tscn")
+@onready var bloc_magma_scene :PackedScene = load("res://scenes/Terrain/tile_bloc_magma.tscn")
 
 var allBlocs :Array = []
+var allMagmaBlocs = []
 var allBlocsPositions :Array = []
 var availablePositions :Array = []
 
@@ -41,17 +43,33 @@ func generate_terrain():
 	await settings.generate_noise_texture()
 	
 	var positions = settings.compute_all_positions()
+	
 	instantiate_blocs(positions)
+
+	apply_spice(settings.terrainSettingStats.convert_spice_level_to_ratio())
 	
 	availablePositions = retreive_available_positions()
+
+
+func apply_spice(spicy_ratio :float):
+	var nb_magma_bloc :int = int(allBlocs.size() * spicy_ratio)
+	for i in range(nb_magma_bloc):
+		var bloc = allBlocs.pop_at(settings.rng.randi_range(0, allBlocs.size()-1))
+		var pos = bloc.global_position
+		bloc.queue_free()
+		var bloc_magma = bloc_magma_scene.instantiate()
+		add_child(bloc_magma)
+		bloc_magma.global_position = pos
+		bloc_magma.scale = settings.tile_scale
+		allMagmaBlocs.append(bloc_magma)
 
 
 func generate_from_positions(positions :Array[Vector3]) -> void:
 	_clear_terrain()
 
 	var blocs_positions = []
-	for position :Vector3 in positions:
-		var global_pos = Vector3(position.x * settings.terrain_scale.x, position.y * settings.terrain_scale.y, position.z * settings.terrain_scale.z)
+	for pos :Vector3 in positions:
+		var global_pos = Vector3(pos.x * settings.terrain_scale.x, pos.y * settings.terrain_scale.y, pos.z * settings.terrain_scale.z)
 		print(global_pos)
 		blocs_positions.append(global_pos)
 
@@ -73,6 +91,8 @@ func retreive_available_positions() -> Array:
 	allBlocsPositions = []
 	
 	for bloc in allBlocs:
+		allBlocsPositions.append(bloc.global_position)
+	for bloc in allMagmaBlocs:
 		allBlocsPositions.append(bloc.global_position)
 	
 	for bloc in allBlocs:

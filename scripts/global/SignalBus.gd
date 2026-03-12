@@ -37,6 +37,8 @@ signal level_intro_finished
 signal current_level_stats_updated(LevelStats)
 signal level_timer_updated(float)
 
+signal player_on_death_floor
+
 
 signal fruit_picked(Node3D)
 signal enter_level_portal

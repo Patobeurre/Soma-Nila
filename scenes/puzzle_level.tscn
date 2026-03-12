@@ -1,7 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://cjtjvqm34ayp2"]
+[gd_scene load_steps=21 format=3 uid="uid://cjtjvqm34ayp2"]
 
 [ext_resource type="Script" uid="uid://dj6et40r463fb" path="res://scenes/puzzle_level.gd" id="1_328bm"]
-[ext_resource type="Resource" uid="uid://uxfkh6xjfe1q" path="res://scripts/resources/Levels/Puzzles/TutorialPack/11-Glue.tres" id="2_328bm"]
+[ext_resource type="Resource" uid="uid://dfkb3f26rn4bs" path="res://scripts/resources/Levels/Puzzles/TutorialPack/12-Nails-1.tres" id="2_328bm"]
 [ext_resource type="Resource" uid="uid://ct3je3220pc05" path="res://scripts/resources/Terrain/PuzzleTerrainSettings.tres" id="2_rbsdd"]
 [ext_resource type="Environment" uid="uid://evgf73em6ceg" path="res://scripts/resources/Environments/main_level_env.tres" id="3_rbsdd"]
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/PlayerCharacterScene.tscn" id="4_1pjho"]
@@ -24,6 +24,9 @@ script = ExtResource("14_7mcvq")
 items = [ExtResource("11_li0g3"), ExtResource("12_imuy6"), ExtResource("13_qjoy7")]
 isCircular = true
 metadata/_custom_type_script = "uid://djrr832cj7vjl"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6atlu"]
+bg_color = Color(1, 0, 0, 0.435294)
 
 [node name="MainLevel" type="Node3D"]
 script = ExtResource("1_328bm")
@@ -81,3 +84,23 @@ script = ExtResource("18_xy5um")
 
 [node name="DisabledState" type="Node" parent="LevelSM"]
 script = ExtResource("19_x5wec")
+
+[node name="DeathPanel" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="DeathPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6atlu")
