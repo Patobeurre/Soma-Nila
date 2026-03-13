@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="PuzzleLevelRes" load_steps=5 format=3 uid="uid://dlj11fu0ou6kg"]
+
+[ext_resource type="Script" uid="uid://70d1hekukawy" path="res://scripts/resources/Stats/AbilityStats.gd" id="1_clgtc"]
+[ext_resource type="Script" uid="uid://c37spsbe0xfd6" path="res://scripts/resources/PuzzleLevelRes.gd" id="2_614ho"]
+[ext_resource type="Texture2D" uid="uid://dsbia86g37wcv" path="res://scripts/resources/Levels/Puzzles/MagmaPack/thumbnails/thumb_crates.png" id="3_614ho"]
+
+[sub_resource type="Resource" id="Resource_sb4i4"]
+script = ExtResource("1_clgtc")
+ability_name = "PO_BOX"
+initial_amount = 12
+amount_left = 0
+amount_used = 0
+metadata/_custom_type_script = "uid://70d1hekukawy"
+
+[resource]
+script = ExtResource("2_614ho")
+ID = 103
+name = "Bowl"
+thumbnail = ExtResource("3_614ho")
+abilities = Array[ExtResource("1_clgtc")]([SubResource("Resource_sb4i4")])
+blocs_positions = Array[Vector3]([Vector3(0, 5.96046e-08, 0), Vector3(0, 1, -2), Vector3(1, 1, -2), Vector3(-1, 1, -2), Vector3(0, 1, 2), Vector3(1, 1, 2), Vector3(-1, 1, 2), Vector3(-2, 1, 1), Vector3(-2, 1, 0), Vector3(-2, 1, -1), Vector3(2, 1, 1), Vector3(2, 1, 0), Vector3(2, 1, -1), Vector3(3, 3, -3), Vector3(3, 3, 3), Vector3(-3, 3, -3), Vector3(-3, 3, 3)])
+magma_blocs_positions = Array[Vector3]([Vector3(0, 0, 1), Vector3(1, 0.999363, 1), Vector3(-0.999999, 1.00191, 1), Vector3(0, 0, -1), Vector3(1, 0.999363, -1), Vector3(-1, 1, -1), Vector3(1, -0.000637045, 0), Vector3(-1, 0, 0), Vector3(0, 2, 3), Vector3(1, 2, 3), Vector3(-1, 2, 3), Vector3(0, 2, -3), Vector3(1, 2, -3), Vector3(-1, 2, -3), Vector3(2, 2, -3), Vector3(2, 2, -2), Vector3(-2, 2, -3), Vector3(-2, 2, -2), Vector3(2, 2, 2), Vector3(3, 2, 2), Vector3(2, 2, 3), Vector3(3, 2, 1), Vector3(3, 2, 0), Vector3(3, 2, -1), Vector3(3, 2, -2), Vector3(-3, 2, 2), Vector3(-3, 2, 1), Vector3(-3, 2, 0), Vector3(-3, 2, -1), Vector3(-3, 2, -2), Vector3(-2, 2, 3), Vector3(-2, 2, 2)])
+fruits_positions = Array[Vector3]([Vector3(3, 4, 3), Vector3(-3, 4, 3), Vector3(3, 4, -3), Vector3(-3, 4, -3)])
+start_position = Vector3(0, 1, 0)

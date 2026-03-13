@@ -152,11 +152,12 @@ func get_placeholder_rotation() -> Vector3:
 
 
 func restart_level_keep_params():
-	if Global.game_controller:
+	if Global.puzzle_level_res.ID >= 0:
 		Global.game_controller.restart_puzzle_level(puzzle_res)
 	#ToDo : remove
 	else:
 		init()
+		await get_tree().create_timer(0.5).timeout
 		_on_level_intro_finished()
 
 
@@ -176,6 +177,7 @@ func remove_placeable_objects() -> void:
 func place_objectives():
 	starting_pos = puzzle_res.start_position * terrainSettings.tile_scale
 	player.global_position = starting_pos
+	player.global_position.y -= 1.5
 	portal.global_position = starting_pos
 
 	for fruit_pos in puzzle_res.fruits_positions:

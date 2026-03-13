@@ -1,6 +1,10 @@
 extends Control
 
 
+func _ready() -> void:
+	print("1.3" < "1.31")
+
+
 func _process(delta: float) -> void:
 	inputManagement()
 

@@ -1,28 +1,26 @@
-[gd_scene load_steps=11 format=3 uid="uid://b87mxba3r3x8e"]
+[gd_scene load_steps=10 format=3 uid="uid://b87mxba3r3x8e"]
 
 [ext_resource type="Script" uid="uid://df3x24nasg2g5" path="res://working files/PuzzleTerrainTool/puzzle_terrain_tool.gd" id="1_luvjt"]
 [ext_resource type="Script" uid="uid://70d1hekukawy" path="res://scripts/resources/Stats/AbilityStats.gd" id="2_dluk2"]
 [ext_resource type="PackedScene" uid="uid://dvbuqr0aytha7" path="res://scenes/Terrain/tile_bloc.tscn" id="3_5cwhi"]
 [ext_resource type="Script" uid="uid://c37spsbe0xfd6" path="res://scripts/resources/PuzzleLevelRes.gd" id="3_vxvmr"]
-[ext_resource type="Texture2D" uid="uid://cejbiwn27te76" path="res://scripts/resources/Levels/Puzzles/MagmaPack/thumbnails/thumb_basics.png" id="4_dvgc4"]
 [ext_resource type="PackedScene" uid="uid://cpfa5biuv5b8q" path="res://scenes/Terrain/tile_bloc_magma.tscn" id="5_dvgc4"]
 [ext_resource type="PackedScene" uid="uid://lvbklg366xau" path="res://models/objects/Strawberry.tscn" id="5_f0f81"]
 [ext_resource type="Environment" uid="uid://evgf73em6ceg" path="res://scripts/resources/Environments/main_level_env.tres" id="8_5cwhi"]
 
-[sub_resource type="Resource" id="Resource_dvgc4"]
+[sub_resource type="Resource" id="Resource_d2vbl"]
 script = ExtResource("2_dluk2")
-ability_name = "PROJ_NAIL"
-initial_amount = 7
+ability_name = "A_ROPE"
+initial_amount = 6
 amount_left = 0
 amount_used = 0
 metadata/_custom_type_script = "uid://70d1hekukawy"
 
-[sub_resource type="Resource" id="Resource_5auxv"]
+[sub_resource type="Resource" id="Resource_f8kma"]
 script = ExtResource("3_vxvmr")
-ID = 101
-name = "test"
-thumbnail = ExtResource("4_dvgc4")
-abilities = Array[ExtResource("2_dluk2")]([SubResource("Resource_dvgc4")])
+ID = 105
+name = "Rope"
+abilities = Array[ExtResource("2_dluk2")]([SubResource("Resource_d2vbl")])
 blocs_positions = Array[Vector3]([])
 magma_blocs_positions = Array[Vector3]([])
 fruits_positions = Array[Vector3]([])
@@ -34,137 +32,214 @@ script = ExtResource("1_luvjt")
 terrain_node = NodePath("Terrain")
 fruits_node = NodePath("Fruits")
 save_path = "res://scripts/resources/Levels/Puzzles/MagmaPack/"
-file_name = "Nails"
-puzzle_res = SubResource("Resource_5auxv")
+file_name = "Rope"
+puzzle_res = SubResource("Resource_f8kma")
 
 [node name="Terrain" type="Node3D" parent="."]
 
-[node name="StaticBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1.31134e-07, 1.7683e-07, 1, -2.21223e-14, 1, -1.7683e-07, -1, 0, 1.31134e-07, 0, 4, 3)
+[node name="StaticBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.96046e-08, 0)
 
-[node name="StaticBody3D2" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 4)
+[node name="StaticBody3D2" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5.96046e-08, 0)
 
 [node name="StaticBody3D3" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5.96046e-08, 0)
 
 [node name="StaticBody3D4" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.96046e-08, -1)
 
 [node name="StaticBody3D5" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5.96046e-08, -1)
 
 [node name="StaticBody3D6" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5.96046e-08, -1)
+
+[node name="_AnimatableBody3D_140159" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 13)
+
+[node name="_AnimatableBody3D_140160" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 14)
+
+[node name="_AnimatableBody3D_140161" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 15)
+
+[node name="_AnimatableBody3D_140162" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 13)
+
+[node name="_AnimatableBody3D_140163" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 14)
+
+[node name="_AnimatableBody3D_140164" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 15)
+
+[node name="_AnimatableBody3D_140165" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 13)
+
+[node name="_AnimatableBody3D_140166" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 14)
+
+[node name="_AnimatableBody3D_140167" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 15)
 
 [node name="StaticBody3D7" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 14)
 
 [node name="StaticBody3D8" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
-isTop = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 14)
 
 [node name="StaticBody3D9" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 2)
-isTop = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 15)
 
-[node name="StaticBody3D10" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 5)
+[node name="_AnimatableBody3D_140169" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 12)
+
+[node name="_AnimatableBody3D_140170" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 13)
+
+[node name="_AnimatableBody3D_140172" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 5, 12)
+
+[node name="_AnimatableBody3D_140173" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 5, 13)
+
+[node name="_AnimatableBody3D_140175" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6, 12)
+
+[node name="_AnimatableBody3D_140176" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6, 13)
 
 [node name="StaticBody3D11" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
-isTop = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 12)
 
 [node name="StaticBody3D12" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 3)
-isTop = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 13)
+
+[node name="_AnimatableBody3D_140168" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 3)
+
+[node name="_AnimatableBody3D_140171" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 4)
+
+[node name="_AnimatableBody3D_140174" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 5)
+
+[node name="_AnimatableBody3D_140177" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 3)
+
+[node name="_AnimatableBody3D_140178" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 4)
+
+[node name="_AnimatableBody3D_140179" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 5)
+
+[node name="_AnimatableBody3D_140180" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 6)
+
+[node name="_AnimatableBody3D_140181" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 7)
+
+[node name="_AnimatableBody3D_140182" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 8)
+
+[node name="_AnimatableBody3D_140183" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 6)
+
+[node name="_AnimatableBody3D_140184" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 7)
+
+[node name="_AnimatableBody3D_140185" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 8)
+
+[node name="_AnimatableBody3D_140186" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 9)
+
+[node name="_AnimatableBody3D_140187" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 10)
+
+[node name="_AnimatableBody3D_140188" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 11)
+
+[node name="_AnimatableBody3D_140189" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 9)
+
+[node name="_AnimatableBody3D_140190" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 10)
+
+[node name="_AnimatableBody3D_140191" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 11)
 
 [node name="StaticBody3D13" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 3)
-isTop = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 11)
 
 [node name="StaticBody3D14" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 3)
-isTop = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 11)
+
+[node name="StaticBody3D10" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 4)
 
 [node name="StaticBody3D15" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 3)
-isTop = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 4)
 
-[node name="StaticBody3D16" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1.31134e-07, 1.7683e-07, 1, -2.21223e-14, 1, -1.7683e-07, -1, 0, 1.31134e-07, 1, 5, 3)
+[node name="StaticBody3D16" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 3)
 
-[node name="StaticBody3D17" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1.31134e-07, 1.7683e-07, 1, -2.21223e-14, 1, -1.7683e-07, -1, 0, 1.31134e-07, 2, 5, 3)
+[node name="StaticBody3D17" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 3)
 
 [node name="StaticBody3D18" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 3)
-isTop = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 6)
 
 [node name="StaticBody3D19" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 6)
 
 [node name="StaticBody3D20" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 5)
 
 [node name="StaticBody3D21" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 5)
 
 [node name="StaticBody3D22" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 8)
 
 [node name="StaticBody3D23" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 8)
 
 [node name="StaticBody3D24" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 7)
 
 [node name="StaticBody3D25" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 7)
 
 [node name="StaticBody3D26" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 10)
 
-[node name="StaticBody3D27" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1.31134e-07, 1.7683e-07, 1, -2.21223e-14, 1, -1.7683e-07, -1, 0, 1.31134e-07, 3, 3, 3)
+[node name="StaticBody3D27" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 10)
 
-[node name="StaticBody3D28" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(-4.37114e-08, 1.7683e-07, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 1.7683e-07, 3, 3, 4)
+[node name="StaticBody3D28" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 9)
 
-[node name="StaticBody3D29" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1.63902e-14, -1, 1.33118e-07, 1.31134e-07, 1.33118e-07, 1, -1, 0, 1.31134e-07, 2, 3, 3)
-
-[node name="StaticBody3D30" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
-
-[node name="StaticBody3D31" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
-
-[node name="StaticBody3D32" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)
-
-[node name="StaticBody3D33" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1.31134e-07, 1.7683e-07, 1, -2.21223e-14, 1, -1.7683e-07, -1, 0, 1.31134e-07, 2, 5, 2)
-
-[node name="StaticBody3D34" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 1)
-
-[node name="StaticBody3D35" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 1)
-
-[node name="StaticBody3D36" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -1, 0, 3)
+[node name="StaticBody3D29" parent="Terrain" instance=ExtResource("3_5cwhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 9)
 
 [node name="Fruits" type="Node3D" parent="."]
 
 [node name="Strawberry" parent="Fruits" instance=ExtResource("5_f0f81")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 3, 5)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3, 3, 14)
+
+[node name="Strawberry2" parent="Fruits" instance=ExtResource("5_f0f81")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1, 5, 13)
+
+[node name="Strawberry3" parent="Fruits" instance=ExtResource("5_f0f81")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 2, 11)
 
 [node name="Environement" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Environement"]
-transform = Transform3D(-0.707106, 0.353553, -0.612373, 1.12904e-07, 0.866026, 0.499999, 0.707107, 0.353552, -0.612372, -4.16688, 6.78869, -3)
+transform = Transform3D(-0.707106, 0.183012, -0.683013, 3.76712e-07, 0.965926, 0.258818, 0.707107, 0.183011, -0.683013, -8, 1.5, 1)
 current = true
-fov = 59.8
+fov = 55.9
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environement"]
 environment = ExtResource("8_5cwhi")

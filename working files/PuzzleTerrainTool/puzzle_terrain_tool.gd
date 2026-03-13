@@ -14,6 +14,7 @@ extends Node
 @export_tool_button("Save Level") var save_button :Callable = save_level
 
 @onready var tile_bloc_scene = load("res://scenes/Terrain/tile_bloc.tscn")
+@onready var tile_magma_bloc_scene = load("res://scenes/Terrain/tile_bloc_magma.tscn")
 @onready var fruit_scene = load("res://models/objects/Strawberry.tscn")
 
 
@@ -75,6 +76,12 @@ func load_level():
 		terrain.add_child(tile)
 		tile.set_owner(get_tree().edited_scene_root)
 		tile.global_position = bloc_pos
+	
+	for magma_bloc_pos in puzzle_res.magma_blocs_positions:
+		var tile = tile_magma_bloc_scene.instantiate()
+		terrain.add_child(tile)
+		tile.set_owner(get_tree().edited_scene_root)
+		tile.global_position = magma_bloc_pos
 
 	var fruits = get_node("./Fruits")
 	for fruit_pos in puzzle_res.fruits_positions:

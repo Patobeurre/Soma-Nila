@@ -165,6 +165,7 @@ func place_objectives():
 	
 	starting_pos = nearestPos
 	player.global_position = starting_pos
+	player.global_position.y -= 1.5
 	portal.global_position = starting_pos
 	fruit.global_position = farestPos
 	fruit.visible = true
