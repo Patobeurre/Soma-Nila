@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="T_ResWithImage" load_steps=2 format=3 uid="uid://di1fynqymxlfv"]
+
+[ext_resource type="Script" uid="uid://bw7lll5l54f3t" path="res://scenes/test_save_resource/ResWithImage.gd" id="1_iddac"]
+
+[resource]
+script = ExtResource("1_iddac")
+name = "Res_B"
+metadata/_custom_type_script = "uid://bw7lll5l54f3t"

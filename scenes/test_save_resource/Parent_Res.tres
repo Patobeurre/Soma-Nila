@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="T_ParentRes" load_steps=5 format=3 uid="uid://cjfdwmjbhigd1"]
+
+[ext_resource type="Script" uid="uid://bw7lll5l54f3t" path="res://scenes/test_save_resource/ResWithImage.gd" id="1_kletl"]
+[ext_resource type="Resource" uid="uid://on6eoehwg85j" path="res://scenes/test_save_resource/NestedA.tres" id="2_dpg7h"]
+[ext_resource type="Script" uid="uid://cl6hww8jdxnvl" path="res://scenes/test_save_resource/ParentRes.gd" id="2_y4goe"]
+[ext_resource type="Resource" uid="uid://di1fynqymxlfv" path="res://scenes/test_save_resource/NestedB.tres" id="3_bm54e"]
+
+[resource]
+script = ExtResource("2_y4goe")
+res_with_image_list = Array[ExtResource("1_kletl")]([ExtResource("2_dpg7h"), ExtResource("3_bm54e")])
+metadata/_custom_type_script = "uid://cl6hww8jdxnvl"

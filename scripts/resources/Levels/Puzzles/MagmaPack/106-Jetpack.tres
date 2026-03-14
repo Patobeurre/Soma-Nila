@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="PuzzleLevelRes" load_steps=5 format=3 uid="uid://00f0jp78ydnc"]
+
+[ext_resource type="Script" uid="uid://70d1hekukawy" path="res://scripts/resources/Stats/AbilityStats.gd" id="1_opk3t"]
+[ext_resource type="Script" uid="uid://c37spsbe0xfd6" path="res://scripts/resources/PuzzleLevelRes.gd" id="2_ttcow"]
+[ext_resource type="Texture2D" uid="uid://bodfui77dg1c2" path="res://scripts/resources/Levels/Puzzles/MagmaPack/thumbnails/thumb_aerial.png" id="3_ttcow"]
+
+[sub_resource type="Resource" id="Resource_r86d3"]
+script = ExtResource("1_opk3t")
+ability_name = "A_JETPACK"
+initial_amount = 120
+amount_left = 0
+amount_used = 0
+metadata/_custom_type_script = "uid://70d1hekukawy"
+
+[resource]
+script = ExtResource("2_ttcow")
+ID = 106
+name = "Aerial"
+difficulty = 3
+puzzle_difficulty = 1
+technical_difficulty = 4
+thumbnail = ExtResource("3_ttcow")
+abilities = Array[ExtResource("1_opk3t")]([SubResource("Resource_r86d3")])
+blocs_positions = Array[Vector3]([Vector3(0, 0, 0), Vector3(-1, 1, 4), Vector3(-4, 1, 4), Vector3(-1, 4, 4), Vector3(-4, 4, 4), Vector3(4, 0, 5), Vector3(1, 0, 5), Vector3(4, 3, 5), Vector3(1, 3, 5), Vector3(-2, 2, 9), Vector3(-5, 2, 9), Vector3(-2, 5, 9), Vector3(-5, 5, 9), Vector3(2, -1, 11), Vector3(-1, -1, 11), Vector3(2, 2, 11), Vector3(-1, 2, 11), Vector3(-2, -1, 19), Vector3(-5, 2, 17)])
+magma_blocs_positions = Array[Vector3]([Vector3(2, 0, 5), Vector3(3, 0, 5), Vector3(1, 1, 5), Vector3(1, 2, 5), Vector3(2, 3, 5), Vector3(3, 3, 5), Vector3(4, 1, 5), Vector3(4, 2, 5), Vector3(0, -1, 11), Vector3(1, -1, 11), Vector3(-1, 0, 11), Vector3(-1, 1, 11), Vector3(0, 2, 11), Vector3(1, 2, 11), Vector3(2, 0, 11), Vector3(2, 1, 11), Vector3(-4, 2, 9), Vector3(-3, 2, 9), Vector3(-5, 3, 9), Vector3(-5, 4, 9), Vector3(-4, 5, 9), Vector3(-3, 5, 9), Vector3(-2, 3, 9), Vector3(-2, 4, 9), Vector3(-2, -2, 17), Vector3(0, -1, 16), Vector3(-1, 2, 18), Vector3(-4, 1, 17), Vector3(-4, 0, 15), Vector3(-3, -1, 18), Vector3(0, 1, 17), Vector3(-2, 1, 15), Vector3(-3, 2, 14), Vector3(-3, 1, 4), Vector3(-2, 1, 4), Vector3(-4, 2, 4), Vector3(-4, 3, 4), Vector3(-3, 4, 4), Vector3(-2, 4, 4), Vector3(-1, 2, 4), Vector3(-1, 3, 4)])
+fruits_positions = Array[Vector3]([Vector3(2.5, 1.5, 5), Vector3(0.5, 0.5, 11), Vector3(-3.5, 3.5, 9), Vector3(-2, 0, 17), Vector3(-2.5, 2.5, 4)])
+start_position = Vector3(0, 1, 0)

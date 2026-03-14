@@ -8,6 +8,9 @@
 script = ExtResource("2_sdoy5")
 ID = 0
 name = "TUTORIAL_BASICS"
+difficulty = 0
+puzzle_difficulty = 0
+technical_difficulty = 0
 thumbnail = ExtResource("3_dtecc")
 abilities = Array[ExtResource("1_u2hj4")]([])
 blocs_positions = Array[Vector3]([Vector3(0, 0, 0), Vector3(0, 0, 1), Vector3(0, 0, 3), Vector3(3, 0, 3), Vector3(4, 0, 3), Vector3(4, 0, 4)])

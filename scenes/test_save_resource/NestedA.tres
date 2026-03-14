@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="T_ResWithImage" load_steps=3 format=3 uid="uid://on6eoehwg85j"]
+
+[ext_resource type="Script" uid="uid://bw7lll5l54f3t" path="res://scenes/test_save_resource/ResWithImage.gd" id="1_65bm8"]
+[ext_resource type="Texture2D" uid="uid://b66qn5qmcvjcv" path="res://scripts/resources/Levels/Puzzles/MagmaPack/thumbnails/thumb_nails.png" id="1_bvbo3"]
+
+[resource]
+script = ExtResource("1_65bm8")
+name = "Res_A"
+image = ExtResource("1_bvbo3")
+metadata/_custom_type_script = "uid://bw7lll5l54f3t"

@@ -8,6 +8,9 @@
 script = ExtResource("2_a2yiw")
 ID = 100
 name = "Correct path"
+difficulty = 0
+puzzle_difficulty = 1
+technical_difficulty = 0
 thumbnail = ExtResource("3_pmxqw")
 abilities = Array[ExtResource("1_j61ee")]([])
 blocs_positions = Array[Vector3]([Vector3(0, 0, 0), Vector3(0, 0, 3), Vector3(1, 0, 0), Vector3(1, 0, 3), Vector3(3, 0, 2), Vector3(3, 0, 1), Vector3(2, 0, 0), Vector3(2, 0, 3)])

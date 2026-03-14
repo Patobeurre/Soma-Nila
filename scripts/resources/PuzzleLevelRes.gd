@@ -4,6 +4,9 @@ class_name PuzzleLevelRes
 
 @export var ID :int = -1
 @export var name :String = ""
+@export var difficulty :int = -1
+@export var puzzle_difficulty :int = -1
+@export var technical_difficulty :int = -1
 @export var thumbnail :CompressedTexture2D
 @export var abilities :Array[AbilityStats] = []
 @export var blocs_positions :Array[Vector3] = []

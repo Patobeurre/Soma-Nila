@@ -67,13 +67,13 @@ func apply_spice(spicy_ratio :float):
 func generate_from_puzzle_res(puzzleRes :PuzzleLevelRes) -> void:
 	_clear_terrain()
 
-	generate_from_positions(puzzleRes.blocs_positions)
-	
 	var magma_blocs_positions = []
 	for pos :Vector3 in puzzleRes.magma_blocs_positions:
 		var global_pos = Vector3(pos.x * settings.terrain_scale.x, pos.y * settings.terrain_scale.y, pos.z * settings.terrain_scale.z)
 		magma_blocs_positions.append(global_pos)
 	instantiate_magma_blocs(magma_blocs_positions)
+	
+	generate_from_positions(puzzleRes.blocs_positions)
 
 	map_generation_finished.emit()
 

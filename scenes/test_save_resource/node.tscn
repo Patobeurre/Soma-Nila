@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://eter0p04tsrr"]
+
+[ext_resource type="Script" uid="uid://iekw6xy67sq2" path="res://save_nested_resource.gd" id="1_uawcj"]
+
+[node name="Node" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uawcj")
+
+[node name="BtnSave" type="Button" parent="."]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 120.0
+offset_right = 337.0
+offset_bottom = 213.0
+text = "SAVE"
+
+[node name="BtnLoad" type="Button" parent="."]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 258.0
+offset_right = 333.0
+offset_bottom = 351.0
+text = "LOAD"
+
+[node name="BtnCopy" type="Button" parent="."]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 119.0
+offset_right = 674.0
+offset_bottom = 212.0
+text = "COPY"
+
+[node name="BtnZip" type="Button" parent="."]
+layout_mode = 0
+offset_left = 802.0
+offset_top = 113.0
+offset_right = 1001.0
+offset_bottom = 206.0
+text = "ZIP"
+
+[node name="BtnIterateFolders" type="Button" parent="."]
+layout_mode = 0
+offset_left = 474.0
+offset_top = 267.0
+offset_right = 673.0
+offset_bottom = 360.0
+text = "Iterate folder"
+
+[connection signal="pressed" from="BtnSave" to="." method="_on_btn_save_pressed"]
+[connection signal="pressed" from="BtnLoad" to="." method="_on_btn_load_pressed"]
+[connection signal="pressed" from="BtnCopy" to="." method="_on_btn_copy_pressed"]
+[connection signal="pressed" from="BtnZip" to="." method="_on_btn_zip_pressed"]
+[connection signal="pressed" from="BtnIterateFolders" to="." method="_on_btn_iterate_folders_pressed"]

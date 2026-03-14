@@ -157,7 +157,7 @@ func restart_level_keep_params():
 	#ToDo : remove
 	else:
 		init()
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(1).timeout
 		_on_level_intro_finished()
 
 

@@ -13,6 +13,12 @@ extends Node
 
 @export_tool_button("Save Level") var save_button :Callable = save_level
 
+@export_group("Level packs")
+
+@export var pack_path :String = "res://scripts/resources/Levels/PuzzlesPack/Exported/"
+@export var pack_res :LevelPackRes = LevelPackRes.new()
+@export_tool_button("Export Pack") var save_pack_button :Callable = save_pack
+
 @onready var tile_bloc_scene = load("res://scenes/Terrain/tile_bloc.tscn")
 @onready var tile_magma_bloc_scene = load("res://scenes/Terrain/tile_bloc_magma.tscn")
 @onready var fruit_scene = load("res://models/objects/Strawberry.tscn")
@@ -90,6 +96,11 @@ func load_level():
 		fruit.set_owner(get_tree().edited_scene_root)
 		fruit.global_position = fruit_pos
 		fruit.scale = Vector3.ONE * 0.2
+
+
+func save_pack():
+	var filePath :String = pack_path + pack_res.name + ".tres"
+	ResourceSaver.save(pack_res, filePath, ResourceSaver.SaverFlags.FLAG_BUNDLE_RESOURCES)
 
 
 func _ready() -> void:

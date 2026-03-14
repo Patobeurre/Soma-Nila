@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c37spsbe0xfd6" path="res://scripts/resources/PuzzleLevelRes.gd" id="2_kabc3"]
 [ext_resource type="Texture2D" uid="uid://t1x1drcnumej" path="res://scripts/resources/Levels/Puzzles/MagmaPack/thumbnails/thumb_pillars.png" id="3_73qvf"]
 
-[sub_resource type="Resource" id="Resource_sb4i4"]
+[sub_resource type="Resource" id="Resource_sua1q"]
 script = ExtResource("1_r3hji")
 ability_name = "PROJ_GLUE"
 initial_amount = 60
@@ -16,8 +16,11 @@ metadata/_custom_type_script = "uid://70d1hekukawy"
 script = ExtResource("2_kabc3")
 ID = 104
 name = "Pillars"
+difficulty = 2
+puzzle_difficulty = 1
+technical_difficulty = 3
 thumbnail = ExtResource("3_73qvf")
-abilities = Array[ExtResource("1_r3hji")]([SubResource("Resource_sb4i4")])
+abilities = Array[ExtResource("1_r3hji")]([SubResource("Resource_sua1q")])
 blocs_positions = Array[Vector3]([Vector3(0, 5.96046e-08, 0), Vector3(-1, 5.96046e-08, 0), Vector3(1, 5.96046e-08, 0), Vector3(0, 5.96046e-08, -1), Vector3(-1, 5.96046e-08, -1), Vector3(1, 5.96046e-08, -1), Vector3(0, 5.96046e-08, 1), Vector3(-1, 5.96046e-08, 1), Vector3(1, 5.96046e-08, 1), Vector3(3, -3, 6), Vector3(3, -4, 6), Vector3(3, -5, 6), Vector3(3, -6, 6), Vector3(3, -7, 6), Vector3(-2, -5, 12), Vector3(-2, -6, 12), Vector3(-2, -7, 12), Vector3(-2, -8, 12), Vector3(-2, -9, 12), Vector3(0, -6, 17), Vector3(0, -7, 17), Vector3(0, -8, 17), Vector3(0, -9, 17), Vector3(0, -10, 17), Vector3(0, -5, 17)])
 magma_blocs_positions = Array[Vector3]([Vector3(3, -2, 6), Vector3(4, -2, 6), Vector3(2, -2, 6), Vector3(3, -2, 5), Vector3(4, -2, 5), Vector3(2, -2, 5), Vector3(3, -2, 7), Vector3(4, -2, 7), Vector3(2, -2, 7), Vector3(-2, -4, 12), Vector3(-1, -4, 12), Vector3(-3, -4, 12), Vector3(-2, -4, 11), Vector3(-1, -4, 11), Vector3(-3, -4, 11), Vector3(-2, -4, 13), Vector3(-1, -4, 13), Vector3(-3, -4, 13), Vector3(1, -5, 17), Vector3(-1, -5, 17), Vector3(0, -5, 16), Vector3(1, -5, 16), Vector3(-1, -5, 16), Vector3(0, -5, 18), Vector3(1, -5, 18), Vector3(-1, -5, 18)])
 fruits_positions = Array[Vector3]([Vector3(0, -4, 17)])

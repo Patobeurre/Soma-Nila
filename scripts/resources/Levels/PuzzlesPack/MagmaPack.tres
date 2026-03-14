@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LevelPackRes" load_steps=8 format=3 uid="uid://6tlf5vej3j7l"]
+[gd_resource type="Resource" script_class="LevelPackRes" load_steps=11 format=3 uid="uid://6tlf5vej3j7l"]
 
 [ext_resource type="Script" uid="uid://c37spsbe0xfd6" path="res://scripts/resources/PuzzleLevelRes.gd" id="1_8wxn2"]
 [ext_resource type="Resource" uid="uid://6w4e1ublw66q" path="res://scripts/resources/Levels/Puzzles/MagmaPack/100-MagmaBasics.tres" id="2_pr1xv"]
@@ -7,11 +7,14 @@
 [ext_resource type="Resource" uid="uid://c0u8o73ov15ld" path="res://scripts/resources/Levels/Puzzles/MagmaPack/102-Bubble.tres" id="4_pr1xv"]
 [ext_resource type="Resource" uid="uid://dlj11fu0ou6kg" path="res://scripts/resources/Levels/Puzzles/MagmaPack/103-Crate.tres" id="5_6dslu"]
 [ext_resource type="Resource" uid="uid://g7uqy6d7nowt" path="res://scripts/resources/Levels/Puzzles/MagmaPack/104-Glue.tres" id="6_5tkwi"]
+[ext_resource type="Resource" uid="uid://bydxjjchbjja6" path="res://scripts/resources/Levels/Puzzles/MagmaPack/105-Rope.tres" id="7_bejf2"]
+[ext_resource type="Resource" uid="uid://00f0jp78ydnc" path="res://scripts/resources/Levels/Puzzles/MagmaPack/106-Jetpack.tres" id="8_hhiys"]
+[ext_resource type="Resource" uid="uid://chyo045cw32tp" path="res://scripts/resources/Levels/Puzzles/MagmaPack/107-Vein.tres" id="9_rbmn3"]
 
 [resource]
 script = ExtResource("4_5tkwi")
 ID = "MAGMA_PACK_1.3"
 name = "MagmaPack"
 game_version_compatibility = "1.3"
-levels = Array[ExtResource("1_8wxn2")]([ExtResource("2_pr1xv"), ExtResource("3_6dslu"), ExtResource("4_pr1xv"), ExtResource("5_6dslu"), ExtResource("6_5tkwi")])
+levels = Array[ExtResource("1_8wxn2")]([ExtResource("2_pr1xv"), ExtResource("3_6dslu"), ExtResource("4_pr1xv"), ExtResource("5_6dslu"), ExtResource("6_5tkwi"), ExtResource("7_bejf2"), ExtResource("8_hhiys"), ExtResource("9_rbmn3")])
 metadata/_custom_type_script = "uid://hje1d4mj0irc"
