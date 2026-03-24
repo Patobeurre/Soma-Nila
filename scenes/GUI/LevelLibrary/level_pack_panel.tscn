@@ -1,7 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3nbupd2tmro4"]
+[gd_scene load_steps=10 format=3 uid="uid://b3nbupd2tmro4"]
 
 [ext_resource type="Script" uid="uid://2t20te5a1atv" path="res://scenes/GUI/LevelLibrary/library_level_pack_panel.gd" id="1_gmb6u"]
 [ext_resource type="Theme" uid="uid://7vunodgdyjg2" path="res://UI/themes/base_font.tres" id="2_4apsu"]
+[ext_resource type="Texture2D" uid="uid://dn6x6lpd46bh8" path="res://images/UI/ui_button_white_flat.png" id="3_43oo4"]
+[ext_resource type="Texture2D" uid="uid://ciftt5xfjrn3i" path="res://images/UI/ui_play.png" id="4_gmb6u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qcpaj"]
+texture = ExtResource("3_43oo4")
+texture_margin_left = 30.0
+texture_margin_top = 40.0
+texture_margin_right = 40.0
+texture_margin_bottom = 25.0
+modulate_color = Color(1, 0.99, 0.99, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_43oo4"]
+texture = ExtResource("3_43oo4")
+texture_margin_left = 30.0
+texture_margin_top = 45.0
+texture_margin_right = 40.0
+texture_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4apsu"]
+texture = ExtResource("3_43oo4")
+texture_margin_left = 30.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gmb6u"]
+texture = ExtResource("3_43oo4")
+texture_margin_left = 30.0
+texture_margin_top = 40.0
+texture_margin_right = 40.0
+texture_margin_bottom = 25.0
+modulate_color = Color(0.858824, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7a7aj"]
 border_width_top = 2
@@ -14,7 +46,11 @@ corner_radius_bottom_left = 1
 [node name="VBoxContainer" type="VBoxContainer"]
 script = ExtResource("1_gmb6u")
 
-[node name="LevelPackTitleText" type="RichTextLabel" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="LevelPackTitleText" type="RichTextLabel" parent="HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_4apsu")
@@ -24,6 +60,24 @@ text = "LEVEL_PACK_TITLE"
 fit_content = true
 autowrap_mode = 0
 vertical_alignment = 2
+
+[node name="BtnNewGame" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../../../MarginContainer2/HBoxContainer/BtnCredits")
+focus_neighbor_top = NodePath("../BtnQuit")
+focus_neighbor_bottom = NodePath("../BtnCustomGame")
+theme = ExtResource("2_4apsu")
+theme_override_colors/font_outline_color = Color(0.223103, 0.223103, 0.223103, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_constants/h_separation = 20
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxTexture_qcpaj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_43oo4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4apsu")
+theme_override_styles/normal = SubResource("StyleBoxTexture_gmb6u")
+text = "BTN_PLAY_ALL_PUZZLES"
+icon = ExtResource("4_gmb6u")
 
 [node name="HSeparator4" type="HSeparator" parent="."]
 layout_mode = 2

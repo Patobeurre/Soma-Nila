@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://coksoncrdv1kv"]
+[gd_scene load_steps=35 format=3 uid="uid://coksoncrdv1kv"]
 
 [ext_resource type="Script" uid="uid://cyffn5dh4p838" path="res://scenes/GUI/new_game_select_menu.gd" id="1_6sdyf"]
 [ext_resource type="Texture2D" uid="uid://dhewfkrdmda6l" path="res://images/dice_random_mode.png" id="2_qqsvr"]
@@ -30,12 +30,18 @@ texture_margin_top = 100.0
 texture_margin_right = 100.0
 texture_margin_bottom = 100.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_82uun"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lpru5"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gckq"]
 bg_color = Color(1, 1, 1, 0.196078)
 corner_radius_top_left = 60
 corner_radius_top_right = 60
 corner_radius_bottom_right = 60
 corner_radius_bottom_left = 60
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_viepn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6sdyf"]
 
@@ -55,6 +61,12 @@ texture_margin_top = 100.0
 texture_margin_right = 100.0
 texture_margin_bottom = 100.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qndmw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3gfud"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hy6q6"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xodkj"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_msise"]
@@ -70,6 +82,12 @@ texture_margin_left = 100.0
 texture_margin_top = 100.0
 texture_margin_right = 100.0
 texture_margin_bottom = 100.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_auxn0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bitjp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e7nnc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u1n05"]
 texture = ExtResource("4_qqsvr")
@@ -170,7 +188,10 @@ horizontal_alignment = 1
 
 [node name="BtnRandomMode" type="Button" parent="MarginContainer/GridContainer/RandomModePanel"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_82uun")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_lpru5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5gckq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_viepn")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_6sdyf")
 
 [node name="CustomModePanel" type="PanelContainer" parent="MarginContainer/GridContainer"]
@@ -214,7 +235,10 @@ horizontal_alignment = 1
 
 [node name="BtnCustomMode" type="Button" parent="MarginContainer/GridContainer/CustomModePanel"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qndmw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_3gfud")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5gckq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hy6q6")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_6sdyf")
 
 [node name="PuzzleModePanel" type="PanelContainer" parent="MarginContainer/GridContainer"]
@@ -258,7 +282,10 @@ horizontal_alignment = 1
 
 [node name="BtnPuzzleMode" type="Button" parent="MarginContainer/GridContainer/PuzzleModePanel"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_auxn0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_bitjp")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5gckq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_e7nnc")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_6sdyf")
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]

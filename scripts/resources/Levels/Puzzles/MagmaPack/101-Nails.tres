@@ -15,7 +15,7 @@ metadata/_custom_type_script = "uid://70d1hekukawy"
 [resource]
 script = ExtResource("2_8r2lv")
 ID = 101
-name = "Climbing hell"
+name = "Climbing hell #1"
 difficulty = 1
 puzzle_difficulty = -1
 technical_difficulty = 2

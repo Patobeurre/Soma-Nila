@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="PuzzleLevelRes" load_steps=6 format=3 uid="uid://bo5m44piqxmvf"]
+
+[ext_resource type="Script" uid="uid://70d1hekukawy" path="res://scripts/resources/Stats/AbilityStats.gd" id="1_0p187"]
+[ext_resource type="Script" uid="uid://c37spsbe0xfd6" path="res://scripts/resources/PuzzleLevelRes.gd" id="2_asw4c"]
+[ext_resource type="Texture2D" uid="uid://quth6irdsm1d" path="res://scripts/resources/Levels/Puzzles/MagmaPack/thumbnails/thumb_nails2.png" id="3_1iqfk"]
+
+[sub_resource type="Resource" id="Resource_d2vbl"]
+script = ExtResource("1_0p187")
+ability_name = "PROJ_NAIL"
+initial_amount = 6
+amount_left = 0
+amount_used = 0
+metadata/_custom_type_script = "uid://70d1hekukawy"
+
+[sub_resource type="Resource" id="Resource_x0nnj"]
+script = ExtResource("1_0p187")
+ability_name = "PO_BOX"
+initial_amount = 1
+amount_left = 0
+amount_used = 0
+metadata/_custom_type_script = "uid://70d1hekukawy"
+
+[resource]
+script = ExtResource("2_asw4c")
+ID = 108
+name = "Climbing hell #2"
+difficulty = 3
+puzzle_difficulty = 2
+technical_difficulty = 3
+thumbnail = ExtResource("3_1iqfk")
+abilities = Array[ExtResource("1_0p187")]([SubResource("Resource_d2vbl"), SubResource("Resource_x0nnj")])
+blocs_positions = Array[Vector3]([Vector3(0, 0, 0), Vector3(0, 0, 1), Vector3(0, 1, 3), Vector3(0, 0, 3), Vector3(0, 2, 3), Vector3(-1, 2, 3), Vector3(-2, 2, 3), Vector3(-2, 3, 3), Vector3(-2, 4, 3), Vector3(-1, 4, 3), Vector3(3, 2, -1), Vector3(3, 2, 0), Vector3(3, 2, 1)])
+magma_blocs_positions = Array[Vector3]([Vector3(0, 0, 2), Vector3(-1, 1, 3), Vector3(0, 3, 3), Vector3(-1, 3, 3), Vector3(0, 3, 4), Vector3(-1, 3, 4), Vector3(-1, 2, 4), Vector3(-2, 2, 4), Vector3(-3, 3, 3), Vector3(-3, 2, 3), Vector3(-3, 4, 3), Vector3(-2, 1, 3), Vector3(-3, 1, 2), Vector3(-2, 5, 3), Vector3(0, 3, 2), Vector3(1, 3, 2), Vector3(1, 3, 1), Vector3(2, 3, 2), Vector3(2, 3, 1), Vector3(2, 2, 2), Vector3(1, 2, 3), Vector3(1, 3, 3), Vector3(0, 3, 1), Vector3(0, 3, 0), Vector3(1, 0, -1), Vector3(1, 0, 1), Vector3(1, 0, 0), Vector3(1, 0, 2), Vector3(1, 0, 3), Vector3(2, 1, -1), Vector3(2, 1, 0), Vector3(2, 0, -1)])
+fruits_positions = Array[Vector3]([Vector3(3, 3, -1)])
+start_position = Vector3(0, 1, 0)

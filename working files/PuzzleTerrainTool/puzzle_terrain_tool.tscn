@@ -1,222 +1,71 @@
 [gd_scene load_steps=12 format=3 uid="uid://b87mxba3r3x8e"]
 
 [ext_resource type="Script" uid="uid://df3x24nasg2g5" path="res://working files/PuzzleTerrainTool/puzzle_terrain_tool.gd" id="1_luvjt"]
-[ext_resource type="Resource" uid="uid://chyo045cw32tp" path="res://scripts/resources/Levels/Puzzles/MagmaPack/107-Vein.tres" id="2_f8kma"]
+[ext_resource type="Script" uid="uid://70d1hekukawy" path="res://scripts/resources/Stats/AbilityStats.gd" id="2_dvgc4"]
 [ext_resource type="PackedScene" uid="uid://dvbuqr0aytha7" path="res://scenes/Terrain/tile_bloc.tscn" id="3_5cwhi"]
+[ext_resource type="Script" uid="uid://c37spsbe0xfd6" path="res://scripts/resources/PuzzleLevelRes.gd" id="3_ngho2"]
 [ext_resource type="Resource" uid="uid://6tlf5vej3j7l" path="res://scripts/resources/Levels/PuzzlesPack/MagmaPack.tres" id="4_dvgc4"]
 [ext_resource type="PackedScene" uid="uid://cpfa5biuv5b8q" path="res://scenes/Terrain/tile_bloc_magma.tscn" id="5_dvgc4"]
 [ext_resource type="PackedScene" uid="uid://lvbklg366xau" path="res://models/objects/Strawberry.tscn" id="5_f0f81"]
-[ext_resource type="Script" uid="uid://lfryewj84806" path="res://scenes/Terrain/tile_bloc.gd" id="5_vykg4"]
-[ext_resource type="Script" uid="uid://cpr5amo4mwpqt" path="res://scenes/Terrain/tile_bloc_magma.gd" id="7_4dwd7"]
 [ext_resource type="Environment" uid="uid://evgf73em6ceg" path="res://scripts/resources/Environments/main_level_env.tres" id="8_5cwhi"]
-[ext_resource type="Script" uid="uid://byb75deu31wf" path="res://models/objects/strawberry.gd" id="9_b0nl1"]
-[ext_resource type="Texture2D" uid="uid://dygawtjpp3132" path="res://images/strawberry_icon.png" id="10_rj03i"]
+
+[sub_resource type="Resource" id="Resource_d2vbl"]
+script = ExtResource("2_dvgc4")
+ability_name = "PROJ_NAIL"
+initial_amount = 6
+amount_left = 0
+amount_used = 0
+metadata/_custom_type_script = "uid://70d1hekukawy"
+
+[sub_resource type="Resource" id="Resource_dvgc4"]
+script = ExtResource("2_dvgc4")
+ability_name = "A_BOX"
+initial_amount = 1
+amount_left = 0
+amount_used = 0
+metadata/_custom_type_script = "uid://70d1hekukawy"
+
+[sub_resource type="Resource" id="Resource_f8kma"]
+script = ExtResource("3_ngho2")
+ID = 108
+name = "Back and Forth"
+difficulty = 3
+puzzle_difficulty = 1
+technical_difficulty = 3
+abilities = Array[ExtResource("2_dvgc4")]([SubResource("Resource_d2vbl"), SubResource("Resource_dvgc4")])
+blocs_positions = Array[Vector3]([])
+magma_blocs_positions = Array[Vector3]([])
+fruits_positions = Array[Vector3]([])
+start_position = Vector3(0, 1, 0)
+metadata/_custom_type_script = "uid://c37spsbe0xfd6"
 
 [node name="PuzzleTerrainTool" type="Node3D" node_paths=PackedStringArray("terrain_node", "fruits_node")]
 script = ExtResource("1_luvjt")
 terrain_node = NodePath("Terrain")
 fruits_node = NodePath("Fruits")
 save_path = "res://scripts/resources/Levels/Puzzles/MagmaPack/"
-file_name = "Vein"
-puzzle_res = ExtResource("2_f8kma")
+file_name = "BackAndForth"
+puzzle_res = SubResource("Resource_f8kma")
 pack_res = ExtResource("4_dvgc4")
 
 [node name="Terrain" type="Node3D" parent="."]
 
-[node name="StaticBody3D" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("5_vykg4")
+[node name="StaticBody3D10" parent="Terrain" instance=ExtResource("3_5cwhi")]
 
-[node name="@AnimatableBody3D@169937" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("5_vykg4")
-
-[node name="@AnimatableBody3D@169938" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("5_vykg4")
-
-[node name="@AnimatableBody3D@169939" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 3)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("5_vykg4")
-
-[node name="@AnimatableBody3D@169940" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3, 3)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("5_vykg4")
-
-[node name="@AnimatableBody3D@169941" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 3)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("5_vykg4")
-
-[node name="@AnimatableBody3D@169942" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("5_vykg4")
-
-[node name="@AnimatableBody3D@169943" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("5_vykg4")
-
-[node name="@AnimatableBody3D@169944" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 3)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("5_vykg4")
-
-[node name="@AnimatableBody3D@169945" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 3)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("5_vykg4")
-
-[node name="@AnimatableBody3D@169946" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="_AnimatableBody3D_169978" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("7_4dwd7")
-
-[node name="@AnimatableBody3D@169947" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("7_4dwd7")
-
-[node name="@AnimatableBody3D@169948" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("7_4dwd7")
-
-[node name="@AnimatableBody3D@169949" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 2)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("7_4dwd7")
-
-[node name="@AnimatableBody3D@169950" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 2)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("7_4dwd7")
-
-[node name="@AnimatableBody3D@169951" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 2)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("7_4dwd7")
-
-[node name="@AnimatableBody3D@169952" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 2)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("7_4dwd7")
-
-[node name="@AnimatableBody3D@169953" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 3)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("7_4dwd7")
-
-[node name="@AnimatableBody3D@169954" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 4)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("7_4dwd7")
-
-[node name="@AnimatableBody3D@169955" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 4)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("7_4dwd7")
-
-[node name="@AnimatableBody3D@169956" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 4)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("7_4dwd7")
-
-[node name="@AnimatableBody3D@169957" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 4)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("7_4dwd7")
-
-[node name="@AnimatableBody3D@169958" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, 4)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("7_4dwd7")
-
-[node name="@AnimatableBody3D@169959" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 4, 4)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("7_4dwd7")
-
-[node name="@AnimatableBody3D@169960" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 4, 3)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("7_4dwd7")
-
-[node name="@AnimatableBody3D@169961" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, 3)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("7_4dwd7")
 
 [node name="Fruits" type="Node3D" parent="."]
 
-[node name="Strawberry" type="Node3D" parent="Fruits" instance=ExtResource("5_f0f81")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 8, 4, 3)
-script = ExtResource("9_b0nl1")
-icon = ExtResource("10_rj03i")
+[node name="Strawberry" parent="Fruits" instance=ExtResource("5_f0f81")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 2, 2)
 
 [node name="Environement" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Environement"]
-transform = Transform3D(-0.866026, 0.129409, -0.482963, -1.31261e-07, 0.965926, 0.258819, 0.5, 0.224144, -0.836516, -0.83644, 4.3643, -5.1196)
+transform = Transform3D(-0.866026, 0.129409, -0.482963, -1.37713e-07, 0.965926, 0.258819, 0.5, 0.224144, -0.836516, -3.27595, 5.36891, -5.1196)
 current = true
-fov = 55.9
+fov = 66.4
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environement"]
 environment = ExtResource("8_5cwhi")

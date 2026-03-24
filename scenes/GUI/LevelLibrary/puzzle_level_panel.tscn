@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c1mjawsl6snqr"]
+[gd_scene load_steps=11 format=3 uid="uid://c1mjawsl6snqr"]
 
 [ext_resource type="Script" uid="uid://bmq8cdw30jfgj" path="res://scenes/GUI/LevelLibrary/puzzle_level_panel.gd" id="1_tgjsy"]
 [ext_resource type="Texture2D" uid="uid://f4bfkjf1s7sw" path="res://images/UI/star.png" id="3_70x5v"]
@@ -9,6 +9,8 @@
 bg_color = Color(1, 1, 1, 0.196078)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iww4u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fa2ls"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iww4u"]
 bg_color = Color(1, 1, 1, 0.235294)
@@ -90,6 +92,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_iww4u")
 
 [node name="BtnLevel" type="Button" parent="PanelContainer4"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fa2ls")
 theme_override_styles/hover = SubResource("StyleBoxFlat_iww4u")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_70x5v")
 
