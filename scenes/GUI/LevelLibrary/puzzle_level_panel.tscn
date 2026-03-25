@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1mjawsl6snqr"]
+[gd_scene load_steps=12 format=3 uid="uid://c1mjawsl6snqr"]
 
 [ext_resource type="Script" uid="uid://bmq8cdw30jfgj" path="res://scenes/GUI/LevelLibrary/puzzle_level_panel.gd" id="1_tgjsy"]
-[ext_resource type="Texture2D" uid="uid://f4bfkjf1s7sw" path="res://images/UI/star.png" id="3_70x5v"]
-[ext_resource type="Texture2D" uid="uid://ca3y4r0fwbkab" path="res://images/UI/star_disabled.png" id="3_g63kd"]
+[ext_resource type="Script" uid="uid://cm7dxiy6iv61" path="res://scenes/GUI/LevelLibrary/difficulty_panel.gd" id="2_fa2ls"]
+[ext_resource type="Texture2D" uid="uid://beqo5hqw0tshv" path="res://images/UI/star_difficulty_disabled.png" id="3_h4eak"]
 [ext_resource type="Theme" uid="uid://7vunodgdyjg2" path="res://UI/themes/base_font.tres" id="4_l1v1k"]
+[ext_resource type="Texture2D" uid="uid://cgrd65bjxc8so" path="res://images/UI/ui_validated.png" id="5_fa2ls"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4eak"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fa2ls"]
 bg_color = Color(1, 1, 1, 0.196078)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iww4u"]
@@ -56,18 +57,65 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 mouse_filter = 2
 
-[node name="PanelContainer2" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -72.0
 grow_horizontal = 2
 grow_vertical = 0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_h4eak")
+theme_override_styles/panel = SubResource("StyleBoxFlat_fa2ls")
 
-[node name="LevelNameText" type="RichTextLabel" parent="PanelContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="DifficultyPanel" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+alignment = 1
+script = ExtResource("2_fa2ls")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/DifficultyPanel"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("3_h4eak")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/VBoxContainer/DifficultyPanel"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("3_h4eak")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="PanelContainer/VBoxContainer/DifficultyPanel"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("3_h4eak")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="PanelContainer/VBoxContainer/DifficultyPanel"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("3_h4eak")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="PanelContainer/VBoxContainer/DifficultyPanel"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("3_h4eak")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LevelNameText" type="RichTextLabel" parent="PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
@@ -108,17 +156,10 @@ offset_bottom = 40.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_g63kd")
 
-[node name="CompletedIconBackground" type="TextureRect" parent="CompletedIconPanel"]
-layout_mode = 2
-texture = ExtResource("3_g63kd")
-expand_mode = 2
-stretch_mode = 3
-
 [node name="CompletedIcon" type="TextureRect" parent="CompletedIconPanel"]
 layout_mode = 2
-texture = ExtResource("3_70x5v")
+texture = ExtResource("5_fa2ls")
 expand_mode = 2
 stretch_mode = 3
-flip_h = true
 
 [connection signal="pressed" from="PanelContainer4/BtnLevel" to="." method="_on_btn_level_pressed"]

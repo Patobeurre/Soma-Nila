@@ -22,6 +22,7 @@ func inputManagement():
 	if Input.is_action_just_pressed("restart"):
 		parentNode.restart_level_keep_params()
 	if Input.is_action_just_pressed("restart_forced"):
+		print("restart forced")
 		parentNode.restart_level_regenerate()
 	if Input.is_action_just_pressed("ui_cancel"):
 		parentNode.exit_level_requested()

@@ -72,18 +72,27 @@ func restart_level() -> void:
 	SignalBus.level_intro_finished.emit()
 
 
-func start_puzzle_level(puzzle_res :PuzzleLevelRes, show_level_intro :bool = true):
-	Global.puzzle_level_res = puzzle_res
+func start_puzzle_level(show_level_intro :bool = true):
 	change_gui_scene("res://scenes/GUI/game_hud.tscn")
 	if show_level_intro:
 		change_gui_scene("res://scenes/GUI/level_intro_screen.tscn", false, true)
 	change_3d_scene("res://scenes/puzzle_level.tscn")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-func restart_puzzle_level(puzzle_res :PuzzleLevelRes) -> void:
-	Global.puzzle_level_res = PuzzleLevelRes.new()
-	start_puzzle_level(puzzle_res, false)
+func restart_puzzle_level() -> void:
+	start_puzzle_level(false)
 	SignalBus.level_intro_finished.emit()
+
+func play_next_puzzle_level() -> void:
+	var next_level = Global.puzzle_playlist_res.get_next_level()
+	if next_level == null:
+		return_to_puzzles_menu()
+	else:
+		start_puzzle_level()
+
+func play_puzzle_playlist(playlist :PuzzlePlaylistRes) -> void:
+	Global.puzzle_playlist_res = playlist
+	start_puzzle_level()
 
 
 func is_secret_level(level_res :MainLevelRes) -> bool:

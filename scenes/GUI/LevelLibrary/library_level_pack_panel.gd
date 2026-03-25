@@ -28,3 +28,8 @@ func _fill_levels() -> void:
 		var level_panel :PuzzleLevelPanel = level_panel_scene.instantiate()
 		levels_container.add_child(level_panel)
 		level_panel.init(level)
+
+
+func _on_btn_play_all_levels_pressed() -> void:
+	var playlist = PuzzlePlaylistRes.create(level_pack_res.levels)
+	Global.game_controller.play_puzzle_playlist(playlist)

@@ -57,8 +57,8 @@ func _ready() -> void:
 	map_node.settings = terrainSettings
 	place_bondaries()
 
-	if Global.puzzle_level_res.ID >= 0:
-		puzzle_res = Global.puzzle_level_res.duplicate(true)
+	if Global.puzzle_playlist_res.current_level >= 0:
+		puzzle_res = Global.puzzle_playlist_res.get_current_level().duplicate(true)
 		init()
 	#ToDo : remove
 	else:
@@ -86,13 +86,6 @@ func init() -> void:
 	SignalBus.current_level_stats_updated.emit(Global.current_level_stats)
 	
 	abilitiesSettings.set_picked_abilities(puzzle_res.abilities)
-
-
-func inputManagement() -> void:
-	if Input.is_action_just_pressed("restart"):
-		restart_level_keep_params()
-	if Input.is_action_just_pressed("ui_cancel"):
-		Global.game_controller.return_to_main_menu()
 
 
 func _physics_process(delta: float) -> void:
@@ -152,8 +145,8 @@ func get_placeholder_rotation() -> Vector3:
 
 
 func restart_level_keep_params():
-	if Global.puzzle_level_res.ID >= 0:
-		Global.game_controller.restart_puzzle_level(puzzle_res)
+	if Global.puzzle_playlist_res.current_level >= 0:
+		Global.game_controller.restart_puzzle_level()
 	#ToDo : remove
 	else:
 		init()
@@ -162,7 +155,7 @@ func restart_level_keep_params():
 
 
 func restart_level_regenerate():
-	pass
+	Global.game_controller.play_next_puzzle_level()
 
 
 func exit_level_requested():

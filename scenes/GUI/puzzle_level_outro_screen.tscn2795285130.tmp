@@ -115,6 +115,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ogebj")
+background_rotate_speed = null
+startAnimationDelay = null
+stepAnimationDelay = null
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1

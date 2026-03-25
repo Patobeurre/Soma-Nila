@@ -44,11 +44,11 @@ func inputManagement():
 	if Input.is_action_just_pressed("ui_cancel"):
 		_on_btn_back_pressed()
 	if Input.is_action_just_pressed("ui_accept"):
-		_on_button_pressed()
+		_on_btn_next_pressed()
 
 
 func display_stats(stats :LevelStats) -> void:
-	levelNameTxt.text = tr(Global.puzzle_level_res.name)
+	levelNameTxt.text = tr(Global.puzzle_playlist_res.get_current_level().name)
 	timeTxt.text = Utils.seconds2hhmmss(stats.completionTime, true)
 	fill_used_abilities()
 
@@ -74,15 +74,15 @@ func fill_used_abilities() -> void:
 		noItemUsed.visible = true
 
 
-func _on_button_pressed() -> void:
-	AudioBus.play_sfx("BTN_OK")
-	#Global.game_controller.start_new_game()
-
-
 func _on_btn_replay_pressed() -> void:
 	AudioBus.play_sfx("BTN_REPLAY")
-	Global.game_controller.start_puzzle_level(Global.puzzle_level_res)
+	Global.game_controller.restart_puzzle_level()
 
 
 func _on_btn_back_pressed() -> void:
 	Global.game_controller.return_to_puzzles_menu()
+
+
+func _on_btn_next_pressed() -> void:
+	AudioBus.play_sfx("BTN_OK")
+	Global.game_controller.play_next_puzzle_level()

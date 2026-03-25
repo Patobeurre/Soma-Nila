@@ -6,6 +6,7 @@ class_name PuzzleLevelPanel
 @onready var level_name :RichTextLabel = %LevelNameText
 @onready var abilities_panel = %AbilitiesPanel
 @onready var completed_icon_panel = %CompletedIconPanel
+@onready var difficulty_panel = %DifficultyPanel
 
 @onready var ability_icon_panel :PackedScene = load("res://scenes/GUI/LevelLibrary/ability_icon_level_panel.tscn")
 
@@ -23,6 +24,7 @@ func init(new_level_res :PuzzleLevelRes) -> void:
 		ability_icon.texture = ability.to_state_res().icon
 		abilities_panel.add_child(ability_icon)
 	
+	difficulty_panel.init(level_res.difficulty)
 	_update_completed_icon()
 	
 
@@ -35,4 +37,5 @@ func _update_completed_icon() -> void:
 
 
 func _on_btn_level_pressed() -> void:
-	Global.game_controller.start_puzzle_level(level_res)
+	var playlist = PuzzlePlaylistRes.create([level_res])
+	Global.game_controller.play_puzzle_playlist(playlist)
