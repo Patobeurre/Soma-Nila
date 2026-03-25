@@ -1,5 +1,4 @@
 extends Node
-class_name GameController
 
 @export var world_3d : Node3D
 @export var world_2d : Node2D

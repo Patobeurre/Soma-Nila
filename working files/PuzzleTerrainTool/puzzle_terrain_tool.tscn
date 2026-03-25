@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b87mxba3r3x8e"]
+[gd_scene load_steps=13 format=3 uid="uid://b87mxba3r3x8e"]
 
 [ext_resource type="Script" uid="uid://df3x24nasg2g5" path="res://working files/PuzzleTerrainTool/puzzle_terrain_tool.gd" id="1_luvjt"]
 [ext_resource type="Script" uid="uid://70d1hekukawy" path="res://scripts/resources/Stats/AbilityStats.gd" id="2_dvgc4"]
@@ -7,11 +7,7 @@
 [ext_resource type="Resource" uid="uid://6tlf5vej3j7l" path="res://scripts/resources/Levels/PuzzlesPack/MagmaPack.tres" id="4_dvgc4"]
 [ext_resource type="PackedScene" uid="uid://cpfa5biuv5b8q" path="res://scenes/Terrain/tile_bloc_magma.tscn" id="5_dvgc4"]
 [ext_resource type="PackedScene" uid="uid://lvbklg366xau" path="res://models/objects/Strawberry.tscn" id="5_f0f81"]
-[ext_resource type="Script" uid="uid://lfryewj84806" path="res://scenes/Terrain/tile_bloc.gd" id="6_4dwd7"]
 [ext_resource type="Environment" uid="uid://evgf73em6ceg" path="res://scripts/resources/Environments/main_level_env.tres" id="8_5cwhi"]
-[ext_resource type="Script" uid="uid://cpr5amo4mwpqt" path="res://scenes/Terrain/tile_bloc_magma.gd" id="8_b0nl1"]
-[ext_resource type="Script" uid="uid://byb75deu31wf" path="res://models/objects/strawberry.gd" id="10_rj03i"]
-[ext_resource type="Texture2D" uid="uid://dygawtjpp3132" path="res://images/strawberry_icon.png" id="11_tmcdu"]
 
 [sub_resource type="Resource" id="Resource_ngho2"]
 script = ExtResource("2_dvgc4")
@@ -60,599 +56,259 @@ pack_res = ExtResource("4_dvgc4")
 
 [node name="Terrain" type="Node3D" parent="."]
 
-[node name="StaticBody3D" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
+[node name="StaticBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
 
-[node name="@AnimatableBody3D@104093" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104093" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104094" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104094" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104095" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104095" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 1)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104096" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104096" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 1)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104097" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104097" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -4, 1)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104098" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104098" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104099" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104099" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 1)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104100" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104100" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -4, 1)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104101" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104101" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1, 1)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104102" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104102" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -4, -0.5)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104103" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104103" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1, -0.5)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104104" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104104" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104105" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104105" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -4, -0.5)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104106" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104106" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 0)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104107" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104107" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104108" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104108" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 0)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104109" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104109" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1, -0.5)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104110" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104110" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1, 1)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104111" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104111" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -2, 1)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104112" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104112" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -2, -1)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104113" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104113" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104114" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104114" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, -1)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104115" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104115" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -2, 1)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104116" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104116" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -3, 1)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104117" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104117" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -3, -1)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104118" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104118" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -3, -1)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104119" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104119" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -3, 1)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104120" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104120" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104121" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104121" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104122" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104122" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 14)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104123" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104123" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 14)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104124" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104124" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 13)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104125" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104125" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 13)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104126" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104126" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 14)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104127" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104127" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 14)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104128" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104128" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -4, 14.5)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104129" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104129" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 14)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104130" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104130" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -4, 14.5)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104131" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104131" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1, 14.5)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104132" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104132" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -4, 13)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104133" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104133" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1, 13)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104134" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104134" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 14)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104135" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104135" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -4, 13)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104136" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104136" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 13)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104137" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104137" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 13)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104138" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104138" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 13)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104139" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104139" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1, 13)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104140" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104140" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1, 14.5)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104141" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104141" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -2, 15)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104142" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104142" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -2, 13)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104143" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104143" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 14)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104144" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104144" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -2, 13)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104145" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104145" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, 15)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104146" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104146" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -3, 15)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104147" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104147" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -3, 13)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104148" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104148" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -3, 13)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104149" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="@AnimatableBody3D@104149" parent="Terrain" instance=ExtResource("3_5cwhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -3, 15)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("6_4dwd7")
 
-[node name="@AnimatableBody3D@104150" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104150" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 3)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104151" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104151" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 3)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104152" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104152" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 3)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104153" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104153" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 2)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104154" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104154" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 2)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104155" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104155" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 2)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104156" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104156" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 4)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104157" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104157" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 4)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104158" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104158" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 4)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104159" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104159" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 6)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104160" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104160" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 6)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104161" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104161" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 6)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104162" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104162" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 5)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104163" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104163" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 5)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104164" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104164" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 5)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104165" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104165" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 7)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104166" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104166" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 7)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104167" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104167" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 7)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104168" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104168" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 8)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104169" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104169" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 8)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104170" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104170" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 8)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104171" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104171" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 9)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104172" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104172" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 9)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104173" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104173" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 9)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104174" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104174" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 11)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104175" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104175" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 11)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104176" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104176" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 11)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
 [node name="_AnimatableBody3D_104174" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 10)
@@ -663,38 +319,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 10)
 [node name="_AnimatableBody3D_104176" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 10)
 
-[node name="@AnimatableBody3D@104177" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104177" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 12)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104178" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104178" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 12)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
-[node name="@AnimatableBody3D@104179" type="AnimatableBody3D" parent="Terrain" instance=ExtResource("5_dvgc4")]
+[node name="@AnimatableBody3D@104179" parent="Terrain" instance=ExtResource("5_dvgc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 12)
-collision_layer = 4097
-collision_mask = 129
-sync_to_physics = false
-script = ExtResource("8_b0nl1")
 
 [node name="Fruits" type="Node3D" parent="."]
 
-[node name="Strawberry" type="Node3D" parent="Fruits" instance=ExtResource("5_f0f81")]
+[node name="Strawberry" parent="Fruits" instance=ExtResource("5_f0f81")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -4, 1)
-script = ExtResource("10_rj03i")
-icon = ExtResource("11_tmcdu")
 
-[node name="@Node3D@104180" type="Node3D" parent="Fruits" instance=ExtResource("5_f0f81")]
+[node name="@Node3D@104180" parent="Fruits" instance=ExtResource("5_f0f81")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -4, 13)
-script = ExtResource("10_rj03i")
-icon = ExtResource("11_tmcdu")
 
 [node name="Environement" type="Node3D" parent="."]
 

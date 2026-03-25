@@ -1,18 +1,4 @@
-extends Node
-class_name GameController
-
-@export var world_3d : Node3D
-@export var world_2d : Node2D
-@export var gui : Control
-
-var current_3d_scene : Node3D
-var current_2d_scene : Node2D
-var current_gui_scene : Control
-
-@onready var abilities_settings :AbilitiesSettings = load("res://scripts/resources/AbilitiesSettingsDefault.tres")
-@onready var terrain_settings :TerrainGenerationSettings = load("res://scripts/resources/Terrain/GenerationSettings.tres")
-@onready var noise_params :FastNoiseLite = load("res://scripts/resources/Terrain/SimplexNoise.tres")
-@onready var tile_gen_settings :TileGenerationSettings = load("res://scripts/resources/Terrain/TileGenSettings.tres")
+extends GameController
 
 @export var puzzle_playlist_res = PuzzlePlaylistRes.new()
 
