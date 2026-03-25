@@ -72,6 +72,19 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_fa2ls")
 layout_mode = 2
 alignment = 2
 
+[node name="CompletionTimeLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("4_l1v1k")
+theme_override_colors/font_outline_color = Color(0.0475577, 0.0475576, 0.0475576, 1)
+theme_override_constants/outline_size = 10
+bbcode_enabled = true
+text = "00:00"
+fit_content = true
+vertical_alignment = 2
+
 [node name="DifficultyPanel" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -146,7 +159,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_70x5v")
 
 [node name="CompletedIconPanel" type="PanelContainer" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0

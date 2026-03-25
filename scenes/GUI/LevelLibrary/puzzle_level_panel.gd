@@ -7,6 +7,7 @@ class_name PuzzleLevelPanel
 @onready var abilities_panel = %AbilitiesPanel
 @onready var completed_icon_panel = %CompletedIconPanel
 @onready var difficulty_panel = %DifficultyPanel
+@onready var completion_time_label = %CompletionTimeLabel
 
 @onready var ability_icon_panel :PackedScene = load("res://scenes/GUI/LevelLibrary/ability_icon_level_panel.tscn")
 
@@ -25,14 +26,22 @@ func init(new_level_res :PuzzleLevelRes) -> void:
 		abilities_panel.add_child(ability_icon)
 	
 	difficulty_panel.init(level_res.difficulty)
-	_update_completed_icon()
-	
+	_update_completed()
+
+
+func _update_completed() -> void:
+	var level_stats :LevelStats = SaveManager.save_game_res.puzzle_levels.try_get_completed_level(level_res.ID)
+	if level_stats != null:
+		_update_completed_icon()
+		_update_completed_time(level_stats.completionTime)
 
 
 func _update_completed_icon() -> void:
-	var level_stats :LevelStats = SaveManager.save_game_res.puzzle_levels.try_get_completed_level(level_res.ID)
-	if level_stats != null:
-		completed_icon_panel.visible = true
+	completed_icon_panel.visible = true
+
+func _update_completed_time(time :float) -> void:
+	completion_time_label.text = " " + Utils.seconds2hhmmss(time, true)
+	completion_time_label.visible = true
 
 
 
