@@ -16,7 +16,7 @@ var isInputActive :bool = false
 
 
 func _ready() -> void:
-	SignalBus.ability_selector_populated.connect(_on_abilities_populated)
+	SignalBus.ability_selector_populated.connect(_on_abilities_populated, CONNECT_ONE_SHOT)
 	isInputActive = !Input.is_action_just_pressed("interact3D") and !Input.is_action_just_pressed("jump")
 	_fill_texts()
 
@@ -47,7 +47,6 @@ func inputManagement():
 	if Input.is_action_just_pressed("interact3D") \
 		or Input.is_action_just_pressed("jump") \
 		or Input.is_action_just_pressed("ui_accept"):
-		SignalBus.ability_selector_populated.disconnect(_on_abilities_populated)
 		Global.game_controller.end_level_intro()
 
 
