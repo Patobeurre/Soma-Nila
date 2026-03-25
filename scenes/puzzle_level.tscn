@@ -29,6 +29,8 @@ bg_color = Color(1, 0, 0, 0.435294)
 
 [node name="MainLevel" type="Node3D"]
 script = ExtResource("1_328bm")
+DISTANCE = 7.0
+boundOffset = 4.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("3_rbsdd")

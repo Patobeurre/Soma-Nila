@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://b288uqfxrhar0"]
+
+[ext_resource type="Script" uid="uid://d3ioyf4xuyeu6" path="res://working files/PuzzleTerrainTool/PuzzleSceneMock/puzzle_global_scene.gd" id="1_y3vap"]
+[ext_resource type="Script" uid="uid://c37spsbe0xfd6" path="res://scripts/resources/PuzzleLevelRes.gd" id="2_77ucw"]
+[ext_resource type="Resource" uid="uid://cqqvy4mb6kpxf" path="res://scripts/resources/Levels/Puzzles/MagmaPack/109-BackAndForth.tres" id="3_77ucw"]
+[ext_resource type="Script" uid="uid://dy8pnciybg1pw" path="res://scripts/resources/PuzzlePlaylistRes.gd" id="4_t127w"]
+
+[sub_resource type="Resource" id="Resource_20mle"]
+script = ExtResource("4_t127w")
+levels = Array[ExtResource("2_77ucw")]([ExtResource("3_77ucw")])
+current_level = 0
+metadata/_custom_type_script = "uid://dy8pnciybg1pw"
+
+[node name="GlobalController" type="Node" node_paths=PackedStringArray("world_3d", "world_2d", "gui")]
+script = ExtResource("1_y3vap")
+world_3d = NodePath("World3D")
+world_2d = NodePath("World2D")
+gui = NodePath("GUI")
+puzzle_playlist_res = SubResource("Resource_20mle")
+
+[node name="World3D" type="Node3D" parent="."]
+
+[node name="World2D" type="Node2D" parent="."]
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

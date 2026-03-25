@@ -1,6 +1,7 @@
 @tool
 extends Node
 
+# Puzzle variables
 @export_tool_button("Load Level") var load_button :Callable = load_level
 @export_tool_button("Clear") var clear_button :Callable = clear
 
@@ -13,15 +14,22 @@ extends Node
 
 @export_tool_button("Save Level") var save_button :Callable = save_level
 
+# Level packs variables
 @export_group("Level packs")
 
 @export var pack_path :String = "res://scripts/resources/Levels/PuzzlesPack/Exported/"
 @export var pack_res :LevelPackRes = LevelPackRes.new()
 @export_tool_button("Export Pack") var save_pack_button :Callable = save_pack
 
+# Instantiation scenes
 @onready var tile_bloc_scene = load("res://scenes/Terrain/tile_bloc.tscn")
 @onready var tile_magma_bloc_scene = load("res://scenes/Terrain/tile_bloc_magma.tscn")
 @onready var fruit_scene = load("res://models/objects/Strawberry.tscn")
+
+# Scene permanent nodes
+@onready var strawberry_node = %Strawberry
+@onready var standard_bloc_node = %StandardBloc
+@onready var magma_bloc_node = %MagmaBloc
 
 
 func save_level():
@@ -55,6 +63,18 @@ func clear() -> void:
 	file_name = ""
 
 	clear_nodes()
+
+	_add_node(strawberry_node.duplicate(true), get_node("./Fruits"), "Fruit")
+	_add_node(standard_bloc_node.duplicate(true), get_node("./Terrain"), "Bloc")
+	_add_node(magma_bloc_node.duplicate(true), get_node("./Terrain"), "MagmaBloc")
+
+
+func _add_node(node :Node, parent :Node, name :String) -> void:
+	if !name.is_empty():
+		node.name = name
+	node.unique_name_in_owner = false
+	parent.add_child(node)
+	node.set_owner(get_tree().edited_scene_root)
 
 
 func clear_nodes() -> void:
