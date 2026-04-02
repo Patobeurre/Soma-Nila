@@ -186,7 +186,6 @@ jolt_physics_3d/limits/max_bodies=20480
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=2
 textures/lossless_compression/force_png=true
 lights_and_shadows/directional_shadow/16_bits=false
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality=3
@@ -194,5 +193,7 @@ global_illumination/gi/use_half_resolution=true
 textures/default_filters/use_nearest_mipmap_filter=true
 anti_aliasing/quality/msaa_2d=2
 anti_aliasing/quality/msaa_3d=2
+textures/decals/filter=1
+textures/light_projectors/filter=1
 mesh_lod/lod_change/threshold_pixels=0.5
 camera/depth_of_field/fov=90.0
