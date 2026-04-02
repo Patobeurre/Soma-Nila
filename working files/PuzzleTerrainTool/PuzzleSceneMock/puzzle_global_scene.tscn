@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d3ioyf4xuyeu6" path="res://working files/PuzzleTerrainTool/PuzzleSceneMock/puzzle_global_scene.gd" id="1_y3vap"]
 [ext_resource type="Script" uid="uid://c37spsbe0xfd6" path="res://scripts/resources/PuzzleLevelRes.gd" id="2_77ucw"]
-[ext_resource type="Resource" uid="uid://cqqvy4mb6kpxf" path="res://scripts/resources/Levels/Puzzles/MagmaPack/109-BackAndForth.tres" id="3_77ucw"]
+[ext_resource type="Resource" uid="uid://df4ab6tc8g75w" path="res://scripts/resources/Levels/Puzzles/TutorialPack/0-Basics.tres" id="3_77ucw"]
 [ext_resource type="Script" uid="uid://dy8pnciybg1pw" path="res://scripts/resources/PuzzlePlaylistRes.gd" id="4_t127w"]
 
 [sub_resource type="Resource" id="Resource_20mle"]

@@ -1,353 +1,66 @@
-[gd_scene load_steps=13 format=3 uid="uid://b87mxba3r3x8e"]
+[gd_scene load_steps=11 format=3 uid="uid://b87mxba3r3x8e"]
 
 [ext_resource type="Script" uid="uid://df3x24nasg2g5" path="res://working files/PuzzleTerrainTool/puzzle_terrain_tool.gd" id="1_luvjt"]
 [ext_resource type="Script" uid="uid://70d1hekukawy" path="res://scripts/resources/Stats/AbilityStats.gd" id="2_dvgc4"]
 [ext_resource type="PackedScene" uid="uid://dvbuqr0aytha7" path="res://scenes/Terrain/tile_bloc.tscn" id="3_5cwhi"]
 [ext_resource type="Script" uid="uid://c37spsbe0xfd6" path="res://scripts/resources/PuzzleLevelRes.gd" id="3_ngho2"]
-[ext_resource type="Resource" uid="uid://6tlf5vej3j7l" path="res://scripts/resources/Levels/PuzzlesPack/MagmaPack.tres" id="4_dvgc4"]
+[ext_resource type="Script" uid="uid://hje1d4mj0irc" path="res://scripts/resources/Levels/PuzzlesPack/LevelPackRes.gd" id="4_dvgc4"]
 [ext_resource type="PackedScene" uid="uid://cpfa5biuv5b8q" path="res://scenes/Terrain/tile_bloc_magma.tscn" id="5_dvgc4"]
 [ext_resource type="PackedScene" uid="uid://lvbklg366xau" path="res://models/objects/Strawberry.tscn" id="5_f0f81"]
 [ext_resource type="Environment" uid="uid://evgf73em6ceg" path="res://scripts/resources/Environments/main_level_env.tres" id="8_5cwhi"]
 
-[sub_resource type="Resource" id="Resource_ngho2"]
-script = ExtResource("2_dvgc4")
-ability_name = "A_ROPE"
-initial_amount = 6
-amount_left = 0
-amount_used = 0
-metadata/_custom_type_script = "uid://70d1hekukawy"
-
-[sub_resource type="Resource" id="Resource_f8kma"]
-script = ExtResource("2_dvgc4")
-ability_name = "PO_MOVINGPLATFORM_H"
-initial_amount = 4
-amount_left = 0
-amount_used = 0
-metadata/_custom_type_script = "uid://70d1hekukawy"
-
-[sub_resource type="Resource" id="Resource_vykg4"]
-script = ExtResource("2_dvgc4")
-ability_name = "PO_MOVINGPLATFORM_V"
-initial_amount = 4
-amount_left = 0
-amount_used = 0
-metadata/_custom_type_script = "uid://70d1hekukawy"
-
-[sub_resource type="Resource" id="Resource_4dwd7"]
+[sub_resource type="Resource" id="Resource_dvgc4"]
 script = ExtResource("3_ngho2")
-ID = 200
+ID = -1
 name = ""
-difficulty = 3
-puzzle_difficulty = 3
-technical_difficulty = 3
-abilities = Array[ExtResource("2_dvgc4")]([SubResource("Resource_ngho2"), SubResource("Resource_f8kma"), SubResource("Resource_vykg4")])
-blocs_positions = Array[Vector3]([Vector3(0, 0, 0), Vector3(1, 0, 0), Vector3(-1, 0, 0), Vector3(0, -5, 1), Vector3(-1, -5, 1), Vector3(-1, -4, 1), Vector3(-1, 0, 1), Vector3(1, -5, 1), Vector3(1, -4, 1), Vector3(-1.5, -1, 1), Vector3(-1, -4, -0.5), Vector3(-1.5, -1, -0.5), Vector3(0, -1, 0), Vector3(1, -4, -0.5), Vector3(-1, -5, 0), Vector3(0, -5, 0), Vector3(1, -5, 0), Vector3(1.5, -1, -0.5), Vector3(1.5, -1, 1), Vector3(-1, -2, 1), Vector3(-2, -2, -1), Vector3(0, -2, 0), Vector3(2, -2, -1), Vector3(1, -2, 1), Vector3(-1.5, -3, 1), Vector3(-1.5, -3, -1), Vector3(1.5, -3, -1), Vector3(1.5, -3, 1), Vector3(1, 0, 1), Vector3(0, 0, 13), Vector3(-1, 0, 13), Vector3(1, 0, 13), Vector3(-1, 0, 12), Vector3(1, 0, 12), Vector3(0, -5, 13), Vector3(-1, -5, 13), Vector3(-1, -4, 13.5), Vector3(1, -5, 13), Vector3(1, -4, 13.5), Vector3(-1.5, -1, 13.5), Vector3(-1, -4, 12), Vector3(-1.5, -1, 12), Vector3(0, -1, 13), Vector3(1, -4, 12), Vector3(-1, -5, 12), Vector3(0, -5, 12), Vector3(1, -5, 12), Vector3(1.5, -1, 12), Vector3(1.5, -1, 13.5), Vector3(-2, -2, 14), Vector3(-1, -2, 12), Vector3(0, -2, 13), Vector3(1, -2, 12), Vector3(2, -2, 14), Vector3(-1.5, -3, 14), Vector3(-1.5, -3, 12), Vector3(1.5, -3, 12), Vector3(1.5, -3, 14)])
-magma_blocs_positions = Array[Vector3]([Vector3(1, -5, 3), Vector3(-1, -5, 3), Vector3(0, -5, 3), Vector3(1, -5, 2), Vector3(-1, -5, 2), Vector3(0, -5, 2), Vector3(1, -5, 4), Vector3(-1, -5, 4), Vector3(0, -5, 4), Vector3(1, -5, 6), Vector3(-1, -5, 6), Vector3(0, -5, 6), Vector3(1, -5, 5), Vector3(-1, -5, 5), Vector3(0, -5, 5), Vector3(1, -5, 7), Vector3(-1, -5, 7), Vector3(0, -5, 7), Vector3(1, -5, 8), Vector3(-1, -5, 8), Vector3(0, -5, 8), Vector3(1, -5, 9), Vector3(-1, -5, 9), Vector3(0, -5, 9), Vector3(1, -5, 10), Vector3(-1, -5, 10), Vector3(0, -5, 10), Vector3(1, -5, 11), Vector3(-1, -5, 11), Vector3(0, -5, 11)])
-fruits_positions = Array[Vector3]([Vector3(0, -4, 1), Vector3(0, -4, 12)])
+difficulty = -1
+puzzle_difficulty = -1
+technical_difficulty = -1
+abilities = Array[ExtResource("2_dvgc4")]([])
+blocs_positions = Array[Vector3]([])
+magma_blocs_positions = Array[Vector3]([])
+fruits_positions = Array[Vector3]([])
 start_position = Vector3(0, 1, 0)
+
+[sub_resource type="Resource" id="Resource_d2vbl"]
+script = ExtResource("4_dvgc4")
+ID = ""
+name = ""
+game_version_compatibility = ""
+levels = Array[ExtResource("3_ngho2")]([])
 
 [node name="PuzzleTerrainTool" type="Node3D" node_paths=PackedStringArray("terrain_node", "fruits_node")]
 script = ExtResource("1_luvjt")
 terrain_node = NodePath("Terrain")
 fruits_node = NodePath("Fruits")
 save_path = "res://scripts/resources/Levels/Puzzles/Vrac/"
-puzzle_res = SubResource("Resource_4dwd7")
-pack_res = ExtResource("4_dvgc4")
+puzzle_res = SubResource("Resource_dvgc4")
+pack_res = SubResource("Resource_d2vbl")
 
 [node name="Terrain" type="Node3D" parent="."]
 
-[node name="StaticBody3D" parent="Terrain" instance=ExtResource("3_5cwhi")]
+[node name="Bloc" parent="Terrain" instance=ExtResource("3_5cwhi")]
 
-[node name="@AnimatableBody3D@104093" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
-
-[node name="@AnimatableBody3D@104094" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
-
-[node name="@AnimatableBody3D@104095" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 1)
-
-[node name="@AnimatableBody3D@104096" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 1)
-
-[node name="@AnimatableBody3D@104097" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -4, 1)
-
-[node name="@AnimatableBody3D@104098" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
-
-[node name="@AnimatableBody3D@104099" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 1)
-
-[node name="@AnimatableBody3D@104100" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -4, 1)
-
-[node name="@AnimatableBody3D@104101" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1, 1)
-
-[node name="@AnimatableBody3D@104102" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -4, -0.5)
-
-[node name="@AnimatableBody3D@104103" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1, -0.5)
-
-[node name="@AnimatableBody3D@104104" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-
-[node name="@AnimatableBody3D@104105" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -4, -0.5)
-
-[node name="@AnimatableBody3D@104106" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 0)
-
-[node name="@AnimatableBody3D@104107" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
-
-[node name="@AnimatableBody3D@104108" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 0)
-
-[node name="@AnimatableBody3D@104109" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1, -0.5)
-
-[node name="@AnimatableBody3D@104110" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1, 1)
-
-[node name="@AnimatableBody3D@104111" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -2, 1)
-
-[node name="@AnimatableBody3D@104112" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -2, -1)
-
-[node name="@AnimatableBody3D@104113" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
-
-[node name="@AnimatableBody3D@104114" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, -1)
-
-[node name="@AnimatableBody3D@104115" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -2, 1)
-
-[node name="@AnimatableBody3D@104116" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -3, 1)
-
-[node name="@AnimatableBody3D@104117" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -3, -1)
-
-[node name="@AnimatableBody3D@104118" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -3, -1)
-
-[node name="@AnimatableBody3D@104119" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -3, 1)
-
-[node name="@AnimatableBody3D@104120" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
-
-[node name="@AnimatableBody3D@104121" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14)
-
-[node name="@AnimatableBody3D@104122" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 14)
-
-[node name="@AnimatableBody3D@104123" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 14)
-
-[node name="@AnimatableBody3D@104124" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 13)
-
-[node name="@AnimatableBody3D@104125" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 13)
-
-[node name="@AnimatableBody3D@104126" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 14)
-
-[node name="@AnimatableBody3D@104127" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 14)
-
-[node name="@AnimatableBody3D@104128" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -4, 14.5)
-
-[node name="@AnimatableBody3D@104129" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 14)
-
-[node name="@AnimatableBody3D@104130" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -4, 14.5)
-
-[node name="@AnimatableBody3D@104131" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1, 14.5)
-
-[node name="@AnimatableBody3D@104132" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -4, 13)
-
-[node name="@AnimatableBody3D@104133" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1, 13)
-
-[node name="@AnimatableBody3D@104134" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 14)
-
-[node name="@AnimatableBody3D@104135" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -4, 13)
-
-[node name="@AnimatableBody3D@104136" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 13)
-
-[node name="@AnimatableBody3D@104137" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 13)
-
-[node name="@AnimatableBody3D@104138" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 13)
-
-[node name="@AnimatableBody3D@104139" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1, 13)
-
-[node name="@AnimatableBody3D@104140" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1, 14.5)
-
-[node name="@AnimatableBody3D@104141" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -2, 15)
-
-[node name="@AnimatableBody3D@104142" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -2, 13)
-
-[node name="@AnimatableBody3D@104143" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 14)
-
-[node name="@AnimatableBody3D@104144" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -2, 13)
-
-[node name="@AnimatableBody3D@104145" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, 15)
-
-[node name="@AnimatableBody3D@104146" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -3, 15)
-
-[node name="@AnimatableBody3D@104147" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -3, 13)
-
-[node name="@AnimatableBody3D@104148" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -3, 13)
-
-[node name="@AnimatableBody3D@104149" parent="Terrain" instance=ExtResource("3_5cwhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -3, 15)
-
-[node name="@AnimatableBody3D@104150" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 3)
-
-[node name="@AnimatableBody3D@104151" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 3)
-
-[node name="@AnimatableBody3D@104152" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 3)
-
-[node name="@AnimatableBody3D@104153" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 2)
-
-[node name="@AnimatableBody3D@104154" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 2)
-
-[node name="@AnimatableBody3D@104155" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 2)
-
-[node name="@AnimatableBody3D@104156" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 4)
-
-[node name="@AnimatableBody3D@104157" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 4)
-
-[node name="@AnimatableBody3D@104158" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 4)
-
-[node name="@AnimatableBody3D@104159" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 6)
-
-[node name="@AnimatableBody3D@104160" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 6)
-
-[node name="@AnimatableBody3D@104161" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 6)
-
-[node name="@AnimatableBody3D@104162" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 5)
-
-[node name="@AnimatableBody3D@104163" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 5)
-
-[node name="@AnimatableBody3D@104164" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 5)
-
-[node name="@AnimatableBody3D@104165" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 7)
-
-[node name="@AnimatableBody3D@104166" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 7)
-
-[node name="@AnimatableBody3D@104167" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 7)
-
-[node name="@AnimatableBody3D@104168" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 8)
-
-[node name="@AnimatableBody3D@104169" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 8)
-
-[node name="@AnimatableBody3D@104170" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 8)
-
-[node name="@AnimatableBody3D@104171" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 9)
-
-[node name="@AnimatableBody3D@104172" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 9)
-
-[node name="@AnimatableBody3D@104173" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 9)
-
-[node name="@AnimatableBody3D@104174" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 11)
-
-[node name="@AnimatableBody3D@104175" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 11)
-
-[node name="@AnimatableBody3D@104176" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 11)
-
-[node name="_AnimatableBody3D_104174" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 10)
-
-[node name="_AnimatableBody3D_104175" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 10)
-
-[node name="_AnimatableBody3D_104176" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 10)
-
-[node name="@AnimatableBody3D@104177" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 12)
-
-[node name="@AnimatableBody3D@104178" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 12)
-
-[node name="@AnimatableBody3D@104179" parent="Terrain" instance=ExtResource("5_dvgc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 12)
+[node name="MagmaBloc" parent="Terrain" instance=ExtResource("5_dvgc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 
 [node name="Fruits" type="Node3D" parent="."]
 
-[node name="Strawberry" parent="Fruits" instance=ExtResource("5_f0f81")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -4, 1)
-
-[node name="@Node3D@104180" parent="Fruits" instance=ExtResource("5_f0f81")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -4, 13)
+[node name="Fruit" parent="Fruits" instance=ExtResource("5_f0f81")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1, 0)
 
 [node name="Environement" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Environement"]
-transform = Transform3D(-0.707107, 0.183012, -0.683013, -1.45164e-07, 0.965926, 0.258819, 0.707107, 0.183013, -0.683013, -7.63525, 1.09437, -2.25603)
+transform = Transform3D(-0.5, -0.433013, 0.75, -1.71231e-07, 0.866026, 0.5, -0.866025, 0.25, -0.433013, 11.3647, 20.0944, -7.25603)
 current = true
-fov = 66.4
+fov = 65.4
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environement"]
 environment = ExtResource("8_5cwhi")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environement"]
-transform = Transform3D(-0.686461, -0.559361, 0.464636, -0.202221, 0.76061, 0.616911, -0.698482, 0.329526, -0.635244, 5.69616, -20.5174, -13.6989)
+transform = Transform3D(-0.686461, -0.559361, 0.464636, -0.202221, 0.76061, 0.616911, -0.698482, 0.329526, -0.635244, 5.69616, -20.5174, -22.6989)
 light_color = Color(0.910845, 0.923517, 0.883351, 1)
 light_energy = 1.2
 shadow_enabled = true
