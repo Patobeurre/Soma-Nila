@@ -83,6 +83,9 @@ func _physics_process(delta: float) -> void:
 	_update_timer(delta)
 
 	if Global.player_global_pos.y < -50:
+		player.global_position.y = -49
+		Global.player_global_pos.y = -49
+		player.set_enable(false)
 		restart_level_keep_params()
 
 

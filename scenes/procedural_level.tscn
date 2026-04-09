@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://1wqeuqodu1ar"]
+[gd_scene load_steps=23 format=3 uid="uid://1wqeuqodu1ar"]
 
 [ext_resource type="Script" uid="uid://c0g7u58cpaarn" path="res://scenes/procedural_level.gd" id="1_abuk1"]
 [ext_resource type="Resource" uid="uid://bxxgkwiehskne" path="res://scripts/resources/Levels/LevelRndRes.tres" id="2_1pxho"]
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/PlayerCharacterScene.tscn" id="2_abuk1"]
+[ext_resource type="PackedScene" uid="uid://b1ifm0554gtdb" path="res://addons/boujie_water_shader/prefabs/outset_ocean.tscn" id="3_q4mrk"]
 [ext_resource type="Script" uid="uid://1vcmdhhiat1j" path="res://scripts/resources/Terrain/map_terrain_generation.gd" id="3_qgw2h"]
 [ext_resource type="Environment" uid="uid://evgf73em6ceg" path="res://scripts/resources/Environments/main_level_env.tres" id="3_qxd3r"]
 [ext_resource type="Resource" uid="uid://f1f4nu16t5gd" path="res://scripts/resources/Terrain/GenerationSettings.tres" id="4_plvsn"]
@@ -43,6 +44,9 @@ transform = Transform3D(-0.686461, -0.559361, 0.464636, -0.202221, 0.76061, 0.61
 light_color = Color(0.910845, 0.923517, 0.883351, 1)
 light_energy = 1.2
 shadow_enabled = true
+
+[node name="OutsetOcean" parent="." instance=ExtResource("3_q4mrk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -52, 0)
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_abuk1")]
 transform = Transform3D(-0.0578428, 0, 0.998326, 0, 1, 0, -0.998326, 0, -0.0578428, 1000, 1000, 1000)

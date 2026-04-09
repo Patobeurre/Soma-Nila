@@ -46,7 +46,7 @@ mouse_cursor/mouse_sensitivity=Vector2(0.5, 0.5)
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/finite_state_machine/plugin.cfg")
+enabled=PackedStringArray("res://addons/boujie_water_shader/plugin.cfg", "res://addons/extra_snaps/plugin.cfg", "res://addons/finite_state_machine/plugin.cfg", "res://addons/waterways/plugin.cfg")
 
 [file_customization]
 
@@ -186,14 +186,18 @@ jolt_physics_3d/limits/max_bodies=20480
 
 [rendering]
 
+textures/vram_compression/import_etc2_astc=true
 textures/lossless_compression/force_png=true
+textures/webp_compression/compression_method=0
+textures/webp_compression/lossless_compression_factor=25.0
+lights_and_shadows/directional_shadow/size=8192
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=3
 lights_and_shadows/directional_shadow/16_bits=false
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality=3
 global_illumination/gi/use_half_resolution=true
-textures/default_filters/use_nearest_mipmap_filter=true
 anti_aliasing/quality/msaa_2d=2
 anti_aliasing/quality/msaa_3d=2
 textures/decals/filter=1
 textures/light_projectors/filter=1
-mesh_lod/lod_change/threshold_pixels=0.5
+mesh_lod/lod_change/threshold_pixels=0.1
 camera/depth_of_field/fov=90.0
