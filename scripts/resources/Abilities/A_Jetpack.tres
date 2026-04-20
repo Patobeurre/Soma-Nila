@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="StateRes" load_steps=5 format=3 uid="uid://di20wh18jrsoy"]
 
-[ext_resource type="Texture2D" uid="uid://hsd2n2nmcl7l" path="res://images/ability_icons/jetpack.png" id="1_ui0i1"]
+[ext_resource type="Texture2D" uid="uid://vupm6ug2ap04" path="res://images/ability_icons/jetpack.png" id="1_ui0i1"]
 [ext_resource type="Script" uid="uid://djw557ek5251m" path="res://scripts/resources/StateRes.gd" id="1_uluy0"]
 [ext_resource type="Script" uid="uid://nfw2fpi2r2fs" path="res://scripts/resources/AbilityWeights.gd" id="3_ui0i1"]
 

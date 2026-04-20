@@ -7,7 +7,7 @@ PROJ_NAIL	Nails	Clous
 PROJ_GLUE	Glue	Glue
 A_GLIDER	Glider	Planeur
 A_JETPACK	Jetpack	Jetpack
-A_MOVEOBJECT	Move	Déplacer
+A_MOVEOBJECT	Telekinesis	Télékinésie
 PO_MOVINGPLATFORM_H	Moving platform	Plateforme mobile
 PO_MOVINGPLATFORM_V	Moving platform	Plateforme mobile
 PO_BUBBLE	Bubble	Bulle

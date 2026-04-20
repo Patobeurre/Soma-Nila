@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="StateRes" load_steps=6 format=3 uid="uid://b38e0d2g77boq"]
 
 [ext_resource type="Resource" uid="uid://j5jqlwpx1ubm" path="res://scripts/resources/ThrowableObjects/NailProjectile.tres" id="1_2qem5"]
-[ext_resource type="Texture2D" uid="uid://cb1aq3hkcwley" path="res://images/ability_icons/nails.png" id="1_ab4xa"]
+[ext_resource type="Texture2D" uid="uid://dcchl5lig7gp8" path="res://images/ability_icons/nails.png" id="1_3wkgk"]
 [ext_resource type="Script" uid="uid://djw557ek5251m" path="res://scripts/resources/StateRes.gd" id="1_y4qw6"]
 [ext_resource type="Script" uid="uid://nfw2fpi2r2fs" path="res://scripts/resources/AbilityWeights.gd" id="4_3wkgk"]
 
@@ -17,7 +17,7 @@ metadata/_custom_type_script = "uid://nfw2fpi2r2fs"
 script = ExtResource("1_y4qw6")
 stateName = "nailGunState"
 name = "PROJ_NAIL"
-icon = ExtResource("1_ab4xa")
+icon = ExtResource("1_3wkgk")
 res = ExtResource("1_2qem5")
 initial_amount = 5
 weights = SubResource("Resource_xfy64")

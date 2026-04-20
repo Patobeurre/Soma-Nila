@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cyjij0jwjbrjq"
 path.s3tc="res://.godot/imported/tile_3d_Material.png-2b8f61ea162af49fe5d451ae7d857608.s3tc.ctex"
-path.etc2="res://.godot/imported/tile_3d_Material.png-2b8f61ea162af49fe5d451ae7d857608.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -16,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://models/islands/tile_3d_Material.png"
-dest_files=["res://.godot/imported/tile_3d_Material.png-2b8f61ea162af49fe5d451ae7d857608.s3tc.ctex", "res://.godot/imported/tile_3d_Material.png-2b8f61ea162af49fe5d451ae7d857608.etc2.ctex"]
+dest_files=["res://.godot/imported/tile_3d_Material.png-2b8f61ea162af49fe5d451ae7d857608.s3tc.ctex"]
 
 [params]
 

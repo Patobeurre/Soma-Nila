@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="StateRes" load_steps=6 format=3 uid="uid://b5b2qo7efvqeg"]
 
-[ext_resource type="Texture2D" uid="uid://d0kpjxjhpktmf" path="res://images/ability_icons/waterlilies.png" id="1_b20hi"]
 [ext_resource type="Script" uid="uid://djw557ek5251m" path="res://scripts/resources/StateRes.gd" id="1_dy75k"]
+[ext_resource type="Texture2D" uid="uid://dc3yivafu1kqv" path="res://images/ability_icons/waterlilies.png" id="1_r4kv4"]
 [ext_resource type="Resource" uid="uid://c6mb06q5i38qs" path="res://scripts/resources/PlaceableObjects/WaterLilies.tres" id="2_s5sr1"]
 [ext_resource type="Script" uid="uid://nfw2fpi2r2fs" path="res://scripts/resources/AbilityWeights.gd" id="4_r4kv4"]
 
@@ -17,7 +17,7 @@ metadata/_custom_type_script = "uid://nfw2fpi2r2fs"
 script = ExtResource("1_dy75k")
 stateName = "placeObjectState"
 name = "PO_WATERLILIES"
-icon = ExtResource("1_b20hi")
+icon = ExtResource("1_r4kv4")
 res = ExtResource("2_s5sr1")
 initial_amount = 1
 weights = SubResource("Resource_yxkc0")

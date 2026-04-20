@@ -10,6 +10,7 @@ resource_name = "water_lily"
 cull_mode = 2
 albedo_texture = ExtResource("1_en14h")
 roughness = 0.5
+refraction_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_gn2x1"]
 _surfaces = [{
@@ -137,7 +138,6 @@ mesh = SubResource("ArrayMesh_3s6r5")
 skeleton = NodePath("")
 
 [node name="Cube_020" type="MeshInstance3D" parent="water_lily3/StaticBody3D/BaseMesh"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_pbj05")
 skeleton = NodePath("")
 
@@ -157,7 +157,6 @@ mesh = SubResource("ArrayMesh_3s6r5")
 skeleton = NodePath("")
 
 [node name="Cube_020" type="MeshInstance3D" parent="water_lily4/StaticBody3D/BaseMesh"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_pbj05")
 skeleton = NodePath("")
 
@@ -198,7 +197,6 @@ mesh = SubResource("ArrayMesh_3s6r5")
 skeleton = NodePath("")
 
 [node name="Cube_020" type="MeshInstance3D" parent="water_lily6/StaticBody3D/BaseMesh"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_pbj05")
 skeleton = NodePath("")
 

@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://beulbuugp63sm"]
+[gd_scene load_steps=5 format=3 uid="uid://beulbuugp63sm"]
 
-[ext_resource type="Texture2D" uid="uid://crympoiqoggf8" path="res://images/ability_icons/bumper.png" id="1_72axj"]
 [ext_resource type="Script" uid="uid://hx7qytkpvpiu" path="res://UI/Components/ability_selector_icon.gd" id="1_w4u54"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6v6d"]
@@ -16,6 +15,16 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 corner_detail = 13
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4u54"]
+bg_color = Color(0.359069, 0.359069, 0.359069, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1q2s"]
+bg_color = Color(0, 0, 0, 0.568627)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
 [node name="PanelContainer" type="PanelContainer"]
 custom_minimum_size = Vector2(100, 100)
 mouse_filter = 2
@@ -24,11 +33,11 @@ script = ExtResource("1_w4u54")
 
 [node name="UnselectedPanel" type="PanelContainer" parent="."]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w4u54")
 
 [node name="Icon" type="TextureRect" parent="."]
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("1_72axj")
 expand_mode = 2
 stretch_mode = 5
 
@@ -47,3 +56,4 @@ autowrap_mode = 0
 [node name="DisabledPanel" type="PanelContainer" parent="."]
 visible = false
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b1q2s")

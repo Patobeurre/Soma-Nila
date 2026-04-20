@@ -201,6 +201,7 @@ void fragment() {
 	float clar_t = clamp(water_depth / transparency_clarity, 0.0, 1.0);
 	// We multiply the refraction offsets by the clarity to make the refractions stronger the deeper the water
 	vec2 ref_ofs = SCREEN_UV - ref_normal.xy * transparency_refraction * clar_t;
+
 	clar_t = ease(clar_t, transparency_depth_curve);
 	float ref_amount = 1.0 - clamp(clar_t + combined_foam, 0.0, 1.0);
 

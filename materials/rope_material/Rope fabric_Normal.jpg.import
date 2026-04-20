@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://eioo8tshmolh"
 path.s3tc="res://.godot/imported/Rope fabric_Normal.jpg-cea36234104b95ba43fabc7df2984d45.s3tc.ctex"
+path.etc2="res://.godot/imported/Rope fabric_Normal.jpg-cea36234104b95ba43fabc7df2984d45.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://materials/rope_material/Rope fabric_Normal.jpg"
-dest_files=["res://.godot/imported/Rope fabric_Normal.jpg-cea36234104b95ba43fabc7df2984d45.s3tc.ctex"]
+dest_files=["res://.godot/imported/Rope fabric_Normal.jpg-cea36234104b95ba43fabc7df2984d45.s3tc.ctex", "res://.godot/imported/Rope fabric_Normal.jpg-cea36234104b95ba43fabc7df2984d45.etc2.ctex"]
 
 [params]
 

@@ -10,6 +10,7 @@
 resource_name = "Material.004"
 albedo_texture = ExtResource("3_qjoan")
 roughness = 0.6
+refraction_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_wvm1h"]
 _surfaces = [{

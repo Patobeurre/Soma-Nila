@@ -42,7 +42,7 @@ var mouseFree : bool = false
 #references variables
 @onready var camera : Camera3D = $Camera
 @onready var cameraTmp : Camera3D = $CameraTmp
-@onready var playChar : PlayerCharacter = $".."
+@onready var playChar = $".."
 @onready var hud : CanvasLayer = $"../HUD"
 
 var axisSensibility :Vector2 = Vector2(0.5, 0.5)

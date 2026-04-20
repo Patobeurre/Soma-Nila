@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://re3uwo87abi7"
 path.s3tc="res://.godot/imported/whirl_background.png-d43adb7191b5940329ba53e9fbe612af.s3tc.ctex"
+path.etc2="res://.godot/imported/whirl_background.png-d43adb7191b5940329ba53e9fbe612af.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://images/whirl_background.png"
-dest_files=["res://.godot/imported/whirl_background.png-d43adb7191b5940329ba53e9fbe612af.s3tc.ctex"]
+dest_files=["res://.godot/imported/whirl_background.png-d43adb7191b5940329ba53e9fbe612af.s3tc.ctex", "res://.godot/imported/whirl_background.png-d43adb7191b5940329ba53e9fbe612af.etc2.ctex"]
 
 [params]
 

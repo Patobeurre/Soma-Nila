@@ -9,3 +9,4 @@ albedo_texture = ExtResource("1_35shi")
 roughness = 0.7
 emission = Color(0.362829, 0.362829, 0.362829, 1)
 emission_energy_multiplier = 1.82
+refraction_enabled = true

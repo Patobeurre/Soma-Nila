@@ -41,6 +41,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Meshes" type="Node3D" parent="."]
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Meshes"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, -1)

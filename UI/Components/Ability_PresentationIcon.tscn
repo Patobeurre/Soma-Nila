@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmdsqqpv0ixy8"]
+[gd_scene load_steps=6 format=3 uid="uid://bmdsqqpv0ixy8"]
 
-[ext_resource type="Texture2D" uid="uid://b8p6fgd13p01x" path="res://images/ability_icons/rope.png" id="1_8mswx"]
 [ext_resource type="Texture2D" uid="uid://dgr8ortdpxm1q" path="res://images/star.png" id="1_en1l1"]
 [ext_resource type="Script" uid="uid://68c62b6lwqel" path="res://UI/Components/ability_presentation_icon.gd" id="1_vvypq"]
 
@@ -135,7 +134,6 @@ expand_mode = 2
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 0
 pivot_offset = Vector2(100, 100)
-texture = ExtResource("1_8mswx")
 expand_mode = 2
 stretch_mode = 4
 

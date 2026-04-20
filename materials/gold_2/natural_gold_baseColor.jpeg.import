@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c26coo4cln37l"
 path.s3tc="res://.godot/imported/natural_gold_baseColor.jpeg-82d0a1b42254835b658a35dab9a45b9f.s3tc.ctex"
+path.etc2="res://.godot/imported/natural_gold_baseColor.jpeg-82d0a1b42254835b658a35dab9a45b9f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://materials/gold_2/natural_gold_baseColor.jpeg"
-dest_files=["res://.godot/imported/natural_gold_baseColor.jpeg-82d0a1b42254835b658a35dab9a45b9f.s3tc.ctex"]
+dest_files=["res://.godot/imported/natural_gold_baseColor.jpeg-82d0a1b42254835b658a35dab9a45b9f.s3tc.ctex", "res://.godot/imported/natural_gold_baseColor.jpeg-82d0a1b42254835b658a35dab9a45b9f.etc2.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="StateRes" load_steps=6 format=3 uid="uid://dueqjnnn43fxa"]
 
-[ext_resource type="Texture2D" uid="uid://dgq65gpsiy6w6" path="res://images/ability_icons/box.png" id="1_n847p"]
+[ext_resource type="Texture2D" uid="uid://c34r76dlxbf3" path="res://images/ability_icons/box.png" id="1_dhg0v"]
 [ext_resource type="Script" uid="uid://djw557ek5251m" path="res://scripts/resources/StateRes.gd" id="1_u700t"]
 [ext_resource type="Resource" uid="uid://dge21qv14qghc" path="res://scripts/resources/PlaceableObjects/Box.tres" id="2_2f8l2"]
 [ext_resource type="Script" uid="uid://nfw2fpi2r2fs" path="res://scripts/resources/AbilityWeights.gd" id="4_dhg0v"]
@@ -17,7 +17,7 @@ metadata/_custom_type_script = "uid://nfw2fpi2r2fs"
 script = ExtResource("1_u700t")
 stateName = "placeObjectState"
 name = "PO_BOX"
-icon = ExtResource("1_n847p")
+icon = ExtResource("1_dhg0v")
 res = ExtResource("2_2f8l2")
 initial_amount = 8
 weights = SubResource("Resource_fkfra")
