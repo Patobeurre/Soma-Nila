@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0xnnn3x1t5rn"]
+
+[ext_resource type="Texture2D" uid="uid://croo8nsnweck" path="res://materials/old-paper-bl/old-paper_albedo.png" id="1_vdeh1"]
+[ext_resource type="PackedScene" uid="uid://i20tlnsquruv" path="res://UI/Components/LetterUI/LetterContent.tscn" id="2_h8xv8"]
+[ext_resource type="Script" uid="uid://ba4hoemja5rv2" path="res://scripts/resources/Letters/LetterRes.gd" id="3_e51ld"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h8xv8"]
+texture = ExtResource("1_vdeh1")
+
+[sub_resource type="Resource" id="Resource_x446v"]
+script = ExtResource("3_e51ld")
+openning = ""
+content = ""
+closing = ""
+metadata/_custom_type_script = "uid://ba4hoemja5rv2"
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="CenterContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+custom_minimum_size = Vector2(600, 850)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_h8xv8")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" parent="MarginContainer/Panel/MarginContainer" instance=ExtResource("2_h8xv8")]
+layout_mode = 2
+letter_res = SubResource("Resource_x446v")

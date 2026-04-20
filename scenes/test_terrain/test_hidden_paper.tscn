@@ -1,20 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://chxs5i6kkq1yi"]
+[gd_scene load_steps=8 format=3 uid="uid://chxs5i6kkq1yi"]
 
 [ext_resource type="PackedScene" uid="uid://dvbuqr0aytha7" path="res://scenes/Terrain/tile_bloc.tscn" id="1_8ekvv"]
-[ext_resource type="Texture2D" uid="uid://bu6i38fs0821t" path="res://images/paper.png" id="2_v14db"]
-[ext_resource type="FontFile" uid="uid://dmxlaybavhk2v" path="res://fonts/sunday_work/Sunday Work.otf" id="4_v14db"]
+[ext_resource type="PackedScene" uid="uid://i20tlnsquruv" path="res://UI/Components/LetterUI/LetterContent.tscn" id="3_8ekvv"]
+[ext_resource type="Texture2D" uid="uid://croo8nsnweck" path="res://materials/old-paper-bl/old-paper_albedo.png" id="4_rr04g"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_vdn34"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_rr04g"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0lxbh"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ekvv"]
 resource_local_to_scene = true
 transparency = 1
-albedo_texture = SubResource("ViewportTexture_vdn34")
+albedo_texture = SubResource("ViewportTexture_rr04g")
 
 [sub_resource type="QuadMesh" id="QuadMesh_64j4f"]
-material = SubResource("StandardMaterial3D_0lxbh")
-size = Vector2(0.3, 0.3)
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_8ekvv")
+size = Vector2(0.18, 0.25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_64j4f"]
+texture = ExtResource("4_rr04g")
 
 [node name="Node3D" type="Node3D"]
 
@@ -25,61 +29,40 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.501)
 mesh = SubResource("QuadMesh_64j4f")
 
 [node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
 transparent_bg = true
-size = Vector2i(1000, 1000)
+size = Vector2i(600, 850)
+size_2d_override_stretch = true
+render_target_update_mode = 4
 
-[node name="TextureRect" type="TextureRect" parent="SubViewport"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -470.0
-offset_top = -500.0
-offset_right = 530.0
-offset_bottom = 500.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_v14db")
+[node name="CenterContainer" type="CenterContainer" parent="SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="TextureRect2" type="TextureRect" parent="SubViewport"]
-custom_minimum_size = Vector2(400, 400)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -200.0
-offset_right = 200.0
-offset_bottom = 200.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 2
-stretch_mode = 5
+[node name="Panel" type="Panel" parent="SubViewport/CenterContainer"]
+custom_minimum_size = Vector2(600, 850)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_64j4f")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="SubViewport"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport/CenterContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -68.0
-offset_top = -320.0
-offset_right = 68.0
-offset_bottom = -177.0
 grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("4_v14db")
-theme_override_font_sizes/normal_font_size = 60
-bbcode_enabled = true
-text = "1/4"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" parent="SubViewport/CenterContainer/Panel/MarginContainer" instance=ExtResource("3_8ekvv")]
+layout_mode = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.33625)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.773066)
+current = true

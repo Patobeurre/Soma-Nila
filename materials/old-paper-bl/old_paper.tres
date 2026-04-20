@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://cwk61pirqg44a"]
+
+[ext_resource type="Texture2D" uid="uid://croo8nsnweck" path="res://materials/old-paper-bl/old-paper_albedo.png" id="1_p1upu"]
+[ext_resource type="Texture2D" uid="uid://b7nyjw6hxeu0e" path="res://materials/old-paper-bl/old-paper_metallic.png" id="2_hx3m0"]
+[ext_resource type="Texture2D" uid="uid://chftf87ghnr2c" path="res://materials/old-paper-bl/old-paper_normal-ogl.png" id="3_moqxo"]
+[ext_resource type="Texture2D" uid="uid://vovhp3fmqwtv" path="res://materials/old-paper-bl/old-paper_roughness.png" id="4_ld188"]
+
+[resource]
+albedo_texture = ExtResource("1_p1upu")
+metallic = 1.0
+metallic_texture = ExtResource("2_hx3m0")
+roughness_texture = ExtResource("4_ld188")
+normal_enabled = true
+normal_texture = ExtResource("3_moqxo")

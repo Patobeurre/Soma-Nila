@@ -68,7 +68,7 @@ settings = ExtResource("4_plvsn")
 [node name="Boundaries" parent="." instance=ExtResource("19_10ai8")]
 
 [node name="Island_Fishing_Update" parent="." instance=ExtResource("9_qxd3r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -30, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, -30, 100)
 
 [node name="Objectives" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 51.3525)

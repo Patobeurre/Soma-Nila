@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://i20tlnsquruv"]
+
+[ext_resource type="Script" uid="uid://bhy5wgf1sehp0" path="res://UI/Components/LetterUI/letter_content.gd" id="1_2m8k2"]
+[ext_resource type="FontFile" uid="uid://yuyn4nrsgb1j" path="res://fonts/diamond_smith/Diamond Smith.otf" id="1_rsbla"]
+
+[node name="VBoxContainer" type="VBoxContainer"]
+theme_override_constants/separation = 50
+script = ExtResource("1_2m8k2")
+
+[node name="Openning" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0.099986, 0.099986, 0.099986, 1)
+theme_override_fonts/normal_font = ExtResource("1_rsbla")
+theme_override_font_sizes/normal_font_size = 40
+fit_content = true
+
+[node name="Content" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0.099986, 0.099986, 0.099986, 1)
+theme_override_fonts/normal_font = ExtResource("1_rsbla")
+theme_override_font_sizes/normal_font_size = 40
+fit_content = true
+
+[node name="Closing" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0.099986, 0.099986, 0.099986, 1)
+theme_override_fonts/normal_font = ExtResource("1_rsbla")
+theme_override_font_sizes/normal_font_size = 40
+fit_content = true
+horizontal_alignment = 2

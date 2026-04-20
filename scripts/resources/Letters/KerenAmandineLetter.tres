@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LetterRes" load_steps=2 format=3 uid="uid://bwd37k8s6csc8"]
+
+[ext_resource type="Script" uid="uid://ba4hoemja5rv2" path="res://scripts/resources/Letters/LetterRes.gd" id="1_8w7li"]
+
+[resource]
+script = ExtResource("1_8w7li")
+openning = "KEREN_LETTER_OPENNING"
+content = "KEREN_LETTER_CONTENT"
+closing = "KEREN_LETTER_CLOSING"
+metadata/_custom_type_script = "uid://ba4hoemja5rv2"

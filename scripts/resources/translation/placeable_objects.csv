@@ -45,3 +45,7 @@ DAVID_1-3	Damn, how are we going to fix all this?\nI'm calling Selene@0000. I th
 		
 KEREN_1-1	I saw players inside of your project. Is it still under construction?\nIf it's officially open, I need to hurry up and finish the satisfaction survey!	J'ai vu des joueurs dans votre projet, il est bien toujours en construction ?\nS’il est officiellement ouvert je dois me dépêcher de finir le questionnaire de satisfaction !
 KEREN_1-2	Don't worry, it's still under construction ;)\nI redirected access from David@153269's room to the project, so that must be where the problem lies.\nThey must be trying to enter the room with too few items on them.	Rassures toi, il est bien en construction ;)\nJ'ai redirigé l'accès à la salle de David@153269 vers le projet, le problème doit venir de là.\nIls doivent tenter de rentrer dans la salle avec trop peu d'objets sur eux.
+		
+KEREN_LETTER_OPENNING	Amandine@7347,	Amandine@7347,
+KEREN_LETTER_CONTENT	You create this spot to gaze at the sea ? It feels more real than the pictures on your desk…\nI want to show you the secret project I'm working on.\nMeet me at my room and bring only your favorite fish.	Tu as cree cet endroit juste pour contempler la mer ? Ca semble plus reel que les dessins sur ton bureau...\nJ’aimerai te montrer le projet secret sur lequel je travaille.\nRejoint-moi dans ma salle et apporte ton poisson prefere.
+KEREN_LETTER_CLOSING	Always,\nKeren@881544	Je t’embrasse,\nKeren@881544

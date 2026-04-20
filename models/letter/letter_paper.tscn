@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://cvw5n2y85qgna"]
+
+[ext_resource type="Script" uid="uid://bfigliyuekxpp" path="res://models/letter/letter_paper.gd" id="1_ddibw"]
+[ext_resource type="Texture2D" uid="uid://croo8nsnweck" path="res://materials/old-paper-bl/old-paper_albedo.png" id="2_ey8a2"]
+[ext_resource type="PackedScene" uid="uid://i20tlnsquruv" path="res://UI/Components/LetterUI/LetterContent.tscn" id="3_ggkoe"]
+[ext_resource type="Resource" uid="uid://bwd37k8s6csc8" path="res://scripts/resources/Letters/KerenAmandineLetter.tres" id="4_8i6o0"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7u4l5"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i4s3d"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_7u4l5")
+
+[sub_resource type="QuadMesh" id="QuadMesh_neu5p"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_i4s3d")
+size = Vector2(0.18, 0.25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u0ycj"]
+texture = ExtResource("2_ey8a2")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uprrm"]
+size = Vector3(0.227539, 0.300659, 0.103088)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ddibw"]
+dof_blur_far_enabled = true
+
+[node name="LetterPaper" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999848, 0.0174524, 0, -0.0174524, 0.999848, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("QuadMesh_neu5p")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(600, 850)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="SubViewport/CenterContainer"]
+custom_minimum_size = Vector2(600, 850)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_u0ycj")
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport/CenterContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" parent="SubViewport/CenterContainer/Panel/MarginContainer" instance=ExtResource("3_ggkoe")]
+layout_mode = 2
+letter_res = ExtResource("4_8i6o0")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_ddibw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00439453, -0.00567627, -0.000640869)
+shape = SubResource("BoxShape3D_uprrm")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.181524)
+attributes = SubResource("CameraAttributesPractical_ddibw")
