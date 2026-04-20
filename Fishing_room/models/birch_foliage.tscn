@@ -1,0 +1,93 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkppqf2mujl6a"]
+
+[ext_resource type="PackedScene" uid="uid://dmymiq54macmy" path="res://Fishing_room/models/imported/plane_bouleau_foliage.glb" id="1_uxr7a"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_uxr7a"]
+height = 1.565
+
+[node name="BirchFoliage" type="Node3D"]
+
+[node name="plane_bouleau_foliage" parent="." instance=ExtResource("1_uxr7a")]
+transform = Transform3D(-0.451151, -0.736486, -0.047711, -0.0822411, 0.105739, -0.854565, 0.733433, -0.441172, -0.125172, -0.417924, 0.144778, -0.256275)
+
+[node name="plane_bouleau_foliage6" parent="." instance=ExtResource("1_uxr7a")]
+transform = Transform3D(0.547263, -0.60936, -0.0397835, 0.295409, 0.310934, -0.698894, 0.534449, 0.452106, 0.427041, -0.335791, 0.417629, 0.255053)
+
+[node name="plane_bouleau_foliage8" parent="." instance=ExtResource("1_uxr7a")]
+transform = Transform3D(-0.348758, -0.359489, -0.911447, 0.493798, 0.77112, -0.49309, 0.846246, -0.598115, -0.0879037, -0.124521, 0.684743, -0.206038)
+
+[node name="plane_bouleau_foliage3" parent="." instance=ExtResource("1_uxr7a")]
+transform = Transform3D(0.619131, -0.880304, -0.291492, -0.692123, -0.205421, -0.849702, 0.617145, 0.652758, -0.660503, -0.391888, -0.19701, 0.282397)
+
+[node name="plane_bouleau_foliage4" parent="." instance=ExtResource("1_uxr7a")]
+transform = Transform3D(0.822467, 0.510322, 0.251234, 0.358669, -0.122477, -0.925395, -0.441479, 0.851217, -0.28377, 0.238, -0.142506, 0.429206)
+
+[node name="plane_bouleau_foliage9" parent="." instance=ExtResource("1_uxr7a")]
+transform = Transform3D(-0.195593, 0.841103, -0.504271, -0.771811, -0.449255, -0.449974, -0.605021, 0.301191, 0.737044, 0.360743, -0.495524, 0.137258)
+
+[node name="plane_bouleau_foliage5" parent="." instance=ExtResource("1_uxr7a")]
+transform = Transform3D(-0.535146, 1.15109, 0.11932, -0.115685, 0.0775909, -1.26737, -1.15146, -0.542769, 0.0718751, 0.457468, 0.0633184, -0.195705)
+
+[node name="plane_bouleau_foliage2" parent="." instance=ExtResource("1_uxr7a")]
+transform = Transform3D(0.529347, 0.638386, 0.558798, -0.019543, 0.667645, -0.744223, -0.848181, 0.383031, 0.365892, 0.267466, 0.620078, 0.145581)
+
+[node name="plane_bouleau_foliage7" parent="." instance=ExtResource("1_uxr7a")]
+transform = Transform3D(-0.964733, 0.138487, 0.223856, -0.171799, 0.313065, -0.934064, -0.199437, -0.939581, -0.278232, 0.0520304, 0.37444, -0.435065)
+
+[node name="plane_bouleau_foliage10" parent="." instance=ExtResource("1_uxr7a")]
+transform = Transform3D(-0.92359, 0.325092, 0.203216, -0.290788, -0.24858, -0.923932, -0.249848, -0.912427, 0.324119, 0.141972, -0.306785, -0.436636)
+
+[node name="plane_bouleau_foliage11" parent="." instance=ExtResource("1_uxr7a")]
+transform = Transform3D(-0.650288, -0.977201, 0.592815, -0.319528, -0.499422, -1.17376, 1.09738, -0.724487, 0.00952507, -0.325617, -0.423094, -0.265041)
+
+[node name="plane_bouleau_foliage12" parent="." instance=ExtResource("1_uxr7a")]
+transform = Transform3D(1.01682, 0.240011, -0.359844, -0.431417, 0.49647, -0.887931, -0.0311864, 0.957568, 0.550559, 0.0996479, 0.471664, 0.38524)
+
+[node name="plane_bouleau_foliage13" parent="." instance=ExtResource("1_uxr7a")]
+transform = Transform3D(-0.853559, -0.394498, -0.340306, 0.151725, -0.813092, 0.562015, -0.498414, 0.42808, 0.753877, -0.102234, -0.722867, 0.0426585)
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(-0.252441, 0, 0.869079, 0, 0.905, 0, -0.869079, 0, -0.252441, 0, 0, 0)
+
+[node name="plane_bouleau_foliage14" parent="Node3D" instance=ExtResource("1_uxr7a")]
+transform = Transform3D(-0.451151, -0.736486, -0.047711, -0.0822411, 0.105739, -0.854565, 0.733433, -0.441172, -0.125172, -0.417924, 0.144778, -0.256275)
+
+[node name="plane_bouleau_foliage15" parent="Node3D" instance=ExtResource("1_uxr7a")]
+transform = Transform3D(0.547263, -0.60936, -0.0397835, 0.295409, 0.310934, -0.698894, 0.534449, 0.452106, 0.427041, -0.335791, 0.417629, 0.255053)
+
+[node name="plane_bouleau_foliage16" parent="Node3D" instance=ExtResource("1_uxr7a")]
+transform = Transform3D(-0.348758, -0.359489, -0.911447, 0.493798, 0.77112, -0.49309, 0.846246, -0.598115, -0.0879037, -0.124521, 0.684743, -0.206038)
+
+[node name="plane_bouleau_foliage17" parent="Node3D" instance=ExtResource("1_uxr7a")]
+transform = Transform3D(0.619131, -0.880304, -0.291492, -0.692123, -0.205421, -0.849702, 0.617145, 0.652758, -0.660503, -0.391888, -0.19701, 0.282397)
+
+[node name="plane_bouleau_foliage18" parent="Node3D" instance=ExtResource("1_uxr7a")]
+transform = Transform3D(0.822467, 0.510322, 0.251234, 0.358669, -0.122477, -0.925395, -0.441479, 0.851217, -0.28377, 0.238, -0.142506, 0.429206)
+
+[node name="plane_bouleau_foliage19" parent="Node3D" instance=ExtResource("1_uxr7a")]
+transform = Transform3D(-0.195593, 0.841103, -0.504271, -0.771811, -0.449255, -0.449974, -0.605021, 0.301191, 0.737044, 0.360743, -0.495524, 0.137258)
+
+[node name="plane_bouleau_foliage20" parent="Node3D" instance=ExtResource("1_uxr7a")]
+transform = Transform3D(-0.535146, 1.15109, 0.119321, -0.115685, 0.0775913, -1.26737, -1.15146, -0.542769, 0.0718755, 0.457468, 0.0633184, -0.195705)
+
+[node name="plane_bouleau_foliage21" parent="Node3D" instance=ExtResource("1_uxr7a")]
+transform = Transform3D(0.529347, 0.638386, 0.558798, -0.019543, 0.667645, -0.744223, -0.848181, 0.383031, 0.365892, 0.267466, 0.620078, 0.145581)
+
+[node name="plane_bouleau_foliage22" parent="Node3D" instance=ExtResource("1_uxr7a")]
+transform = Transform3D(-0.964733, 0.138487, 0.223856, -0.171799, 0.313065, -0.934064, -0.199437, -0.939581, -0.278232, 0.0520304, 0.37444, -0.435065)
+
+[node name="plane_bouleau_foliage23" parent="Node3D" instance=ExtResource("1_uxr7a")]
+transform = Transform3D(-0.92359, 0.325092, 0.203216, -0.290788, -0.24858, -0.923932, -0.249848, -0.912427, 0.324119, 0.141972, -0.306785, -0.436636)
+
+[node name="plane_bouleau_foliage24" parent="Node3D" instance=ExtResource("1_uxr7a")]
+transform = Transform3D(-0.650288, -0.977201, 0.592815, -0.319528, -0.499422, -1.17376, 1.09738, -0.724487, 0.00952507, -0.325617, -0.423094, -0.265041)
+
+[node name="plane_bouleau_foliage25" parent="Node3D" instance=ExtResource("1_uxr7a")]
+transform = Transform3D(1.01682, 0.240011, -0.359844, -0.431417, 0.49647, -0.887931, -0.0311864, 0.957568, 0.550559, 0.0996479, 0.471664, 0.38524)
+
+[node name="plane_bouleau_foliage26" parent="Node3D" instance=ExtResource("1_uxr7a")]
+transform = Transform3D(-0.853559, -0.394498, -0.340306, 0.151725, -0.813092, 0.562015, -0.498414, 0.42808, 0.753877, -0.102234, -0.722867, 0.0426585)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("SphereMesh_uxr7a")

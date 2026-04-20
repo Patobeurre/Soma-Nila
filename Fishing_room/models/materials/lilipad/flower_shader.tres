@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bpg8wr4ehp633"]
+
+[ext_resource type="Shader" uid="uid://ch5lpt88p34rx" path="res://Fishing_room/models/materials/fade_angle.gdshader" id="1_rxm7s"]
+[ext_resource type="Texture2D" uid="uid://c5nunu7uw1upo" path="res://Fishing_room/models/materials/lilipad/lilipad_flower_lilipad_flower.png" id="2_rxm7s"]
+
+[resource]
+render_priority = 1
+shader = ExtResource("1_rxm7s")
+shader_parameter/albedo_texture = ExtResource("2_rxm7s")
+shader_parameter/main_color = Color(0.946361, 0.971159, 7.70092e-07, 1)
+shader_parameter/fade_power = 1.233

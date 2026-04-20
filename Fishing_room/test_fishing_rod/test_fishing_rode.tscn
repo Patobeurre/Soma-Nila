@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://dj0bq4rmcfa4n"]
+
+[ext_resource type="Script" uid="uid://bugrnt43p4cq5" path="res://Fishing_room/test_fishing_rod/fishing_rod.gd" id="1_gcdkj"]
+[ext_resource type="Texture2D" uid="uid://csbvbk64tywyc" path="res://Fishing_room/test_fishing_rod/rope_curve_smooth.tres" id="2_5diaj"]
+[ext_resource type="Material" uid="uid://d2x17ijo0ckuc" path="res://materials/rope_material/rope.tres" id="2_i7nqg"]
+[ext_resource type="PackedScene" uid="uid://dn7oq3k4vekto" path="res://Fishing_room/models/bobber.tscn" id="3_i7nqg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gcdkj"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_i7nqg"]
+sky_material = SubResource("ProceduralSkyMaterial_gcdkj")
+
+[sub_resource type="Environment" id="Environment_5diaj"]
+background_mode = 2
+sky = SubResource("Sky_i7nqg")
+tonemap_mode = 2
+
+[sub_resource type="Curve3D" id="Curve3D_2k67f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i7nqg"]
+albedo_color = Color(1, 0.00999999, 0.00999999, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_3l8a1"]
+material = SubResource("StandardMaterial3D_i7nqg")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_i7nqg"]
+radius = 3.81738
+
+[node name="FishingRod" type="Node3D"]
+script = ExtResource("1_gcdkj")
+curve_smooth = ExtResource("2_5diaj")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5diaj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 15)
+current = true
+
+[node name="Rope" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+
+[node name="RopePath3D" type="Path3D" parent="Rope"]
+unique_name_in_owner = true
+curve = SubResource("Curve3D_2k67f")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Rope/RopePath3D"]
+cast_shadow = 0
+polygon = PackedVector2Array(0.05, 0, 0.035, 0.035, 0, 0.05, -0.035, 0.035, -0.05, 0, -0.035, -0.035, 0, -0.05, 0.035, -0.035)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = ExtResource("2_i7nqg")
+
+[node name="DebugRodMesh" type="MeshInstance3D" parent="Rope"]
+mesh = SubResource("SphereMesh_3l8a1")
+
+[node name="EndPoint" parent="." instance=ExtResource("3_i7nqg")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 6, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+collision_layer = 65536
+collision_mask = 131072
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_i7nqg")

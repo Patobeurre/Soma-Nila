@@ -1,0 +1,182 @@
+[gd_scene load_steps=10 format=3 uid="uid://cls38y4x2bvq8"]
+
+[ext_resource type="PackedScene" uid="uid://cfswp4i0jj8uh" path="res://Fishing_room/models/imported/blacony.glb" id="1_21gb4"]
+[ext_resource type="PackedScene" uid="uid://0jdhre1mtn6g" path="res://Fishing_room/models/house/house_stairs.tscn" id="2_x5qnn"]
+[ext_resource type="PackedScene" uid="uid://cqfkwrpca451w" path="res://Fishing_room/models/oak_foliage.tscn" id="3_x5qnn"]
+[ext_resource type="PackedScene" uid="uid://be01ph203y653" path="res://Fishing_room/models/imported/root.glb" id="4_5vrau"]
+[ext_resource type="PackedScene" uid="uid://6vrfbu2frjn6" path="res://Fishing_room/models/imported/pot.glb" id="5_dywal"]
+[ext_resource type="PackedScene" uid="uid://bt3v5ci3e4gxr" path="res://Fishing_room/models/furnitures/glass.glb" id="6_xclhi"]
+[ext_resource type="PackedScene" uid="uid://ddktltoohc7mf" path="res://Fishing_room/models/furnitures/bottle.glb" id="7_ryr48"]
+[ext_resource type="PackedScene" uid="uid://dvsex47828eu0" path="res://Fishing_room/models/furnitures/lamp.glb" id="8_psntf"]
+[ext_resource type="PackedScene" uid="uid://dsnw566n88s8c" path="res://Fishing_room/models/flower_purple_grape.tscn" id="10_hy722"]
+
+[node name="House" type="Node3D"]
+
+[node name="blacony" parent="." instance=ExtResource("1_21gb4")]
+
+[node name="Stairs" parent="." instance=ExtResource("2_x5qnn")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.897964, -1.19432, 4.69357)
+
+[node name="Furnitures" type="Node3D" parent="."]
+
+[node name="glass" parent="Furnitures" instance=ExtResource("6_xclhi")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 4.65071, 1.19656, 1.94416)
+
+[node name="bottle2" parent="Furnitures" instance=ExtResource("7_ryr48")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 4.69611, 1.20404, 2.332)
+
+[node name="lamp" parent="." instance=ExtResource("8_psntf")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.49309, 4, 4)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="lamp"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(1, 0.965467, 0.660906, 1)
+light_energy = 1.5
+spot_range = 15.714
+spot_attenuation = 0.78
+spot_angle = 133.27
+spot_angle_attenuation = 0.784587
+
+[node name="Decoration" type="Node3D" parent="."]
+
+[node name="Foliage" type="Node3D" parent="Decoration"]
+visible = false
+
+[node name="OakFoliage10" parent="Decoration/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.360913, 0.355611, 0.0581581, -0.357946, 0.363283, -1.04462e-08, -0.0414272, -0.0408186, 0.506673, 4.8024, 3.77209, -1.58152)
+
+[node name="OakFoliage7" parent="Decoration/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.467028, 0, 0, 0, 0.48115, -0.380767, 0, 0.380767, 0.48115, 4.92816, 3.68462, -0.430791)
+
+[node name="OakFoliage8" parent="Decoration/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.349037, 0.343909, 0, -0.343909, 0.349037, 0, 0, 0, 0.49, 4.92816, 3.70875, -1.13182)
+
+[node name="OakFoliage11" parent="Decoration/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.311822, 0.144215, -0.220158, -0.343909, 0.163833, 6.82082e-08, 0.156823, 0.0725294, 0.437756, 4.57111, 4.41045, -1.00432)
+
+[node name="OakFoliage15" parent="Decoration/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.40644, 0.123203, -0.208279, -0.224306, 0.298204, -0.0713423, 0.156823, 0.107218, 0.437756, 3.79814, 4.66471, -2.22808)
+
+[node name="OakFoliage17" parent="Decoration/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.40644, 0.123203, -0.208279, -0.188485, 0.313605, 0.0174804, 0.198444, 0.0455307, 0.443187, 3.21838, 4.87148, -2.22808)
+
+[node name="OakFoliage18" parent="Decoration/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.242158, 0.039062, -0.422244, 0.0234852, 0.335281, 0.0778908, 0.425333, -0.0407525, 0.236099, 3.34298, 4.83561, -2.95897)
+
+[node name="OakFoliage16" parent="Decoration/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.432198, 0.159315, 0.0242514, -0.224306, 0.298204, -0.0713423, -0.0546994, 0.0359602, 0.484172, 4.07101, 4.66471, -1.57757)
+
+[node name="OakFoliage19" parent="Decoration/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.40644, 0.123203, -0.208279, -0.224306, 0.298204, -0.0713423, 0.156823, 0.107218, 0.437756, 3.79814, 4.66471, -3.78305)
+
+[node name="OakFoliage20" parent="Decoration/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.242158, 0.039062, -0.422244, 0.0234852, 0.335281, 0.0778908, 0.425333, -0.0407525, 0.236099, 3.34298, 4.83561, -4.51395)
+
+[node name="OakFoliage22" parent="Decoration/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.242158, 0.039062, -0.422244, 0.0234852, 0.335281, 0.0778908, 0.425333, -0.0407525, 0.236099, 4.03487, 4.61073, -4.51395)
+
+[node name="OakFoliage23" parent="Decoration/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.242158, 0.0562952, -0.422244, 0.401716, 0.131404, 0.247905, 0.141715, -0.468683, 0.0187876, 3.72702, 4.54586, -5.22216)
+
+[node name="OakFoliage24" parent="Decoration/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.289107, 0.0672096, -0.504108, 0.4796, 0.156881, 0.295968, 0.169191, -0.55955, 0.0224301, 4.18196, 3.87665, -5.22216)
+
+[node name="OakFoliage25" parent="Decoration/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(-0.0605839, 0.367694, -0.0967265, 0.315634, 0.103246, 0.194782, 0.211966, -0.0486481, -0.317693, 4.38044, 3.30597, -5.15075)
+
+[node name="OakFoliage28" parent="Decoration/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(-0.0605839, 0.367694, -0.0967265, 0.192576, -0.0547765, -0.328845, -0.327825, -0.10013, -0.1753, 4.49817, 2.20264, -5.15075)
+
+[node name="OakFoliage26" parent="Decoration/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(-0.0818276, 0.496625, -0.130644, 0.426311, 0.139449, 0.263083, 0.286292, -0.0657065, -0.429092, 4.58473, 2.7699, -5.20766)
+
+[node name="OakFoliage21" parent="Decoration/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.126068, 0.0977284, 0.452073, -0.224306, 0.298204, -0.0713423, -0.417006, -0.130858, 0.175044, 3.07101, 4.98587, -3.75608)
+
+[node name="OakFoliage27" parent="Decoration/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(-0.450651, 0.0981333, -0.130432, 0.138275, 0.325478, 0.0308638, 0.133769, -0.00584369, -0.471312, 2.32379, 5.20383, -4.09403)
+
+[node name="OakFoliage29" parent="Decoration/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(-0.344886, 0.0750431, -0.0998201, 0.105823, 0.248895, 0.0236203, 0.102374, -0.00446871, -0.360698, 1.89704, 5.40185, -3.74889)
+
+[node name="OakFoliage12" parent="Decoration/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.233584, 0.230152, 0.220212, -0.277233, 0.281366, 3.29811e-09, -0.156861, -0.154557, 0.32792, 4.65621, 4.21686, -1.67934)
+
+[node name="OakFoliage9" parent="Decoration/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.374357, 0.368857, -0.289483, -0.421113, 0.427392, 0, 0.206205, 0.203175, 0.525547, 4.92816, 3.09909, -1.49997)
+
+[node name="RootInPot" type="Node3D" parent="Decoration"]
+
+[node name="pot" parent="Decoration/RootInPot" instance=ExtResource("5_dywal")]
+
+[node name="root" parent="Decoration/RootInPot" instance=ExtResource("4_5vrau")]
+
+[node name="Foliage" type="Node3D" parent="Decoration/RootInPot"]
+
+[node name="OakFoliage" parent="Decoration/RootInPot/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.36, 4.75737, 3.22367, 6.34436)
+
+[node name="OakFoliage6" parent="Decoration/RootInPot/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.387185, 0.146661, 0, -0.118796, 0.478007, 0, 0, 0, 0.325, 4.89147, 2.85048, 6.21328)
+
+[node name="OakFoliage2" parent="Decoration/RootInPot/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.275, 0, 0, 0, 0.585, 0, 0, 0, 0.585, 5.11501, 3.47496, 5.76317)
+
+[node name="OakFoliage13" parent="Decoration/RootInPot/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.585, 0, 0, 0, 0.4, 0, 0, 0, 0.585, 4.59088, 4.08339, 5.76317)
+
+[node name="OakFoliage5" parent="Decoration/RootInPot/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.585, 0, 0, 0, 0.559792, 0.110346, 0, -0.169875, 0.363626, 4.57474, 3.79865, 6.36584)
+
+[node name="OakFoliage3" parent="Decoration/RootInPot/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.265, 0, 0, 0, 0.49, 0, 0, 0, 0.49, 5.04009, 3.70875, 5.06214)
+
+[node name="OakFoliage4" parent="Decoration/RootInPot/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.474769, 0, 0.383008, 0, 0.61, 0, -0.383008, 0, 0.474769, 4.6844, 3.53568, 4.61057)
+
+[node name="OakFoliage14" parent="Decoration/RootInPot/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.435, 0, 0, 0, 0.585, 0, 0, 0, 0.585, 4.61726, 2.99226, 5.02759)
+
+[node name="OakFoliage30" parent="Decoration/RootInPot/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.445, 0, 0, 0, 0.49, 0, 0, 0, 0.49, 4.56489, 2.91893, 4.32656)
+
+[node name="OakFoliage31" parent="Decoration/RootInPot/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.174857, 0, 0.0308876, 0, 0.555, 0, -0.00706579, 0, 0.764376, 4.8219, 3.55225, 3.87499)
+
+[node name="OakFoliage32" parent="Decoration/RootInPot/Foliage" instance=ExtResource("3_x5qnn")]
+transform = Transform3D(0.174857, 0, 0.0308876, 0, 0.555, 0, -0.00706579, 0, 0.764376, 4.71045, 2.79852, 3.75938)
+
+[node name="Flowers" type="Node3D" parent="Decoration/RootInPot"]
+
+[node name="PurpleFlower" parent="Decoration/RootInPot/Flowers" instance=ExtResource("10_hy722")]
+transform = Transform3D(-0.105942, 0, -0.621028, 0, 0.63, 0, 0.621028, 0, -0.105942, 5.05087, 2.70386, 5)
+
+[node name="PurpleFlower6" parent="Decoration/RootInPot/Flowers" instance=ExtResource("10_hy722")]
+transform = Transform3D(-0.0639018, 0, -0.374589, 0, 0.38, 0, 0.374589, 0, -0.0639018, 5.27286, 3.21122, 6.22455)
+
+[node name="PurpleFlower4" parent="Decoration/RootInPot/Flowers" instance=ExtResource("10_hy722")]
+transform = Transform3D(0.396059, 0, 0.22397, 0, 0.455, 0, -0.22397, 0, 0.396059, 5.15588, 3.13857, 5.30845)
+
+[node name="PurpleFlower8" parent="Decoration/RootInPot/Flowers" instance=ExtResource("10_hy722")]
+transform = Transform3D(0.388882, 0, -0.0692495, 0, 0.395, 0, 0.0692495, 0, 0.388882, 5.0221, 2.7967, 6.57877)
+
+[node name="PurpleFlower9" parent="Decoration/RootInPot/Flowers" instance=ExtResource("10_hy722")]
+transform = Transform3D(-0.105493, 0, -0.43746, 0, 0.45, 0, 0.43746, 0, -0.105493, 4.79033, 3.35882, 6.73622)
+
+[node name="PurpleFlower10" parent="Decoration/RootInPot/Flowers" instance=ExtResource("10_hy722")]
+transform = Transform3D(-0.110182, 0, -0.456903, 0, 0.47, 0, 0.456903, 0, -0.110182, 5.13693, 3.68176, 6.46109)
+
+[node name="PurpleFlower7" parent="Decoration/RootInPot/Flowers" instance=ExtResource("10_hy722")]
+transform = Transform3D(0.248467, 0, 0.369173, 0, 0.445, 0, -0.369173, 0, 0.248467, 5.30888, 3.42204, 4.79196)
+
+[node name="PurpleFlower5" parent="Decoration/RootInPot/Flowers" instance=ExtResource("10_hy722")]
+transform = Transform3D(0.331262, 0, -0.311914, 0, 0.455, 0, 0.311914, 0, 0.331262, 5.1876, 2.98975, 5.94953)
+
+[node name="PurpleFlower2" parent="Decoration/RootInPot/Flowers" instance=ExtResource("10_hy722")]
+transform = Transform3D(0.328217, 0, -0.106296, 0, 0.345, 0, 0.106296, 0, 0.328217, 4.97608, 3.12454, 4)
+
+[node name="PurpleFlower11" parent="Decoration/RootInPot/Flowers" instance=ExtResource("10_hy722")]
+transform = Transform3D(0.344158, 0, -0.024084, 0, 0.475, 0, 0.024084, 0, 0.344158, 5.01238, 3.2704, 3.72282)
+
+[node name="PurpleFlower3" parent="Decoration/RootInPot/Flowers" instance=ExtResource("10_hy722")]
+transform = Transform3D(0.462534, 0, 0.0834397, 0, 0.42, 0, -0.0834397, 0, 0.462534, 4.82787, 2.23301, 3.4907)

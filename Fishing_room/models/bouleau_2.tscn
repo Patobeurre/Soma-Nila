@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://jk4imkmsjlex"]
+
+[ext_resource type="PackedScene" uid="uid://b6guw00rm4rja" path="res://Fishing_room/models/imported/birch_2.glb" id="2_ewwl7"]
+[ext_resource type="PackedScene" uid="uid://dkppqf2mujl6a" path="res://Fishing_room/models/birch_foliage.tscn" id="3_tpl81"]
+
+[node name="Bouleau" type="Node3D"]
+
+[node name="birch_2" parent="." instance=ExtResource("2_ewwl7")]
+
+[node name="BirchFoliage" parent="." instance=ExtResource("3_tpl81")]
+transform = Transform3D(1, 0, 0, 0, 0.970821, -0.239804, 0, 0.239804, 0.970821, -0.158086, 2.2845, 0.218499)
+
+[node name="BirchFoliage2" parent="." instance=ExtResource("3_tpl81")]
+transform = Transform3D(0.79692, 0.144862, 0.586458, 0.0959781, 0.928126, -0.35968, -0.596411, 0.342923, 0.725739, -0.158086, 3.4581, 0.604746)
+
+[node name="BirchFoliage4" parent="." instance=ExtResource("3_tpl81")]
+transform = Transform3D(0.874071, -0.251466, -0.415649, 0.0959781, 0.928126, -0.35968, 0.476223, 0.274493, 0.835384, -0.837076, 3.88836, 0.286613)
+
+[node name="BirchFoliage5" parent="." instance=ExtResource("3_tpl81")]
+transform = Transform3D(0.874071, -0.251466, -0.415649, 0.246764, 0.966825, -0.0660042, 0.418458, -0.0448749, 0.907127, -0.311012, 4.42786, -0.163752)
+
+[node name="BirchFoliage17" parent="." instance=ExtResource("3_tpl81")]
+transform = Transform3D(0.400733, -0.359209, -0.842841, 0.102369, 0.931731, -0.348421, 0.910458, 0.0533427, 0.410147, -0.334768, 4.85804, 0.185032)
+
+[node name="BirchFoliage6" parent="." instance=ExtResource("3_tpl81")]
+transform = Transform3D(0.874071, -0.251466, -0.415649, -0.238464, -0.967522, 0.0838807, -0.423243, 0.0257995, -0.905649, -0.311012, 3.38652, -0.283034)
+
+[node name="BirchFoliage14" parent="." instance=ExtResource("3_tpl81")]
+transform = Transform3D(0.426657, -0.0267825, 0.904017, -0.238464, -0.967522, 0.0838807, 0.87241, -0.251363, -0.419187, -0.986518, 3.57029, -0.458086)
+
+[node name="BirchFoliage13" parent="." instance=ExtResource("3_tpl81")]
+transform = Transform3D(-0.309451, 0.213131, -0.926723, -0.3262, -0.939216, -0.10708, -0.893215, 0.269161, 0.360165, -0.626981, 4.24915, -0.59961)
+
+[node name="BirchFoliage7" parent="." instance=ExtResource("3_tpl81")]
+transform = Transform3D(0.646541, -0.0220053, -0.762562, -0.396477, -0.863679, -0.311231, -0.65176, 0.503562, -0.567128, 0.38194, 4.07652, -0.283034)
+
+[node name="BirchFoliage10" parent="." instance=ExtResource("3_tpl81")]
+transform = Transform3D(0.917372, -0.144154, -0.37101, -0.213589, -0.964828, -0.15325, -0.335869, 0.219831, -0.915896, 0.492976, 2.91937, 0.291203)
+
+[node name="BirchFoliage11" parent="." instance=ExtResource("3_tpl81")]
+transform = Transform3D(0.955459, 0.0521625, -0.290479, -0.074109, -0.910313, -0.407232, -0.285669, 0.41062, -0.865901, 0.233124, 4.01581, 0.291203)
+
+[node name="BirchFoliage12" parent="." instance=ExtResource("3_tpl81")]
+transform = Transform3D(0.905603, -0.179904, -0.38408, -0.313491, -0.893882, -0.320466, -0.285669, 0.41062, -0.865901, -0.126248, 4.52095, 0.291203)
+
+[node name="BirchFoliage8" parent="." instance=ExtResource("3_tpl81")]
+transform = Transform3D(0.881279, -0.127322, -0.455122, -0.221705, -0.961861, -0.160217, -0.417365, 0.242099, -0.875896, 0.38194, 3.26902, -0.507839)
+
+[node name="BirchFoliage15" parent="." instance=ExtResource("3_tpl81")]
+transform = Transform3D(0.908886, -0.263358, 0.32337, -0.221705, -0.961861, -0.160217, 0.353231, 0.0739262, -0.932611, -0.136956, 3.47309, -0.953643)
+
+[node name="BirchFoliage9" parent="." instance=ExtResource("3_tpl81")]
+transform = Transform3D(0.881279, -0.127322, -0.455122, -0.258592, -0.935984, -0.238882, -0.395572, 0.328213, -0.857787, 0.0747929, 2.28102, -0.507839)
+
+[node name="BirchFoliage16" parent="." instance=ExtResource("3_tpl81")]
+transform = Transform3D(0.915985, 0.209157, -0.342381, 0.0670379, -0.921157, -0.383375, -0.395572, 0.328213, -0.857787, -0.508776, 2.36333, -0.285709)
+
+[node name="BirchFoliage3" parent="." instance=ExtResource("3_tpl81")]
+transform = Transform3D(0.700152, -0.63178, -0.332628, 0.409844, 0.737095, -0.537325, 0.58465, 0.239883, 0.77501, -0.831771, 3.04568, 0.252961)

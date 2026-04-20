@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqfkwrpca451w"]
+
+[ext_resource type="PackedScene" uid="uid://4j32vcs01v1l" path="res://Fishing_room/models/imported/up_normal_foliage.glb" id="1_qtftb"]
+[ext_resource type="PackedScene" uid="uid://byx8f14psd62g" path="res://Fishing_room/models/imported/up_normal_foliage_2.glb" id="2_1dfhx"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_6ritw"]
+radius = 1.0
+height = 2.0
+
+[node name="OakFoliage" type="Node3D"]
+
+[node name="up_normal_foliage" parent="." instance=ExtResource("1_qtftb")]
+
+[node name="up_normal_foliage_2" parent="." instance=ExtResource("2_1dfhx")]
+transform = Transform3D(0.849309, 0.115301, -0.51515, -0.0985839, 0.993331, 0.0597963, 0.518609, 0, 0.855011, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+cast_shadow = 3
+mesh = SubResource("SphereMesh_6ritw")

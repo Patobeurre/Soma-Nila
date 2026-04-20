@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dsipbnydg0ol3"]
+
+[ext_resource type="Texture2D" uid="uid://qjm0dstbb3f0" path="res://Fishing_room/models/materials/trees/leaves/leaves_oak 2.png" id="1_00ej4"]
+
+[resource]
+resource_name = "Material.001"
+transparency = 1
+albedo_texture = ExtResource("1_00ej4")
+roughness = 0.8
+normal_scale = 16.0
+rim_tint = 0.6
+detail_blend_mode = 1
+distance_fade_mode = 1
+distance_fade_max_distance = 2.0

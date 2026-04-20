@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cb7gv4mer5mbu"]
+
+[ext_resource type="Texture2D" uid="uid://drj6vwm07w7de" path="res://Fishing_room/models/materials/wood_planks/old_oak_planks.png" id="1_pi8k0"]
+
+[resource]
+albedo_texture = ExtResource("1_pi8k0")
+uv1_scale = Vector3(1.295, 0.1, 1)
+uv1_offset = Vector3(-0.27, 0.215, 0.195)
+uv1_triplanar = true
+texture_filter = 1

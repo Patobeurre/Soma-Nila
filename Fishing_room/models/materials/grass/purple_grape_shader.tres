@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bvlygj6y34d5n"]
+
+[ext_resource type="Shader" uid="uid://ch5lpt88p34rx" path="res://Fishing_room/models/materials/fade_angle.gdshader" id="1_qduil"]
+[ext_resource type="Texture2D" uid="uid://db5174s46i86e" path="res://Fishing_room/models/materials/grass/purple_grape.png" id="2_qduil"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_qduil")
+shader_parameter/albedo_texture = ExtResource("2_qduil")
+shader_parameter/main_color = Color(0.439216, 0.254902, 0.67451, 1)
+shader_parameter/fade_power = 0.388

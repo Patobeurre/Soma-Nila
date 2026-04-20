@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://xp4h1i60tfdk"]
+
+[ext_resource type="Texture2D" uid="uid://c1x3iactrgwil" path="res://Fishing_room/models/materials/trees/Wood_oak_2.png" id="1_58tjb"]
+
+[resource]
+albedo_texture = ExtResource("1_58tjb")
+rim_tint = 0.23
+uv1_scale = Vector3(-1.29, -1.29, -1.29)

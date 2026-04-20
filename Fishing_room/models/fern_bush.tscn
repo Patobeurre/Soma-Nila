@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://m0mx72hj4yil"]
+
+[ext_resource type="PackedScene" uid="uid://b4m6w52ehif05" path="res://Fishing_room/models/imported/fern.glb" id="1_qq0e7"]
+[ext_resource type="Texture2D" uid="uid://dyy8jr1dggbfk" path="res://Fishing_room/models/materials/grass/Fern.png" id="2_bmfqg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jb6b5"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_bmfqg")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_o8t4v"]
+material = SubResource("StandardMaterial3D_jb6b5")
+
+[sub_resource type="BoxMesh" id="BoxMesh_0keyp"]
+size = Vector3(3.02, 0.975, 4.645)
+
+[node name="FernBush" type="Node3D"]
+
+[node name="fern" parent="." instance=ExtResource("1_qq0e7")]
+transform = Transform3D(0.96, 0, 0, 0, 0.96, 0, 0, 0, 0.96, 0, 0, 0.0382969)
+
+[node name="fern5" parent="." instance=ExtResource("1_qq0e7")]
+transform = Transform3D(0.706373, -0.000239499, 0.445267, 0.0635645, 0.826502, -0.100394, -0.440706, 0.118825, 0.699202, 0, 0, 0)
+
+[node name="fern2" parent="." instance=ExtResource("1_qq0e7")]
+transform = Transform3D(0.3875, 0, -0.67117, 0, 0.775, 0, 0.67117, 0, 0.3875, 0, 0, 0)
+
+[node name="fern3" parent="." instance=ExtResource("1_qq0e7")]
+transform = Transform3D(-0.83, 0, 1.25327e-07, 0, 0.83, 0, -1.25327e-07, 0, -0.83, 0, 0, 0)
+
+[node name="fern4" parent="." instance=ExtResource("1_qq0e7")]
+transform = Transform3D(-0.197261, -0.065876, 0.736188, -0.01705, 0.762158, 0.0636313, -0.738933, -1.13994e-08, -0.197996, 0, 0, -0.0424132)
+
+[node name="fern7" parent="." instance=ExtResource("1_qq0e7")]
+transform = Transform3D(0.193732, -0.040991, 0.507753, -0.105554, 0.528212, 0.0829166, -0.498348, -0.127814, 0.179825, -0.0859385, 0, -0.107057)
+
+[node name="fern6" parent="." instance=ExtResource("1_qq0e7")]
+transform = Transform3D(-0.234679, -0.37314, -0.575602, -0.18317, 0.620353, -0.32747, 0.661059, 0.0394239, -0.295078, 0, 0, 0)
+
+[node name="fern9" parent="." instance=ExtResource("1_qq0e7")]
+transform = Transform3D(-0.170918, -0.0245029, -0.590264, -0.129815, 0.60101, 0.0126403, 0.576334, 0.128106, -0.172202, 0, 0, 0)
+
+[node name="fern8" parent="." instance=ExtResource("1_qq0e7")]
+transform = Transform3D(-0.554987, 0.0247352, 0.356339, -0.11694, 0.60955, -0.224441, -0.337512, -0.251867, -0.508182, 0, 0, 0.0410161)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.71, 0, 0, 0, 0.71, 0, 0, 0, 0.71, 0, 0.126623, -0.646878)
+cast_shadow = 3
+mesh = SubResource("PlaneMesh_o8t4v")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.472271, 0, 0.291521, 0, 0.555, 0, -0.291521, 0, 0.472271, -0.272026, 0.126623, -0.374852)
+cast_shadow = 3
+mesh = SubResource("PlaneMesh_o8t4v")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.220853, 0, 0.509165, 0, 0.555, 0, -0.509165, 0, -0.220853, -0.493046, 0.126623, 0.10686)
+cast_shadow = 3
+mesh = SubResource("PlaneMesh_o8t4v")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.667456, 0, -0.0583362, 0, 0.67, 0, 0.0583362, 0, -0.667456, -0.028336, 0.126623, 0.469561)
+cast_shadow = 3
+mesh = SubResource("PlaneMesh_o8t4v")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.333517, 0, -0.449852, 0, 0.56, 0, 0.449852, 0, 0.333517, 0.368368, 0.126623, -0.210503)
+cast_shadow = 3
+mesh = SubResource("PlaneMesh_o8t4v")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.501286, 0)
+visible = false
+mesh = SubResource("BoxMesh_0keyp")

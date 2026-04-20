@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://rpav27gqy20k"]
+
+[ext_resource type="PackedScene" uid="uid://bf2kmu34r1epk" path="res://Fishing_room/models/grass.tscn" id="1_y3ted"]
+
+[node name="Grasses" type="Node3D"]
+
+[node name="Grass" parent="." instance=ExtResource("1_y3ted")]
+
+[node name="Grass2" parent="." instance=ExtResource("1_y3ted")]
+transform = Transform3D(0.238114, 0, -0.888652, 0, 0.92, 0, 0.888652, 0, 0.238114, 1, 0, 1)
+
+[node name="Grass3" parent="." instance=ExtResource("1_y3ted")]
+transform = Transform3D(0.744323, 0, -0.66782, 0, 1, 0, 0.66782, 0, 0.744323, 0.519393, 0, 0.196283)
+
+[node name="Grass4" parent="." instance=ExtResource("1_y3ted")]
+transform = Transform3D(0.475967, 0, -0.661574, 0, 0.815, 0, 0.661574, 0, 0.475967, 0.297578, 0, 1.00854)
+
+[node name="Grass5" parent="." instance=ExtResource("1_y3ted")]
+transform = Transform3D(0.775, 0, 0, 0, 0.775, 0, 0, 0, 0.775, 1.2568, 0, 0.140373)
+
+[node name="Grass6" parent="." instance=ExtResource("1_y3ted")]
+transform = Transform3D(0.58391, 0, -0.296773, 0, 0.655, 0, 0.296773, 0, 0.58391, 0.568036, 0, -0.619675)
+
+[node name="Grass7" parent="." instance=ExtResource("1_y3ted")]
+transform = Transform3D(0.160992, 0, 0.737636, 0, 0.755, 0, -0.737636, 0, 0.160992, -0.180699, 0, -0.557102)
+
+[node name="Grass8" parent="." instance=ExtResource("1_y3ted")]
+transform = Transform3D(0.272754, 0, 0.762696, 0, 0.81, 0, -0.762696, 0, 0.272754, 0.960599, 0, -0.540531)
+
+[node name="Grass9" parent="." instance=ExtResource("1_y3ted")]
+transform = Transform3D(-0.0980332, 0, -0.778855, 0, 0.785, 0, 0.778855, 0, -0.0980332, -0.0676081, -0.321989, 0.669545)

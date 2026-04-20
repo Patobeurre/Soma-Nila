@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bqdj2p2761fbe"]
+
+[ext_resource type="Shader" uid="uid://ch5lpt88p34rx" path="res://Fishing_room/models/materials/fade_angle.gdshader" id="1_yg1ci"]
+[ext_resource type="Texture2D" uid="uid://btjusrrfa2cc1" path="res://Fishing_room/models/materials/trees/leaves/leaves_birch.png" id="2_yg1ci"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_yg1ci")
+shader_parameter/albedo_texture = ExtResource("2_yg1ci")
+shader_parameter/main_color = Color(0.52549, 0.694118, 0.196078, 1)
+shader_parameter/fade_power = 1.0

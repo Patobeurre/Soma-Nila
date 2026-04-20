@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://f6fhlujh5i6x"]
+
+[ext_resource type="Texture2D" uid="uid://ct0q3612kebo0" path="res://Fishing_room/models/materials/lilipad/lilipad_flower_lilipad.png" id="1_yjj83"]
+
+[resource]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("1_yjj83")

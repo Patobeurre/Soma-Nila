@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp1m0d4rl8lun"]
+
+[ext_resource type="PackedScene" uid="uid://dfe0jxokqnk4r" path="res://Fishing_room/models/imported/oak_tree.glb" id="1_lsb87"]
+[ext_resource type="PackedScene" uid="uid://cqfkwrpca451w" path="res://Fishing_room/models/oak_foliage.tscn" id="2_264qf"]
+
+[node name="Oak" type="Node3D"]
+
+[node name="oak_tree" parent="." instance=ExtResource("1_lsb87")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="test_foliage" parent="." instance=ExtResource("2_264qf")]
+transform = Transform3D(0.748695, 0, 0.805889, 0, 1.1, 0, -0.805889, 0, 0.748695, -1.82617, 6.94944, 1.31661)
+
+[node name="test_foliage3" parent="." instance=ExtResource("2_264qf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.54732, 7.55324, -0.18674)
+
+[node name="test_foliage14" parent="." instance=ExtResource("2_264qf")]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -2.91492, 6.06421, -1.2383)
+
+[node name="test_foliage8" parent="." instance=ExtResource("2_264qf")]
+transform = Transform3D(1.21136, 0, -0.701861, 0, 1.4, 0, 0.701861, 0, 1.21136, -1.42917, 6.94944, -1.87189)
+
+[node name="test_foliage13" parent="." instance=ExtResource("2_264qf")]
+transform = Transform3D(0.0807431, -0.893732, -0.940597, 0.962071, 0.673571, -0.557424, 0.870574, -0.661472, 0.703246, -2.09078, 5.73197, -2.87672)
+
+[node name="test_foliage9" parent="." instance=ExtResource("2_264qf")]
+transform = Transform3D(0.52706, 0, -0.849828, 0, 1, 0, 0.849828, 0, 0.52706, -0.123044, 7.55324, -2.9083)
+
+[node name="test_foliage15" parent="." instance=ExtResource("2_264qf")]
+transform = Transform3D(0.221634, 0, -0.97513, 0, 1, 0, 0.97513, 0, 0.221634, 1.84187, 7.55324, -0.592573)
+
+[node name="test_foliage16" parent="." instance=ExtResource("2_264qf")]
+transform = Transform3D(0.451833, 0.179517, -0.873854, -0.573415, 0.808832, -0.130329, 0.683405, 0.559968, 0.468394, 3.38944, 6.77895, -0.0251646)
+
+[node name="test_foliage17" parent="." instance=ExtResource("2_264qf")]
+transform = Transform3D(0.94294, -0.346116, 0.656557, 0.284044, 1.149, 0.197776, -0.685699, 0, 0.984793, 3.38944, 6.2441, -1.79106)
+
+[node name="test_foliage12" parent="." instance=ExtResource("2_264qf")]
+transform = Transform3D(0.826727, 0, -0.562603, 0, 1, 0, 0.562603, 0, 0.826727, -0.453502, 6.26987, -3.94584)
+
+[node name="test_foliage11" parent="." instance=ExtResource("2_264qf")]
+transform = Transform3D(-0.715229, -0.24782, -0.653477, 0.101893, 0.888056, -0.448301, 0.691423, -0.387223, -0.609912, 3.28546, 5.00072, -2.59741)
+
+[node name="test_foliage4" parent="." instance=ExtResource("2_264qf")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.0890687, 7.98606, -0.646263)
+
+[node name="test_foliage2" parent="." instance=ExtResource("2_264qf")]
+transform = Transform3D(0.724425, 0.689354, 0, -0.689354, 0.724425, 0, 0, 0, 1, -0.337682, 6, 2.0631)
+
+[node name="test_foliage5" parent="." instance=ExtResource("2_264qf")]
+transform = Transform3D(0.882825, 0.840086, 0.452633, -0.933589, 0.63269, 0.646619, 0.197569, -0.764173, 1.03296, 2.48264, 5.46579, 1.49105)
+
+[node name="test_foliage10" parent="." instance=ExtResource("2_264qf")]
+transform = Transform3D(0.201358, 1.05121, -0.737843, -0.933589, 0.63269, 0.646619, 0.881968, 0.429723, 0.852919, 1.39797, 5.56468, -3.17475)
+
+[node name="test_foliage18" parent="." instance=ExtResource("2_264qf")]
+transform = Transform3D(0.216847, 1.13207, -0.794601, -1.0054, 0.681358, 0.696359, 0.949811, 0.462779, 0.918528, 1.39797, 6.94223, -2.01089)
+
+[node name="test_foliage6" parent="." instance=ExtResource("2_264qf")]
+transform = Transform3D(0.814915, 0.775464, 0.417815, -0.861774, 0.584021, 0.596879, 0.182371, -0.70539, 0.953502, 1.13775, 6.87892, 1.09319)
+
+[node name="test_foliage7" parent="." instance=ExtResource("2_264qf")]
+transform = Transform3D(0.747005, 0.710842, 0.382997, -0.631541, 0.839465, -0.326273, -0.503129, 0.00168122, 0.978192, -0.400069, 7.82284, 1.09319)

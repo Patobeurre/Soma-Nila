@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dya34q6w4p1vl"]
+
+[ext_resource type="PackedScene" uid="uid://dkppqf2mujl6a" path="res://Fishing_room/models/birch_foliage.tscn" id="2_y7lxp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_abbia"]
+radius = 0.425211
+height = 1.41983
+
+[node name="BirchFoliage" type="Node3D"]
+
+[node name="BirchFoliage" parent="." instance=ExtResource("2_y7lxp")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_abbia")

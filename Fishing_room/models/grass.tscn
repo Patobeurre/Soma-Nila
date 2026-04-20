@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf2kmu34r1epk"]
+
+[ext_resource type="PackedScene" uid="uid://u4trs0y0ry5" path="res://Fishing_room/models/imported/plane_grass.glb" id="1_ens30"]
+[ext_resource type="Material" uid="uid://b5vwusb253h1f" path="res://Fishing_room/models/materials/grass/grass_shader.tres" id="1_la40e"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2xps0"]
+material = ExtResource("1_la40e")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yffqb"]
+material = ExtResource("1_la40e")
+
+[node name="Grass" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.49691e-08, 0.8, -3.49691e-08, 0, -3.49691e-08, -0.8, -0.8, -3.49691e-08, 1.52855e-15, 0.0751996, 0.466151, 0.0522149)
+visible = false
+mesh = SubResource("PlaneMesh_2xps0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.69282, -0.4, 1.74846e-08, 0, -3.49691e-08, -0.8, 0.4, 0.69282, -3.02841e-08, -0.299853, 0.47468, 0.0934362)
+visible = false
+mesh = SubResource("PlaneMesh_yffqb")
+skeleton = NodePath("../plane_grass3")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.69282, -0.4, 1.74846e-08, 1.77636e-15, -3.49691e-08, -0.8, 0.4, -0.69282, 3.02841e-08, -0.299853, 0.466141, -0.0951094)
+visible = false
+mesh = SubResource("PlaneMesh_yffqb")
+skeleton = NodePath("../plane_grass3")
+
+[node name="plane_grass" parent="." instance=ExtResource("1_ens30")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.0751996, -0.322256, 0.0522149)
+
+[node name="plane_grass3" parent="." instance=ExtResource("1_ens30")]
+transform = Transform3D(-0.389068, 0, -0.699017, 0, 0.8, 0, 0.699018, 0, -0.389068, -0.299853, -0.322256, 0.0934362)
+
+[node name="plane_grass4" parent="." instance=ExtResource("1_ens30")]
+transform = Transform3D(-0.389068, 0, 0.699017, 0, 0.8, 0, -0.699018, 0, -0.389068, -0.299853, -0.325572, -0.0951094)

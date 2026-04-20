@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmwosbhs458bf"]
+
+[ext_resource type="PackedScene" uid="uid://d3gj0s0hk68vo" path="res://Fishing_room/models/flower.tscn" id="1_0xx2v"]
+
+[node name="FlowerBunch" type="Node3D"]
+
+[node name="Flower" parent="." instance=ExtResource("1_0xx2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0676823, 0, 0)
+
+[node name="Flower2" parent="." instance=ExtResource("1_0xx2v")]
+transform = Transform3D(0.415376, 0, 0.90965, 0, 1, 0, -0.90965, 0, 0.415376, 0.657488, 0, 0)
+
+[node name="Flower3" parent="." instance=ExtResource("1_0xx2v")]
+transform = Transform3D(0.764618, 0, -0.644484, 0, 1, 0, 0.644484, 0, 0.764618, -0.682633, 0, 0.597601)
+
+[node name="Flower7" parent="." instance=ExtResource("1_0xx2v")]
+transform = Transform3D(-0.540314, 0, -0.841464, 0, 1, 0, 0.841464, 0, -0.540314, -1.01842, 0, -0.96408)
+
+[node name="Flower8" parent="." instance=ExtResource("1_0xx2v")]
+transform = Transform3D(-0.799108, 0, -0.601188, 0, 1, 0, 0.601188, 0, -0.799108, -0.36761, 0, -1.26713)
+
+[node name="Flower4" parent="." instance=ExtResource("1_0xx2v")]
+transform = Transform3D(-0.99557, 0, -0.0940216, 0, 1, 0, 0.0940216, 0, -0.99557, -0.0472972, 0, 0.745786)
+
+[node name="Flower5" parent="." instance=ExtResource("1_0xx2v")]
+transform = Transform3D(0.618792, 0, -0.785555, 0, 1, 0, 0.785555, 0, 0.618792, 0.645761, 0, -0.433854)
+
+[node name="Flower6" parent="." instance=ExtResource("1_0xx2v")]
+transform = Transform3D(0.54578, 0, 0.837928, 0, 1, 0, -0.837928, 0, 0.54578, -0.933668, 0, -0.282117)
