@@ -145,9 +145,6 @@ alignment = 2
 script = ExtResource("6_0x245")
 input_action_name = "restart"
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer2/RestartInputs/RestartLevel"]
-layout_mode = 2
-
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer2/RestartInputs/RestartLevel"]
 layout_mode = 2
 theme = ExtResource("7_qb8rb")
@@ -159,13 +156,14 @@ autowrap_mode = 0
 horizontal_alignment = 2
 vertical_alignment = 1
 
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2/RestartInputs/RestartLevel"]
+layout_mode = 2
+
 [node name="NextLevel" type="HBoxContainer" parent="MarginContainer2/RestartInputs"]
 layout_mode = 2
+alignment = 2
 script = ExtResource("6_0x245")
 input_action_name = "restart_forced"
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer2/RestartInputs/NextLevel"]
-layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer2/RestartInputs/NextLevel"]
 layout_mode = 2
@@ -176,6 +174,9 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2/RestartInputs/NextLevel"]
+layout_mode = 2
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]
 layout_mode = 1
