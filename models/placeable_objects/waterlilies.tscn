@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://b2lmbdkkgc7k3"]
+[gd_scene load_steps=10 format=4 uid="uid://b2lmbdkkgc7k3"]
 
-[ext_resource type="Texture2D" uid="uid://cgj3vkyc0iw7r" path="res://models/water_lily_water_lily.png" id="1_en14h"]
+[ext_resource type="PackedScene" uid="uid://cqpg7dqueayrw" path="res://models/placeable_objects/waterlily.tscn" id="1_en14h"]
+[ext_resource type="Texture2D" uid="uid://cgj3vkyc0iw7r" path="res://models/water_lily_water_lily.png" id="2_a54wo"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dcb5l"]
 points = PackedVector3Array(0, 0, -1, -0.382733, 0, -0.923919, 0.382537, 0, -0.923919, -0.707126, 0, -0.707162, 0.70693, 0, -0.707162, -0.924041, 0, -0.382686, 0.923845, 0, -0.382686, -1, 0, -1.95503e-05, 1, 0, -1.95503e-05, -0.924041, 0, 0.382647, 0.923845, 0, 0.382647, -0.707126, 0, 0.706935, 0.70693, 0, 0.706935, -0.382733, 0, 0.92388, 0.382537, 0, 0.92388)
@@ -8,7 +9,7 @@ points = PackedVector3Array(0, 0, -1, -0.382733, 0, -0.923919, 0.382537, 0, -0.9
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y32ar"]
 resource_name = "water_lily"
 cull_mode = 2
-albedo_texture = ExtResource("1_en14h")
+albedo_texture = ExtResource("2_a54wo")
 roughness = 0.5
 refraction_enabled = true
 
@@ -86,122 +87,37 @@ shadow_mesh = SubResource("ArrayMesh_5f2cg")
 [node name="water_lily" type="Node3D" parent="."]
 transform = Transform3D(0.259808, 0, -0.15, 0, 0.3, 0, 0.15, 0, 0.259808, -0.0223778, -0.125916, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="water_lily"]
-collision_layer = 4129
-collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="water_lily/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_dcb5l")
-
-[node name="BaseMesh" type="MeshInstance3D" parent="water_lily/StaticBody3D"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-mesh = SubResource("ArrayMesh_3s6r5")
-skeleton = NodePath("")
-
-[node name="Cube_020" type="MeshInstance3D" parent="water_lily/StaticBody3D/BaseMesh"]
-mesh = SubResource("ArrayMesh_pbj05")
-skeleton = NodePath("")
+[node name="Waterlily" parent="water_lily" instance=ExtResource("1_en14h")]
 
 [node name="water_lily2" type="Node3D" parent="."]
 transform = Transform3D(-0.186108, 0, -0.387639, 0, 0.43, 0, 0.387639, 0, -0.186108, -0.450369, 0.159085, -1.54108)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="water_lily2"]
-transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0)
-collision_layer = 4129
-collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="water_lily2/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_dcb5l")
-
-[node name="BaseMesh" type="MeshInstance3D" parent="water_lily2/StaticBody3D"]
-mesh = SubResource("ArrayMesh_3s6r5")
-skeleton = NodePath("")
-
-[node name="Cube_020" type="MeshInstance3D" parent="water_lily2/StaticBody3D/BaseMesh"]
-transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0)
-mesh = SubResource("ArrayMesh_pbj05")
-skeleton = NodePath("")
+[node name="Waterlily" parent="water_lily2" instance=ExtResource("1_en14h")]
 
 [node name="water_lily3" type="Node3D" parent="."]
 transform = Transform3D(0.160775, 0, 0.253282, 0, 0.3, 0, -0.253282, 0, 0.160775, 0.597684, -0.113766, -2.33537)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="water_lily3"]
-collision_layer = 4129
-collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="water_lily3/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_dcb5l")
-
-[node name="BaseMesh" type="MeshInstance3D" parent="water_lily3/StaticBody3D"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-mesh = SubResource("ArrayMesh_3s6r5")
-skeleton = NodePath("")
-
-[node name="Cube_020" type="MeshInstance3D" parent="water_lily3/StaticBody3D/BaseMesh"]
-mesh = SubResource("ArrayMesh_pbj05")
-skeleton = NodePath("")
+[node name="Waterlily" parent="water_lily3" instance=ExtResource("1_en14h")]
 
 [node name="water_lily4" type="Node3D" parent="."]
 transform = Transform3D(0.293437, 0, 0.0624093, 0, 0.3, 0, -0.0624093, 0, 0.293437, 0.436287, -0.180029, -1.00341)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="water_lily4"]
-collision_layer = 4129
-collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="water_lily4/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_dcb5l")
-
-[node name="BaseMesh" type="MeshInstance3D" parent="water_lily4/StaticBody3D"]
-transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, 0, 0, 0)
-mesh = SubResource("ArrayMesh_3s6r5")
-skeleton = NodePath("")
-
-[node name="Cube_020" type="MeshInstance3D" parent="water_lily4/StaticBody3D/BaseMesh"]
-mesh = SubResource("ArrayMesh_pbj05")
-skeleton = NodePath("")
+[node name="Waterlily" parent="water_lily4" instance=ExtResource("1_en14h")]
 
 [node name="water_lily5" type="Node3D" parent="."]
 transform = Transform3D(0.313751, 0, -0.389308, 0, 0.5, 0, 0.389308, 0, 0.313751, -0.146495, 0.288235, -3.19098)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="water_lily5"]
-transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0)
-collision_layer = 4129
-collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="water_lily5/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_dcb5l")
-
-[node name="BaseMesh" type="MeshInstance3D" parent="water_lily5/StaticBody3D"]
-transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0)
-mesh = SubResource("ArrayMesh_3s6r5")
-skeleton = NodePath("")
-
-[node name="Cube_020" type="MeshInstance3D" parent="water_lily5/StaticBody3D/BaseMesh"]
-transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0)
-mesh = SubResource("ArrayMesh_pbj05")
-skeleton = NodePath("")
+[node name="Waterlily" parent="water_lily5" instance=ExtResource("1_en14h")]
 
 [node name="water_lily6" type="Node3D" parent="."]
 transform = Transform3D(0.289658, 0, 0.0780907, 0, 0.3, 0, -0.0780907, 0, 0.289658, -0.582647, -0.291451, -4.09514)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="water_lily6"]
-collision_layer = 4129
-collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="water_lily6/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_dcb5l")
-
-[node name="BaseMesh" type="MeshInstance3D" parent="water_lily6/StaticBody3D"]
-transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0)
-mesh = SubResource("ArrayMesh_3s6r5")
-skeleton = NodePath("")
-
-[node name="Cube_020" type="MeshInstance3D" parent="water_lily6/StaticBody3D/BaseMesh"]
-mesh = SubResource("ArrayMesh_pbj05")
-skeleton = NodePath("")
+[node name="Waterlily" parent="water_lily6" instance=ExtResource("1_en14h")]
 
 [node name="water_lily7" type="Node3D" parent="."]
 transform = Transform3D(-0.0255271, 0, 0.208443, 0, 0.21, 0, -0.208443, 0, -0.0255271, 0.432046, 0.115765, -4.58005)
+
+[node name="Waterlily" parent="water_lily7" instance=ExtResource("1_en14h")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="water_lily7"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0, 0, 0)

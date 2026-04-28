@@ -35,7 +35,6 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:Circle_004": {
-"generate/physics": true,
 "physics/layer": 4129,
 "physics/mask": 2,
 "physics/shape_type": 1
