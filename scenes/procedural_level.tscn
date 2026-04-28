@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://1wqeuqodu1ar"]
+[gd_scene load_steps=25 format=3 uid="uid://1wqeuqodu1ar"]
 
 [ext_resource type="Script" uid="uid://c0g7u58cpaarn" path="res://scenes/procedural_level.gd" id="1_abuk1"]
 [ext_resource type="Resource" uid="uid://bxxgkwiehskne" path="res://scripts/resources/Levels/LevelRndRes.tres" id="2_1pxho"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://cd2a0hec2s6ls" path="res://scripts/object_selector.gd" id="10_rfl2w"]
 [ext_resource type="PackedScene" uid="uid://c32svoku0jbdb" path="res://scripts/abilitySM/abilities_state_machine.tscn" id="15_10ai8"]
 [ext_resource type="PackedScene" uid="uid://b8c6ydfgjo18g" path="res://models/decoration/boundaries.tscn" id="19_10ai8"]
+[ext_resource type="LightmapGIData" uid="uid://d1ro3pi1ffx42" path="res://scenes/procedural_level.lmbake" id="22_5bhmg"]
 [ext_resource type="Script" uid="uid://dudmuee06bbct" path="res://scripts/levelSM/disabled_state.gd" id="22_r6i00"]
 [ext_resource type="Script" uid="uid://ciubcnmrvfqsa" path="res://scripts/levelSM/level_state_machine.gd" id="22_ucegv"]
 [ext_resource type="Script" uid="uid://tq6g3r851271" path="res://scripts/levelSM/playing_state.gd" id="23_5bhmg"]
@@ -117,3 +118,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_10ai8")
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+light_data = ExtResource("22_5bhmg")
