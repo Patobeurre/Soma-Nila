@@ -1,0 +1,123 @@
+[gd_scene load_steps=4 format=3 uid="uid://b26fs7cl281ht"]
+
+[ext_resource type="PackedScene" uid="uid://b7nt42d7hn4i5" path="res://Fishing_room/models/ivy_bunch.tscn" id="1_ra1pe"]
+[ext_resource type="PackedScene" uid="uid://buc6c0pgnc65h" path="res://Fishing_room/models/ivy_leaf.tscn" id="2_rjmwb"]
+[ext_resource type="Texture2D" uid="uid://mgu5x3fbova1" path="res://working files/turtle_easy.png" id="3_bvj3h"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Ivy_bunch" parent="." instance=ExtResource("1_ra1pe")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.405794, 0.481716)
+
+[node name="Ivy_bunch2" parent="." instance=ExtResource("1_ra1pe")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.0671086, 0.127039)
+
+[node name="Ivy_bunch3" parent="." instance=ExtResource("1_ra1pe")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.35085, 0.710286)
+
+[node name="Ivy_bunch4" parent="." instance=ExtResource("1_ra1pe")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.35085, -0.393154)
+
+[node name="Ivy_bunch5" parent="." instance=ExtResource("1_ra1pe")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.177452, -1.05522)
+
+[node name="Ivy_bunch6" parent="." instance=ExtResource("1_ra1pe")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.382149, -1.50448)
+
+[node name="Ivy_bunch7" parent="." instance=ExtResource("1_ra1pe")]
+transform = Transform3D(0.165, 0, 0, 0, 0.165, 0, 0, 0, 0.165, 0, 0.94986, 2.07382)
+
+[node name="Ivy_bunch8" parent="." instance=ExtResource("1_ra1pe")]
+transform = Transform3D(0.135, 0, 0, 0, 0.135, 0, 0, 0, 0.135, 0, 0.484839, 1.51422)
+
+[node name="Ivy_bunch9" parent="." instance=ExtResource("1_ra1pe")]
+transform = Transform3D(0.135, 0, 0, 0, 0.135, 0, 0, 0, 0.135, 0, -0.0274718, 1.08861)
+
+[node name="Ivy_bunch10" parent="." instance=ExtResource("1_ra1pe")]
+transform = Transform3D(0.135, 0, 0, 0, 0.135, 0, 0, 0, 0.135, 0, 0.823753, 2.5152)
+
+[node name="Ivy_bunch11" parent="." instance=ExtResource("1_ra1pe")]
+transform = Transform3D(0.135, 0, 0, 0, 0.135, 0, 0, 0, 0.135, 0, 0.382377, -1.41778)
+
+[node name="Ivy_bunch12" parent="." instance=ExtResource("1_ra1pe")]
+transform = Transform3D(0.135, 0, 0, 0, 0.135, 0, 0, 0, 0.135, 0, -0.153579, -1.93797)
+
+[node name="Leaf_ivy11" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-2.41193e-08, 0.0759937, 0.043875, 6.40756e-09, 0.043875, -0.0759937, -0.08775, -1.76841e-08, -1.76088e-08, 0.0888403, -0.438876, -2.30476)
+
+[node name="Leaf_ivy12" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-1.87388e-08, 0.0590413, 0.0340875, 4.97818e-09, 0.0340875, -0.0590413, -0.068175, -1.37392e-08, -1.36807e-08, 0.0888403, -0.475255, -2.48548)
+
+[node name="Leaf_ivy13" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-1.87388e-08, 0.0590413, 0.0340875, 4.97818e-09, 0.0340875, -0.0590413, -0.068175, -1.37392e-08, -1.36807e-08, 0.0888403, -0.350573, -2.39469)
+
+[node name="Leaf_ivy14" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-2.70878e-08, 0.0853468, 0.049275, 7.19619e-09, 0.049275, -0.0853468, -0.09855, -1.98607e-08, -1.9776e-08, 0.0888403, -0.221868, -2.22921)
+
+[node name="Leaf_ivy15" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-2.70878e-08, 0.0853468, 0.049275, 7.19619e-09, 0.049275, -0.0853468, -0.09855, -1.98607e-08, -1.9776e-08, 0.0888403, -0.221868, -0.831838)
+
+[node name="Leaf_ivy16" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-3.30249e-08, 0.104053, 0.060075, 8.77344e-09, 0.060075, -0.104053, -0.12015, -2.42137e-08, -2.41105e-08, 0.0888403, -0.433312, -0.877804)
+
+[node name="Leaf_ivy17" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-3.72922e-08, 0.117498, 0.0678375, 9.90708e-09, 0.0678375, -0.117498, -0.135675, -2.73424e-08, -2.72259e-08, 0.0888403, -0.368959, -0.629587)
+
+[node name="Leaf_ivy19" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-3.72922e-08, 0.117498, 0.0678375, 9.90708e-09, 0.0678375, -0.117498, -0.135675, -2.73424e-08, -2.72259e-08, 0.0888403, 0.587136, -0.059607)
+
+[node name="Leaf_ivy34" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-3.32585e-08, 0.104789, 0.0605001, 8.83551e-09, 0.0605001, -0.104789, -0.121, -2.4385e-08, -2.4281e-08, 0.0888403, 0.39343, 1.2417)
+
+[node name="Leaf_ivy35" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-3.32585e-08, 0.104789, 0.0605001, 8.83551e-09, 0.0605001, -0.104789, -0.121, -2.4385e-08, -2.4281e-08, 0.0888403, -0.0706469, 1.31993)
+
+[node name="Leaf_ivy25" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-3.72922e-08, 0.117498, 0.0678375, 9.90708e-09, 0.0678375, -0.117498, -0.135675, -2.73424e-08, -2.72259e-08, 0.0888403, -0.493111, 0.784647)
+
+[node name="Leaf_ivy26" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-3.72922e-08, 0.117498, 0.0678375, 9.90708e-09, 0.0678375, -0.117498, -0.135675, -2.73424e-08, -2.72259e-08, 0.0888403, 0.257498, 1.17067)
+
+[node name="Leaf_ivy27" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-2.2264e-08, 0.070148, 0.0405, 5.91468e-09, 0.0405, -0.070148, -0.081, -1.63238e-08, -1.62543e-08, 0.0888403, 0.354004, 1.72827)
+
+[node name="Leaf_ivy28" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-2.2264e-08, 0.070148, 0.0405, 5.91468e-09, 0.0405, -0.070148, -0.081, -1.63238e-08, -1.62543e-08, 0.0888403, 0.868707, 1.72827)
+
+[node name="Leaf_ivy29" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-3.87558e-08, 0.12211, 0.0705001, 1.02959e-08, 0.0705001, -0.12211, -0.141, -2.84155e-08, -2.82944e-08, 0.0888403, 0.750755, 1.62104)
+
+[node name="Leaf_ivy30" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-2.91356e-08, 0.0917987, 0.0530001, 7.7402e-09, 0.0530001, -0.0917987, -0.106, -2.1362e-08, -2.1271e-08, 0.0888403, 1.07244, 2.59683)
+
+[node name="Leaf_ivy31" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-3.56761e-08, 0.097233, 0.0801357, 3.3621e-09, 0.0801357, -0.097233, -0.126, -2.53926e-08, -2.52844e-08, 0.0888403, 1.06172, 2.37165)
+
+[node name="Leaf_ivy32" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-2.64739e-08, 0.0817992, 0.0674158, 2.82844e-09, 0.0674158, -0.0817992, -0.106, -1.86308e-08, -1.902e-08, 0.0888403, 0.418195, 2.22456)
+
+[node name="Leaf_ivy33" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-2.2609e-08, 0.065055, 0.0392918, 4.76709e-09, 0.0392918, -0.065055, -0.076, -1.68884e-08, -1.57693e-08, 0.0888403, 0.418195, 2.62906)
+
+[node name="Leaf_ivy20" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-3.17262e-08, 0.099961, 0.0577125, 8.42841e-09, 0.0577125, -0.099961, -0.115425, -2.32614e-08, -2.31623e-08, 0.0888403, 0.449238, 0.151838)
+
+[node name="Leaf_ivy21" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-3.78487e-08, 0.119252, 0.0688501, 1.0055e-08, 0.0688501, -0.119252, -0.1377, -2.77505e-08, -2.76322e-08, 0.0888403, 0.550363, 0.308122)
+
+[node name="Leaf_ivy22" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-3.78487e-08, 0.119252, 0.0688501, 1.0055e-08, 0.0688501, -0.119252, -0.1377, -2.77505e-08, -2.76322e-08, 0.0888403, 0.467624, -0.804258)
+
+[node name="Leaf_ivy23" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-4.08173e-08, 0.128605, 0.0742501, 1.08436e-08, 0.0742501, -0.128605, -0.1485, -2.9927e-08, -2.97995e-08, 0.0888403, 0.577943, -1.07086)
+
+[node name="Leaf_ivy18" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-3.45091e-08, 0.108729, 0.062775, 9.16775e-09, 0.062775, -0.108729, -0.12555, -2.53019e-08, -2.51941e-08, 0.0888403, -0.424118, -0.35379)
+
+[node name="Leaf_ivy24" parent="." instance=ExtResource("2_rjmwb")]
+transform = Transform3D(-4.15044e-08, 0.13077, 0.0755001, 1.10261e-08, 0.0755001, -0.13077, -0.151, -3.04308e-08, -3.03011e-08, 0.0888403, 0.136668, -1.78793)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1.50996e-07, 0, 2, 0, 2, 0, -2, 0, 1.50996e-07, 0, 0, 0)
+visible = false
+texture = ExtResource("3_bvj3h")

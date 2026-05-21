@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=4 uid="uid://dpmc44rjy3trf"]
+
+[ext_resource type="Script" uid="uid://nk358l28n15l" path="res://Fishing_room/Tangram/Pieces/scenes/tangram_piece.gd" id="1_emcp6"]
+[ext_resource type="Material" uid="uid://xt77tipnasih" path="res://Fishing_room/Tangram/models/materials/brown_oak_piece.tres" id="2_kjnb1"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dt513"]
+_surfaces = [{
+"aabb": AABB(-0.575736, -1, -0.575736, 2, 2, 2),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAwACAAEABAAAAAIABAACAAMAAAAFAAEABQAAAAQABQADAAEABQAEAAMA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAA/////wAAAAD//wAAAAAAAAAAAAAAAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2cirk"]
+resource_name = "triangle_M_Cube_007"
+_surfaces = [{
+"aabb": AABB(-0.575736, -1, -0.575736, 2, 2, 2),
+"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//58AAP+f/3//XwAA/x//f/8f/z//X/9//5//f//f/z//3/9/"),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADwAQABEA"),
+"material": ExtResource("2_kjnb1"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 18,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAPzFAAD//////MX/////AAD8xQAAAAD///zFAAAAAAAA/78AAAAA////v///AAAAAP+//////wAA//8AAP///////wAA//8AAP//VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7//HP8c/xz/HP8c/xz/HP8cAAD/fwAA/38AAP9//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_dt513")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kjnb1"]
+points = PackedVector3Array(1.42426, 1, -0.575736, 1.42426, -1, -0.575736, -0.575736, 1, -0.575736, -0.575736, 1, 1.42426, -0.575736, -1, 1.42426, -0.575736, -1, -0.575736)
+
+[node name="MediumTriangle" type="StaticBody3D"]
+collision_layer = 256
+collision_mask = 0
+script = ExtResource("1_emcp6")
+
+[node name="triangle_M" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.353553, 0, -0.353553, -0.353553, -2.18557e-09, -0.353553, -1.54543e-08, 0.05, -1.54543e-08, 0, 0, 0)
+mesh = SubResource("ArrayMesh_2cirk")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.353553, 0, -0.353553, -0.353553, -2.18557e-09, -0.353553, -1.54543e-08, 0.05, -1.54543e-08, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_kjnb1")

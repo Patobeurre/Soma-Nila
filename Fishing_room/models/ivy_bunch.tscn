@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7nt42d7hn4i5"]
+
+[ext_resource type="PackedScene" uid="uid://buc6c0pgnc65h" path="res://Fishing_room/models/ivy_leaf.tscn" id="1_iglq6"]
+
+[node name="Ivy_bunch" type="Node3D"]
+
+[node name="Leaf_ivy" parent="." instance=ExtResource("1_iglq6")]
+transform = Transform3D(-2.18557e-07, 0.707107, 0.707107, 3.55271e-15, 0.707107, -0.707107, -1, -1.54543e-07, -1.54543e-07, 0.658076, 1, -0.0857099)
+
+[node name="Leaf_ivy3" parent="." instance=ExtResource("1_iglq6")]
+transform = Transform3D(-2.5956e-07, 0.650538, 0.650538, 0, 0.650538, -0.650538, -0.92, -1.83536e-07, -1.83536e-07, 0.658076, -0.269017, -0.655131)
+
+[node name="Leaf_ivy4" parent="." instance=ExtResource("1_iglq6")]
+transform = Transform3D(-2.12563e-07, 0.6755, 0.39, 5.69561e-08, 0.39, -0.6755, -0.78, -1.55607e-07, -1.55607e-07, 0.658076, -1.60089, -1.45767)
+
+[node name="Leaf_ivy9" parent="." instance=ExtResource("1_iglq6")]
+transform = Transform3D(-1.97491e-07, 0.494975, 0.494975, 6.30004e-15, 0.494975, -0.494975, -0.7, -1.39647e-07, -1.39647e-07, 0.658076, 0.0705237, 0.916906)
+
+[node name="Leaf_ivy7" parent="." instance=ExtResource("1_iglq6")]
+transform = Transform3D(-1.69105e-07, 0.365698, 0.481964, -2.31946e-08, 0.481964, -0.365698, -0.605, -1.20695e-07, -1.20695e-07, 0.658076, -1.40825, -0.531889)
+
+[node name="Leaf_ivy10" parent="." instance=ExtResource("1_iglq6")]
+transform = Transform3D(-1.62154e-07, 0.272828, 0.539991, -5.32978e-08, 0.539991, -0.272828, -0.605, -1.20695e-07, -1.20695e-07, 0.658076, -2.25133, 0.0936161)
+
+[node name="Leaf_ivy6" parent="." instance=ExtResource("1_iglq6")]
+transform = Transform3D(-1.95577e-07, 0.558927, 0.421427, 2.74308e-08, 0.421427, -0.558927, -0.7, -1.39647e-07, -1.39647e-07, 0.658076, -1.20036, 0.760034)
+
+[node name="Leaf_ivy2" parent="." instance=ExtResource("1_iglq6")]
+transform = Transform3D(-1.19688e-07, 0.319101, 0.548998, -7.02543e-08, 0.548998, -0.319102, -0.635, -1.20885e-07, -6.81737e-08, 0.658076, 0.516418, -1.02964)
+
+[node name="Leaf_ivy5" parent="." instance=ExtResource("1_iglq6")]
+transform = Transform3D(-2.55616e-07, 0.75362, 0.52769, 4.5072e-08, 0.52769, -0.75362, -0.92, -1.83536e-07, -1.83536e-07, 0.658076, -2.99807, -0.655131)
+
+[node name="Leaf_ivy8" parent="." instance=ExtResource("1_iglq6")]
+transform = Transform3D(-1.38784e-07, 0.553106, 0.311927, 4.96329e-15, 0.311927, -0.553106, -0.635, -1.20885e-07, -6.81737e-08, 0.658076, -2.21264, -1.02964)

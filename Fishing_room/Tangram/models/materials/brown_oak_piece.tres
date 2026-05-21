@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://xt77tipnasih"]
+
+[ext_resource type="Texture2D" uid="uid://bkvkam5w0mqu2" path="res://Fishing_room/models/materials/trees/brown_oak_wood.png" id="1_dk0ka"]
+
+[resource]
+albedo_texture = ExtResource("1_dk0ka")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://buc6c0pgnc65h"]
+
+[ext_resource type="Texture2D" uid="uid://dppeuiuw3u3i4" path="res://Fishing_room/models/materials/grass/leaf.png" id="1_3t20o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4be7"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_3t20o")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fa0i8"]
+material = SubResource("StandardMaterial3D_s4be7")
+
+[node name="Leaf_ivy" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_fa0i8")

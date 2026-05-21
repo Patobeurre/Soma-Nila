@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=4 uid="uid://bk07dbpeqqq17"]
+
+[ext_resource type="Script" uid="uid://nk358l28n15l" path="res://Fishing_room/Tangram/Pieces/scenes/tangram_piece.gd" id="1_jrxlf"]
+[ext_resource type="Material" uid="uid://xt77tipnasih" path="res://Fishing_room/Tangram/models/materials/brown_oak_piece.tres" id="2_87bsf"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4hus2"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1.2, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIAAAAEAAEABAAAAAMABAAFAAEABAADAAYABAAGAAUAAwACAAcAAQAHAAIABgADAAcAAQAFAAcABgAHAAUA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAD/f///AAAAAAAA/////wAA/38AAP//AAD/fwAAAAAAAP///////wAA//8AAP//AAD/f/////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bl1jm"]
+resource_name = "triangle_L_Cube_005"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1.2, 2, 2, 2),
+"attribute_data": PackedByteArray("/1////+f/5//n////1//n/9P/4//n/8//6//j/9f/z//X/8f/58AAP+f/x//XwAA/1//P/+f/z//T/+P/z//P/9f/z//P/9//x//P/+//3//v/8//9//P/+f/z8="),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAAIAAoADAAKAA0ADgAPABAAEQASAA8AEwAUABUAEwAWABQA"),
+"material": ExtResource("2_87bsf"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 23,
+"vertex_data": PackedByteArray("AAAAAP//9eD/f///AAD14AAA//////Xg/38AAAAA9eD/fwAAAAD14P////////Xg/3///wAA9eD//wAA///14P9/AAD///+/AAD//////7//f///////vwAAAAD///+///8AAP///7//////////v/9/AAAAAP+//38AAP///7///wAA////v/9/AAAAAP+/AAAAAP///7//f///AAD///9/////////AAD//////////////////xrPGs8azxrPGs8azxrPGs/kMOQw5DDkMOQw5DDkMOQw////////////////////////////////AAD/fwAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_4hus2")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_87bsf"]
+points = PackedVector3Array(1, 1, 0.8, 1, -1, 0.8, -0.000195742, 1, -1.2, -1, 1, 0.8, -1, -1, 0.8, -0.000195742, -1, -1.2)
+
+[node name="LargeTriangle" type="StaticBody3D"]
+collision_layer = 256
+collision_mask = 0
+script = ExtResource("1_jrxlf")
+
+[node name="triangle_L" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -2.18557e-09, -0.5, 0, 0.05, -2.18557e-08, 0, 0, 0)
+mesh = SubResource("ArrayMesh_bl1jm")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -2.18557e-09, -0.5, 0, 0.05, -2.18557e-08, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_87bsf")

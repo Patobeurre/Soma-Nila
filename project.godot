@@ -36,9 +36,8 @@ gdscript/warnings/unused_signal=0
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-window/size/mode=3
+window/size/viewport_width=1536
+window/size/viewport_height=864
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 mouse_cursor/custom_image="uid://cunmjqxq70v8j"
@@ -180,6 +179,8 @@ locale/translations=PackedStringArray("res://scripts/resources/translation/place
 3d_physics/layer_3="BreakableObject"
 3d_physics/layer_4="Interactable"
 3d_physics/layer_5="Collectable"
+3d_physics/layer_9="Draggable3D"
+3d_physics/layer_10="Drag3DBackground"
 3d_physics/layer_13="MovableObject"
 3d_physics/layer_17="FishingArea"
 3d_physics/layer_18="Bobber"

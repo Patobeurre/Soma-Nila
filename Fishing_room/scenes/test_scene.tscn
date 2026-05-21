@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://72d1rvpwarrd"]
+[gd_scene load_steps=23 format=3 uid="uid://72d1rvpwarrd"]
 
 [ext_resource type="PackedScene" uid="uid://crjc08x424u86" path="res://Fishing_room/PlayerFishingCharacter/PlayerFishingCharacterScene.tscn" id="1_asyad"]
 [ext_resource type="PackedScene" uid="uid://dd67k5yewmjyv" path="res://Fishing_room/models/imported/rock_cliff.glb" id="2_c7leb"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bff70mnxhmiam" path="res://Fishing_room/models/imported/rock.glb" id="16_asyad"]
 [ext_resource type="Script" uid="uid://da3lrqkjss8xk" path="res://Fishing_room/scenes/debug_ui.gd" id="17_gdr7n"]
 [ext_resource type="LightmapGIData" uid="uid://bmemrm2ar155k" path="res://Fishing_room/scenes/test_scene.lmbake" id="18_82fx6"]
+[ext_resource type="PackedScene" uid="uid://bmxd8ssw70nd6" path="res://Fishing_room/models/oak_tree_crow.tscn" id="19_apwlc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ua7ho"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -53,7 +54,7 @@ volumetric_fog_temporal_reprojection_enabled = false
 [node name="Node3D" type="Node3D"]
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_asyad")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.1157, 177.098, 55.5151)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5983, 183.098, 101.515)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6p85s")
@@ -270,13 +271,13 @@ transform = Transform3D(-1.26053, -0.0136509, -2.72229, 0.00194931, 2.99996, -0.
 transform = Transform3D(-1.81103, 0.0574416, 0.846684, 0.0609053, 1.99907, -0.00534812, -0.846442, 0.020941, -1.81193, 3.39984, 1.12672, -23.4711)
 
 [node name="Bouleau5" parent="Island/Vegetation/Trees" instance=ExtResource("6_w21fj")]
-transform = Transform3D(1.05551, -0.0211934, -3.85817, 0.00259908, 3.99994, -0.0212612, 3.85822, 0.00310341, 1.05551, 1.30599, -0.354858, 36.2027)
+transform = Transform3D(1.05551, -0.0211934, -3.85817, 0.00259908, 3.99994, -0.0212612, 3.85822, 0.00310341, 1.05551, 7.99069, -0.354858, 33.3281)
 
 [node name="Bouleau7" parent="Island/Vegetation/Trees" instance=ExtResource("6_w21fj")]
-transform = Transform3D(2.7085, -0.208943, 2.36228, 0.237603, 3.59187, 0.0452724, -2.35957, 0.121852, 2.71617, -25.8358, -0.354858, 40.395)
+transform = Transform3D(2.7085, -0.208943, 2.36228, 0.237603, 3.59187, 0.0452724, -2.35957, 0.121852, 2.71617, -25.8358, -0.354858, 38.9231)
 
 [node name="Bouleau6" parent="Island/Vegetation/Trees" instance=ExtResource("6_w21fj")]
-transform = Transform3D(4.10387, 0.0126965, -1.84609, -0.00526532, 4.49996, 0.0192435, 1.84613, -0.0153894, 4.10385, 8.38792, 0.222565, 39.1464)
+transform = Transform3D(4.10387, 0.0126965, -1.84609, -0.00526532, 4.49996, 0.0192435, 1.84613, -0.0153894, 4.10385, 15.0726, 0.222626, 36.2718)
 
 [node name="Grasseses" type="Node3D" parent="Island/Vegetation"]
 
@@ -423,25 +424,25 @@ transform = Transform3D(0.385642, -0.238146, 1.00228, 0.159919, 1.07107, 0.19295
 [node name="Cliff" type="Node3D" parent="Island/Terrain"]
 
 [node name="rock_cliff7" parent="Island/Terrain/Cliff" instance=ExtResource("2_c7leb")]
-transform = Transform3D(-1.10039, 1.34797, -1.79502, 1.02905, 2.07957, 0.93083, 1.99505, -0.329156, -1.47018, -5.16042, -11.7075, 54.3739)
+transform = Transform3D(-1.10039, 1.34797, -1.79502, 1.02905, 2.07957, 0.93083, 1.99505, -0.329156, -1.47018, 1.52428, -11.7075, 51.4993)
 
 [node name="rock_cliff8" parent="Island/Terrain/Cliff" instance=ExtResource("2_c7leb")]
-transform = Transform3D(0.519729, 0, 1.58356, 0, 1.66667, 0, -1.58356, 0, 0.519729, -12.6431, -7.47882, 42.6002)
+transform = Transform3D(0.519729, 0, 1.58356, 0, 1.66667, 0, -1.58356, 0, 0.519729, -5.9584, -7.47879, 39.7256)
 
 [node name="rock8" parent="Island/Terrain/Cliff" instance=ExtResource("16_asyad")]
-transform = Transform3D(0.432166, -0.0765311, 1.60784, -0.0330901, 1.66401, 0.0880988, -1.60932, -0.0547662, 0.429957, 0.202141, -0.0526123, 39.6809)
+transform = Transform3D(0.432166, -0.0765311, 1.60784, -0.0330901, 1.66401, 0.0880988, -1.60932, -0.0547662, 0.429957, 6.88684, -0.0526123, 36.8063)
 
 [node name="rock9" parent="Island/Terrain/Cliff" instance=ExtResource("16_asyad")]
-transform = Transform3D(0.769763, -0.0691769, 0.63457, 0.125537, 0.991102, -0.0442384, -0.625863, 0.113715, 0.771599, -12.4778, 4.56921, 44.4897)
+transform = Transform3D(0.769763, -0.0691769, 0.63457, 0.125537, 0.991102, -0.0442384, -0.625863, 0.113715, 0.771599, -5.79309, 4.56924, 41.6151)
 
 [node name="rock10" parent="Island/Terrain/Cliff" instance=ExtResource("16_asyad")]
-transform = Transform3D(1.15621, -1.07695, 0.530208, -1.03443, -1.26738, -0.318537, 0.609016, -0.108101, -1.54764, -13.9934, 1.23447, 51.6318)
+transform = Transform3D(1.15621, -1.07695, 0.530208, -1.03443, -1.26738, -0.318537, 0.609016, -0.108101, -1.54764, -7.30869, 1.23447, 48.7572)
 
 [node name="rock12" parent="Island/Terrain/Cliff" instance=ExtResource("16_asyad")]
-transform = Transform3D(-0.876074, 0.704505, -1.58352, -1.6236, 0.287257, 1.02605, 0.606454, 1.78676, 0.45941, -16.693, 0.00665283, 49.066)
+transform = Transform3D(-0.876074, 0.704505, -1.58352, -1.6236, 0.287257, 1.02605, 0.606454, 1.78676, 0.45941, -10.0083, 0.00671387, 46.1914)
 
 [node name="rock11" parent="Island/Terrain/Cliff" instance=ExtResource("16_asyad")]
-transform = Transform3D(1.60037, -0.0942727, -0.45575, 0.42513, 0.960224, 1.29422, 0.189368, -1.35899, 0.946075, -13.1905, 3.27118, 50.3611)
+transform = Transform3D(1.60037, -0.0942727, -0.45575, 0.42513, 0.960224, 1.29422, 0.189368, -1.35899, 0.946075, -6.50579, 3.27118, 47.4865)
 
 [node name="DebugUI" type="Control" parent="."]
 layout_mode = 3
@@ -460,3 +461,6 @@ offset_right = 176.0
 offset_bottom = 40.0
 mouse_filter = 2
 fit_content = true
+
+[node name="Oak_crow" parent="." instance=ExtResource("19_apwlc")]
+transform = Transform3D(0.898694, -0.305369, 0.3148, 0.320979, 0.947084, 0.00237579, -0.298867, 0.098909, 0.949155, -45.4441, 176.505, 102.595)

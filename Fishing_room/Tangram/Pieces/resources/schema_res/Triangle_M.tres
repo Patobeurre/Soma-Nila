@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TangramPiece" load_steps=3 format=3 uid="uid://naikc3jwvil5"]
+
+[ext_resource type="PackedScene" uid="uid://dpmc44rjy3trf" path="res://Fishing_room/Tangram/Pieces/scenes/Triangle_M.tscn" id="1_ioesu"]
+[ext_resource type="Script" uid="uid://dpgin5bdnnqjj" path="res://Fishing_room/Tangram/Pieces/resources/tangram_piece_schema.gd" id="2_tjf27"]
+
+[resource]
+script = ExtResource("2_tjf27")
+type = 2
+mesh_scene = ExtResource("1_ioesu")
+metadata/_custom_type_script = "uid://dpgin5bdnnqjj"

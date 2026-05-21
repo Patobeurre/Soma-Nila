@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmxd8ssw70nd6"]
+
+[ext_resource type="PackedScene" uid="uid://hmi0j8wdtqok" path="res://Fishing_room/models/imported/oak_crow.glb" id="1_xtark"]
+
+[node name="Oak_crow" type="Node3D"]
+
+[node name="oak_crow" parent="." instance=ExtResource("1_xtark")]
