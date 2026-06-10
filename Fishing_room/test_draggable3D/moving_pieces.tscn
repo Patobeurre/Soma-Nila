@@ -1,18 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://bl2xcbqbkxxqu"]
+[gd_scene load_steps=9 format=3 uid="uid://bl2xcbqbkxxqu"]
 
-[ext_resource type="Script" uid="uid://7tokwqi2k0ue" path="res://Fishing_room/test_draggable3D/DragAndDrop3DSystem.gd" id="1_35ew5"]
 [ext_resource type="Script" uid="uid://dn6yhft8alh2l" path="res://Fishing_room/test_draggable3D/moving_pieces.gd" id="1_o1wcb"]
-[ext_resource type="Script" uid="uid://dyl4nr2prvrlb" path="res://Fishing_room/Tangram/scripts/tangram.gd" id="2_70v3f"]
-[ext_resource type="Script" uid="uid://4jk8n3cirg38" path="res://Fishing_room/test_draggable3D/DraggableStateMachineScript.gd" id="2_ugcdt"]
-[ext_resource type="Script" uid="uid://jncph8f052dx" path="res://Fishing_room/test_draggable3D/default_drag_state.gd" id="3_o0fcp"]
-[ext_resource type="Script" uid="uid://dpgin5bdnnqjj" path="res://Fishing_room/Tangram/Pieces/resources/tangram_piece_schema.gd" id="3_slwlx"]
-[ext_resource type="Script" uid="uid://cep5a3u8dktgy" path="res://Fishing_room/test_draggable3D/dragging_state.gd" id="4_ugcdt"]
-[ext_resource type="Resource" uid="uid://cey0c3h7vffsp" path="res://Fishing_room/Tangram/Pieces/resources/schema_res/Square.tres" id="4_v6vwj"]
-[ext_resource type="Resource" uid="uid://ib4i4qqov1cj" path="res://Fishing_room/Tangram/Pieces/resources/schema_res/Triangle_L.tres" id="5_3fbg5"]
-[ext_resource type="Resource" uid="uid://bqwysmsc7mef1" path="res://Fishing_room/Tangram/Pieces/resources/schema_res/Triangle_S.tres" id="6_ywusj"]
-[ext_resource type="PackedScene" uid="uid://8oqf6xiiq552" path="res://Fishing_room/Tangram/models/imported/board.glb" id="7_slwlx"]
-[ext_resource type="Resource" uid="uid://naikc3jwvil5" path="res://Fishing_room/Tangram/Pieces/resources/schema_res/Triangle_M.tres" id="7_swxas"]
-[ext_resource type="Resource" uid="uid://bq2aiygduei4q" path="res://Fishing_room/Tangram/Pieces/resources/schema_res/Parallelepiped.tres" id="8_3fbg5"]
+[ext_resource type="PackedScene" uid="uid://cmirmtlvkmlgf" path="res://Fishing_room/Tangram/scenes/tangram.tscn" id="2_35ew5"]
+[ext_resource type="PackedScene" uid="uid://k15a0e4lm453" path="res://scripts/global/ScreenshotHandler/screenshot_handler.tscn" id="3_o0fcp"]
+[ext_resource type="PackedScene" uid="uid://dmx55awxw5m45" path="res://scenes/test_image_texture_mesh/PhotoDocument.tscn" id="4_ugcdt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ugcdt"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -26,14 +17,7 @@ background_mode = 2
 sky = SubResource("Sky_o1wcb")
 tonemap_mode = 2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82ny6"]
-albedo_color = Color(0.223103, 0.223103, 0.223103, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_582jb"]
-material = SubResource("StandardMaterial3D_82ny6")
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_o1wcb"]
-points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugcdt"]
 
 [node name="MovingPieces" type="Node3D"]
 script = ExtResource("1_o1wcb")
@@ -42,64 +26,17 @@ script = ExtResource("1_o1wcb")
 environment = SubResource("Environment_70v3f")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(-0.496819, -0.751584, 0.433925, 1.47562e-08, 0.499998, 0.866027, -0.867854, 0.430259, -0.248409, 3.31659, -4.6561, 0)
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-3.09086e-08, -0.707107, 0.707107, -3.09086e-08, 0.707107, 0.707107, -1, 0, -4.37114e-08, -0.190454, 1.02635, 0.0122021)
+transform = Transform3D(-4.36178e-08, -0.0653861, 0.99786, -2.8581e-09, 0.99786, 0.0653861, -1, 1.75415e-14, -4.37114e-08, 1.71612, 0.144784, 0.593384)
 current = true
 fov = 47.1
 size = 1.21759
 
-[node name="Tangram" type="Node3D" parent="."]
+[node name="Tangram" parent="." instance=ExtResource("2_35ew5")]
 unique_name_in_owner = true
-transform = Transform3D(0.565685, -0.565685, 0, 0.565685, 0.565685, 0, 0, 0, 0.8, -1.22755, 0, 0)
-script = ExtResource("2_70v3f")
-available_pieces = Array[ExtResource("3_slwlx")]([ExtResource("4_v6vwj"), ExtResource("5_3fbg5"), ExtResource("6_ywusj"), ExtResource("5_3fbg5"), ExtResource("6_ywusj"), ExtResource("7_swxas"), ExtResource("8_3fbg5")])
-
-[node name="Background" type="StaticBody3D" parent="Tangram"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.1, 0, 0)
-collision_layer = 512
-collision_mask = 0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Tangram/Background"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
-visible = false
-mesh = SubResource("PlaneMesh_582jb")
-skeleton = NodePath("../../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tangram/Background"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.0844764)
-shape = SubResource("ConvexPolygonShape3D_o1wcb")
-
-[node name="board" parent="Tangram/Background" instance=ExtResource("7_slwlx")]
-transform = Transform3D(1, -4.37114e-08, 4.37114e-08, 4.37114e-08, -4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, 0, 0, 0)
-
-[node name="Pieces" type="Node3D" parent="Tangram"]
-unique_name_in_owner = true
-transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 0, 0, 0)
-
-[node name="DragAndDrop3DSystem" type="Node3D" parent="Tangram"]
-unique_name_in_owner = true
-script = ExtResource("1_35ew5")
-DRAGGABLE_LAYER_MASK = 256
-BACKGROUND_LAYER_MASK = 512
-snap_while_dragging = true
-hold_input = false
-TILE_SIZE = Vector3(0.02, 0.02, 0.02)
-
-[node name="DragStateMachine" type="Node" parent="Tangram/DragAndDrop3DSystem" node_paths=PackedStringArray("initialState")]
-script = ExtResource("2_ugcdt")
-initialState = NodePath("DefaultDragState")
-metadata/_custom_type_script = "uid://b547cpm41w7bl"
-
-[node name="DefaultDragState" type="Node" parent="Tangram/DragAndDrop3DSystem/DragStateMachine"]
-script = ExtResource("3_o0fcp")
-metadata/_custom_type_script = "uid://gjekmtw4eb1e"
-
-[node name="DraggingState" type="Node" parent="Tangram/DragAndDrop3DSystem/DragStateMachine"]
-script = ExtResource("4_ugcdt")
-metadata/_custom_type_script = "uid://gjekmtw4eb1e"
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -157,6 +94,13 @@ layout_mode = 2
 text = "NONE"
 fit_content = true
 autowrap_mode = 0
+
+[node name="ScreenshotHandler" parent="." instance=ExtResource("3_o0fcp")]
+
+[node name="Sprite3D" parent="." instance=ExtResource("4_ugcdt")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 1.43706)
+texture = SubResource("AtlasTexture_ugcdt")
+desired_height = 0.8
 
 [connection signal="pressed" from="Control/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

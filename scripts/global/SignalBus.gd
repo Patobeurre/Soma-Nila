@@ -2,7 +2,7 @@ extends Node
 
 
 # Player
-signal on_player_pos_changed(Vector3)
+signal on_player_pos_changed(pos :Vector3)
 
 
 # Save
@@ -10,8 +10,20 @@ signal savegame_loaded
 signal save_requested
 
 
+# Screenshot
+signal screenshot_taken
+
+
 # Camera transition
-signal terminal_cam_transition_requested(Camera3D)
+signal terminal_cam_transition_requested(cam :Camera3D)
+signal interact_cam_transition_requested(cam :Camera3D)
+
+
+# Drag and Drop
+signal on_drag_hover_enter
+signal on_drag_hover_exit
+signal on_drag_started
+signal on_drag_released
 
 
 # Abilities

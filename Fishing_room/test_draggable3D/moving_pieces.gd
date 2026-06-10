@@ -9,11 +9,14 @@ extends Node3D
 
 func _ready() -> void:
 	tangram.solution_checked.connect(_on_solution_checked)
+	
+	$Sprite3D.load_screenshot(ResourceLoader.load("user://screenshots/screenshot_2026-05-22_153312.tres"))
 
 
 func _on_solution_checked(solution :TangramSolutionStat) -> void:
 	if solution != null:
 		solution_check.text = solution.name
+		tangram.animate_solution()
 	else:
 		solution_check.text = "NONE"
 

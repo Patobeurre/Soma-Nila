@@ -31,6 +31,8 @@ enum EDragType {
 @export var TILE_SIZE :Vector3 = Vector3(1,1,1)
 
 
+@onready var state_machine = %DragStateMachine
+
 var intersect_ray :Dictionary = {}
 
 
@@ -49,3 +51,8 @@ func raycast_at_mouse_position(mask :int = 255) -> Dictionary:
 	raycast_param.collision_mask = mask
 	raycast_param.collide_with_areas = true
 	return space_state.intersect_ray(raycast_param)
+
+
+func set_enabled(enabled :bool) -> void:
+	state_machine.set_enabled(enabled)
+	

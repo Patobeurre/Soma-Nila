@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://8ddgnyhoglra"]
+
+[ext_resource type="PackedScene" uid="uid://bxe2m610tomu5" path="res://Fishing_room/models/furnitures/frame.glb" id="1_pdv4h"]
+
+[node name="Frame" type="Node3D"]
+
+[node name="frame" parent="." instance=ExtResource("1_pdv4h")]

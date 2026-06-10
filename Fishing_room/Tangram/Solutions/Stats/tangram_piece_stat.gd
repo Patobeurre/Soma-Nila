@@ -6,6 +6,7 @@ class_name TangramPieceStat
 @export var position :Vector2 = Vector2.ZERO
 @export var rot_angle :int = 0
 @export var dist_to_center :float = 0.0
+var solution_pos :Vector2 = Vector2.ZERO
 
 
 func set_rotation(degree :float):

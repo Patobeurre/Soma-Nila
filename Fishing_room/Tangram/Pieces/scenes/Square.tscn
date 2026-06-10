@@ -44,7 +44,8 @@ collision_layer = 256
 collision_mask = 0
 script = ExtResource("1_n43ps")
 
-[node name="Square" type="MeshInstance3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("ArrayMesh_247vy")
 skeleton = NodePath("")

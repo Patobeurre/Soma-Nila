@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="TangramSolutionStat" load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://Fishing_room/Tangram/Solutions/Stats/tangram_piece_stat.gd" id="1_rpk3i"]
+[ext_resource type="Script" path="res://Fishing_room/Tangram/Solutions/Stats/tangram_solution_stat.gd" id="2_5ukg4"]
+
+[sub_resource type="Resource" id="Resource_rpk3i"]
+script = ExtResource("1_rpk3i")
+type = 0
+position = Vector2(-0.0935379, 0.347286)
+rot_angle = 45
+dist_to_center = 0.0
+
+[sub_resource type="Resource" id="Resource_5ukg4"]
+script = ExtResource("1_rpk3i")
+type = 3
+position = Vector2(-0.0922024, -0.771386)
+rot_angle = 0
+dist_to_center = 0.0
+
+[sub_resource type="Resource" id="Resource_gigv3"]
+script = ExtResource("1_rpk3i")
+type = 1
+position = Vector2(-0.610674, 0.612867)
+rot_angle = 180
+dist_to_center = 0.0
+
+[sub_resource type="Resource" id="Resource_ypbhj"]
+script = ExtResource("1_rpk3i")
+type = 3
+position = Vector2(-0.70154, -0.1621)
+rot_angle = -90
+dist_to_center = 0.0
+
+[sub_resource type="Resource" id="Resource_ftdrn"]
+script = ExtResource("1_rpk3i")
+type = 1
+position = Vector2(0.169706, -0.162101)
+rot_angle = 90
+dist_to_center = 0.0
+
+[sub_resource type="Resource" id="Resource_ro6np"]
+script = ExtResource("1_rpk3i")
+type = 2
+position = Vector2(0.640072, 0.57011)
+rot_angle = -45
+dist_to_center = 0.0
+
+[sub_resource type="Resource" id="Resource_i8wml"]
+script = ExtResource("1_rpk3i")
+type = 4
+position = Vector2(0.688177, -0.434676)
+rot_angle = 90
+dist_to_center = 0.0
+
+[resource]
+script = ExtResource("2_5ukg4")
+name = "initial_square"
+pieces = Array[ExtResource("1_rpk3i")]([SubResource("Resource_rpk3i"), SubResource("Resource_5ukg4"), SubResource("Resource_gigv3"), SubResource("Resource_ypbhj"), SubResource("Resource_ftdrn"), SubResource("Resource_ro6np"), SubResource("Resource_i8wml")])
+center_of_mass = Vector2(-0.00140029, 0.00216935)

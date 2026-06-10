@@ -31,26 +31,39 @@ func get_all_file_paths(path: String) -> Array[String]:
 	return file_paths
 
 
+func take_screenshot():
+
+	var date = Time.get_date_string_from_system().replace(".","_")
+	var time :String = Time.get_time_string_from_system().replace(":","")
+	var screenshot_path = "user://screenshots/" + "screenshot_" + date + "_" + time + ".tres"
+
+	var image = get_viewport().get_texture().get_image()
+	var screenshot_res :ScreenshotRes = ScreenshotRes.new()
+	screenshot_res.texture = ImageTexture.create_from_image(image)
+	
+	ResourceSaver.save(screenshot_res, screenshot_path)
+
+
 func extract_all_zip_files(zip_path :String, to_path :String) -> void:
 
 	var reader = ZIPReader.new()
 	reader.open(zip_path)
 
-    # Destination directory for the extracted files (this folder must exist before extraction).
-    # Not all ZIP archives put everything in a single root folder,
-    # which means several files/folders may be created in `root_dir` after extraction.
+	# Destination directory for the extracted files (this folder must exist before extraction).
+	# Not all ZIP archives put everything in a single root folder,
+	# which means several files/folders may be created in `root_dir` after extraction.
 	var root_dir = DirAccess.open(to_path)
 
 	var files = reader.get_files()
 	for file_path in files:
-        # If the current entry is a directory.
+		# If the current entry is a directory.
 		if file_path.ends_with("/"):
 			root_dir.make_dir_recursive(file_path)
 			continue
 
-        # Write file contents, creating folders automatically when needed.
-        # Not all ZIP archives are strictly ordered, so we need to do this in case
-        # the file entry comes before the folder entry.
+		# Write file contents, creating folders automatically when needed.
+		# Not all ZIP archives are strictly ordered, so we need to do this in case
+		# the file entry comes before the folder entry.
 		root_dir.make_dir_recursive(root_dir.get_current_dir().path_join(file_path).get_base_dir())
 		var file = FileAccess.open(root_dir.get_current_dir().path_join(file_path), FileAccess.WRITE)
 		var buffer = reader.read_file(file_path)
@@ -95,6 +108,22 @@ static func get_unique_array(original_array: Array) -> Array:
 			unique_array.append(item)
 	
 	return unique_array
+
+
+func to_vec3(vec2 :Vector2, axis :String = "XY") -> Vector3:
+	var vec3 :Vector3 = Vector3.ZERO
+	var vec2_array = [vec2.x, vec2.y]
+	var i :int = 0
+	for val in vec2_array:
+		match axis[i]:
+			"X":
+				vec3.x = val
+			"Y":
+				vec3.y = val
+			"Z":
+				vec3.z = val
+		i += 1
+	return vec3
 
 
 static func subtractArr(a: Array, b: Array) -> Array:

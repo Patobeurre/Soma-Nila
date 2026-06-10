@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cls38y4x2bvq8"]
+[gd_scene load_steps=11 format=3 uid="uid://cls38y4x2bvq8"]
 
 [ext_resource type="PackedScene" uid="uid://cfswp4i0jj8uh" path="res://Fishing_room/models/imported/blacony.glb" id="1_21gb4"]
 [ext_resource type="PackedScene" uid="uid://0jdhre1mtn6g" path="res://Fishing_room/models/house/house_stairs.tscn" id="2_x5qnn"]
 [ext_resource type="PackedScene" uid="uid://cqfkwrpca451w" path="res://Fishing_room/models/oak_foliage.tscn" id="3_x5qnn"]
 [ext_resource type="PackedScene" uid="uid://be01ph203y653" path="res://Fishing_room/models/imported/root.glb" id="4_5vrau"]
 [ext_resource type="PackedScene" uid="uid://6vrfbu2frjn6" path="res://Fishing_room/models/imported/pot.glb" id="5_dywal"]
+[ext_resource type="PackedScene" uid="uid://8ddgnyhoglra" path="res://Fishing_room/models/furnitures/frame.tscn" id="5_hy722"]
 [ext_resource type="PackedScene" uid="uid://bt3v5ci3e4gxr" path="res://Fishing_room/models/furnitures/glass.glb" id="6_xclhi"]
 [ext_resource type="PackedScene" uid="uid://ddktltoohc7mf" path="res://Fishing_room/models/furnitures/bottle.glb" id="7_ryr48"]
 [ext_resource type="PackedScene" uid="uid://dvsex47828eu0" path="res://Fishing_room/models/furnitures/lamp.glb" id="8_psntf"]
@@ -24,6 +25,9 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 4.65071, 1.19656, 1.944
 
 [node name="bottle2" parent="Furnitures" instance=ExtResource("7_ryr48")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 4.69611, 1.20404, 2.332)
+
+[node name="Frame" parent="Furnitures" instance=ExtResource("5_hy722")]
+transform = Transform3D(-0.174841, 0.0233815, 0.0358339, 0.0238591, 0.178412, 2.08583e-09, -0.0355177, 0.0047498, -0.176397, 4.20137, 0.774817, 3.76135)
 
 [node name="lamp" parent="." instance=ExtResource("8_psntf")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.49309, 4, 4)

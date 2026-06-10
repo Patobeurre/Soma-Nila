@@ -3,7 +3,7 @@
 [ext_resource type="Shader" uid="uid://vbovvpx5p6ug" path="res://materials/outline.gdshader" id="1_lmkya"]
 
 [resource]
-render_priority = 0
+render_priority = 1
 shader = ExtResource("1_lmkya")
 shader_parameter/step_count = 3
 shader_parameter/thickness = 16.0

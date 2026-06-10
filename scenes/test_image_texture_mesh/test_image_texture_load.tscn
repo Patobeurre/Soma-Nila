@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://5ogym670hnc8"]
+
+[ext_resource type="Script" uid="uid://blnn7c02dq6f" path="res://scenes/test_image_texture_mesh/test_image_texture_load.gd" id="1_nweqd"]
+[ext_resource type="PackedScene" uid="uid://dmx55awxw5m45" path="res://scenes/test_image_texture_mesh/PhotoDocument.tscn" id="2_bc8m3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jvlba"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_0na6o"]
+sky_material = SubResource("ProceduralSkyMaterial_jvlba")
+
+[sub_resource type="Environment" id="Environment_3nkug"]
+background_mode = 2
+sky = SubResource("Sky_0na6o")
+tonemap_mode = 2
+
+[node name="TestImageTextureLoad" type="Node3D"]
+script = ExtResource("1_nweqd")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3nkug")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866027, -0.43301, 0.249997, -1.49013e-08, 0.499998, 0.866027, -0.499997, -0.750003, 0.433012, 0, -2.71264, 2.90774)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.73659)
+current = true
+
+[node name="Sprite3D" parent="." instance=ExtResource("2_bc8m3")]
+unique_name_in_owner = true

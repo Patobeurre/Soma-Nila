@@ -22,6 +22,8 @@ func _ready() -> void:
 	current_solution = TangramSolutionStat.create(_retreive_pieces_stats())
 	solutions_to_check.append(ResourceLoader.load("user://tangram/initial_square.tres"))
 	solutions_to_check.append(ResourceLoader.load("user://tangram/jumping_fish.tres"))
+	solutions_to_check.append(ResourceLoader.load("user://tangram/barn.tres"))
+	#drag_drop_system.set_enabled(false)
 
 
 func set_available_pieces(given_pieces :Array[TangramPieceSchema]):
@@ -39,7 +41,7 @@ func load_solution(solution :TangramSolutionStat) -> void:
 
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("rotate_piece"):
 		_rotate_piece()
 
 
@@ -91,10 +93,27 @@ func _retreive_pieces_stats() -> Array[TangramPieceStat]:
 
 func _check_solution() -> TangramSolutionStat:
 	for solution :TangramSolutionStat in solutions_to_check:
-		if solution.checkSolution(current_solution.duplicate(true)):
-			solution_checked.emit(solution)
+		if solution.checkSolution(current_solution):
 			return solution
 	return null
+
+
+func animate_solution() -> void:
+	drag_drop_system.set_enabled(false)
+
+	var duration :float = 0.5
+	
+	var tween :Tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_CUBIC)
+	for piece in pieces:
+		print(piece.stats.solution_pos)
+		var to_position :Vector3 = Utils.to_vec3(piece.stats.solution_pos + current_solution.center_of_mass)
+		tween.parallel().tween_property(piece, "position", to_position, duration)
+	
+	tween.play()
+	await tween.finished
+
+	drag_drop_system.set_enabled(true)
+
 
 
 func _on_piece_stat_updated(piece_stat :TangramPieceStat) -> void:

@@ -24,7 +24,9 @@ func checkSolution(solution_to_check :TangramSolutionStat) -> bool:
 
 func has_valid_piece(piece_to_check :TangramPieceStat, solution :TangramSolutionStat) -> bool:
 	for piece in solution.pieces:
-		if piece.equals(piece_to_check, solution.center_of_mass, offset_pos): return true
+		if piece.equals(piece_to_check, solution.center_of_mass, offset_pos):
+			piece.solution_pos = piece_to_check.position
+			return true
 	return false
 
 

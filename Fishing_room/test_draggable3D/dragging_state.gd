@@ -10,13 +10,20 @@ func enter(parentRef : Variant):
 	
 	verifications()
 
+	SignalBus.on_drag_started.emit()
+
+	if parent.intersect_ray.collider.has_method("on_drag"):
+		parent.intersect_ray.collider.on_drag()
+
 
 func exit():
 	if parent.drag_type == parent.EDragType.SNAP_TO_GRID:
 		parent.intersect_ray.collider.global_position = parent.intersect_ray.collider.global_position.snapped(Vector3(parent.TILE_SIZE.x, parent.TILE_SIZE.y, parent.TILE_SIZE.z))
 	
-	if parent.intersect_ray.collider.has_method("moved"):
-		parent.intersect_ray.collider.moved()
+	SignalBus.on_drag_released.emit()
+
+	if parent.intersect_ray.collider.has_method("on_released"):
+		parent.intersect_ray.collider.on_released()
 
 
 func verifications() -> void:

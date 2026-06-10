@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c6c03wro4jrn6"]
+
+[ext_resource type="Texture2D" uid="uid://g11jdosgrfvj" path="res://Fishing_room/models/materials/trees/red_oak_wood.png" id="1_lm4tl"]
+
+[resource]
+resource_name = "drawer_front"
+cull_mode = 2
+albedo_texture = ExtResource("1_lm4tl")
+roughness = 0.5
+uv1_scale = Vector3(1.335, 0.375, 0.55)
+uv1_triplanar = true

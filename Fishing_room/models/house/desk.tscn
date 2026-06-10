@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://yemr2e81os1c"]
+
+[ext_resource type="PackedScene" uid="uid://cum2wp4rx8t26" path="res://Fishing_room/models/imported/desk.glb" id="1_dga3k"]
+[ext_resource type="PackedScene" uid="uid://cmirmtlvkmlgf" path="res://Fishing_room/Tangram/scenes/tangram.tscn" id="2_vy1ql"]
+[ext_resource type="Script" uid="uid://ecm2qimisry0" path="res://Fishing_room/models/house/desk_interaction.gd" id="3_donik"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bmf7o"]
+size = Vector3(1.52649, 1.78864, 3.46686)
+
+[node name="DeskWithTangram" type="Node3D"]
+
+[node name="desk" parent="." instance=ExtResource("1_dga3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0630709, -0.266839, 0.123649)
+
+[node name="Tangram" parent="." instance=ExtResource("2_vy1ql")]
+transform = Transform3D(0.12775, -0.895938, 0, 0.895938, 0.12775, 0, 0, 0, 0.905, 0.00678349, 0.108806, -0.85357)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("3_donik")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.263245, -0.338531, -0.248016)
+shape = SubResource("BoxShape3D_bmf7o")
+
+[node name="Camera3D" type="Camera3D" parent="StaticBody3D"]
+transform = Transform3D(-1.13133e-08, -0.965926, 0.258819, -4.2222e-08, 0.258819, 0.965926, -1, -1.77636e-15, -4.37114e-08, 0.333089, 1.17136, -0.160836)

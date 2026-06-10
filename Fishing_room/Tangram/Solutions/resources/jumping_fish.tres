@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="TangramSolutionStat" load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://Fishing_room/Tangram/Solutions/Stats/tangram_piece_stat.gd" id="1_8of31"]
+[ext_resource type="Script" path="res://Fishing_room/Tangram/Solutions/Stats/tangram_solution_stat.gd" id="2_88lqm"]
+
+[sub_resource type="Resource" id="Resource_8of31"]
+script = ExtResource("1_8of31")
+type = 0
+position = Vector2(1.09792, -0.436618)
+rot_angle = 0
+dist_to_center = 0.0
+
+[sub_resource type="Resource" id="Resource_88lqm"]
+script = ExtResource("1_8of31")
+type = 3
+position = Vector2(-0.729426, 0.0136209)
+rot_angle = 0
+dist_to_center = 0.0
+
+[sub_resource type="Resource" id="Resource_ta8d6"]
+script = ExtResource("1_8of31")
+type = 1
+position = Vector2(0.11804, -0.91864)
+rot_angle = 225
+dist_to_center = 0.0
+
+[sub_resource type="Resource" id="Resource_te2no"]
+script = ExtResource("1_8of31")
+type = 3
+position = Vector2(0.282236, 0.20431)
+rot_angle = 315
+dist_to_center = 0.0
+
+[sub_resource type="Resource" id="Resource_sydtr"]
+script = ExtResource("1_8of31")
+type = 1
+position = Vector2(0.923131, 0.119559)
+rot_angle = 135
+dist_to_center = 0.0
+
+[sub_resource type="Resource" id="Resource_a3gnd"]
+script = ExtResource("1_8of31")
+type = 2
+position = Vector2(-2.16482, -0.388947)
+rot_angle = 270
+dist_to_center = 0.0
+
+[sub_resource type="Resource" id="Resource_ihv3s"]
+script = ExtResource("1_8of31")
+type = 4
+position = Vector2(0.472916, 1.40671)
+rot_angle = 90
+dist_to_center = 0.0
+
+[resource]
+script = ExtResource("2_88lqm")
+name = "jumping_fish"
+pieces = Array[ExtResource("1_8of31")]([SubResource("Resource_8of31"), SubResource("Resource_88lqm"), SubResource("Resource_ta8d6"), SubResource("Resource_te2no"), SubResource("Resource_sydtr"), SubResource("Resource_a3gnd"), SubResource("Resource_ihv3s")])
+center_of_mass = Vector2(0.0323908, -0.0373364)
